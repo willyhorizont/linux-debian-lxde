@@ -1,4 +1,6 @@
-# Debian+LXDE Post Install
+# Debian LXfcDE (LXDE+Xfce) Post Install
+
+![Debian LXfcDE (LXDE+Xfce) Screenshot](https://github.com/willyhorizont/linux-debian-lxde/blob/main/screenshot.jpg)  
 
 1. Do [linux > post-install > debian-apt.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/debian-apt.md#a)
 
