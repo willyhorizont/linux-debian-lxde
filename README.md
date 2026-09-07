@@ -116,16 +116,43 @@ sudo update-alternatives --config x-cursor-theme
 
 13. Do [linux > post-install > general.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/general.md#a)
 
-14. Change lock screen
-```
-TODO
-```
-
-15. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
-
-16. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
-
-17. Adjust notification settings:
+14. Adjust notification settings:
 ```
 xfce4-notifyd-config
 ```
+
+15. whiskermenu > commands:
+```
+# logout
+lxsession-logout --logout
+
+# lock screen
+lxlock
+
+```
+
+16. Change menu icon panel button size, make it bigger -> open ```mousepad ~/.config/gtk-3.0/gtk.css``` and add this:
+```
+#whiskermenu-button image {
+    -gtk-icon-transform: scale(1.4);
+}
+```
+
+17. Change lock screen
+```
+# install lock screen settings
+sudo apt install lightdm-gtk-greeter-settings -y
+
+# copy image to:
+/usr/share/images/
+
+# change lock screen clock format to:
+%a, %d %b %Y | %I:%M:%S %p
+
+# remove lock screen settings
+sudo apt remove lightdm-gtk-greeter-settings -y && sudo apt autoremove -y
+```
+
+18. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
+
+19. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
