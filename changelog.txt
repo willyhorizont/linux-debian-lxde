@@ -1,3 +1,6 @@
+[Last updated: 08 Sep 2026 @ 02:48 AM][version: 0.0.6]
+update whiskermenu command;
+
 [Last updated: 08 Sep 2026 @ 02:42 AM][version: 0.0.5]
 update lockscreen;
 

@@ -124,7 +124,7 @@ xfce4-notifyd-config
 15. whiskermenu > commands:
 ```
 # logout
-lxsession-logout --logout
+lxsession-logout
 
 # lock screen
 lxlock
