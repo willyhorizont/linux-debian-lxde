@@ -104,13 +104,13 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
     <!-- Super+Shift+S to Screenshot area -->
     <keybind key="W-S-s">
       <action name="Execute">
-        <command>bash -c 'gnome-screenshot -a -f ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
+        <command>bash -c 'gnome-screenshot --area --include-pointer --clipboard --file ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
       </action>
     </keybind>
     <!-- Shift+PrtSc to Screenshot -->
     <keybind key="S-Print">
       <action name="Execute">
-          <command>bash -c 'gnome-screenshot -f ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
+          <command>bash -c 'gnome-screenshot --include-pointer --clipboard --file ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
       </action>
     </keybind>
 ```

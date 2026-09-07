@@ -1,3 +1,7 @@
+[Last updated: 08 Sep 2026 @ 04:27 AM][version: 0.0.10]
+update Shift+PrtSc to to screenshot;
+update Super+Shift+S screenshot area;
+
 [Last updated: 08 Sep 2026 @ 04:17 AM][version: 0.0.9]
 add Shift+PrtSc to to screenshot;
 add Super+Shift+S screenshot area;
