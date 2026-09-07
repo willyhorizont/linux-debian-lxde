@@ -1,3 +1,6 @@
+[Last updated: 08 Sep 2026 @ 01:01 AM][version: 0.0.3]
+remove xcape;
+
 [Last updated: 07 Sep 2026 @ 11:48 PM][version: 0.0.2]
 replace lxde panel with xfce panel;
 

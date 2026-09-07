@@ -27,9 +27,6 @@ sudo apt install xfce4-docklike-plugin -y
 sudo apt install xfce4-pulseaudio-plugin -y
 sudo apt install xfce4-power-manager-plugins -y
 sudo apt install xfce4-genmon-plugin -y
-
-# Hotkey
-# sudo apt install xcape -y
 ```
 
 4. Enable Audio
@@ -97,7 +94,6 @@ openbox --reconfigure
 8. Add this to autostart:
 ```
 xfce4-panel
-# xcape -e 'Super_L=Alt_L|F1;Super_R=Alt_L|F1'
 ```
 
 9. (Optional) Install and enable Window Compositor for animations/transparencies/shadows/effects
