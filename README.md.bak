@@ -1,0 +1,39 @@
+6. Turn on super key to open menu on startup
+```
+sudo apt install xfce4-appfinder -y
+```
+```
+Name=Xcape Super Key
+Description=Open menu on Super key press
+Command=xcape -e 'xfce4-appfinder'
+```
+
+6. Turn on super key to open menu on startup
+```
+sudo apt install synapse -y
+```
+```
+Name=Xcape Super Key
+Description=Open menu on Super key press
+Command=xcape -e 'synapse'
+```
+
+6. Turn on super key to open menu on startup
+```
+sudo apt install xcape -y
+```
+```
+Name=Xcape Super Key
+Description=Open menu on Super key press
+Command=xcape -e 'Super_L=Alt_L|F1;Super_R=Alt_L|F1'
+```
+
+7. Replace lxpanel with xfce4-panel xfce4-docklike-plugin
+```
+sudo apt install xfce4-panel xfce4-docklike-plugin
+```
+
+7. Replace lxpanel with plank
+```
+sudo apt install plank
+```
