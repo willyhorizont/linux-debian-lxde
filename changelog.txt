@@ -1,3 +1,6 @@
+[Last updated: 08 Sep 2026 @ 01:08 AM][version: 0.0.4]
+add notification;
+
 [Last updated: 08 Sep 2026 @ 01:01 AM][version: 0.0.3]
 remove xcape;
 

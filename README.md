@@ -27,6 +27,7 @@ sudo apt install xfce4-docklike-plugin -y
 sudo apt install xfce4-pulseaudio-plugin -y
 sudo apt install xfce4-power-manager-plugins -y
 sudo apt install xfce4-genmon-plugin -y
+sudo apt install xfce4-notifyd -y
 ```
 
 4. Enable Audio
@@ -123,3 +124,8 @@ TODO
 15. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
 
 16. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
+
+17. Adjust notification settings:
+```
+xfce4-notifyd-config
+```
