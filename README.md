@@ -100,6 +100,19 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
       <mousebind button="W-A-Right" action="Drag">
         <action name="Resize"/>
       </mousebind>
+
+    <!-- Super+Shift+S to Screenshot area -->
+    <keybind key="W-S-s">
+      <action name="Execute">
+        <command>bash -c 'gnome-screenshot -a -f ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
+      </action>
+    </keybind>
+    <!-- Shift+PrtSc to Screenshot -->
+    <keybind key="S-Print">
+      <action name="Execute">
+          <command>bash -c 'gnome-screenshot -f ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
+      </action>
+    </keybind>
 ```
 
 6. Restart and refresh the Desktop

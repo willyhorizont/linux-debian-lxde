@@ -1,3 +1,7 @@
+[Last updated: 08 Sep 2026 @ 04:17 AM][version: 0.0.9]
+add Shift+PrtSc to to screenshot;
+add Super+Shift+S screenshot area;
+
 [Last updated: 08 Sep 2026 @ 03:40 AM][version: 0.0.8]
 add Super + Alt + LMB to move window;
 add Super + Alt + RMB to resize window;
