@@ -1,23 +1,44 @@
 # Debian+LXDE Post Install
 
-1. Do linux > post-install > debian-apt.md > A
+1. Do [linux > post-install > debian-apt.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/debian-apt.md#a)
 
-2. Reverse scroll
+2. Reverse scroll and Turn on touchpad tapping
 ```
-sudo mkdir -p /etc/X11/xorg.conf.d && echo -e 'Section "InputClass"\n    Identifier "touchpad catchall"\n    MatchIsTouchpad "on"\n    MatchDevicePath "/dev/input/event*"\n    Driver "libinput"\n    Option "NaturalScrolling" "true"\nEndSection' | sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf
-```
-
-3. Turn on tap touchpad
-```
-sudo sed -i '/Driver "libinput"/a \    Option "Tapping" "on"' /etc/X11/xorg.conf.d/30-touchpad.conf
+sudo mkdir -p /etc/X11/xorg.conf.d && echo -e 'Section "InputClass"\n    Identifier "touchpad catchall"\n    MatchIsTouchpad "on"\n    MatchDevicePath "/dev/input/event*"\n    Driver "libinput"\n    Option "NaturalScrolling" "true"\n    Option "Tapping" "on"\nEndSection' | sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf
 ```
 
-4. Brightness and Audio control
-4.1.
+3. Install packages
 ```
-sudo apt install brightnessctl pulseaudio-utils -y
+# Brightness control
+sudo apt install brightnessctl -y
+
+# Audio
+sudo apt install pipewire-audio -y
+sudo apt install pipewire-pulse -y
+sudo apt install pulseaudio-utils -y
+
+# Bluetooth
+sudo apt install blueman -y
+
+# Panel
+sudo apt install xfce4-panel -y
+sudo apt install xfce4-whiskermenu-plugin -y
+sudo apt install xfce4-docklike-plugin -y
+sudo apt install xfce4-pulseaudio-plugin -y
+sudo apt install xfce4-power-manager-plugins -y
+sudo apt install xfce4-genmon-plugin -y
+
+# Hotkey
+# sudo apt install xcape -y
 ```
-4.2. open ```~/.config/openbox/lxde-rc.xml``` and add this:
+
+4. Enable Audio
+```
+systemctl --user daemon-reload
+systemctl --user --now enable pipewire pipewire-pulse wireplumber
+```
+
+5. Add keybinds -> open ```~/.config/openbox/lxde-rc.xml``` and add this:
 ```
     <!-- Audio control -->
     <keybind key="XF86AudioRaiseVolume">
@@ -47,77 +68,62 @@ sudo apt install brightnessctl pulseaudio-utils -y
         <command>brightnessctl set 10%-</command>
       </action>
     </keybind>
-```
-4.3. Restart and refresh the Desktop
-```
-openbox --reconfigure
-```
 
-5. Install bluetooth
-```
-sudo apt install blueman -y
-```
+    <!-- Open Terminal -->
+    <keybind key="C-A-t">
+      <action name="Execute">
+        <command>lxterminal</command>
+      </action>
+    </keybind>
 
-6. Turn on super key to open menu on startup
-
-6.1.
-```
-sudo apt install jgmenu -y
-```
-
-6.2. open ```~/.config/openbox/lxde-rc.xml``` and add this:
-```
     <!-- Super key toggle menu -->
     <keybind key="Super_L">
       <action name="Execute">
-        <command>jgmenu_run</command>
+        <command>xfce4-popup-whiskermenu</command>
       </action>
     </keybind>
 ```
 
-6.3. Restart and refresh the Desktop
+6. Restart and refresh the Desktop
 ```
 openbox --reconfigure
 ```
 
-6.4. open ```~/.config/jgmenu/jgmenurc``` and adjust this:
+7. Remove this from autostart:
 ```
-menu_margin_x = 0
-menu_margin_y = 24
-
-color_menu_bg = #ffffff
-color_menu_bg_to = #ffffff
-color_menu_border = #cccccc
-color_norm_bg = #ffffff
-color_norm_fg = #333333
-color_sel_bg = #e0e0e0
-color_sel_fg = #000000
+@lxpanel
 ```
 
-6.5. Create appmenu-jgmenu.desktop
+8. Add this to autostart:
 ```
-echo -e "[Desktop Entry]\nVersion=1.0\nType=Application\nName=App Menu\nComment=App Menu\nExec=jgmenu_run\nIcon=/usr/share/icons/Papirus/16x16/apps/distributor-logo-debian.svg\nTerminal=false\nCategories=System;\nStartupNotify=false" > ~/.local/share/applications/appmenu-jgmenu.desktop
-update-desktop-database ~/.local/share/applications && sudo update-desktop-database /usr/share/applications
-```
-
-6.6. Create separator.desktop
-```
-echo -e "[Desktop Entry]\nVersion=1.0\nType=Application\nName=Separator\nComment=Separator\nExec=true\nIcon=/usr/share/icons/Papirus/16x16/symbolic/apps/separator-symbolic.svg\nTerminal=false\nCategories=System;\nStartupNotify=false" > ~/.local/share/applications/separator.desktop
-update-desktop-database ~/.local/share/applications && sudo update-desktop-database /usr/share/applications
+xfce4-panel
+# xcape -e 'Super_L=Alt_L|F1;Super_R=Alt_L|F1'
 ```
 
-7. Install linux > themes > gtk2.md
+9. (Optional) Install and enable Window Compositor for animations/transparencies/shadows/effects
+```
+sudo apt install picom -y
+```
 
-8. Apply Cursor theme globally
+10. (Optional) Add this to autostart to Enable Window Compositor for animations/transparencies/shadows/effects:
+```
+picom -b
+```
+
+11. Install [linux > themes > gtk2.md](https://github.com/willyhorizont/linux/blob/main/themes/gtk2.md)
+
+12. Apply Cursor theme globally
 ```
 sudo update-alternatives --config x-cursor-theme
 ```
 
-9. Do linux > post-install > general.md > A
+13. Do [linux > post-install > general.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/general.md#a)
 
-10. Change lock screen
+14. Change lock screen
 ```
 TODO
 ```
 
-11. See linux > cheatsheet > debian-apt.md
+15. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
+
+16. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)

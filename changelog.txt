@@ -1,3 +1,6 @@
+[Last updated: 07 Sep 2026 @ 11:48 PM][version: 0.0.2]
+replace lxde panel with xfce panel;
+
 [Last updated: 07 Sep 2026 @ 08:52 PM][version: 0.0.1]
 init commit before replacing lxpanel with xfce4-panel xfce4-docklike-plugin;
 
