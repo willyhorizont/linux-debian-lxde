@@ -80,6 +80,26 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
         <command>xfce4-popup-whiskermenu</command>
       </action>
     </keybind>
+
+      <!-- Super + Alt + LMB to move window -->
+      <!--
+      <mousebind button="A-Left" action="Drag">
+        <action name="Move"/>
+      </mousebind>
+      -->
+      <mousebind button="W-A-Left" action="Drag">
+        <action name="Move"/>
+      </mousebind>
+
+      <!-- Super + Alt + RMB to resize window -->
+      <!--
+      <mousebind button="A-Right" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+      -->
+      <mousebind button="W-A-Right" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
 ```
 
 6. Restart and refresh the Desktop
