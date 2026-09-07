@@ -128,7 +128,6 @@ lxsession-logout
 
 # lock screen
 lxlock
-
 ```
 
 16. Change menu icon panel button size, make it bigger -> open ```mousepad ~/.config/gtk-3.0/gtk.css``` and add this:
@@ -150,9 +149,20 @@ sudo apt install lightdm-gtk-greeter-settings -y
 %a, %d %b %Y | %I:%M:%S %p
 
 # remove lock screen settings
-sudo apt remove lightdm-gtk-greeter-settings -y && sudo apt autoremove -y
+sudo apt purge lightdm-gtk-greeter-settings -y && sudo apt autoremove -y
 ```
 
-18. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
+18. Adjust default app:
+```
+sudo update-alternatives --config x-terminal-emulator
+```
 
-19. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
+19. Remove unused packages:
+```
+sudo apt purge xiterm+thai -y && sudo apt autoremove -y
+sudo apt purge lxpanel -y && sudo apt autoremove -y
+```
+
+20. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
+
+21. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
