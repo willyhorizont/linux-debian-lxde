@@ -1,10 +1,10 @@
-# Debian LXfcDE (LXDE+Xfce) Post Install
+# Debian LXDE Post Install
 
-![Debian LXfcDE (LXDE+Xfce) Screenshot](https://github.com/willyhorizont/linux-debian-lxde/blob/main/screenshot.jpg)  
+![Debian LXDE Screenshot](https://github.com/willyhorizont/linux-debian-lxde/blob/main/screenshot.jpg)  
 
-1. Do [linux > post-install > debian-apt.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/debian-apt.md#a)
+1. Do [linux > post-install > general.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/general.md#a)
 
-2. Do [linux > post-install > general.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/general.md#a)
+2. Do [linux > post-install > debian-apt.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/debian-apt.md#a)
 
 3. Reverse scroll and Turn on touchpad tapping
 ```
@@ -25,13 +25,14 @@ sudo apt install pulseaudio-utils -y
 sudo apt install blueman -y
 
 # Panel
-sudo apt install xfce4-panel -y
-sudo apt install xfce4-whiskermenu-plugin -y
-sudo apt install xfce4-docklike-plugin -y
-sudo apt install xfce4-pulseaudio-plugin -y
-sudo apt install xfce4-power-manager-plugins -y
-sudo apt install xfce4-genmon-plugin -y
-sudo apt install xfce4-notifyd -y
+sudo apt install tint2 -y
+sudo apt install jgmenu -y
+sudo apt install volumeicon-alsa -y
+sudo apt install fdpowermon -y
+sudo apt install acpi -y
+sudo apt install xdotool -y
+sudo apt install dunst -y
+sudo apt install libnotify-bin -y
 ```
 
 5. Enable Audio
@@ -81,7 +82,7 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
     <!-- Super key toggle menu -->
     <keybind key="Super_L">
       <action name="Execute">
-        <command>xfce4-popup-whiskermenu</command>
+        <command>jgmenu_run</command>
       </action>
     </keybind>
 
@@ -124,24 +125,18 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
 openbox --reconfigure
 ```
 
-8. Remove this from autostart:
+8. comment out this from ```~/.config/lxsession/LXDE/autostart```:
 ```
 @lxpanel
+@xscreensaver
 ```
 
-9. Add this to autostart:
+9. Add this to ```~/.config/lxsession/LXDE/autostart```:
 ```
-xfce4-panel
-```
-
-10. (Optional) Install and enable Window Compositor for animations/transparencies/shadows/effects
-```
-sudo apt install picom -y
-```
-
-11. (Optional) Add this to autostart to Enable Window Compositor for animations/transparencies/shadows/effects:
-```
-picom -b
+@tint2
+@dunst
+@blueman-applet
+@sh -c "sleep 1 && nm-applet"
 ```
 
 12. Install [linux > themes > gtk2.md](https://github.com/willyhorizont/linux/blob/main/themes/gtk2.md)
@@ -151,12 +146,9 @@ picom -b
 sudo update-alternatives --config x-cursor-theme
 ```
 
-14. Adjust notification settings:
-```
-xfce4-notifyd-config
-```
+14. Adjust notification settings in ```~/.config/dunst/dunstrc```
 
-15. whiskermenu > commands:
+15. create logout.desktop and lock.desktop:
 ```
 # logout
 lxsession-logout
@@ -165,11 +157,104 @@ lxsession-logout
 lxlock
 ```
 
-16. Change menu icon panel button size, make it bigger -> open ```mousepad ~/.config/gtk-3.0/gtk.css``` and add this:
+16. Setup panel:
 ```
-#whiskermenu-button image {
-    -gtk-icon-transform: scale(1.4);
-}
+mkdir -p ~/.config/tint2
+cat << 'EOF' > ~/.config/tint2/tint2rc
+#-------------------------------------
+# L -> T -> S -> (E1: Audio) -> (E2: Battery) -> (E3: Notification) -> (P: Show Desktop)
+#-------------------------------------
+panel_items = LTSEEEP
+panel_position = bottom center horizontal
+panel_layer = top
+panel_size = 100% 36
+panel_margin = 0 0
+panel_padding = 4 2 4
+wm_menu = 1
+
+# --- BACKGROUND 1 (SOLID WHITE MAIN PANEL) ---
+background_id = 1
+background_color = #ffffff 100
+border_color = #dcdcdc 100
+border_width = 1
+border_radius = 0
+border_sides = top bottom left right
+
+# --- BACKGROUND 2 (GREY ACTIVE TASKBAR) ---
+background_id = 2
+background_color = #e0e0e0 100
+border_color = #cccccc 100
+border_width = 1
+border_radius = 2
+border_sides = top bottom left right
+
+# Apply Solid White Background
+panel_background_id = 1
+
+# --- L: Menu Button Launcher ---
+launcher_padding = 4 0
+launcher_background_id = 0
+launcher_icon_size = 24
+launcher_item_app = /usr/share/applications/jgmenu.desktop
+
+# --- T: Unified App Tray (Pinned + Opened) ---
+taskbar_mode = single_desktop
+taskbar_hide_if_empty = 0
+taskbar_padding = 6 0 6
+task_icon = 1
+task_text = 0
+task_centered = 0
+task_maximum_size = 40 32
+taskbar_sort_order = application
+task_launcher = 1
+task_always_grouped = 1
+task_background_id = 0
+task_active_background_id = 2
+
+# --- S: Systray (Bluetooth & Wifi) ---
+systray_padding = 4 2 4
+systray_background_id = 0
+systray_sort = left2right
+systray_icon_size = 20
+
+# --- E1: Indicator Audio Volume ---
+execp = new
+execp_command = echo "🔊 $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | head -n1)"
+execp_interval = 1
+execp_has_icon = 0
+execp_font = Sans 10
+execp_font_color = #000000 100
+execp_padding = 6 0
+execp_lclick_command = lxterminal -e alsamixer
+
+# --- E2: Indicator Battery ---
+execp = new
+execp_command = echo "🔋 $(acpi -b | awk -F', ' '{print $2}' | tr -d '\n')"
+execp_interval = 5
+execp_has_icon = 0
+execp_font = Sans 10
+execp_font_color = #000000 100
+execp_padding = 6 0
+
+# --- E3: Indicator Notification ---
+execp = new
+execp_command = echo "🔔"
+execp_interval = 0
+execp_has_icon = 0
+execp_font = Sans 10
+execp_font_color = #000000 100
+execp_padding = 6 0
+execp_lclick_command = dunstctl history-pop
+
+# --- P: Button to Show Desktop ---
+button = new
+button_text = ▊
+button_font = Sans 10
+button_font_color = #000000 100
+button_lclick_command = xdotool key Alt+d
+button_padding = 6 0
+button_background_id = 0
+EOF
 ```
 
 17. Change lock screen
