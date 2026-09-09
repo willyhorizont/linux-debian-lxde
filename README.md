@@ -2,9 +2,9 @@
 
 ![Debian LXfcDE (LXDE+Xfce) Screenshot](https://github.com/willyhorizont/linux-debian-lxde/blob/main/screenshot.jpg)  
 
-1. Do [linux > post-install > debian-apt.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/debian-apt.md#a)
+1. Do [linux > post-install > general.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/general.md#a)
 
-2. Do [linux > post-install > general.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/general.md#a)
+2. Do [linux > post-install > debian-apt.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/debian-apt.md#a)
 
 3. Reverse scroll and Turn on touchpad tapping
 ```
@@ -42,81 +42,82 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
 
 6. Add keybinds -> open ```~/.config/openbox/lxde-rc.xml``` and add this:
 ```
-    <!-- Audio control -->
-    <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute">
-        <command>pactl set-sink-volume @DEFAULT_SINK@ +5%</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioLowerVolume">
-      <action name="Execute">
-        <command>pactl set-sink-volume @DEFAULT_SINK@ -5%</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioMute">
-      <action name="Execute">
-        <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
-      </action>
-    </keybind>
+  <!-- Audio control -->
+  <keybind key="XF86AudioRaiseVolume">
+    <action name="Execute">
+      <command>pactl set-sink-volume @DEFAULT_SINK@ +5%</command>
+    </action>
+  </keybind>
+  <keybind key="XF86AudioLowerVolume">
+    <action name="Execute">
+      <command>pactl set-sink-volume @DEFAULT_SINK@ -5%</command>
+    </action>
+  </keybind>
+  <keybind key="XF86AudioMute">
+    <action name="Execute">
+      <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
+    </action>
+  </keybind>
 
-    <!-- Brightness control -->
-    <keybind key="XF86MonBrightnessUp">
-      <action name="Execute">
-        <command>brightnessctl set +10%</command>
-      </action>
-    </keybind>
-    <keybind key="XF86MonBrightnessDown">
-      <action name="Execute">
-        <command>brightnessctl set 10%-</command>
-      </action>
-    </keybind>
+  <!-- Brightness control -->
+  <keybind key="XF86MonBrightnessUp">
+    <action name="Execute">
+      <command>brightnessctl set +10%</command>
+    </action>
+  </keybind>
+  <keybind key="XF86MonBrightnessDown">
+    <action name="Execute">
+      <command>brightnessctl set 10%-</command>
+    </action>
+  </keybind>
 
-    <!-- Open Terminal -->
-    <keybind key="C-A-t">
-      <action name="Execute">
-        <command>lxterminal</command>
-      </action>
-    </keybind>
+  <!-- Open Terminal -->
+  <keybind key="C-A-t">
+    <action name="Execute">
+      <command>lxterminal</command>
+    </action>
+  </keybind>
 
-    <!-- Super key toggle menu -->
-    <keybind key="Super_L">
-      <action name="Execute">
-        <command>xfce4-popup-whiskermenu</command>
-      </action>
-    </keybind>
+  <!-- Super key toggle menu -->
+  <keybind key="Super_L">
+    <action name="Execute">
+      <command>xfce4-popup-whiskermenu</command>
+    </action>
+  </keybind>
 
-      <!-- Super + Alt + LMB to move window -->
-      <!--
-      <mousebind button="A-Left" action="Drag">
-        <action name="Move"/>
-      </mousebind>
-      -->
-      <mousebind button="W-A-Left" action="Drag">
-        <action name="Move"/>
-      </mousebind>
+  <!-- Super+Shift+S to Screenshot area -->
+  <keybind key="W-S-s">
+    <action name="Execute">
+      <command>bash -c 'gnome-screenshot --area --include-pointer --clipboard --file ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
+    </action>
+  </keybind>
 
-      <!-- Super + Alt + RMB to resize window -->
-      <!--
-      <mousebind button="A-Right" action="Drag">
-        <action name="Resize"/>
-      </mousebind>
-      -->
-      <mousebind button="W-A-Right" action="Drag">
-        <action name="Resize"/>
-      </mousebind>
+  <!-- Shift+PrtSc to Screenshot -->
+  <keybind key="S-Print">
+    <action name="Execute">
+        <command>bash -c 'gnome-screenshot --include-pointer --clipboard --file ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
+    </action>
+  </keybind>
 
-    <!-- Super+Shift+S to Screenshot area -->
-    <keybind key="W-S-s">
-      <action name="Execute">
-        <command>bash -c 'gnome-screenshot --area --include-pointer --clipboard --file ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
-      </action>
-    </keybind>
-    <!-- Shift+PrtSc to Screenshot -->
-    <keybind key="S-Print">
-      <action name="Execute">
-          <command>bash -c 'gnome-screenshot --include-pointer --clipboard --file ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
-      </action>
-    </keybind>
+    <!-- Super + Alt + LMB to move window -->
+    <!--
+    <mousebind button="A-Left" action="Drag">
+      <action name="Move"/>
+    </mousebind>
+    -->
+    <mousebind button="W-A-Left" action="Drag">
+      <action name="Move"/>
+    </mousebind>
+
+    <!-- Super + Alt + RMB to resize window -->
+    <!--
+    <mousebind button="A-Right" action="Drag">
+      <action name="Resize"/>
+    </mousebind>
+    -->
+    <mousebind button="W-A-Right" action="Drag">
+      <action name="Resize"/>
+    </mousebind>
 ```
 
 7. Restart and refresh the Desktop
@@ -124,14 +125,15 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
 openbox --reconfigure
 ```
 
-8. Remove this from autostart:
+8. Comment out this from ```~/.config/lxsession/LXDE/autostart```:
 ```
-@lxpanel
+# @lxpanel
+# @xscreensaver
 ```
 
-9. Add this to autostart:
+9. Add this to ```~/.config/lxsession/LXDE/autostart```:
 ```
-xfce4-panel
+@xfce4-panel
 ```
 
 10. (Optional) Install and enable Window Compositor for animations/transparencies/shadows/effects

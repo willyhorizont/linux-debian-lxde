@@ -1,3 +1,6 @@
+[Last updated: 09 Sep 2026 @ 09:40 AM][version: 0.0.13]
+update autostart;
+
 [Last updated: 09 Sep 2026 @ 08:49 AM][version: 0.0.12]
 tried replace xfce4-panel with tint2 and ended up regret it;
 
