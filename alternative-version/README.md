@@ -154,6 +154,7 @@ Print Queue Applet (system-config-printer)
 User folders update (xdg-user-dirs-gtk)
 Power Manager
 Diodon
+xiccd
 ```
 
 9. Copy ```launch-desktop.sh``` to ``````~/.config/tint2/```
@@ -189,7 +190,7 @@ lxlock
 15. Setup Top Bar:
 ```
 cat << 'EOF' > ~/.config/tint2/tint2-top
-panel_items = EEE
+panel_items = EFEFE
 panel_position = top center horizontal
 panel_layer = top
 panel_size = 100% 20
@@ -197,13 +198,13 @@ panel_margin = 0 0
 panel_padding = 0 0 0
 strut_policy = follow_size
 
-active_tooltip = 0
-
 background_id = 1
 background_color = #000000 100
 border_color = #000000 0
 border_width = 0
 border_radius = 0
+border_sides = top bottom left right
+
 panel_background_id = 1
 
 # --- E1: SPRM ---
@@ -211,7 +212,7 @@ execp = new
 execp_command = $HOME/Codes/linux/SPRM.pl
 execp_interval = 1
 execp_has_icon = 0
-execp_font = Monospace 9
+execp_font = Monospace 8
 execp_font_color = #FF1493 100
 execp_padding = 4 0
 
@@ -219,7 +220,7 @@ execp_padding = 4 0
 execp = new
 execp_command = echo "willyhorizont.github.io"
 execp_interval = 0
-execp_font = Sans 9
+execp_font = Monospace 8
 execp_font_color = #FF1493 100
 execp_padding = 4 0
 
@@ -228,7 +229,7 @@ execp = new
 execp_command = $HOME/Codes/linux/SuckMyClock.pl
 execp_interval = 1
 execp_has_icon = 0
-execp_font = Monospace 9
+execp_font = Monospace 8
 execp_font_color = #FF1493 100
 execp_padding = 4 0
 EOF
@@ -238,10 +239,9 @@ EOF
 ```
 mkdir -p ~/.config/tint2
 cat << 'EOF' > ~/.config/tint2/tint2-bottom
-panel_items = FSEEEP
+panel_items = LFSEEEEP
 panel_position = bottom center horizontal
 panel_layer = bottom
-
 panel_size = 100% 36
 panel_margin = 0 0
 panel_padding = 4 2 4
@@ -256,6 +256,14 @@ border_width = 1
 border_radius = 0
 border_sides = top bottom left right
 panel_background_id = 1
+
+# --- L: App Launcher ---
+launcher_padding = 4 4
+launcher_background_id = 0
+launcher_icon_size = 24
+launcher_icon_theme = Papirus
+launcher_icon_theme_override = 1
+launcher_item_app = ~/.local/share/applications/jgmenu-custom.desktop
 
 # --- S: Systray ---
 systray_padding = 4 2 4
@@ -297,23 +305,65 @@ button = new
 button_text = _
 button_font = Sans 10
 button_font_color = #000000 100
-button_lclick_command = xdotool key --clearmodifiers ctrl+super+d
+button_lclick_command = xdotool key ctrl+super+d
 button_padding = 6 0
 button_background_id = 0
 EOF
 ```
 
-17. Open ```~/.config/jgmenu/jgmenurc``` and add this:
+17. Create Bottom Panel App Launcher by running this code:
 ```
+mkdir -p ~/.local/share/applications
+cat << 'EOF' > ~/.local/share/applications/bottom-panel-app-launcher.desktop
+[Desktop Entry]
+Name=Bottom Panel App Launcher
+Comment=Bottom Panel App Launcher
+Exec=jgmenu_run
+Terminal=false
+Type=Application
+Icon=distributor-logo-debian
+Categories=System;Utility;
+EOF
+
+mkdir -p ~/.config/jgmenu
+cat << 'EOF' > ~/.config/jgmenu/jgmenurc
+# --- Positioning ---
 menu_margin_x = 0
 menu_margin_y = 36
 menu_padding_top = 4
 menu_padding_right = 4
 menu_padding_bottom = 4
 menu_padding_left = 4
-
 menu_halign = left
 menu_valign = bottom
+
+# --- Base Theming ---
+color_menu_bg = #ffffff 100
+color_menu_border = #dcdcdc 100
+color_norm_fg = #000000 100
+color_norm_bg = #ffffff 0
+
+# --- Theming When Active/Hover ---
+color_sel_fg = #000000 100
+color_sel_bg = #e0e0e0 100
+color_sel_border = #cccccc 100
+
+# --- Theming Font ---
+font = Sans 10
+icon_theme = Papirus-Light
+item_height = 28
+EOF
+
+cat << 'EOF' > ~/.config/jgmenu/prepend.csv
+Terminal,lxterminal,utilities-terminal
+File Manager,pcmanfm,system-file-manager
+Firefox Web Browser,firefox-esr,firefox-esr
+EOF
+
+cat << 'EOF' > ~/.config/jgmenu/append.csv
+Lock Screen,lxlock,system-lock-screen
+Logout,lxsession-logout,system-log-out
+EOF
 ```
 
 18. Setup App Tray -> run ```sudo mousepad /usr/share/plank/themes/Transparent/dock.theme``` and change ```BottomPadding=2``` to ```BottomPadding=0```

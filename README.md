@@ -139,6 +139,7 @@ Print Queue Applet (system-config-printer)
 User folders update (xdg-user-dirs-gtk)
 Power Manager
 Diodon
+xiccd
 ```
 
 9. Replace ```~/.config/lxsession/LXDE/autostart``` with this:
