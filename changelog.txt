@@ -1,3 +1,6 @@
+[Last updated: 10 Sep 2026 @ 11:07 PM][version: 0.0.15]
+add Debian LXDET2P (Tint2+Plank);
+
 [Last updated: 09 Sep 2026 @ 10:11 AM][version: 0.0.14]
 change some order;
 

@@ -85,6 +85,11 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
     </action>
   </keybind>
 
+  <!-- Toggle Show Desktop -->
+  <keybind key="C-W-d">
+      <action name="ToggleShowDesktop"/>
+  </keybind>
+
   <!-- Super+Shift+S to Screenshot area -->
   <keybind key="W-S-s">
     <action name="Execute">
@@ -125,47 +130,45 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
 openbox --reconfigure
 ```
 
-8. Comment out this from ```~/.config/lxsession/LXDE/autostart```:
+8. Uncheck this in Default application for LXSession > autostart > Known Applications:
 ```
-# @lxpanel
-# @xscreensaver
+picom
+network
+bluetooth
+Print Queue Applet (system-config-printer)
+User folders update (xdg-user-dirs-gtk)
+Power Manager
+Diodon
 ```
 
-9. Add this to ```~/.config/lxsession/LXDE/autostart```:
+9. Replace ```~/.config/lxsession/LXDE/autostart``` with this:
 ```
+# @lxpanel --profile LXDE
+@pcmanfm --desktop --profile LXDE
+# @xscreensaver -no-splash
 @xfce4-panel
 ```
 
-10. (Optional) Install and enable Window Compositor for animations/transparencies/shadows/effects
-```
-sudo apt install picom -y
-```
+10. Install [linux > themes > gtk2.md](https://github.com/willyhorizont/linux/blob/main/themes/gtk2.md)
 
-11. (Optional) Add this to autostart to Enable Window Compositor for animations/transparencies/shadows/effects:
-```
-picom -b
-```
-
-12. Install [linux > themes > gtk2.md](https://github.com/willyhorizont/linux/blob/main/themes/gtk2.md)
-
-13. Apply Cursor theme globally
+11. Apply Cursor theme globally
 ```
 sudo update-alternatives --config x-cursor-theme
 ```
 
-14. Adjust notification settings:
+12. Adjust notification settings:
 ```
 xfce4-notifyd-config
 ```
 
-15. Change menu icon panel button size, make it bigger -> open ```mousepad ~/.config/gtk-3.0/gtk.css``` and add this:
+13. Change menu icon panel button size, make it bigger -> open ```mousepad ~/.config/gtk-3.0/gtk.css``` and add this:
 ```
 #whiskermenu-button image {
     -gtk-icon-transform: scale(1.4);
 }
 ```
 
-16. whiskermenu > commands:
+14. whiskermenu > commands:
 ```
 # logout
 lxsession-logout
@@ -174,7 +177,7 @@ lxsession-logout
 lxlock
 ```
 
-17. Change lock screen
+15. Change lock screen
 ```
 # install lock screen settings
 sudo apt install lightdm-gtk-greeter-settings -y
@@ -189,17 +192,17 @@ sudo apt install lightdm-gtk-greeter-settings -y
 sudo apt purge lightdm-gtk-greeter-settings -y && sudo apt autoremove -y
 ```
 
-18. Adjust default terminal:
+16. Adjust default terminal:
 ```
 sudo update-alternatives --config x-terminal-emulator
 ```
 
-19. Remove unused packages:
+17. Remove unused packages:
 ```
 sudo apt purge xiterm+thai -y && sudo apt autoremove -y
 sudo apt purge lxpanel -y && sudo apt autoremove -y
 ```
 
-21. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
+18. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
 
-20. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
+19. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
