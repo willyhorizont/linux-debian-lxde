@@ -45,99 +45,186 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
 
 6. Add keybinds -> open ```~/.config/openbox/lxde-rc.xml``` and add this:
 ```
-  <!-- Audio control -->
-  <keybind key="XF86AudioRaiseVolume">
-    <action name="Execute">
-      <command>pactl set-sink-volume @DEFAULT_SINK@ +5%</command>
-    </action>
-  </keybind>
-  <keybind key="XF86AudioLowerVolume">
-    <action name="Execute">
-      <command>pactl set-sink-volume @DEFAULT_SINK@ -5%</command>
-    </action>
-  </keybind>
-  <keybind key="XF86AudioMute">
-    <action name="Execute">
-      <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
-    </action>
-  </keybind>
+    <!-- Audio control -->
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>pactl set-sink-volume @DEFAULT_SINK@ +5%</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>pactl set-sink-volume @DEFAULT_SINK@ -5%</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
+      </action>
+    </keybind>
 
-  <!-- Brightness control -->
-  <keybind key="XF86MonBrightnessUp">
-    <action name="Execute">
-      <command>brightnessctl set +10%</command>
-    </action>
-  </keybind>
-  <keybind key="XF86MonBrightnessDown">
-    <action name="Execute">
-      <command>brightnessctl set 10%-</command>
-    </action>
-  </keybind>
+    <!-- Brightness control -->
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>brightnessctl set +10%</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>brightnessctl set 10%-</command>
+      </action>
+    </keybind>
 
-  <!-- Open Terminal -->
-  <keybind key="C-A-t">
-    <action name="Execute">
-      <command>lxterminal</command>
-    </action>
-  </keybind>
+    <!-- Open Terminal -->
+    <keybind key="C-A-t">
+      <action name="Execute">
+        <command>lxterminal</command>
+      </action>
+    </keybind>
 
-  <!-- Super key toggle menu -->
-  <keybind key="Super_L">
-    <action name="Execute">
-      <command>jgmenu_run</command>
-    </action>
-  </keybind>
+    <!-- Super key toggle menu -->
+    <keybind key="Super_L">
+      <action name="Execute">
+        <command>jgmenu_run</command>
+      </action>
+    </keybind>
 
-  <!-- Toggle Show Desktop -->
-  <keybind key="C-W-d">
-      <action name="ToggleShowDesktop"/>
-  </keybind>
+    <!-- Super+Shift+S to Screenshot area -->
+    <keybind key="W-S-s">
+      <action name="Execute">
+        <command>bash -c 'gnome-screenshot --area --include-pointer --clipboard --file ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
+      </action>
+    </keybind>
 
-  <!-- Super+Shift+S to Screenshot area -->
-  <keybind key="W-S-s">
-    <action name="Execute">
-      <command>bash -c 'gnome-screenshot --area --include-pointer --clipboard --file ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
-    </action>
-  </keybind>
+    <!-- Shift+PrtSc to Screenshot -->
+    <keybind key="S-Print">
+      <action name="Execute">
+          <command>bash -c 'gnome-screenshot --include-pointer --clipboard --file ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
+      </action>
+    </keybind>
 
-  <!-- Shift+PrtSc to Screenshot -->
-  <keybind key="S-Print">
-    <action name="Execute">
-        <command>bash -c 'gnome-screenshot --include-pointer --clipboard --file ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
-    </action>
-  </keybind>
+    <!-- Toggle Show Desktop -->
+    <keybind key="C-W-d">
+        <action name="ToggleShowDesktop"/>
+    </keybind>
 
-    <!-- Super + Alt + LMB to move window -->
-    <!--
-    <mousebind button="A-Left" action="Drag">
-      <action name="Move"/>
-    </mousebind>
-    -->
-    <mousebind button="W-A-Left" action="Drag">
-      <action name="Move"/>
-    </mousebind>
+    <!-- Tile window Top-Left -->
+    <keybind key="C-W-q">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
 
-    <!-- Super + Alt + RMB to resize window -->
-    <!--
-    <mousebind button="A-Right" action="Drag">
-      <action name="Resize"/>
-    </mousebind>
-    -->
-    <mousebind button="W-A-Right" action="Drag">
-      <action name="Resize"/>
-    </mousebind>
+    <!-- Tile window Top-Right -->
+    <keybind key="C-W-w">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
 
-  <!-- Force Tint2 Bottom Stay Below Surface (Anti-Raise) -->
-  <application name="tint2" class="Tint2">
-    <layer>below</layer>
-    <focus>no</focus>
-  </application>
+    <!-- Tile window Bottom-Left -->
+    <keybind key="C-W-a">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
 
-  <!-- Force Plank Always Floating Above Tint2 -->
-  <application name="plank" class="Plank">
-    <layer>above</layer>
-    <focus>yes</focus>
-  </application>
+    <!-- Tile window Bottom-Right -->
+    <keybind key="C-W-s">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>-0</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+
+    <!-- Put a window into a full screen -->
+    <keybind key="C-W-z">
+      <action name="Maximize"/>
+    </keybind>
+
+    <!-- Put a window into a half screen -->
+    <keybind key="C-W-Left">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
+    <keybind key="C-W-Right">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
+    <keybind key="C-W-Up">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>100%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <keybind key="C-W-Down">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <width>100%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+
+      <!-- Super + Alt + LMB to move window -->
+      <!--
+      <mousebind button="A-Left" action="Drag">
+        <action name="Move"/>
+      </mousebind>
+      -->
+      <mousebind button="W-A-Left" action="Drag">
+        <action name="Move"/>
+      </mousebind>
+
+      <!-- Super + Alt + RMB to resize window -->
+      <!--
+      <mousebind button="A-Right" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+      -->
+      <mousebind button="W-A-Right" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+
+    <!-- Force Tint2 Bottom Stay Below Surface (Anti-Raise) -->
+    <application name="tint2" class="Tint2">
+      <layer>below</layer>
+      <focus>no</focus>
+    </application>
+
+    <!-- Force Plank Always Floating Above Tint2 -->
+    <application name="plank" class="Plank">
+      <layer>above</layer>
+      <focus>yes</focus>
+    </application>
 ```
 
 7. Restart and refresh the Desktop
