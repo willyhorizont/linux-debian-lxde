@@ -41,7 +41,7 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
 ```
 
 6. Add keybinds -> open ```~/.config/openbox/lxde-rc.xml``` and add this:
-```
+```xml
     <!-- Audio control -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
@@ -104,6 +104,72 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
         <action name="ToggleShowDesktop"/>
     </keybind>
 
+    <!-- Tile window Full -->
+    <keybind key="C-W-z">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>100%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
+
+    <!-- Tile window Full + gap -->
+    <keybind key="C-W-e">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>center</y>
+        <width>99%</width>
+        <height>98%</height>
+      </action>
+    </keybind>
+
+    <!-- Tile window Left -->
+    <keybind key="C-W-Left">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
+
+    <!-- Tile window Right -->
+    <keybind key="C-W-Right">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
+
+    <!-- Tile window Top -->
+    <keybind key="C-W-Up">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>100%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+
+    <!-- Tile window Bottom -->
+    <keybind key="C-W-Down">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <width>100%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+
     <!-- Tile window Top-Left -->
     <keybind key="C-W-q">
       <action name="Unmaximize"/>
@@ -148,50 +214,7 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
       </action>
     </keybind>
 
-    <!-- Put a window into a full screen -->
-    <keybind key="C-W-z">
-      <action name="Maximize"/>
-    </keybind>
-
-    <!-- Put a window into a half screen -->
-    <keybind key="C-W-Left">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <width>50%</width>
-        <height>100%</height>
-      </action>
-    </keybind>
-    <keybind key="C-W-Right">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>0</y>
-        <width>50%</width>
-        <height>100%</height>
-      </action>
-    </keybind>
-    <keybind key="C-W-Up">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <width>100%</width>
-        <height>50%</height>
-      </action>
-    </keybind>
-    <keybind key="C-W-Down">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>-0</y>
-        <width>100%</width>
-        <height>50%</height>
-      </action>
-    </keybind>
-
-      <!-- Super + Alt + LMB to move window -->
+      <!-- move window -->
       <!--
       <mousebind button="A-Left" action="Drag">
         <action name="Move"/>
@@ -201,7 +224,7 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
         <action name="Move"/>
       </mousebind>
 
-      <!-- Super + Alt + RMB to resize window -->
+      <!-- resize window -->
       <!--
       <mousebind button="A-Right" action="Drag">
         <action name="Resize"/>
