@@ -197,7 +197,7 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
         <action name="Move"/>
       </mousebind>
       -->
-      <mousebind button="W-A-Left" action="Drag">
+      <mousebind button="C-W-Left" action="Drag">
         <action name="Move"/>
       </mousebind>
 
@@ -207,7 +207,7 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
         <action name="Resize"/>
       </mousebind>
       -->
-      <mousebind button="W-A-Right" action="Drag">
+      <mousebind button="C-W-Right" action="Drag">
         <action name="Resize"/>
       </mousebind>
 ```

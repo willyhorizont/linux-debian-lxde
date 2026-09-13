@@ -1,3 +1,7 @@
+[Last updated: 14 Sep 2026 @ 02:51 AM][version: 0.0.18]
+update modifier move;
+update modifier resize;
+
 [Last updated: 11 Sep 2026 @ 11:56 PM][version: 0.0.17]
 add window tiling;
 
