@@ -1,3 +1,6 @@
+[Last updated: 14 Sep 2026 @ 10:55 AM][version: 0.0.20]
+update preinstalled packages clean up;
+
 [Last updated: 14 Sep 2026 @ 03:14 AM][version: 0.0.19]
 update tiling keybinds;
 

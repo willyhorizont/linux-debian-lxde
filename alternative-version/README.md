@@ -14,27 +14,31 @@ sudo mkdir -p /etc/X11/xorg.conf.d && echo -e 'Section "InputClass"\n    Identif
 4. Install packages
 ```
 # Brightness control
-sudo apt install brightnessctl -y
+sudo apt install -y brightnessctl
 
 # Audio
-sudo apt install pipewire-audio -y
-sudo apt install pipewire-pulse -y
-sudo apt install pulseaudio-utils -y
+sudo apt install -y \
+    pipewire-audio \
+    pipewire-pulse \
+    pulseaudio-utils \
+    "" && true
 
 # Bluetooth
-sudo apt install blueman -y
+sudo apt install -y blueman
 
 # Panel
-sudo apt install picom -y
-sudo apt install tint2 -y
-sudo apt install plank -y
-sudo apt install jgmenu -y
-sudo apt install volumeicon-alsa -y
-sudo apt install fdpowermon -y
-sudo apt install acpi -y
-sudo apt install xdotool -y
-sudo apt install dunst -y
-sudo apt install libnotify-bin -y
+sudo apt install -y \
+    picom \
+    tint2 \
+    plank \
+    jgmenu \
+    volumeicon-alsa \
+    fdpowermon \
+    acpi \
+    xdotool \
+    dunst \
+    libnotify-bin \
+    "" && true
 ```
 
 5. Enable Audio
@@ -481,7 +485,7 @@ EOF
 19. Change lock screen
 ```
 # install lock screen settings
-sudo apt install lightdm-gtk-greeter-settings -y
+sudo apt install -y lightdm-gtk-greeter-settings
 
 # copy image to:
 /usr/share/images/
@@ -490,7 +494,7 @@ sudo apt install lightdm-gtk-greeter-settings -y
 %a, %d %b %Y | %I:%M:%S %p
 
 # remove lock screen settings
-sudo apt purge lightdm-gtk-greeter-settings -y && sudo apt autoremove -y
+sudo apt purge -y lightdm-gtk-greeter-settings && sudo apt autoremove -y --purge
 ```
 
 20. Adjust default terminal:
@@ -500,8 +504,74 @@ sudo update-alternatives --config x-terminal-emulator
 
 21. Remove unused packages:
 ```
-sudo apt purge xiterm+thai -y && sudo apt autoremove -y
-sudo apt purge lxpanel -y && sudo apt autoremove -y
+sudo apt purge -y lxpanel && sudo apt autoremove -y --purge
+sudo apt purge -y xiterm+thai && sudo apt autoremove -y --purge
+sudo apt purge -y goldendict-ng && sudo apt autoremove -y --purge
+sudo apt purge -y \
+    fcitx-frontend-qt5 \
+    fcitx-frontend-qt6 \
+    fcitx5-config-qt \
+    fcitx5-frontend-qt5 \
+    fcitx5-frontend-qt6 \
+    libfcitx-qt5-1 \
+    libfcitx-qt5-data \
+    libfcitx5-qt-data \
+    libfcitx5-qt1 \
+    libfcitx5-qt6-1 \
+    libkf6dbusaddons-bin \
+    libkf6dbusaddons-data \
+    libkf6dbusaddons6 \
+    libkf6itemviews-data \
+    libkf6itemviews6 \
+    libkf6widgetsaddons-data \
+    libkf6widgetsaddons6 \
+    libqt5core5t64 \
+    libqt5dbus5t64 \
+    libqt5gui5t64 \
+    libqt5network5t64 \
+    libqt5positioning5 \
+    libqt5printsupport5t64 \
+    libqt5qml5 \
+    libqt5qmlmodels5 \
+    libqt5quick5 \
+    libqt5quickwidgets5 \
+    libqt5svg5 \
+    libqt5waylandclient5 \
+    libqt5waylandcompositor5 \
+    libqt5webchannel5 \
+    libqt5webengine-data \
+    libqt5webenginecore5 \
+    libqt5webenginewidgets5 \
+    libqt5widgets5t64 \
+    libqt5x11extras5 \
+    libqt6core6t64 \
+    libqt6dbus6 \
+    libqt6gui6 \
+    libqt6network6 \
+    libqt6opengl6 \
+    libqt6qml6 \
+    libqt6qmlmeta6 \
+    libqt6qmlmodels6 \
+    libqt6qmlworkerscript6 \
+    libqt6quick6 \
+    libqt6svg6 \
+    libqt6waylandclient6 \
+    libqt6waylandcompositor6 \
+    libqt6widgets6 \
+    libqt6wlshellintegration6 \
+    qt5-gtk-platformtheme \
+    qt6-gtk-platformtheme \
+    qt6-qpa-plugins \
+    qt6-svg-plugins \
+    qt6-translations-l10n \
+    qt6-wayland \
+    qttranslations5-l10n \
+    qtwayland5 \
+    uim-qt5 \
+    uim-qt5-immodule \
+    uim-qt6 \
+    uim-qt6-immodule \
+    "" && sudo apt -y autoremove --purge
 ```
 
 22. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
