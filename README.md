@@ -21,7 +21,7 @@ sudo apt install -y \
     pipewire-audio \
     pipewire-pulse \
     pulseaudio-utils \
-    "" && true
+    ""
 
 # Bluetooth
 sudo apt install -y blueman
@@ -35,7 +35,7 @@ sudo apt install -y \
     xfce4-power-manager-plugins \
     xfce4-genmon-plugin \
     xfce4-notifyd \
-    "" && true
+    ""
 ```
 
 5. Enable Audio

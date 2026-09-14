@@ -21,7 +21,7 @@ sudo apt install -y \
     pipewire-audio \
     pipewire-pulse \
     pulseaudio-utils \
-    "" && true
+    ""
 
 # Bluetooth
 sudo apt install -y blueman
@@ -38,7 +38,7 @@ sudo apt install -y \
     xdotool \
     dunst \
     libnotify-bin \
-    "" && true
+    ""
 ```
 
 5. Enable Audio
