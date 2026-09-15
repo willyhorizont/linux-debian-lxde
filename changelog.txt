@@ -1,3 +1,8 @@
+[Last updated: 16 Sep 2026 @ 02:42 AM][version: 0.0.24]
+update refresh-desktop.sh;
+update pinned app in bottom panel app launcher;
+update screenshot;
+
 [Last updated: 16 Sep 2026 @ 02:21 AM][version: 0.0.23]
 update top bar;
 

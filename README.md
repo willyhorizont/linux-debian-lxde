@@ -487,6 +487,9 @@ cat << 'EOF' > ~/.config/jgmenu/prepend.csv
 Terminal,lxterminal,utilities-terminal
 File Manager,pcmanfm,system-file-manager
 Firefox Web Browser,firefox-esr,firefox-esr
+Vivaldi Web Browser,vivaldi-stable,vivaldi
+Brave Web Browser,brave-browser-stable,brave-browser
+Chrome Web Browser,google-chrome-stable,google-chrome
 EOF
 
 cat << 'EOF' > ~/.config/jgmenu/append.csv
