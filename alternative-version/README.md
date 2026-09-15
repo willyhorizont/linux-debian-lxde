@@ -1,6 +1,6 @@
 # Debian LXfcDE (LXDE+Xfce) Post Install
 
-![Debian LXfcDE (LXDE+Xfce) Screenshot](https://github.com/willyhorizont/linux-debian-lxde/blob/main/screenshot.jpg)  
+![Debian LXfcDE (LXDE+Xfce) Screenshot](https://github.com/willyhorizont/linux-debian-lxde/blob/main/alternative-version/screenshot.jpg)  
 
 1. Reverse scroll and Turn on touchpad tapping
 ```
