@@ -1,6 +1,6 @@
 #!/bin/bash
 
-blueman-applet &
+# blueman-applet &
 
 sleep 2
 
