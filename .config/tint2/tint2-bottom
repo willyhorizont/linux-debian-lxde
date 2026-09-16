@@ -1,4 +1,4 @@
-panel_items = PFSEEEEEEEEEEEEEEEP
+panel_items = PFSEEEEEEEEEEEEP
 panel_position = bottom center horizontal
 panel_layer = bottom
 panel_size = 100% 36
@@ -58,16 +58,6 @@ execp_padding = 8 0
 execp_tooltip = 
 execp_lclick_command = lxterminal -e bluetoothctl
 
-# --- E: Separator ---
-execp = new
-execp_command = echo "|"
-execp_interval = 0
-execp_has_icon = 0
-execp_font = JetBrains Mono 8
-execp_font_color = #dcdcdc 100
-execp_padding = 0 0
-execp_tooltip = 
-
 # --- E: Indicator Network ---
 execp = new
 execp_command = CON_TYPE=$(nmcli -t -f TYPE,STATE dev | grep -w "connected" | head -n1 | cut -d: -f1); if [ "$CON_TYPE" = "ethernet" ]; then echo "🌐🟢 Wired        "; elif [ "$CON_TYPE" = "wifi" ]; then WIFI_INFO=$(nmcli -t -f active,ssid,signal dev wifi | grep '^yes:'); SSID=$(echo "$WIFI_INFO" | cut -d: -f2 | cut -c 1-8); SSID_PAD=$(printf "%-8s" "$SSID"); SIG=$(echo "$WIFI_INFO" | cut -d: -f3); SIG_PAD=$(printf "%3d" "$SIG"); echo "🛜🟢 $SSID_PAD $SIG_PAD%"; else echo "🌐🔴 Not Conn     "; fi
@@ -99,16 +89,6 @@ execp_font_color = #000000 100
 execp_padding = 8 0
 execp_tooltip = 
 
-# --- E: Separator ---
-execp = new
-execp_command = echo "|"
-execp_interval = 0
-execp_has_icon = 0
-execp_font = JetBrains Mono 8
-execp_font_color = #dcdcdc 100
-execp_padding = 0 0
-execp_tooltip = 
-
 # --- E: Indicator Audio Input ---
 execp = new
 execp_command = MIC_MUTE=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}'); if [ "$MIC_MUTE" = "yes" ]; then echo "🎤🔴 Muted"; else MIC_VOL=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}' | head -n1 | tr -d '%'); MIC_PAD=$(printf "%3d" "$MIC_VOL"); echo "🎤🟢 $MIC_PAD% "; fi
@@ -119,16 +99,6 @@ execp_font_color = #000000 100
 execp_padding = 8 0
 execp_tooltip = 
 execp_lclick_command = lxterminal -e alsamixer
-
-# --- E: Separator ---
-execp = new
-execp_command = echo "|"
-execp_interval = 0
-execp_has_icon = 0
-execp_font = JetBrains Mono 8
-execp_font_color = #dcdcdc 100
-execp_padding = 0 0
-execp_tooltip = 
 
 # --- E: Indicator Audio Output ---
 execp = new
