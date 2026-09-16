@@ -453,54 +453,13 @@ Type=Application
 Icon=distributor-logo-debian
 Categories=System;Utility;
 EOF
-
-mkdir -p ~/.config/jgmenu
-cat << 'EOF' > ~/.config/jgmenu/jgmenurc
-# --- Positioning ---
-menu_margin_x = 0
-menu_margin_y = 36
-menu_padding_top = 4
-menu_padding_right = 4
-menu_padding_bottom = 4
-menu_padding_left = 4
-menu_halign = left
-menu_valign = bottom
-
-# --- Base Theming ---
-color_menu_bg = #ffffff 100
-color_menu_border = #dcdcdc 100
-color_norm_fg = #000000 100
-color_norm_bg = #ffffff 0
-
-# --- Theming When Active/Hover ---
-color_sel_fg = #000000 100
-color_sel_bg = #e0e0e0 100
-color_sel_border = #cccccc 100
-
-# --- Theming Font ---
-font = Sans 10
-icon_theme = Papirus-Light
-item_height = 28
-EOF
-
-cat << 'EOF' > ~/.config/jgmenu/prepend.csv
-Terminal,lxterminal,utilities-terminal
-File Manager,pcmanfm,system-file-manager
-Firefox Web Browser,firefox-esr,firefox-esr
-Vivaldi Web Browser,vivaldi-stable,vivaldi
-Brave Web Browser,brave-browser-stable,brave-browser
-Chrome Web Browser,google-chrome-stable,google-chrome
-EOF
-
-cat << 'EOF' > ~/.config/jgmenu/append.csv
-Lock Screen,lxlock,system-lock-screen
-Logout,lxsession-logout,system-log-out
-EOF
 ```
 
-18. Setup App Tray -> run ```sudo mousepad /usr/share/plank/themes/Transparent/dock.theme``` and change ```BottomPadding=2``` to ```BottomPadding=0```
+18. Copy jgmenu to ~/.config
 
-19. Change lock screen
+19. Setup App Tray -> run ```sudo mousepad /usr/share/plank/themes/Transparent/dock.theme``` and change ```BottomPadding=2``` to ```BottomPadding=0```
+
+20. Change lock screen
 ```
 # install lock screen settings
 sudo apt install -y lightdm-gtk-greeter-settings
@@ -515,12 +474,12 @@ sudo apt install -y lightdm-gtk-greeter-settings
 sudo apt purge -y lightdm-gtk-greeter-settings && sudo apt autoremove -y --purge
 ```
 
-20. Adjust default terminal:
+21. Adjust default terminal:
 ```
 sudo update-alternatives --config x-terminal-emulator
 ```
 
-21. Remove unused packages:
+22. Remove unused packages:
 ```
 sudo apt purge -y lxpanel && sudo apt autoremove -y --purge
 sudo apt purge -y xiterm+thai && sudo apt autoremove -y --purge
@@ -592,6 +551,6 @@ sudo apt purge -y \
     "" && sudo apt -y autoremove --purge
 ```
 
-22. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
+23. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
 
-23. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
+24. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
