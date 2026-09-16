@@ -1,3 +1,6 @@
+[Last updated: 17 Sep 2026 @ 06:17 AM][version: 0.1.5]
+update bluetooth indicator, add timeout;
+
 [Last updated: 17 Sep 2026 @ 03:30 AM][version: 0.1.4]
 update plank theme;
 TODO: configure plank theme;

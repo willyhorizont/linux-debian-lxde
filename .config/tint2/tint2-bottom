@@ -49,7 +49,7 @@ execp_tooltip =
 
 # --- E: Indicator Bluetooth ---
 execp = new
-execp_command = if [ "$(bluetoothctl show | grep "Powered: yes")" = "" ]; then echo ">ᛒ🔴 Offline "; else DEVICE=$(bluetoothctl info | grep "Name:" | cut -d' ' -f2- | cut -c 1-8); if [ -z "$DEVICE" ]; then echo ">ᛒ🟢 Not Conn"; else echo ">ᛒ🟢 $DEVICE"; fi; fi
+execp_command = if [ "$(bluetoothctl show | grep "Powered: yes")" = "" ]; then echo ">B🔴 OFF     "; else DEVICE=$(timeout 0.2 bluetoothctl info | grep "Name:" | cut -d' ' -f2- | cut -c 1-8); if [ -z "$DEVICE" ]; then echo ">B🟢 Not Conn"; else echo ">B🟢 $DEVICE"; fi; fi
 execp_interval = 4
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
