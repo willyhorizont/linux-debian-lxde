@@ -13,6 +13,9 @@ sudo mkdir -p /etc/X11/xorg.conf.d && echo -e 'Section "InputClass"\n    Identif
 
 4. Install packages
 ```
+# Font
+sudo apt install -y fonts-jetbrains-mono
+
 # Brightness control
 sudo apt install -y brightnessctl
 
@@ -32,8 +35,7 @@ sudo apt install -y \
     tint2 \
     plank \
     jgmenu \
-    volumeicon-alsa \
-    fdpowermon \
+    power-profiles-daemon \
     acpi \
     xdotool \
     dunst \
@@ -52,7 +54,7 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
     <!-- Audio control -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume @DEFAULT_SINK@ +5%</command>
+        <command>bash -c 'pactl set-sink-volume @DEFAULT_SINK@ +5% &amp;&amp; VOL=$(pactl get-sink-volume @DEFAULT_SINK@ | awk "{print \$5}" | head -n1 | tr -d "%"); if [ "$VOL" -gt 100 ]; then pactl set-sink-volume @DEFAULT_SINK@ 100%; fi'</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
@@ -65,7 +67,11 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
         <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
       </action>
     </keybind>
-
+    <keybind key="XF86AudioMicMute">
+      <action name="Execute">
+        <command>pactl set-source-mute @DEFAULT_SOURCE@ toggle</command>
+      </action>
+    </keybind>
     <!-- Brightness control -->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
@@ -278,18 +284,9 @@ Diodon
 xiccd
 ```
 
-9. Configure ```launch-desktop.sh``` location
+9. Copy ```./.config/tint2/start-desktop.sh``` to ```~/.config/tint2/start-desktop.sh```
 
-10. Replace ```~/.config/lxsession/LXDE/autostart``` with this:
-```
-@picom --backend xrender -b
-# @lxpanel --profile LXDE
-@pcmanfm --desktop --profile LXDE
-# @xscreensaver -no-splash
-@dunst
-@/home/yourusername/path/to/launch-desktop.sh
-@lxterminal
-```
+10. Copy ```./.config/lxsession/LXDE/autostart``` to ```~/.config/lxsession/LXDE/autostart```
 
 11. Install [linux > themes > gtk2.md](https://github.com/willyhorizont/linux/blob/main/themes/gtk2.md)
 
@@ -309,150 +306,9 @@ lxsession-logout
 lxlock
 ```
 
-15. Setup Top Bar:
-```
-cat << 'EOF' > ~/.config/tint2/tint2-top
-panel_items = EFEFEFE
-panel_position = top center horizontal
-panel_layer = top
-panel_size = 100% 20
-panel_margin = 0 0
-panel_padding = 0 0 0
-strut_policy = follow_size
+15. Copy ```tint2-top``` to ```~/.config/tint2/tint2-top```
 
-background_id = 1
-background_color = #000000 100
-border_color = #000000 0
-border_width = 0
-border_radius = 0
-border_sides = top bottom left right
-
-panel_background_id = 1
-
-# --- E1: SPRM ---
-execp = new
-execp_command = $HOME/Codes/linux/SPRM.pl
-execp_interval = 1
-execp_has_icon = 0
-execp_font = Monospace 8
-execp_font_color = #FF1493 100
-execp_padding = 4 0
-execp_tooltip = SPRM
-
-# --- E2: SpaceAvailable ---
-execp = new
-execp_command = echo " SPACE AVAILABLE      |"
-execp_interval = 0
-execp_font = Monospace 8
-execp_font_color = #FF1493 100
-execp_padding = 4 0
-execp_tooltip = SpaceAvailable
-
-# --- E3: WhoAmI ---
-execp = new
-execp_command = echo "willyhorizont.github.io"
-execp_interval = 0
-execp_font = Monospace 8
-execp_font_color = #FF1493 100
-execp_padding = 4 0
-execp_tooltip = WhoAmI
-
-# --- E4: SuckMyClock ---
-execp = new
-execp_command = $HOME/Codes/linux/SuckMyClock.pl
-execp_interval = 1
-execp_has_icon = 0
-execp_font = Monospace 8
-execp_font_color = #FF1493 100
-execp_padding = 4 0
-execp_tooltip = SuckMyClock
-EOF
-```
-
-16. Setup Bottom Panel:
-```
-mkdir -p ~/.config/tint2
-cat << 'EOF' > ~/.config/tint2/tint2-bottom
-panel_items = LFSEEEEP
-panel_position = bottom center horizontal
-panel_layer = bottom
-panel_size = 100% 36
-panel_margin = 0 0
-panel_padding = 4 2 4
-wm_menu = 1
-strut_policy = follow_window
-
-tooltip_show_status = 1
-tooltip_background_color = #ffffff 100
-tooltip_font_color = #000000 100
-tooltip_font = Sans 10
-
-# --- BACKGROUND 1 ---
-background_id = 1
-background_color = #ffffff 100
-border_color = #dcdcdc 100
-border_width = 1
-border_radius = 0
-border_sides = top bottom left right
-panel_background_id = 1
-
-# --- L: App Launcher ---
-launcher_padding = 4 4
-launcher_background_id = 0
-launcher_icon_size = 24
-launcher_icon_theme = Papirus-Light
-launcher_icon_theme_override = 1
-launcher_item_app = ~/.local/share/applications/bottom-panel-app-launcher.desktop
-
-# --- S: Systray ---
-systray_padding = 4 2 4
-systray_background_id = 0
-systray_sort = left2right
-systray_icon_size = 20
-systray_icon_asb = 100 0 -80
-
-# --- E1: Indicator Audio Volume ---
-execp = new
-execp_command = echo "🔊 $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | head -n1)"
-execp_interval = 1
-execp_has_icon = 0
-execp_font = Sans 10
-execp_font_color = #000000 100
-execp_padding = 6 0
-execp_tooltip = 
-execp_lclick_command = lxterminal -e alsamixer
-
-# --- E2: Indicator Battery ---
-execp = new
-execp_command = echo "🔋 $(acpi -b | awk -F', ' '{print $2}' | tr -d '\n')"
-execp_interval = 5
-execp_has_icon = 0
-execp_font = Sans 10
-execp_font_color = #000000 100
-execp_padding = 6 0
-execp_tooltip = 
-
-# --- E3: Indicator Notification ---
-execp = new
-execp_command = echo "🔔"
-execp_interval = 0
-execp_has_icon = 0
-execp_font = Sans 10
-execp_font_color = #000000 100
-execp_padding = 6 0
-execp_tooltip = 
-execp_lclick_command = dunstctl history-pop
-
-# --- P: Button to Toggle Show Desktop ---
-button = new
-button_text = _
-button_font = Sans 10
-button_font_color = #000000 100
-button_lclick_command = xdotool key ctrl+super+d
-button_padding = 6 0
-button_background_id = 0
-EOF
-```
+16. Copy ```tint2-bottom``` to ```~/.config/tint2/tint2-bottom```
 
 17. Create Bottom Panel App Launcher by running this code:
 ```
@@ -499,6 +355,7 @@ sudo apt purge -y lxpanel && sudo apt autoremove -y --purge
 sudo apt purge -y xiterm+thai && sudo apt autoremove -y --purge
 sudo apt purge -y goldendict-ng && sudo apt autoremove -y --purge
 sudo apt purge -y kasumi && sudo apt autoremove -y --purge
+sudo apt purge -y volumeicon-alsa fdpowermon && sudo apt autoremove -y --purge
 sudo apt purge -y \
     fcitx-frontend-qt5 \
     fcitx-frontend-qt6 \

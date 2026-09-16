@@ -1,0 +1,203 @@
+panel_items = PFSEEEEEEEEEEEEEEEP
+panel_position = bottom center horizontal
+panel_layer = bottom
+panel_size = 100% 36
+panel_margin = 0 0
+panel_padding = 0 2 0
+wm_menu = 1
+strut_policy = follow_window
+
+tooltip_show_status = 1
+tooltip_background_color = #ffffff 100
+tooltip_font_color = #000000 100
+tooltip_font = JetBrains Mono 8
+
+# --- BACKGROUND 1 ---
+background_id = 1
+background_color = #ffffff 100
+border_color = #dcdcdc 0
+border_width = 0
+border_radius = 0
+border_sides = top bottom left right
+panel_background_id = 1
+
+# --- P: Bottom Panel App Launcher ---
+button = new
+button_text =  
+button_font = JetBrains Mono 8
+button_font_color = #000000 100
+button_lclick_command = jgmenu_run
+button_padding = 8 0
+button_background_id = 0
+
+# --- S: Systray ---
+systray_padding = 4 2 4
+systray_background_id = 0
+systray_sort = left2right
+systray_icon_size = 20
+systray_icon_asb = 100 0 -80
+
+# --- E: Separator ---
+execp = new
+execp_command = echo "|"
+execp_interval = 0
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #dcdcdc 100
+execp_padding = 0 0
+execp_tooltip = 
+
+# --- E: Indicator Bluetooth ---
+execp = new
+execp_command = if [ "$(bluetoothctl show | grep "Powered: yes")" = "" ]; then echo ">ᛒ🔴 Offline "; else DEVICE=$(bluetoothctl info | grep "Name:" | cut -d' ' -f2- | cut -c 1-8); if [ -z "$DEVICE" ]; then echo ">ᛒ🟢 Not Conn"; else echo ">ᛒ🟢 $DEVICE"; fi; fi
+execp_interval = 4
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #000000 100
+execp_padding = 8 0
+execp_tooltip = 
+execp_lclick_command = lxterminal -e bluetoothctl
+
+# --- E: Separator ---
+execp = new
+execp_command = echo "|"
+execp_interval = 0
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #dcdcdc 100
+execp_padding = 0 0
+execp_tooltip = 
+
+# --- E: Indicator Network ---
+execp = new
+execp_command = CON_TYPE=$(nmcli -t -f TYPE,STATE dev | grep -w "connected" | head -n1 | cut -d: -f1); if [ "$CON_TYPE" = "ethernet" ]; then echo "🌐🟢 Wired        "; elif [ "$CON_TYPE" = "wifi" ]; then WIFI_INFO=$(nmcli -t -f active,ssid,signal dev wifi | grep '^yes:'); SSID=$(echo "$WIFI_INFO" | cut -d: -f2 | cut -c 1-8); SSID_PAD=$(printf "%-8s" "$SSID"); SIG=$(echo "$WIFI_INFO" | cut -d: -f3); SIG_PAD=$(printf "%3d" "$SIG"); echo "🛜🟢 $SSID_PAD $SIG_PAD%"; else echo "🌐🔴 Not Conn     "; fi
+execp_interval = 5
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #000000 100
+execp_padding = 8 0
+execp_tooltip = 
+execp_lclick_command = lxterminal -e nmtui
+
+# --- E: Separator ---
+execp = new
+execp_command = echo "|"
+execp_interval = 0
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #dcdcdc 100
+execp_padding = 0 0
+execp_tooltip = 
+
+# --- E: Indicator Video Input ---
+execp = new
+execp_command = if [ -f /sys/class/video4linux/video0/device/power/runtime_status ]; then STATUS=$(cat /sys/class/video4linux/video0/device/power/runtime_status); if [ "$STATUS" = "active" ]; then echo "📷🟢 ON "; else echo "📷🔴 OFF"; fi; else echo "📷🔴 OFF"; fi
+execp_interval = 2
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #000000 100
+execp_padding = 8 0
+execp_tooltip = 
+
+# --- E: Separator ---
+execp = new
+execp_command = echo "|"
+execp_interval = 0
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #dcdcdc 100
+execp_padding = 0 0
+execp_tooltip = 
+
+# --- E: Indicator Audio Input ---
+execp = new
+execp_command = MIC_MUTE=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}'); if [ "$MIC_MUTE" = "yes" ]; then echo "🎤🔴 Muted"; else MIC_VOL=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}' | head -n1 | tr -d '%'); MIC_PAD=$(printf "%3d" "$MIC_VOL"); echo "🎤🟢 $MIC_PAD% "; fi
+execp_interval = 1
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #000000 100
+execp_padding = 8 0
+execp_tooltip = 
+execp_lclick_command = lxterminal -e alsamixer
+
+# --- E: Separator ---
+execp = new
+execp_command = echo "|"
+execp_interval = 0
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #dcdcdc 100
+execp_padding = 0 0
+execp_tooltip = 
+
+# --- E: Indicator Audio Output ---
+execp = new
+execp_command = SINK_MUTE=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}'); if [ "$SINK_MUTE" = "yes" ]; then echo "🔉🔴 Muted"; else VOL=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | head -n1 | tr -d '%'); VOL_PAD=$(printf "%3d" "$VOL"); echo "🔉🟢 $VOL_PAD% "; fi
+execp_interval = 1
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #000000 100
+execp_padding = 8 0
+execp_tooltip = 
+execp_lclick_command = lxterminal -e alsamixer
+
+# --- E: Separator ---
+execp = new
+execp_command = echo "|"
+execp_interval = 0
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #dcdcdc 100
+execp_padding = 0 0
+execp_tooltip = 
+
+# --- E: Indicator Battery ---
+execp = new
+execp_command = ACPI_OUT=$(acpi -b | head -n1); CAP=$(echo "$ACPI_OUT" | awk -F', ' '{print $2}' | tr -d '% '); CAP_PAD=$(printf "%3d" "$CAP"); if echo "$ACPI_OUT" | grep -F ", Charging," > /dev/null || echo "$ACPI_OUT" | grep -q "[: ]Charging,"; then if [ "$CAP" -ge 40 ]; then echo "⚡🔋 $CAP_PAD%"; else echo "⚡🪫 $CAP_PAD%"; fi; else if [ "$CAP" -ge 40 ]; then echo " 🔋 $CAP_PAD%"; else echo " 🪫 $CAP_PAD%"; fi; fi
+execp_interval = 5
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #000000 100
+execp_padding = 8 0
+execp_tooltip = 
+execp_lclick_command = lxterminal -e ~/.config/tint2/powerprofilestui.sh
+
+# --- E: Separator ---
+execp = new
+execp_command = echo "|"
+execp_interval = 0
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #dcdcdc 100
+execp_padding = 0 0
+execp_tooltip = 
+
+# --- E: Indicator Notification ---
+execp = new
+execp_command = echo "🔔"
+execp_interval = 0
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #000000 100
+execp_padding = 8 0
+execp_tooltip = 
+execp_lclick_command = dunstctl history-pop
+
+# --- E: Separator ---
+execp = new
+execp_command = echo "|"
+execp_interval = 0
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #dcdcdc 100
+execp_padding = 0 0
+execp_tooltip = 
+
+# --- P: Button to Toggle Show Desktop ---
+button = new
+button_text =  _ 
+button_font = JetBrains Mono 8
+button_font_color = #000000 100
+button_lclick_command = xdotool key ctrl+super+d
+button_padding = 8 0
+button_background_id = 0

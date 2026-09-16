@@ -1,0 +1,54 @@
+panel_items = EFEFEFE
+panel_position = top center horizontal
+panel_layer = top
+panel_size = 100% 20
+panel_margin = 0 0
+panel_padding = 0 0 0
+strut_policy = follow_size
+
+background_id = 1
+background_color = #000000 100
+border_color = #000000 0
+border_width = 0
+border_radius = 0
+border_sides = top bottom left right
+
+panel_background_id = 1
+
+# --- E: SPRM ---
+execp = new
+execp_command = $HOME/Codes/linux/SPRM.pl
+execp_interval = 1
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #FF1493 100
+execp_padding = 4 0
+execp_tooltip = SPRM
+
+# --- E: SpaceAvailable ---
+execp = new
+execp_command = echo " SPACE AVAILABLE      |"
+execp_interval = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #FF1493 100
+execp_padding = 4 0
+execp_tooltip = SpaceAvailable
+
+# --- E: WhoAmI ---
+execp = new
+execp_command = echo "willyhorizont.github.io"
+execp_interval = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #FF1493 100
+execp_padding = 4 0
+execp_tooltip = WhoAmI
+
+# --- E: SuckMyClock ---
+execp = new
+execp_command = $HOME/Codes/linux/SuckMyClock.pl
+execp_interval = 1
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #FF1493 100
+execp_padding = 4 0
+execp_tooltip = SuckMyClock

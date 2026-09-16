@@ -1,0 +1,7 @@
+@picom --backend xrender -b
+#@lxpanel --profile LXDE
+@pcmanfm --desktop --profile LXDE
+#@xscreensaver -no-splash
+@dunst
+@/home/willy/.config/tint2/start-desktop.sh
+@lxterminal

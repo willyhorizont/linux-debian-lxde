@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.0.31" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.1.0" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,7 +12,18 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-add more item to purge command;
+update tint2-bottom;
+update tint2-top;
+replace blueman-applet with bluetoothctl + suckless, add suckless bluetooth indicator;
+replace nm-applet with nmcli + nmtui + suckless, add suckless network indicator;
+replace fdpowermon with power-profiles-daemon + suckless, add suckless power indicator;
+replace volumeicon-alsa with alsamixer + suckless, add suckless audio output indicator;
+add font;
+update keybind, add keybind to mute mic, update volume up keybind to limit max output;
+update autostart;
+add audio input indicator;
+add video input indicator;
+TODO: configure plank theme;
 "
 M=$(sed -e '/./,$!d' <<< "$M")
 M="$H

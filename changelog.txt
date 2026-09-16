@@ -1,3 +1,17 @@
+[Last updated: 17 Sep 2026 @ 01:56 AM][version: 0.1.0]
+update tint2-bottom;
+update tint2-top;
+replace blueman-applet with bluetoothctl + suckless, add suckless bluetooth indicator;
+replace nm-applet with nmcli + nmtui + suckless, add suckless network indicator;
+replace fdpowermon with power-profiles-daemon + suckless, add suckless power indicator;
+replace volumeicon-alsa with alsamixer + suckless, add suckless audio output indicator;
+add font;
+update keybind, add keybind to mute mic, update volume up keybind to limit max output;
+update autostart;
+add audio input indicator;
+add video input indicator;
+TODO: configure plank theme;
+
 [Last updated: 16 Sep 2026 @ 05:52 PM][version: 0.0.31]
 add more item to purge command;
 
