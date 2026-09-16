@@ -1,3 +1,6 @@
+[Last updated: 17 Sep 2026 @ 06:25 AM][version: 0.1.6]
+fix bluetooth indicator;
+
 [Last updated: 17 Sep 2026 @ 06:17 AM][version: 0.1.5]
 update bluetooth indicator, add timeout;
 
