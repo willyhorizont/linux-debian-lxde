@@ -1,3 +1,7 @@
+[Last updated: 17 Sep 2026 @ 02:49 AM][version: 0.1.3]
+update screenshot;
+TODO: configure plank theme;
+
 [Last updated: 17 Sep 2026 @ 02:22 AM][version: 0.1.2]
 re-update tint2-bottom change onclick event from bluetoothctl to blueman-manager;
 update tint2-top;
