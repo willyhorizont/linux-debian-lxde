@@ -1,3 +1,6 @@
+[Last updated: 16 Sep 2026 @ 04:43 PM][version: 0.0.29]
+update screenshot;
+
 [Last updated: 16 Sep 2026 @ 04:32 PM][version: 0.0.28]
 update autostart;
 update bottom-panel;
