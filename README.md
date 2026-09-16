@@ -288,6 +288,7 @@ xiccd
 # @xscreensaver -no-splash
 @dunst
 @/home/yourusername/path/to/launch-desktop.sh
+@lxterminal
 ```
 
 11. Install [linux > themes > gtk2.md](https://github.com/willyhorizont/linux/blob/main/themes/gtk2.md)
@@ -336,6 +337,7 @@ execp_has_icon = 0
 execp_font = Monospace 8
 execp_font_color = #FF1493 100
 execp_padding = 4 0
+execp_tooltip = SPRM
 
 # --- E2: SpaceAvailable ---
 execp = new
@@ -344,6 +346,7 @@ execp_interval = 0
 execp_font = Monospace 8
 execp_font_color = #FF1493 100
 execp_padding = 4 0
+execp_tooltip = SpaceAvailable
 
 # --- E3: WhoAmI ---
 execp = new
@@ -352,6 +355,7 @@ execp_interval = 0
 execp_font = Monospace 8
 execp_font_color = #FF1493 100
 execp_padding = 4 0
+execp_tooltip = WhoAmI
 
 # --- E4: SuckMyClock ---
 execp = new
@@ -361,6 +365,7 @@ execp_has_icon = 0
 execp_font = Monospace 8
 execp_font_color = #FF1493 100
 execp_padding = 4 0
+execp_tooltip = SuckMyClock
 EOF
 ```
 
@@ -377,6 +382,11 @@ panel_padding = 4 2 4
 wm_menu = 1
 strut_policy = follow_window
 
+tooltip_show_status = 1
+tooltip_background_color = #ffffff 100
+tooltip_font_color = #000000 100
+tooltip_font = Sans 10
+
 # --- BACKGROUND 1 ---
 background_id = 1
 background_color = #ffffff 100
@@ -390,7 +400,7 @@ panel_background_id = 1
 launcher_padding = 4 4
 launcher_background_id = 0
 launcher_icon_size = 24
-launcher_icon_theme = Papirus
+launcher_icon_theme = Papirus-Light
 launcher_icon_theme_override = 1
 launcher_item_app = ~/.local/share/applications/bottom-panel-app-launcher.desktop
 
@@ -399,6 +409,7 @@ systray_padding = 4 2 4
 systray_background_id = 0
 systray_sort = left2right
 systray_icon_size = 20
+systray_icon_asb = 100 0 -80
 
 # --- E1: Indicator Audio Volume ---
 execp = new
@@ -408,6 +419,7 @@ execp_has_icon = 0
 execp_font = Sans 10
 execp_font_color = #000000 100
 execp_padding = 6 0
+execp_tooltip = 
 execp_lclick_command = lxterminal -e alsamixer
 
 # --- E2: Indicator Battery ---
@@ -418,6 +430,7 @@ execp_has_icon = 0
 execp_font = Sans 10
 execp_font_color = #000000 100
 execp_padding = 6 0
+execp_tooltip = 
 
 # --- E3: Indicator Notification ---
 execp = new
@@ -427,6 +440,7 @@ execp_has_icon = 0
 execp_font = Sans 10
 execp_font_color = #000000 100
 execp_padding = 6 0
+execp_tooltip = 
 execp_lclick_command = dunstctl history-pop
 
 # --- P: Button to Toggle Show Desktop ---
