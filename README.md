@@ -327,7 +327,11 @@ EOF
 
 18. Copy jgmenu to ~/.config
 
-19. Setup App Tray -> run ```sudo mousepad /usr/share/plank/themes/Transparent/dock.theme``` and change ```BottomPadding=2``` to ```BottomPadding=0```
+19. Setup App Tray -> run ```sudo mousepad /usr/share/plank/themes/Transparent/dock.theme``` and change ```BottomPadding=2``` to:
+```
+BottomPadding=0
+LaunchBounceTime=0
+```
 
 20. Change lock screen
 ```
