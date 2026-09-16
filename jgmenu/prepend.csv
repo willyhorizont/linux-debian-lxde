@@ -29,8 +29,9 @@
 -- Pinned --,,,#Pinned
 Terminal,lxterminal,utilities-terminal,,#Pinned
 File Manager,pcmanfm,system-file-manager,,#Pinned
-Firefox ESR,firefox-esr,firefox-esr,,#Pinned
-Vivaldi,vivaldi-stable,vivaldi,,#Pinned
-Brave Browser,brave-browser-stable,brave-browser,,#Pinned
-Google Chrome,google-chrome-stable,google-chrome,,#Pinned
+Firefox Web Browser,firefox-esr,firefox-esr,,#Pinned
+Vivaldi Web Browser,vivaldi-stable,vivaldi,,#Pinned
+Brave Web Browser,brave-browser-stable,brave-browser,,#Pinned
+Google Chrome Web Browser,google-chrome-stable,google-chrome,,#Pinned
+Visual Studio Code,code,vscode,,#Pinned
 -- All --,,,#Pinned

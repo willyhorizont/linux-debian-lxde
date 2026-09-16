@@ -339,7 +339,7 @@ execp_padding = 4 0
 
 # --- E2: SpaceAvailable ---
 execp = new
-execp_command = echo "SPACE AVAILABLE       |"
+execp_command = echo " SPACE AVAILABLE      |"
 execp_interval = 0
 execp_font = Monospace 8
 execp_font_color = #FF1493 100
