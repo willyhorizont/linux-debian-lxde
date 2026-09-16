@@ -56,7 +56,7 @@ execp_font = JetBrains Mono 8
 execp_font_color = #000000 100
 execp_padding = 8 0
 execp_tooltip = 
-execp_lclick_command = lxterminal -e bluetoothctl
+execp_lclick_command = blueman-manager
 
 # --- E: Indicator Network ---
 execp = new
