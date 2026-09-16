@@ -498,6 +498,7 @@ sudo update-alternatives --config x-terminal-emulator
 sudo apt purge -y lxpanel && sudo apt autoremove -y --purge
 sudo apt purge -y xiterm+thai && sudo apt autoremove -y --purge
 sudo apt purge -y goldendict-ng && sudo apt autoremove -y --purge
+sudo apt purge -y kasumi && sudo apt autoremove -y --purge
 sudo apt purge -y \
     fcitx-frontend-qt5 \
     fcitx-frontend-qt6 \
@@ -563,6 +564,7 @@ sudo apt purge -y \
     uim-qt6 \
     uim-qt6-immodule \
     "" && sudo apt -y autoremove --purge
+sudo apt purge -y fcitx* && sudo apt autoremove -y --purge
 ```
 
 23. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)

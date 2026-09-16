@@ -1,3 +1,6 @@
+[Last updated: 16 Sep 2026 @ 05:52 PM][version: 0.0.31]
+add more item to purge command;
+
 [Last updated: 16 Sep 2026 @ 04:47 PM][version: 0.0.30]
 update screenshot again;
 
