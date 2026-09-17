@@ -1,3 +1,11 @@
+[Last updated: 18 Sep 2026 @ 01:59 AM][version: 0.2.0]
+minor update;
+replace static path with dynamic path;
+update bottom-panel, replace unicode colorful emoji with boring symbolic yet descriptive one;
+add tui-bt.sh;
+add tui-net.sh;
+add tui-power-profile.sh;
+
 [Last updated: 17 Sep 2026 @ 09:35 AM][version: 0.1.9]
 update tint2-bottom, fix suckless-bluetooth attempt 4;
 update screenshot;

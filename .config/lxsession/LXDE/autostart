@@ -3,5 +3,6 @@
 @pcmanfm --desktop --profile LXDE
 #@xscreensaver -no-splash
 @dunst
-@/home/willy/.config/tint2/start-desktop.sh
+@bash -c "$HOME/linux-debian-lxde/scripts/start-desktop.sh"
+@pactl set-source-mute @DEFAULT_SOURCE@ 1
 @lxterminal

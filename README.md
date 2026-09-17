@@ -306,11 +306,7 @@ lxsession-logout
 lxlock
 ```
 
-15. Copy ```tint2-top``` to ```~/.config/tint2/tint2-top```
-
-16. Copy ```tint2-bottom``` to ```~/.config/tint2/tint2-bottom```
-
-17. Create Bottom Panel App Launcher by running this code:
+15. Create Bottom Panel App Launcher by running this code:
 ```
 mkdir -p ~/.local/share/applications
 cat << 'EOF' > ~/.local/share/applications/bottom-panel-app-launcher.desktop
@@ -325,15 +321,15 @@ Categories=System;Utility;
 EOF
 ```
 
-18. Copy jgmenu to ~/.config
+16. Copy jgmenu to ~/.config
 
-19. Setup App Tray -> run ```sudo mousepad /usr/share/plank/themes/Transparent/dock.theme``` and change ```BottomPadding=2``` to:
+17. Setup App Tray -> run ```sudo mousepad /usr/share/plank/themes/Transparent/dock.theme``` and change ```BottomPadding=2``` to:
 ```
 BottomPadding=0
 LaunchBounceTime=0
 ```
 
-20. Change lock screen
+18. Change lock screen
 ```
 # install lock screen settings
 sudo apt install -y lightdm-gtk-greeter-settings
@@ -348,12 +344,12 @@ sudo apt install -y lightdm-gtk-greeter-settings
 sudo apt purge -y lightdm-gtk-greeter-settings && sudo apt autoremove -y --purge
 ```
 
-21. Adjust default terminal:
+19. Adjust default terminal:
 ```
 sudo update-alternatives --config x-terminal-emulator
 ```
 
-22. Remove unused packages:
+20. Remove unused packages:
 ```
 sudo apt purge -y lxpanel && sudo apt autoremove -y --purge
 sudo apt purge -y xiterm+thai && sudo apt autoremove -y --purge
@@ -428,6 +424,6 @@ sudo apt purge -y \
 sudo apt purge -y fcitx* && sudo apt autoremove -y --purge
 ```
 
-23. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
+21. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
 
-24. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
+22. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)

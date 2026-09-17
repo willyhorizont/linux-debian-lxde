@@ -1,6 +1,6 @@
 @rect  ,                                                                                                                               , 154,   4, 292,  36, 2, left, top, #000000 100, #ffffff 100, 
 @search,                                                                                                                               , 159,   4, 240,  36, 2, left, top, #000000 100, #000000 100, 
-@icon  ,                                                                                                                               , 416,  12,  22,  22, 2, left, top, #000000 0  , #ffffff 0  , /home/willy/.config/jgmenu/greeneye-search.svg
+@icon  ,                                                                                                                               , 416,  12,  22,  22, 2, left, top, #000000 0  , #ffffff 0  , %HOME%/.config/jgmenu/greeneye-search.svg
 @rect  ,                                                                                                                               , 154,  44, 292, 462, 2, left, top, #000000 0  , #ffffff 100, 
 @rect  , ^filter(*)                                                                                                                    ,   4,   4, 142,  35, 2, left, top, #000000 0  , #000000 0 , 
 @text  ,                                                                                                                               ,   9,   4, 142,  35, 2, left, top, #000000 100, #000000 0 , All
