@@ -1,3 +1,6 @@
+[Last updated: 18 Sep 2026 @ 04:50 AM][version: 0.2.2]
+update screenshot;
+
 [Last updated: 18 Sep 2026 @ 02:02 AM][version: 0.2.1]
 minor update;
 replace static path with dynamic path;

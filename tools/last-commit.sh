@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.2.1" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.2.2" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,13 +12,7 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-minor update;
-replace static path with dynamic path;
-update bottom-panel, replace unicode colorful emoji with boring symbolic yet descriptive one;
-add tui-bt.sh;
-add tui-net.sh;
-add tui-power-profile.sh;
-re-add separator in bottom-panel;
+update screenshot;
 "
 M=$(sed -e '/./,$!d' <<< "$M")
 M="$H
