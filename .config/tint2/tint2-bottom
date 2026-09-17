@@ -45,7 +45,7 @@ execp_tooltip =
 
 # --- E: Indicator Bluetooth ---
 execp = new
-execp_command = ADAPTER=$(bluetoothctl list); if [ -z "$ADAPTER" ]; then echo ">B🔴 OFF     "; else if [ "$(bluetoothctl show | grep "Powered: yes")" = "" ]; then echo ">B🔴 OFF     "; else CONN_MAC=$(bluetoothctl devices Connected | awk '{print $2}' | head -n1); if [ -z "$CONN_MAC" ]; then echo ">B🟢 Not Conn"; else DEVICE=$(bluetoothctl info "$CONN_MAC" | grep "Name:" | cut -d' ' -f2- | cut -c 1-8); echo ">B🟢 $DEVICE"; fi; fi; fi
+execp_command = if [ -z "$(ls /sys/class/bluetooth/ 2>/dev/null)" ] || [ "$(bluetoothctl show 2>/dev/null | grep 'Powered: yes')" = "" ]; then echo ">B🔴 OFF     "; else CONN_MAC=$(bluetoothctl devices Connected 2>/dev/null | awk '{print $2}' | head -n1); if [ -z "$CONN_MAC" ]; then echo ">B🟢 Not Conn"; else DEVICE=$(bluetoothctl info "$CONN_MAC" 2>/dev/null | grep "Name:" | cut -d' ' -f2- | cut -c 1-8); echo ">B🟢 $DEVICE"; fi; fi
 execp_interval = 4
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
@@ -87,7 +87,7 @@ execp_tooltip =
 
 # --- E: Indicator Audio Input ---
 execp = new
-execp_command = MIC_MUTE=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}'); if [ "$MIC_MUTE" = "yes" ]; then echo "🎤🔴 Muted"; else MIC_VOL=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}' | head -n1 | tr -d '%'); MIC_PAD=$(printf "%3d" "$MIC_VOL"); echo "🎤🟢 $MIC_PAD% "; fi
+execp_command = MIC_MUTE=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}'); if [ "$MIC_MUTE" = "yes" ]; then echo "🎤🔴 OFF "; else MIC_VOL=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}' | head -n1 | tr -d '%'); MIC_PAD=$(printf "%3d" "$MIC_VOL"); echo "🎤🟢 $MIC_PAD%"; fi
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
@@ -98,7 +98,7 @@ execp_lclick_command = lxterminal -e alsamixer
 
 # --- E: Indicator Audio Output ---
 execp = new
-execp_command = SINK_MUTE=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}'); if [ "$SINK_MUTE" = "yes" ]; then echo "🔉🔴 Muted"; else VOL=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | head -n1 | tr -d '%'); VOL_PAD=$(printf "%3d" "$VOL"); echo "🔉🟢 $VOL_PAD% "; fi
+execp_command = SINK_MUTE=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}'); if [ "$SINK_MUTE" = "yes" ]; then echo "🔉🔴 OFF "; else VOL=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | head -n1 | tr -d '%'); VOL_PAD=$(printf "%3d" "$VOL"); echo "🔉🟢 $VOL_PAD%"; fi
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
