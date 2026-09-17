@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.2.0" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.2.1" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -18,6 +18,7 @@ update bottom-panel, replace unicode colorful emoji with boring symbolic yet des
 add tui-bt.sh;
 add tui-net.sh;
 add tui-power-profile.sh;
+re-add separator in bottom-panel;
 "
 M=$(sed -e '/./,$!d' <<< "$M")
 M="$H
