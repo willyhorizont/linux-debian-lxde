@@ -1,3 +1,8 @@
+[Last updated: 17 Sep 2026 @ 09:01 AM][version: 0.1.8]
+update tint2-top;
+update tint2-bottom;
+update plank theme;
+
 [Last updated: 17 Sep 2026 @ 08:18 AM][version: 0.1.7]
 fix bluetooth indicator attempt 2;
 

@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.1.7" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.1.8" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,7 +12,9 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-fix bluetooth indicator attempt 2;
+update tint2-top;
+update tint2-bottom;
+update plank theme;
 "
 M=$(sed -e '/./,$!d' <<< "$M")
 M="$H

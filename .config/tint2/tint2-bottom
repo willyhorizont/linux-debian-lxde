@@ -7,17 +7,13 @@ panel_padding = 0 2 0
 wm_menu = 1
 strut_policy = follow_window
 
-tooltip_show_status = 1
-tooltip_background_color = #ffffff 100
 tooltip_font_color = #000000 100
 tooltip_font = JetBrains Mono 8
 
 # --- BACKGROUND 1 ---
-background_id = 1
 background_color = #ffffff 100
 border_color = #dcdcdc 0
 border_width = 0
-border_radius = 0
 border_sides = top bottom left right
 panel_background_id = 1
 

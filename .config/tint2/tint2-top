@@ -6,11 +6,9 @@ panel_margin = 0 0
 panel_padding = 0 0 0
 strut_policy = follow_size
 
-background_id = 1
 background_color = #000000 100
 border_color = #000000 0
 border_width = 0
-border_radius = 0
 border_sides = top bottom left right
 
 panel_background_id = 1
