@@ -1,4 +1,4 @@
-panel_items = EEEE
+panel_items = EFEFEE
 panel_position = top center horizontal
 panel_layer = top
 panel_size = 100% 20
@@ -25,7 +25,7 @@ execp_tooltip = SPRM
 
 # --- E: SpaceAvailable ---
 execp = new
-execp_command = $HOME/Codes/linux/pets/running-text-space-available.pl
+execp_command = echo "SPACE AVAILABLE"
 execp_interval = 1
 execp_font = JetBrains Mono 8
 execp_font_color = #FF1493 100
@@ -34,7 +34,7 @@ execp_tooltip = SpaceAvailable
 
 # --- E: WhoAmI ---
 execp = new
-execp_command = echo "|   willyhorizont.github.io   "
+execp_command = echo "| willyhorizont.github.io "
 execp_interval = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #FF1493 100
