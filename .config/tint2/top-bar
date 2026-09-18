@@ -23,14 +23,14 @@ execp_font_color = #FF1493 100
 execp_padding = 0 0
 execp_tooltip = SPRM
 
-# --- E: RunningText ---
+# --- E: SpaceAvailable ---
 execp = new
-execp_command = $HOME/Codes/linux/RunningText.pl
+execp_command = $HOME/Codes/linux/pets/running-text-space-available.pl
 execp_interval = 1
 execp_font = JetBrains Mono 8
 execp_font_color = #FF1493 100
 execp_padding = 0 0
-execp_tooltip = RunningText
+execp_tooltip = SpaceAvailable
 
 # --- E: WhoAmI ---
 execp = new
