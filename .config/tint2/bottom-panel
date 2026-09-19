@@ -1,4 +1,4 @@
-panel_items = PFSEEEEEEEEEEEEP
+panel_items = PFSEEEEEEEEEEPEP
 panel_position = bottom center horizontal
 panel_layer = bottom
 panel_size = 100% 36
@@ -45,7 +45,7 @@ execp_tooltip =
 
 # --- E: Indicator Bluetooth ---
 execp = new
-execp_command = if [ -z "$(ls /sys/class/bluetooth/ 2>/dev/null)" ] || [ "$(bluetoothctl show 2>/dev/null | grep 'Powered: yes')" = "" ]; then echo "[>B/n]"; else CONN_MAC=$(bluetoothctl devices Connected 2>/dev/null | awk '{print $2}' | head -n1); if [ -z "$CONN_MAC" ]; then echo "[>B/?]"; else echo "[>B/y]"; fi; fi
+execp_command = ~/linux-debian-lxde/scripts/indicator-bt.sh
 execp_interval = 4
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
@@ -56,7 +56,7 @@ execp_lclick_command = lxterminal -e ~/linux-debian-lxde/scripts/tui-bt.sh
 
 # --- E: Indicator Network ---
 execp = new
-execp_command = CON_TYPE=$(nmcli -t -f TYPE,STATE dev | grep -w "connected" | head -n1 | cut -d: -f1); if [ "$CON_TYPE" = "ethernet" ]; then echo "[net/ethernet ]"; elif [ "$CON_TYPE" = "wifi" ]; then WIFI_INFO=$(nmcli -t -f active,ssid,signal dev wifi | grep '^yes:'); SIG=$(echo "$WIFI_INFO" | cut -d: -f3); SIG_PAD=$(printf "%3d" "$SIG"); echo "[net/wifi $SIG_PAD%]"; else echo "[net/x        ]"; fi
+execp_command = ~/linux-debian-lxde/scripts/indicator-net.sh
 execp_interval = 5
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
@@ -75,9 +75,9 @@ execp_font_color = #999999 100
 execp_padding = 0 0
 execp_tooltip = 
 
-# --- E: Indicator Camera ---
+# --- E: Indicator Cam ---
 execp = new
-execp_command = if [ -f /sys/class/video4linux/video0/device/power/runtime_status ]; then STATUS=$(cat /sys/class/video4linux/video0/device/power/runtime_status); if [ "$STATUS" = "active" ]; then echo "[ cam]"; else echo "[~cam]"; fi; else echo "[~cam]"; fi
+execp_command = ~/linux-debian-lxde/scripts/indicator-cam.sh
 execp_interval = 2
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
@@ -87,7 +87,7 @@ execp_tooltip =
 
 # --- E: Indicator Mic ---
 execp = new
-execp_command = MIC_VOL=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}' | head -n1 | tr -d '%'); MIC_PAD=$(printf "%3d" "$MIC_VOL"); MIC_MUTE=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}'); if [ "$MIC_MUTE" = "yes" ]; then echo "[~mic $MIC_PAD%]"; else echo "[ mic $MIC_PAD%]"; fi
+execp_command = ~/linux-debian-lxde/scripts/indicator-mic.sh
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
@@ -98,7 +98,7 @@ execp_lclick_command = lxterminal -e alsamixer --view=capture
 
 # --- E: Indicator Volume ---
 execp = new
-execp_command = VOL=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | head -n1 | tr -d '%'); VOL_PAD=$(printf "%3d" "$VOL"); SINK_MUTE=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}'); if [ "$SINK_MUTE" = "yes" ]; then echo "[~vol $VOL_PAD%]"; else echo "[ vol $VOL_PAD%]" ; fi
+execp_command = ~/linux-debian-lxde/scripts/indicator-vol.sh
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
@@ -119,7 +119,7 @@ execp_tooltip =
 
 # --- E: Indicator Power ---
 execp = new
-execp_command = if [ ! -d /sys/class/power_supply ] || [ -z "$(ls /sys/class/power_supply/ | grep -E '^BAT|^battery')" ]; then echo "AC          "; exit 0; else ACPI_OUT=$(acpi -b | head -n1); CAP=$(echo "$ACPI_OUT" | awk -F', ' '{print $2}' | tr -d '% '); CAP_PAD=$(printf "%3d" "$CAP"); if echo "$ACPI_OUT" | grep -F ", Charging," > /dev/null || echo "$ACPI_OUT" | grep -q "[: ]Charging,"; then if [ "$CAP" -ge 40 ]; then echo "AC+batt $CAP_PAD%"; else echo "AC+batt $CAP_PAD%"; fi; else if [ "$CAP" -ge 40 ]; then echo "   batt $CAP_PAD%"; else echo "   batt $CAP_PAD%"; fi; fi fi
+execp_command = ~/linux-debian-lxde/scripts/indicator-power.sh
 execp_interval = 5
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
@@ -138,16 +138,14 @@ execp_font_color = #999999 100
 execp_padding = 0 0
 execp_tooltip = 
 
-# --- E: Indicator Notification ---
-execp = new
-execp_command = echo "⩍"
-execp_interval = 0
-execp_has_icon = 0
-execp_font = JetBrains Mono 8
-execp_font_color = #000000 100
-execp_padding = 8 0
-execp_tooltip = 
-execp_lclick_command = dunstctl history-pop
+# --- P: Button to Show Notification History ---
+button = new
+button_text = ⩍ 
+button_font = JetBrains Mono 8
+button_font_color = #000000 100
+button_lclick_command = dunstctl history-pop
+button_padding = 8 0
+button_background_id = 0
 
 # --- E: Separator ---
 execp = new

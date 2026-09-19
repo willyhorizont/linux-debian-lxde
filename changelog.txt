@@ -1,3 +1,6 @@
+[Last updated: 19 Sep 2026 @ 07:33 AM][version: 0.2.6]
+update bottom-panel, move inline execp_command to scripts>indicator-*.sh;
+
 [Last updated: 18 Sep 2026 @ 08:42 PM][version: 0.2.5]
 update top-bar;
 
