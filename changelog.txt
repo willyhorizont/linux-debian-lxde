@@ -1,3 +1,7 @@
+[Last updated: 19 Sep 2026 @ 09:43 AM][version: 0.2.8]
+update indicator-bt.sh;
+update screenshot;
+
 [Last updated: 19 Sep 2026 @ 07:38 AM][version: 0.2.7]
 update indicator-power.sh;
 
