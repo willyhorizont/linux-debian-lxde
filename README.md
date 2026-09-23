@@ -355,6 +355,7 @@ sudo apt purge -y lxpanel && sudo apt autoremove -y --purge
 sudo apt purge -y xiterm+thai && sudo apt autoremove -y --purge
 sudo apt purge -y goldendict-ng && sudo apt autoremove -y --purge
 sudo apt purge -y kasumi && sudo apt autoremove -y --purge
+sudo apt purge -y mplayer && sudo apt autoremove -y --purge
 sudo apt purge -y volumeicon-alsa fdpowermon && sudo apt autoremove -y --purge
 sudo apt purge -y \
     fcitx-frontend-qt5 \
