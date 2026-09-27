@@ -15,7 +15,12 @@ panel_background_id = 1
 
 # --- E: SPRM ---
 execp = new
-execp_command = $HOME/Codes/linux/SPRM.pl
+execp_command = $HOME/willyhorizont.github.io/linux/SPRM-c
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM-cpp
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.awk
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.pl
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.py
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.sh
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
@@ -43,7 +48,12 @@ execp_tooltip = WhoAmI
 
 # --- E: SuckMyClock ---
 execp = new
-execp_command = $HOME/Codes/linux/SuckMyClock.pl
+execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-c
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-cpp
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.awk
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.pl
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.py
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.sh
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 8

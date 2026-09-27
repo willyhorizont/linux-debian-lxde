@@ -1,3 +1,13 @@
+[Last updated: 28 Sep 2026 @ 12:38 AM][version: 0.2.10]
+add install.sh;
+update restart-desktop.sh;
+update start-desktop.sh;
+update tint2-bottom-panel;
+update tint2-top-bar;
+update LXDE session autostart;
+update and fix plank theme;
+move indicator-bt.sh, indicator-cam.sh, indicator-mic.sh, indicator-net.sh, indicator-powr.sh, indicator-vol.sh, tui-bt.sh, tui-net.sh, tui-powr-pfl.sh to github.com/willyhorizont/linux;
+
 [Last updated: 23 Sep 2026 @ 11:02 AM][version: 0.2.9]
 update video player;
 

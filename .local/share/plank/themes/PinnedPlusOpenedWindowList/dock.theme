@@ -8,13 +8,13 @@ BottomRoundness=0
 #The thickness (in pixels) of lines drawn.
 LineWidth=0
 #The color (RGBA) of the outer stroke.
-OuterStrokeColor=255;;255;;255;;0
+OuterStrokeColor=255;;255;;255;;255
 #The starting color (RGBA) of the fill gradient.
-FillStartColor=255;;255;;255;;0
+FillStartColor=255;;255;;255;;255
 #The ending color (RGBA) of the fill gradient.
-FillEndColor=255;;255;;255;;0
+FillEndColor=255;;255;;255;;255
 #The color (RGBA) of the inner stroke.
-InnerStrokeColor=255;;255;;255;;0
+InnerStrokeColor=255;;255;;255;;255
 
 [PlankDockTheme]
 #The padding on the left/right dock edges, in tenths of a percent of IconSize.
@@ -62,4 +62,14 @@ ItemMoveTime=0
 #Whether background and icons will unhide/hide with different speeds. The top-border of both will leave/hit the screen-edge at the same time.
 CascadeHide=true
 #The color (RGBA) of the badge displaying urgent count
-BadgeColor=0;;0;;0;;0
+BadgeColor=255;;20;;147;;255
+#The color (RGBA) of the tooltip background.
+TooltipColor=255;;255;;255;;255
+#The color (RGBA) of the tooltip text.
+TooltipTextColor=0;;0;;0;;255
+#The thickness (in pixels) of the tooltip lines drawn.
+TooltipLineWidth=0
+#The color (RGBA) of the tooltip outer stroke.
+TooltipStrokeColor=255;;255;;255;;255
+#The roundness of the tooltip corners.
+TooltipRoundness=0

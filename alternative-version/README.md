@@ -253,7 +253,7 @@ openbox --reconfigure
 
 8. Uncheck this in Default application for LXSession > autostart > Known Applications:
 ```
-picom
+picom # or xcompmgr
 network
 bluetooth
 Print Queue Applet (system-config-printer)
@@ -287,6 +287,10 @@ xfce4-notifyd-config
 ```
 #whiskermenu-button image {
     -gtk-icon-transform: scale(1.4);
+}
+.tooltip, tooltip.background, .tooltip.background {
+    background-color: #ffffff; /* Change to your preferred background color */
+    color: #000000;            /* Change to your preferred text color */
 }
 ```
 

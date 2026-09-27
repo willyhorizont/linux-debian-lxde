@@ -1,8 +1,9 @@
-@picom --backend xrender -b
+@picom --backend=xrender --daemon --no-fading-openclose --no-fading-destroyed-argb --shadow-opacity=0 --blur-method=none --active-opacity=1.0 --inactive-opacity=1.0 --inactive-dim=0 --corner-radius=0
+#@xcompmgr -a
 #@lxpanel --profile LXDE
 @pcmanfm --desktop --profile LXDE
 #@xscreensaver -no-splash
 @dunst
-@bash -c "$HOME/linux-debian-lxde/scripts/start-desktop.sh"
+@bash -c "$HOME/willyhorizont.github.io/linux-debian-lxde/start-desktop.sh"
 @pactl set-source-mute @DEFAULT_SOURCE@ 1
 @lxterminal

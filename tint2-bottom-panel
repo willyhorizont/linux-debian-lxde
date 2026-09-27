@@ -45,25 +45,25 @@ execp_tooltip =
 
 # --- E: Indicator Bluetooth ---
 execp = new
-execp_command = ~/linux-debian-lxde/scripts/indicator-bt.sh
+execp_command = ~/willyhorizont.github.io/linux/indicator-bt.sh
 execp_interval = 4
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #000000 100
 execp_padding = 8 0
 execp_tooltip = 
-execp_lclick_command = lxterminal -e ~/linux-debian-lxde/scripts/tui-bt.sh
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui-bt.sh
 
 # --- E: Indicator Network ---
 execp = new
-execp_command = ~/linux-debian-lxde/scripts/indicator-net.sh
+execp_command = ~/willyhorizont.github.io/linux/indicator-net.sh
 execp_interval = 5
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #000000 100
 execp_padding = 8 0
 execp_tooltip = 
-execp_lclick_command = lxterminal -e ~/linux-debian-lxde/scripts/tui-net.sh
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui-net.sh
 
 # --- E: Separator ---
 execp = new
@@ -77,7 +77,7 @@ execp_tooltip =
 
 # --- E: Indicator Cam ---
 execp = new
-execp_command = ~/linux-debian-lxde/scripts/indicator-cam.sh
+execp_command = ~/willyhorizont.github.io/linux/indicator-cam.sh
 execp_interval = 2
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
@@ -87,7 +87,7 @@ execp_tooltip =
 
 # --- E: Indicator Mic ---
 execp = new
-execp_command = ~/linux-debian-lxde/scripts/indicator-mic.sh
+execp_command = ~/willyhorizont.github.io/linux/indicator-mic.sh
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
@@ -98,7 +98,7 @@ execp_lclick_command = lxterminal -e alsamixer --view=capture
 
 # --- E: Indicator Volume ---
 execp = new
-execp_command = ~/linux-debian-lxde/scripts/indicator-vol.sh
+execp_command = ~/willyhorizont.github.io/linux/indicator-vol.sh
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
@@ -119,14 +119,14 @@ execp_tooltip =
 
 # --- E: Indicator Power ---
 execp = new
-execp_command = ~/linux-debian-lxde/scripts/indicator-power.sh
+execp_command = ~/willyhorizont.github.io/linux/indicator-powr.sh
 execp_interval = 5
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #000000 100
 execp_padding = 8 0
 execp_tooltip = 
-execp_lclick_command = lxterminal -e ~/linux-debian-lxde/scripts/tui-power-profile.sh
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui-powr-pfl.sh
 
 # --- E: Separator ---
 execp = new

@@ -31,7 +31,7 @@ sudo apt install -y blueman
 
 # Panel
 sudo apt install -y \
-    picom \
+    picom \ # or xcompmgr
     tint2 \
     plank \
     jgmenu \
@@ -274,7 +274,7 @@ openbox --reconfigure
 
 8. Uncheck this in Default application for LXSession > autostart > Known Applications:
 ```
-picom
+picom # or xcompmgr
 network
 bluetooth
 Print Queue Applet (system-config-printer)
