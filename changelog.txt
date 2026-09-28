@@ -1,3 +1,11 @@
+[Last updated: 28 Sep 2026 @ 10:19 PM][version: 0.2.13]
+add keep screen awake;
+add disable pointer acceleration;
+add disable daemon;
+set default input;
+remove unecessary inputs;
+install input driver;
+
 [Last updated: 28 Sep 2026 @ 06:07 PM][version: 0.2.12]
 add maximize keybind;
 

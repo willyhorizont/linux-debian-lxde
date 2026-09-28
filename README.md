@@ -2,16 +2,43 @@
 
 ![Debian LXDE Screenshot](https://github.com/willyhorizont/linux-debian-lxde/blob/main/screenshot.jpg)  
 
-1. Reverse scroll and Turn on touchpad tapping
+## Reverse scroll and Turn on touchpad tapping
 ```
 sudo mkdir -p /etc/X11/xorg.conf.d && echo -e 'Section "InputClass"\n    Identifier "touchpad catchall"\n    MatchIsTouchpad "on"\n    MatchDevicePath "/dev/input/event*"\n    Driver "libinput"\n    Option "NaturalScrolling" "true"\n    Option "Tapping" "on"\nEndSection' | sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf
 ```
 
-2. Do [linux > post-install > general.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/general.md#a)
+## Disable Mouse Acceleration
+```
+sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo tee /etc/X11/xorg.conf.d/10-monitor.conf << 'EOF'
+Section "Monitor"
+    Identifier "Monitor0"
+    Option "DPMS" "false"
+EndSection
 
-3. Do [linux > post-install > debian-apt.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/debian-apt.md#a)
+Section "ServerFlags"
+    Option "BlankTime" "0"
+    Option "StandbyTime" "0"
+    Option "SuspendTime" "0"
+    Option "OffTime" "0"
+    Option "NoPM" "true"
+EndSection
+EOF
 
-4. Install packages
+sudo tee /etc/X11/xorg.conf.d/50-mouse-acceleration.conf << 'EOF'
+Section "InputClass"
+    Identifier "My Pointer Acceleration Override"
+    MatchIsPointer "yes"
+    Driver "libinput"
+    Option "AccelProfile" "flat"
+EndSection
+EOF
+```
+
+## Do [linux > post-install > general.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/general.md#a)
+
+## Do [linux > post-install > debian-apt.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/debian-apt.md#a)
+
+## Install packages
 ```
 # Font
 sudo apt install -y fonts-jetbrains-mono
@@ -43,13 +70,27 @@ sudo apt install -y \
     ""
 ```
 
-5. Enable Audio
+## Disable Daemon
+```
+# Printer
+sudo systemctl disable --now cups-browsed.service
+
+# Modem
+sudo systemctl disable --now ModemManager.service
+```
+
+## Set to English US Keyboard Only
+```
+im-config -n none
+```
+
+## Enable Audio
 ```
 systemctl --user daemon-reload
 systemctl --user --now enable pipewire pipewire-pulse wireplumber
 ```
 
-6. Add keybinds -> open ```~/.config/openbox/lxde-rc.xml``` and add this:
+## Add keybinds -> open ```~/.config/openbox/lxde-rc.xml``` and add this:
 ```xml
     <!-- Audio control -->
     <keybind key="XF86AudioRaiseVolume">
@@ -272,12 +313,12 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
     </application>
 ```
 
-7. Restart and refresh the Desktop
+## Restart and refresh the Desktop
 ```
 openbox --reconfigure
 ```
 
-8. Uncheck this in Default application for LXSession > autostart > Known Applications:
+## Uncheck this in Default application for LXSession > autostart > Known Applications:
 ```
 picom # or xcompmgr
 network
@@ -289,29 +330,29 @@ Diodon
 xiccd
 ```
 
-9. Copy ```./.config/tint2/start-desktop.sh``` to ```~/.config/tint2/start-desktop.sh```
+## Copy ```./.config/tint2/start-desktop.sh``` to ```~/.config/tint2/start-desktop.sh```
 
-10. Copy ```./.config/lxsession/LXDE/autostart``` to ```~/.config/lxsession/LXDE/autostart```
+## Copy ```./.config/lxsession/LXDE/autostart``` to ```~/.config/lxsession/LXDE/autostart```
 
-11. Install [linux > themes > gtk2.md](https://github.com/willyhorizont/linux/blob/main/themes/gtk2.md)
+## Install [linux > themes > gtk2.md](https://github.com/willyhorizont/linux/blob/main/themes/gtk2.md)
 
-12. Apply Cursor theme globally
+## Apply Cursor theme globally
 ```
 sudo update-alternatives --config x-cursor-theme
 ```
 
-13. Adjust notification settings in ```~/.config/dunst/dunstrc```
+## Adjust notification settings in ```~/.config/dunst/dunstrc```
 
-14. create logout.desktop and lock.desktop:
+## create logout.desktop and lock.desktop:
 ```
-# logout
+## logout
 lxsession-logout
 
-# lock screen
+## lock screen
 lxlock
 ```
 
-15. Create Bottom Panel App Launcher by running this code:
+## Create Bottom Panel App Launcher by running this code:
 ```
 mkdir -p ~/.local/share/applications
 cat << 'EOF' > ~/.local/share/applications/bottom-panel-app-launcher.desktop
@@ -326,35 +367,35 @@ Categories=System;Utility;
 EOF
 ```
 
-16. Copy jgmenu to ~/.config
+## Copy jgmenu to ~/.config
 
-17. Setup App Tray -> run ```sudo mousepad /usr/share/plank/themes/Transparent/dock.theme``` and change ```BottomPadding=2``` to:
+## Setup App Tray -> run ```sudo mousepad /usr/share/plank/themes/Transparent/dock.theme``` and change ```BottomPadding=2``` to:
 ```
 BottomPadding=0
 LaunchBounceTime=0
 ```
 
-18. Change lock screen
+## Change lock screen
 ```
-# install lock screen settings
+## install lock screen settings
 sudo apt install -y lightdm-gtk-greeter-settings
 
-# copy image to:
+## copy image to:
 /usr/share/images/
 
-# change lock screen clock format to:
+## change lock screen clock format to:
 %a, %d %b %Y | %I:%M:%S %p
 
-# remove lock screen settings
+## remove lock screen settings
 sudo apt purge -y lightdm-gtk-greeter-settings && sudo apt autoremove -y --purge
 ```
 
-19. Adjust default terminal:
+## Adjust default terminal:
 ```
 sudo update-alternatives --config x-terminal-emulator
 ```
 
-20. Remove unused packages:
+## Remove unused packages:
 ```
 sudo apt purge -y lxpanel && sudo apt autoremove -y --purge
 sudo apt purge -y xiterm+thai && sudo apt autoremove -y --purge
@@ -428,8 +469,12 @@ sudo apt purge -y \
     uim-qt6-immodule \
     "" && sudo apt -y autoremove --purge
 sudo apt purge -y fcitx* && sudo apt autoremove -y --purge
+sudo apt purge -y ibus ibus-gtk3 ibus-gtk4 ibus-hangul && sudo apt autoremove -y --purge
+sudo apt purge -y uim uim-gtk3 uim-mozc mozc-server mozc-data && sudo apt autoremove -y --purge
+sudo apt install -y xserver-xorg-input-all xserver-xorg-input-libinput libinput-bin
+sudo apt install -y xserver-xorg-input-synaptics
 ```
 
-21. See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
+## See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
 
-22. See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
+## See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
