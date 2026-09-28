@@ -74,19 +74,25 @@ sudo apt install -y \
 ```
 # Printer
 sudo systemctl disable --now cups-browsed.service
+sudo systemctl disable --now cups.service
+sudo systemctl disable --now cups.path
+sudo systemctl disable --now cups.socket
 
 # Modem
 sudo systemctl disable --now ModemManager.service
 
 # Docker
-sudo systemctl disable --now docker.service containerd.service
+sudo systemctl disable --now docker.service
+sudo systemctl disable --now containerd.service
 sudo systemctl enable docker.socket
 ```
 
 ## Enable Audio
 ```
 systemctl --user daemon-reload
-systemctl --user --now enable pipewire pipewire-pulse wireplumber
+systemctl --user --now enable pipewire
+systemctl --user --now enable pipewire-pulse
+systemctl --user --now enable wireplumber
 ```
 
 ## Add keybinds -> open ```~/.config/openbox/lxde-rc.xml``` and add this:

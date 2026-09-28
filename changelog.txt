@@ -1,3 +1,6 @@
+[Last updated: 29 Sep 2026 @ 12:53 AM][version: 0.2.16]
+update disable daemon;
+
 [Last updated: 29 Sep 2026 @ 12:34 AM][version: 0.2.15]
 change docker to ondemand;
 update cleanup;
