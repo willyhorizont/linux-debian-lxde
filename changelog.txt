@@ -1,3 +1,6 @@
+[Last updated: 28 Sep 2026 @ 10:50 PM][version: 0.2.14]
+update non american english input removal method;
+
 [Last updated: 28 Sep 2026 @ 10:19 PM][version: 0.2.13]
 add keep screen awake;
 add disable pointer acceleration;

@@ -79,11 +79,6 @@ sudo systemctl disable --now cups-browsed.service
 sudo systemctl disable --now ModemManager.service
 ```
 
-## Set to English US Keyboard Only
-```
-im-config -n none
-```
-
 ## Enable Audio
 ```
 systemctl --user daemon-reload
@@ -395,12 +390,13 @@ sudo apt purge -y lightdm-gtk-greeter-settings && sudo apt autoremove -y --purge
 sudo update-alternatives --config x-terminal-emulator
 ```
 
-## Remove unused packages:
+## Cleanup:
 ```
 sudo apt purge -y lxpanel && sudo apt autoremove -y --purge
-sudo apt purge -y xiterm+thai && sudo apt autoremove -y --purge
-sudo apt purge -y goldendict-ng && sudo apt autoremove -y --purge
-sudo apt purge -y kasumi && sudo apt autoremove -y --purge
+
+# Dictionary stuff
+sudo apt purge -y goldendict-ng kasumi && sudo apt autoremove -y --purge
+
 sudo apt purge -y mplayer && sudo apt autoremove -y --purge
 sudo apt purge -y volumeicon-alsa fdpowermon && sudo apt autoremove -y --purge
 sudo apt purge -y \
@@ -468,9 +464,31 @@ sudo apt purge -y \
     uim-qt6 \
     uim-qt6-immodule \
     "" && sudo apt -y autoremove --purge
-sudo apt purge -y fcitx* && sudo apt autoremove -y --purge
+
+# non american english input
+dpkg -l | grep -i -E "mozc|scim|fcitx"
+sudo apt purge -y xiterm+thai && sudo apt autoremove -y --purge
 sudo apt purge -y ibus ibus-gtk3 ibus-gtk4 ibus-hangul && sudo apt autoremove -y --purge
 sudo apt purge -y uim uim-gtk3 uim-mozc mozc-server mozc-data && sudo apt autoremove -y --purge
+sudo apt purge -y anthy && sudo apt autoremove -y --purge
+sudo apt purge -y \
+    fcitx-config-common \
+    fcitx-config-gtk \
+    fcitx-frontend-all \
+    fcitx-frontend-gtk2 \
+    fcitx-frontend-gtk3 \
+    fcitx-module-dbus \
+    fcitx-module-kimpanel \
+    fcitx-module-lua \
+    fcitx-module-x11 \
+    fcitx-modules \
+    libfcitx-config4 \
+    libfcitx-core0 \
+    libfcitx-gclient1 \
+    libfcitx-utils0 \
+    "" && sudo apt autoremove -y --purge
+im-config -n none
+
 sudo apt install -y xserver-xorg-input-all xserver-xorg-input-libinput libinput-bin
 sudo apt install -y xserver-xorg-input-synaptics
 ```
