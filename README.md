@@ -77,6 +77,10 @@ sudo systemctl disable --now cups-browsed.service
 
 # Modem
 sudo systemctl disable --now ModemManager.service
+
+# Docker
+sudo systemctl disable --now docker.service containerd.service
+sudo systemctl enable docker.socket
 ```
 
 ## Enable Audio
@@ -397,8 +401,25 @@ sudo apt purge -y lxpanel && sudo apt autoremove -y --purge
 # Dictionary stuff
 sudo apt purge -y goldendict-ng kasumi && sudo apt autoremove -y --purge
 
+sudo apt purge -y lxtask && sudo apt autoremove -y --purge
+sudo apt install -y btop
 sudo apt purge -y mplayer && sudo apt autoremove -y --purge
 sudo apt purge -y volumeicon-alsa fdpowermon && sudo apt autoremove -y --purge
+sudo apt purge -y xsane sane-utils && sudo apt autoremove -y --purge
+sudo apt purge -y system-config-printer system-config-printer-common && sudo apt autoremove -y --purge
+sudo apt purge -y synaptic && sudo apt autoremove -y --purge
+sudo apt install -y transmission-gtk
+sudo apt purge -y deluge deluge-common deluge-gtk && sudo apt autoremove -y --purge
+
+mkdir -p ~/.local/share/applications
+cp /usr/share/applications/libreoffice-startcenter.desktop ~/.local/share/applications/
+cp /usr/share/applications/libreoffice-math.desktop ~/.local/share/applications/
+cp /usr/share/applications/libreoffice-draw.desktop ~/.local/share/applications/
+if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; fi
+if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-math.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-math.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-math.desktop"; fi
+if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-draw.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-draw.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-draw.desktop"; fi
+
+# Qt
 sudo apt purge -y \
     fcitx-frontend-qt5 \
     fcitx-frontend-qt6 \

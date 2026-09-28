@@ -1,3 +1,7 @@
+[Last updated: 29 Sep 2026 @ 12:34 AM][version: 0.2.15]
+change docker to ondemand;
+update cleanup;
+
 [Last updated: 28 Sep 2026 @ 10:50 PM][version: 0.2.14]
 update non american english input removal method;
 
