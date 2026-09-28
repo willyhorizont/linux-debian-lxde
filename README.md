@@ -141,8 +141,8 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
       <action name="MoveResizeTo">
         <x>center</x>
         <y>center</y>
-        <width>99%</width>
-        <height>98%</height>
+        <width>94%</width>
+        <height>91%</height>
       </action>
     </keybind>
 

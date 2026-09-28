@@ -1,4 +1,4 @@
-panel_items = PFSEEEEEEEEEEPEP
+panel_items = PFSEEEEEEEEEEEPEP
 panel_position = bottom center horizontal
 panel_layer = bottom
 panel_size = 100% 36
@@ -32,6 +32,16 @@ systray_background_id = 0
 systray_sort = left2right
 systray_icon_size = 20
 systray_icon_asb = 100 0 -80
+
+# --- E: Indicator Tux ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux/indicator-tux.sh
+execp_interval = 2
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #000000 100
+execp_padding = 8 0
+execp_tooltip = 
 
 # --- E: Separator ---
 execp = new

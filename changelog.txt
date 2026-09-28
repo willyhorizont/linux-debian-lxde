@@ -1,3 +1,10 @@
+[Last updated: 28 Sep 2026 @ 03:58 PM][version: 0.2.11]
+update install.sh, comment restart-desktop;
+update openbox lxde-rc.xml;
+update start-desktop.sh, add tux-d;
+update tint2-bottom-panel, add indicator-tux;
+add sync.sh;
+
 [Last updated: 28 Sep 2026 @ 12:38 AM][version: 0.2.10]
 add install.sh;
 update restart-desktop.sh;
