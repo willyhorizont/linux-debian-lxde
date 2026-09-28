@@ -1,3 +1,6 @@
+[Last updated: 29 Sep 2026 @ 01:13 AM][version: 0.2.17]
+update screenshot;
+
 [Last updated: 29 Sep 2026 @ 12:53 AM][version: 0.2.16]
 update disable daemon;
 
