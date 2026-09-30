@@ -3,7 +3,7 @@ panel_position = top center horizontal
 panel_layer = top
 panel_size = 100% 20
 panel_margin = 0 0
-panel_padding = 0 0 0
+panel_padding = 0 0
 strut_policy = follow_size
 
 background_color = #000000 100

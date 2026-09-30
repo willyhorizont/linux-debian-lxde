@@ -1,9 +1,9 @@
-panel_items = PFSEEEEEEEEEEEPEP
+panel_items = PFSEEEEEEEEPEP
 panel_position = bottom center horizontal
 panel_layer = bottom
 panel_size = 100% 36
 panel_margin = 0 0
-panel_padding = 0 2 0
+panel_padding = 0 2
 wm_menu = 1
 strut_policy = follow_window
 
@@ -12,7 +12,7 @@ tooltip_font = JetBrains Mono 8
 
 # --- BACKGROUND 1 ---
 background_color = #ffffff 100
-border_color = #999999 0
+border_color = #000000 0
 border_width = 0
 border_sides = top bottom left right
 panel_background_id = 1
@@ -23,11 +23,11 @@ button_text =
 button_font = JetBrains Mono 8
 button_font_color = #000000 100
 button_lclick_command = jgmenu_run
-button_padding = 8 0
+button_padding = 0 0
 button_background_id = 0
 
 # --- S: Systray ---
-systray_padding = 4 2 4
+systray_padding = 4 2
 systray_background_id = 0
 systray_sort = left2right
 systray_icon_size = 20
@@ -40,16 +40,6 @@ execp_interval = 2
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #000000 100
-execp_padding = 8 0
-execp_tooltip = 
-
-# --- E: Separator ---
-execp = new
-execp_command = echo "|"
-execp_interval = 0
-execp_has_icon = 0
-execp_font = JetBrains Mono 8
-execp_font_color = #999999 100
 execp_padding = 0 0
 execp_tooltip = 
 
@@ -60,7 +50,7 @@ execp_interval = 4
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #000000 100
-execp_padding = 8 0
+execp_padding = 0 0
 execp_tooltip = 
 execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui-bt.sh
 
@@ -71,19 +61,9 @@ execp_interval = 5
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #000000 100
-execp_padding = 8 0
-execp_tooltip = 
-execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui-net.sh
-
-# --- E: Separator ---
-execp = new
-execp_command = echo "|"
-execp_interval = 0
-execp_has_icon = 0
-execp_font = JetBrains Mono 8
-execp_font_color = #999999 100
 execp_padding = 0 0
 execp_tooltip = 
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui-net.sh
 
 # --- E: Indicator Cam ---
 execp = new
@@ -92,7 +72,7 @@ execp_interval = 2
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #000000 100
-execp_padding = 8 0
+execp_padding = 0 0
 execp_tooltip = 
 
 # --- E: Indicator Mic ---
@@ -102,7 +82,7 @@ execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #000000 100
-execp_padding = 8 0
+execp_padding = 0 0
 execp_tooltip = 
 execp_lclick_command = lxterminal -e alsamixer --view=capture
 
@@ -113,19 +93,9 @@ execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #000000 100
-execp_padding = 8 0
-execp_tooltip = 
-execp_lclick_command = lxterminal -e alsamixer --view=playback
-
-# --- E: Separator ---
-execp = new
-execp_command = echo "|"
-execp_interval = 0
-execp_has_icon = 0
-execp_font = JetBrains Mono 8
-execp_font_color = #999999 100
 execp_padding = 0 0
 execp_tooltip = 
+execp_lclick_command = lxterminal -e alsamixer --view=playback
 
 # --- E: Indicator Power ---
 execp = new
@@ -134,7 +104,7 @@ execp_interval = 5
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #000000 100
-execp_padding = 8 0
+execp_padding = 0 0
 execp_tooltip = 
 execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui-powr-pfl.sh
 
@@ -144,7 +114,7 @@ execp_command = echo "|"
 execp_interval = 0
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
-execp_font_color = #999999 100
+execp_font_color = #000000 100
 execp_padding = 0 0
 execp_tooltip = 
 
@@ -163,7 +133,7 @@ execp_command = echo "|"
 execp_interval = 0
 execp_has_icon = 0
 execp_font = JetBrains Mono 8
-execp_font_color = #999999 100
+execp_font_color = #000000 100
 execp_padding = 0 0
 execp_tooltip = 
 
