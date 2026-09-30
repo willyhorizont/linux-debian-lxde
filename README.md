@@ -84,7 +84,7 @@ sudo systemctl disable --now ModemManager.service
 # Docker
 sudo systemctl disable --now docker.service
 sudo systemctl disable --now containerd.service
-sudo systemctl enable docker.socket
+sudo systemctl enable --now docker.socket
 ```
 
 ## Enable Audio
