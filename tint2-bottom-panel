@@ -43,6 +43,16 @@ execp_font_color = #000000 100
 execp_padding = 0 0
 execp_tooltip = 
 
+# --- E: Separator ---
+execp = new
+execp_command = echo "| "
+execp_interval = 0
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #000000 100
+execp_padding = 0 0
+execp_tooltip = 
+
 # --- E: Indicator Bluetooth ---
 execp = new
 execp_command = ~/willyhorizont.github.io/linux/indicator-bt.sh
@@ -107,16 +117,6 @@ execp_font_color = #000000 100
 execp_padding = 0 0
 execp_tooltip = 
 execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui-powr-pfl.sh
-
-# --- E: Separator ---
-execp = new
-execp_command = echo "|"
-execp_interval = 0
-execp_has_icon = 0
-execp_font = JetBrains Mono 8
-execp_font_color = #000000 100
-execp_padding = 0 0
-execp_tooltip = 
 
 # --- P: Button to Show Notification History ---
 button = new
