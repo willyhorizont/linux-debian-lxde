@@ -1,17 +1,25 @@
+#---- willyhorizont.github.io tint2-top-bar configuration ----
+# https://gitlab.com/o9000/tint2/wikis/Configure
+# https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md
+
+rounded = 0
+border_width = 0
+background_color = #000000 100
+border_color = #000000 100
+
+rounded = 0
+border_width = 1
+background_color = #ffffff 100
+border_color = #FF1493 100
+
 panel_items = EFEFEE
 panel_position = top center horizontal
 panel_layer = top
 panel_size = 100% 20
 panel_margin = 0 0
 panel_padding = 0 0
-strut_policy = follow_size
-
-background_color = #000000 100
-border_color = #000000 0
-border_width = 0
-border_sides = top bottom left right
-
 panel_background_id = 1
+strut_policy = follow_size
 
 # --- E: SPRM ---
 execp = new
@@ -26,7 +34,7 @@ execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #FF1493 100
 execp_padding = 0 0
-execp_tooltip = SPRM
+execp_lclick_command = lxterminal --geometry=80x28 -e btop
 
 # --- E: SpaceAvailable ---
 execp = new
@@ -35,7 +43,7 @@ execp_interval = 1
 execp_font = JetBrains Mono 8
 execp_font_color = #FF1493 100
 execp_padding = 0 0
-execp_tooltip = SpaceAvailable
+execp_tooltip = 
 
 # --- E: WhoAmI ---
 execp = new
@@ -44,7 +52,7 @@ execp_interval = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #FF1493 100
 execp_padding = 0 0
-execp_tooltip = WhoAmI
+execp_tooltip = 
 
 # --- E: SuckMyClock ---
 execp = new
@@ -59,4 +67,7 @@ execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #FF1493 100
 execp_padding = 0 0
-execp_tooltip = SuckMyClock
+
+tooltip_font_color = #000000 100
+tooltip_font = JetBrains Mono Bold 8
+tooltip_background_id = 2

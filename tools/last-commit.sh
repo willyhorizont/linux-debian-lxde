@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.2.22" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.3.0" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,7 +12,14 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update tint2-bottom-panel, update systray;
+update install.sh;
+update and fix restart-desktop.sh;
+fix start-desktop.sh;
+update sync.sh;
+update README.md, add Disable Camera Startup, add Customize Display Manager;
+update tint2-bottom-panel, fix tooltip, change static tooltip to dinamic tooltip via stderr, add tui0-tux.sh, add tui3-cam.sh, add tui4-mic.sh, add tui5-vol.sh, replace tui-powr-pfl.sh with tui6-powr.sh;
+update tint2-top-bar, fix tooltip, change static tooltip to dinamic tooltip via stderr;
+update screenshot;
 "
 M=$(sed -e '/./,$!d' <<< "$M")
 M="$H

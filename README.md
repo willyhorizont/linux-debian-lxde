@@ -7,7 +7,7 @@
 sudo mkdir -p /etc/X11/xorg.conf.d && echo -e 'Section "InputClass"\n    Identifier "touchpad catchall"\n    MatchIsTouchpad "on"\n    MatchDevicePath "/dev/input/event*"\n    Driver "libinput"\n    Option "NaturalScrolling" "true"\n    Option "Tapping" "on"\nEndSection' | sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf
 ```
 
-## Disable Mouse Acceleration
+## Disable Screen Blank
 ```
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo tee /etc/X11/xorg.conf.d/10-monitor.conf << 'EOF'
 Section "Monitor"
@@ -23,7 +23,10 @@ Section "ServerFlags"
     Option "NoPM" "true"
 EndSection
 EOF
+```
 
+## Disable Mouse Acceleration
+```
 sudo tee /etc/X11/xorg.conf.d/50-mouse-acceleration.conf << 'EOF'
 Section "InputClass"
     Identifier "My Pointer Acceleration Override"
@@ -32,6 +35,11 @@ Section "InputClass"
     Option "AccelProfile" "flat"
 EndSection
 EOF
+```
+
+## Disable Camera Startup
+```
+echo "blacklist uvcvideo" | sudo tee /etc/modprobe.d/block-camera.conf
 ```
 
 ## Do [linux > post-install > general.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/general.md#a)
@@ -58,13 +66,13 @@ sudo apt install -y blueman
 
 # Panel
 sudo apt install -y \
+    xdotool \
     picom \ # or xcompmgr
     tint2 \
     plank \
     jgmenu \
     power-profiles-daemon \
     acpi \
-    xdotool \
     dunst \
     libnotify-bin \
     ""
@@ -380,20 +388,24 @@ BottomPadding=0
 LaunchBounceTime=0
 ```
 
-## Change lock screen
+## Customize Display Manager
+```sh
+sudo bash -c '
+TARGET_FILE="/etc/lightdm/lightdm-gtk-greeter.conf"
+
+# hide user image
+if grep -q "#hide-user-image=" "$TARGET_FILE"; then sed -i "s|#hide-user-image=|#hide-user-image=\nhide-user-image=true|g" "$TARGET_FILE"; else sed -i "\$a hide-user-image=true" "$TARGET_FILE"; fi
+
+# change indicator order
+sed -i "s|#indicators=|#indicators=\nindicators=~host;~spacer;~clock;~spacer;~session;~power|g" "$TARGET_FILE"
+
+# change clock format
+sed -i "s|#clock-format=|#clock-format=\nclock-format=%a, %d %b %Y \| %I:%M:%S %p|g" "$TARGET_FILE"
+'
 ```
-## install lock screen settings
-sudo apt install -y lightdm-gtk-greeter-settings
 
-## copy image to:
-/usr/share/images/
-
-## change lock screen clock format to:
-%a, %d %b %Y | %I:%M:%S %p
-
-## remove lock screen settings
-sudo apt purge -y lightdm-gtk-greeter-settings && sudo apt autoremove -y --purge
-```
+## Restart Display Manager
+```sudo systemctl restart lightdm```
 
 ## Adjust default terminal:
 ```

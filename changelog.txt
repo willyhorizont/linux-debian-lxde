@@ -1,3 +1,13 @@
+[Last updated: 02 Oct 2026 @ 02:51 PM][version: 0.3.0]
+update install.sh;
+update and fix restart-desktop.sh;
+fix start-desktop.sh;
+update sync.sh;
+update README.md, add Disable Camera Startup, add Customize Display Manager;
+update tint2-bottom-panel, fix tooltip, change static tooltip to dinamic tooltip via stderr, add tui0-tux.sh, add tui3-cam.sh, add tui4-mic.sh, add tui5-vol.sh, replace tui-powr-pfl.sh with tui6-powr.sh;
+update tint2-top-bar, fix tooltip, change static tooltip to dinamic tooltip via stderr;
+update screenshot;
+
 [Last updated: 01 Oct 2026 @ 04:56 AM][version: 0.2.22]
 update tint2-bottom-panel, update systray;
 

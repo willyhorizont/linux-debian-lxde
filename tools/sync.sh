@@ -5,3 +5,4 @@ RD=$(realpath "$SD/..")
 rm -rf "$HOME/willyhorizont.github.io/linux-debian-lxde"
 mkdir -p "$HOME/willyhorizont.github.io/linux-debian-lxde/"
 cp -r "$RD/." "$HOME/willyhorizont.github.io/linux-debian-lxde/"
+~/willyhorizont.github.io/linux-debian-lxde/install.sh

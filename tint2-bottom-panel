@@ -1,147 +1,162 @@
+#---- willyhorizont.github.io tint2-bottom-panel configuration ----
+# https://gitlab.com/o9000/tint2/wikis/Configure
+# https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md
+
+rounded = 0
+border_width = 0
+background_color = #ffffff 100
+border_color = #ffffff 100
+
+rounded = 0
+border_width = 1
+background_color = #ffffff 100
+border_color = #FF1493 100
+
 panel_items = PFSEEEEEEEEPEP
 panel_position = bottom center horizontal
 panel_layer = bottom
 panel_size = 100% 36
 panel_margin = 0 0
-panel_padding = 0 2
+panel_padding = 0 0
+panel_background_id = 1
 wm_menu = 1
 strut_policy = follow_window
-
-tooltip_font_color = #000000 100
-tooltip_font = JetBrains Mono 8
-
-# --- BACKGROUND 1 ---
-background_color = #ffffff 100
-border_color = #000000 0
-border_width = 0
-border_sides = top bottom left right
-panel_background_id = 1
 
 # --- P: Bottom Panel App Launcher ---
 button = new
 button_text =  
-button_font = JetBrains Mono 8
+button_font = JetBrains Mono Bold 8
 button_font_color = #000000 100
+button_background_id = 1
 button_lclick_command = jgmenu_run
 button_padding = 0 0
-button_background_id = 0
 
 # --- S: Systray ---
 systray_padding = 1 2
-systray_background_id = 0
-systray_sort = left2right
+systray_background_id = 1
+systray_sort = descending
 systray_icon_size = 20
 systray_icon_asb = 100 0 -80
 
 # --- E: Indicator Tux ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indicator-tux.sh
+execp_command = ~/willyhorizont.github.io/linux/indic0-tux.sh
 execp_interval = 2
 execp_has_icon = 0
 execp_font = JetBrains Mono 11
 execp_font_color = #000000 100
-execp_padding = 1 0
-execp_tooltip = 
+execp_background_id = 1
+execp_padding = 0 0
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui0-tux.sh
 
 # --- E: Separator ---
 execp = new
 execp_command = echo "|"
 execp_interval = 0
 execp_has_icon = 0
-execp_font = JetBrains Mono 8
+execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
+execp_background_id = 1
 execp_padding = 0 0
 execp_tooltip = 
 
 # --- E: Indicator Bluetooth ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indicator-bt.sh
+execp_command = ~/willyhorizont.github.io/linux/indic1-bt.sh
 execp_interval = 4
 execp_has_icon = 0
-execp_font = JetBrains Mono 8
+execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
+execp_background_id = 1
 execp_padding = 0 0
-execp_tooltip = 
-execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui-bt.sh
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui1-bt.sh
 
 # --- E: Indicator Network ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indicator-net.sh
+execp_command = ~/willyhorizont.github.io/linux/indic2-net.sh
 execp_interval = 5
 execp_has_icon = 0
-execp_font = JetBrains Mono 8
+execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
+execp_background_id = 1
 execp_padding = 0 0
-execp_tooltip = 
-execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui-net.sh
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui2-net.sh
 
 # --- E: Indicator Cam ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indicator-cam.sh
+execp_command = ~/willyhorizont.github.io/linux/indic3-cam.sh
 execp_interval = 2
 execp_has_icon = 0
-execp_font = JetBrains Mono 8
+execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
+execp_background_id = 1
 execp_padding = 0 0
-execp_tooltip = 
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui3-cam.sh
 
 # --- E: Indicator Mic ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indicator-mic.sh
+execp_command = ~/willyhorizont.github.io/linux/indic4-mic.sh
 execp_interval = 1
 execp_has_icon = 0
-execp_font = JetBrains Mono 8
+execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
+execp_background_id = 1
 execp_padding = 0 0
-execp_tooltip = 
-execp_lclick_command = lxterminal -e alsamixer --view=capture
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui4-mic.sh
 
 # --- E: Indicator Volume ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indicator-vol.sh
+execp_command = ~/willyhorizont.github.io/linux/indic5-vol.sh
 execp_interval = 1
 execp_has_icon = 0
-execp_font = JetBrains Mono 8
+execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
+execp_background_id = 1
 execp_padding = 0 0
-execp_tooltip = 
-execp_lclick_command = lxterminal -e alsamixer --view=playback
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui5-vol.sh
 
 # --- E: Indicator Power ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indicator-powr.sh
+execp_command = ~/willyhorizont.github.io/linux/indic6-powr.sh
 execp_interval = 5
 execp_has_icon = 0
-execp_font = JetBrains Mono 8
+execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
+execp_background_id = 1
 execp_padding = 0 0
-execp_tooltip = 
-execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui-powr-pfl.sh
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui6-powr.sh
 
 # --- P: Button to Show Notification History ---
 button = new
-button_text = ⩍ 
-button_font = JetBrains Mono 8
+button_text = 🔔
+button_font = JetBrains Mono Bold 8
 button_font_color = #000000 100
+button_background_id = 1
 button_lclick_command = dunstctl history-pop
 button_padding = 8 0
-button_background_id = 0
+button_tooltip = Notification History
 
 # --- E: Separator ---
 execp = new
 execp_command = echo "|"
 execp_interval = 0
 execp_has_icon = 0
-execp_font = JetBrains Mono 8
+execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
+execp_background_id = 1
 execp_padding = 0 0
 execp_tooltip = 
 
 # --- P: Button to Toggle Show Desktop ---
 button = new
 button_text =  _ 
-button_font = JetBrains Mono 8
+button_font = JetBrains Mono Bold 8
 button_font_color = #000000 100
+button_background_id = 1
 button_lclick_command = xdotool key ctrl+super+d
 button_padding = 8 0
-button_background_id = 0
+button_tooltip = Desktop
+
+tooltip_font_color = #000000 100
+tooltip_font = JetBrains Mono Bold 8
+tooltip_background_id = 2
