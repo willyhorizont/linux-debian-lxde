@@ -1,3 +1,9 @@
+[Last updated: 03 Oct 2026 @ 12:03 PM][version: 0.3.1]
+update and fix in restart-desktop.sh, restart more properly, kill tuxd more properly;
+remove mute from autostart, move mute to start-desktop.sh;
+remove fastfetch from autostart, move fastfetch to start-desktop.sh;
+update start-desktop.sh, add mute, add fastfetch;
+
 [Last updated: 02 Oct 2026 @ 02:51 PM][version: 0.3.0]
 update install.sh;
 update and fix restart-desktop.sh;

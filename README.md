@@ -324,6 +324,27 @@ systemctl --user --now enable wireplumber
       <layer>above</layer>
       <focus>yes</focus>
     </application>
+
+    <application class="XTerm">
+        <position force="yes">
+            <x>center</x>
+            <y>center</y>
+        </position>
+    </application>
+
+    <application class="Lxterminal">
+        <position force="yes">
+            <x>center</x>
+            <y>center</y>
+        </position>
+    </application>
+
+    <application class="Pcmanfm">
+        <position force="yes">
+            <x>center</x>
+            <y>center</y>
+        </position>
+    </application>
 ```
 
 ## Restart and refresh the Desktop
