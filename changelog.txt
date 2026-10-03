@@ -1,3 +1,6 @@
+[Last updated: 03 Oct 2026 @ 12:59 PM][version: 0.3.3]
+update screenshot;
+
 [Last updated: 03 Oct 2026 @ 12:21 PM][version: 0.3.2]
 re update and fix in restart-desktop.sh, restart more more properly, kill tuxd more more properly;
 
