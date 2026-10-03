@@ -22,8 +22,10 @@
 @text  ,                                                                                                                               ,   9, 284, 142,  35, 2, left, top, #000000 100, #000000 0 , Settings
 @rect  , ^filter(#System #Emulator #FileManager #TerminalEmulator #Filesystem #Monitor )                                               ,   4, 319, 142,  35, 2, left, top, #000000 0  , #000000 0 , 
 @text  ,                                                                                                                               ,   9, 319, 142,  35, 2, left, top, #000000 100, #000000 0 , System
-@rect  , lxsession-logout                                                                                                              ,   4, 359, 142,  35, 2, left, top, #000000 0  , #000000 0 , 
-@text  , lxsession-logout                                                                                                              ,   9, 359, 142,  35, 2, left, top, #000000 100, #000000 0 , Logout
+@rect  , xtrlock                                                                                                                       ,   4, 359, 142,  35, 2, left, top, #000000 0  , #000000 0 , 
+@text  , xtrlock                                                                                                                       ,   9, 359, 142,  35, 2, left, top, #000000 100, #000000 0 , Lock
+@rect  , lxsession-logout                                                                                                              ,   4, 399, 142,  35, 2, left, top, #000000 0  , #000000 0 , 
+@text  , lxsession-logout                                                                                                              ,   9, 399, 142,  35, 2, left, top, #000000 100, #000000 0 , Logout
 
 ^tag(lx-apps)
 -- Pinned --,,,#Pinned

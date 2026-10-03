@@ -48,6 +48,9 @@ echo "blacklist uvcvideo" | sudo tee /etc/modprobe.d/block-camera.conf
 
 ## Install packages
 ```
+# Screen locker
+sudo apt install -y xtrlock
+
 # Font
 sudo apt install -y fonts-jetbrains-mono
 
@@ -105,6 +108,12 @@ systemctl --user --now enable wireplumber
 
 ## Add keybinds -> open ```~/.config/openbox/lxde-rc.xml``` and add this:
 ```xml
+    <!-- Lock screen -->
+    <keybind key="C-W-l">
+        <action name="Execute">
+        <command>xtrlock</command>
+        </action>
+    </keybind>
     <!-- Audio control -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
@@ -450,13 +459,16 @@ sudo apt purge -y synaptic && sudo apt autoremove -y --purge
 sudo apt install -y transmission-gtk
 sudo apt purge -y deluge deluge-common deluge-gtk && sudo apt autoremove -y --purge
 
+# Screen locker
+sudo apt purge -y light-locker xscreensaver gnome-screensaver slock suckless-tools lxlock && sudo apt autoremove -y --purge
+
 mkdir -p ~/.local/share/applications
-cp /usr/share/applications/libreoffice-startcenter.desktop ~/.local/share/applications/
-cp /usr/share/applications/libreoffice-math.desktop ~/.local/share/applications/
-cp /usr/share/applications/libreoffice-draw.desktop ~/.local/share/applications/
-if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; fi
-if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-math.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-math.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-math.desktop"; fi
-if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-draw.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-draw.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-draw.desktop"; fi
+if [ -f /usr/share/applications/libreoffice-startcenter.desktop ]; then cp /usr/share/applications/libreoffice-startcenter.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; fi; }; fi
+if [ -f /usr/share/applications/libreoffice-math.desktop ]; then cp /usr/share/applications/libreoffice-math.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-math.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-math.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-math.desktop"; fi; }; fi
+if [ -f /usr/share/applications/libreoffice-draw.desktop ]; then cp /usr/share/applications/libreoffice-draw.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-draw.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-draw.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-draw.desktop"; fi; }; fi
+if [ -f /usr/share/applications/btop.desktop ]; then cp /usr/share/applications/btop.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -geometry 80x28 -bg black -fg white -fa Monospace -fs 8 -e btop|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/btop.desktop"; }; fi
+if [ -f /usr/share/applications/cmatrix.desktop ]; then cp /usr/share/applications/cmatrix.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -geometry 80x24 -bg black -fg white -fa Monospace -fs 8 -bc -uc -e cmatrix -s -u 10 -a|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/cmatrix.desktop"; }; fi
+if [ -f /usr/share/applications/xterm.desktop ]; then cp /usr/share/applications/xterm.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -geometry 88x24 -bc -uc|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/xterm.desktop"; }; fi
 
 # Qt
 sudo apt purge -y \

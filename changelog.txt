@@ -1,3 +1,8 @@
+[Last updated: 03 Oct 2026 @ 04:09 PM][version: 0.3.4]
+update README.md, add xtrlock screen locker installation command, add screen locker keybind, add purge default screen locker command, add some .desktop;
+tuxd.sh now act as screenlocker;
+update jgmenu, add lock screen;
+
 [Last updated: 03 Oct 2026 @ 12:59 PM][version: 0.3.3]
 update screenshot;
 
