@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.3.1" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.3.2" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,10 +12,7 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update and fix in restart-desktop.sh, restart more properly, kill tuxd more properly;
-remove mute from autostart, move mute to start-desktop.sh;
-remove fastfetch from autostart, move fastfetch to start-desktop.sh;
-update start-desktop.sh, add mute, add fastfetch;
+re update and fix in restart-desktop.sh, restart more more properly, kill tuxd more more properly;
 "
 M=$(sed -e '/./,$!d' <<< "$M")
 M="$H

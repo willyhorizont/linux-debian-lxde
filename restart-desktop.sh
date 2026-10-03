@@ -3,11 +3,14 @@
 notify-send "Restarting Desktop..."
 
 pkill -f "tuxd.sh"
-pkill -x xterm
-pkill -x xpenguins
+pkill -x "xterm"
+pkill -x "xpenguins"
 
 openbox --reconfigure
 
-lxsession -r >/dev/null 2>&1 &
+killall -9 tint2 plank
 
-exit 0
+xdotool search --class "tint2" 2>/dev/null | xargs -I {} xdotool windowwaitunmap {} 2>/dev/null
+xdotool search --class "plank" 2>/dev/null | xargs -I {} xdotool windowwaitunmap {} 2>/dev/null
+
+nohup ~/willyhorizont.github.io/linux-debian-lxde/start-desktop.sh >/dev/null 2>&1 &
