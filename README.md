@@ -521,7 +521,17 @@ sudo apt install -y transmission-gtk
 sudo apt purge -y deluge deluge-common deluge-gtk && sudo apt autoremove -y --purge
 
 # Screen locker
-sudo apt purge -y light-locker xscreensaver gnome-screensaver slock suckless-tools lxlock && sudo apt autoremove -y --purge
+sudo apt purge -y \
+    light-locker \
+    xscreensaver \
+    gnome-screensaver \
+    slock \
+    suckless-tools \
+    xlock \
+    i3lock \
+    slimlock \
+    xsecurelock \
+    && sudo apt autoremove -y --purge
 
 mkdir -p ~/.local/share/applications
 if [ -f /usr/share/applications/libreoffice-startcenter.desktop ]; then cp /usr/share/applications/libreoffice-startcenter.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; fi; }; fi
