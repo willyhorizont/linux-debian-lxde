@@ -69,6 +69,8 @@ sudo apt install -y blueman
 
 # Panel
 sudo apt install -y \
+    dconf-cli \
+    scrot \
     xdotool \
     picom \ # or xcompmgr
     tint2 \
@@ -79,6 +81,34 @@ sudo apt install -y \
     dunst \
     libnotify-bin \
     ""
+```
+
+## Setup Plank
+```
+dconf dump /net/launchpad/plank/
+
+dconf write /net/launchpad/plank/docks/dock1/alignment "'center'"
+dconf write /net/launchpad/plank/docks/dock1/auto-pinning true
+dconf write /net/launchpad/plank/docks/dock1/current-workspace-only false
+dconf write /net/launchpad/plank/docks/dock1/dock-items "['bottom-panel-app-launcher.dockitem', 'lxterminal.dockitem', 'pcmanfm.dockitem', 'firefox-esr.dockitem', 'brave-browser.dockitem', 'vivaldi-stable.dockitem', 'google-chrome.dockitem', 'com.microsoft.VSCode.dockitem']"
+dconf write /net/launchpad/plank/docks/dock1/hide-delay 0
+dconf write /net/launchpad/plank/docks/dock1/hide-mode "'none'"
+dconf write /net/launchpad/plank/docks/dock1/icon-size 36
+dconf write /net/launchpad/plank/docks/dock1/items-alignment "'center'"
+dconf write /net/launchpad/plank/docks/dock1/lock-items false
+dconf write /net/launchpad/plank/docks/dock1/monitor "''"
+dconf write /net/launchpad/plank/docks/dock1/offset -100
+dconf write /net/launchpad/plank/docks/dock1/pinned-only false
+dconf write /net/launchpad/plank/docks/dock1/position "'bottom'"
+dconf write /net/launchpad/plank/docks/dock1/pressure-reveal false
+dconf write /net/launchpad/plank/docks/dock1/show-dock-item false
+dconf write /net/launchpad/plank/docks/dock1/theme "'WindowsTenStyle'"
+dconf write /net/launchpad/plank/docks/dock1/tooltips-enabled true
+dconf write /net/launchpad/plank/docks/dock1/unhide-delay 0
+dconf write /net/launchpad/plank/docks/dock1/zoom-enabled false
+dconf write /net/launchpad/plank/docks/dock1/zoom-percent 150
+
+dconf dump /net/launchpad/plank/
 ```
 
 ## Disable Daemon
@@ -168,18 +198,18 @@ systemctl --user --now enable wireplumber
       </action>
     </keybind>
 
-    <!-- Super+Shift+S to Screenshot area -->
-    <keybind key="W-S-s">
-      <action name="Execute">
-        <command>bash -c 'gnome-screenshot --area --include-pointer --clipboard --file ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
-      </action>
+    <!-- Shift+Super+S to Screenshot area -->
+    <keybind key="S-W-s">
+        <action name="Execute">
+            <command>bash -c 'mkdir -p "$HOME/Pictures/Screenshots" && scrot --border --pointer --freeze --select --quality 100 "$HOME/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg"'</command>
+        </action>
     </keybind>
 
     <!-- Shift+PrtSc to Screenshot -->
     <keybind key="S-Print">
-      <action name="Execute">
-          <command>bash -c 'gnome-screenshot --include-pointer --clipboard --file ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H%M%S).jpg'</command>
-      </action>
+        <action name="Execute">
+            <command>bash -c 'mkdir -p "$HOME/Pictures/Screenshots" && scrot --border --pointer --quality 100 "$HOME/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg"'</command>
+        </action>
     </keybind>
 
     <!-- Toggle Show Desktop -->
@@ -334,6 +364,13 @@ systemctl --user --now enable wireplumber
       <focus>yes</focus>
     </application>
 
+    <application class="X-terminal-emulator">
+        <position force="yes">
+            <x>center</x>
+            <y>center</y>
+        </position>
+    </application>
+
     <application class="XTerm">
         <position force="yes">
             <x>center</x>
@@ -395,7 +432,7 @@ lxsession-logout
 lxlock
 ```
 
-## Create Bottom Panel App Launcher by running this code:
+## Create Bottom Panel App Launcher desktop shortcut
 ```
 mkdir -p ~/.local/share/applications
 cat << 'EOF' > ~/.local/share/applications/bottom-panel-app-launcher.desktop
@@ -407,6 +444,21 @@ Terminal=false
 Type=Application
 Icon=distributor-logo-debian
 Categories=System;Utility;
+EOF
+```
+
+## Create tui0-screenlocker desktop shortcut
+```
+mkdir -p ~/.local/share/applications
+cat << 'EOF' > ~/.local/share/applications/tui0-screenlocker.desktop
+[Desktop Entry]
+Name=tui0-screenlocker
+Comment=tui0-screenlocker
+Exec=xterm -geometry 80x28 -bg black -fg white -fa Monospace -fs 8 -e ~/willyhorizont.github.io/linux/tui0-screenlocker.sh
+Terminal=false
+Type=Application
+Icon=system-lock-screen
+Categories=Settings;
 EOF
 ```
 

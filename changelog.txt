@@ -1,3 +1,12 @@
+[Last updated: 05 Oct 2026 @ 07:52 AM][version: 0.3.5]
+update README.md, add install dconf-cli, add Plank Setup, replace gnome-screenshot with scrot, add tui0-screenlocker desktop shortcut;
+replace tuxd.sh with screenlockerd.sh;
+add plank config;
+update tint2-bottom-panel, add panel_window_name, replace lxterminal with xterm for tui*;
+update tint2-top-bar, add panel_window_name, replace lxterminal with xterm for tui*;
+update restart-desktop.sh, finally can kill start-desktop.sh and screenlockerd.sh properly, finally can wait tint2-bottom-panel and tint2-top-bar properly;
+update start-desktop.sh, finally can wait tint2-bottom-panel and tint2-top-bar properly;
+
 [Last updated: 03 Oct 2026 @ 04:09 PM][version: 0.3.4]
 update README.md, add xtrlock screen locker installation command, add screen locker keybind, add purge default screen locker command, add some .desktop;
 tuxd.sh now act as screenlocker;
