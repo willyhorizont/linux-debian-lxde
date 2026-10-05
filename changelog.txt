@@ -1,3 +1,6 @@
+[Last updated: 05 Oct 2026 @ 06:10 PM][version: 0.3.8]
+update tint2-top-bar, add calcurse on click;
+
 [Last updated: 05 Oct 2026 @ 09:15 AM][version: 0.3.7]
 update README.md, add xprintidle install;
 

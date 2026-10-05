@@ -68,6 +68,7 @@ execp_has_icon = 0
 execp_font = JetBrains Mono 8
 execp_font_color = #FF1493 100
 execp_padding = 0 0
+execp_lclick_command = xterm -geometry 80x28 -bg black -fg white -fa Monospace -fs 8 -e calcurse
 
 tooltip_font_color = #000000 100
 tooltip_font = JetBrains Mono Bold 8
