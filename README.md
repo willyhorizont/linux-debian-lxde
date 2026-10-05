@@ -70,8 +70,9 @@ sudo apt install -y blueman
 # Panel
 sudo apt install -y \
     dconf-cli \
-    scrot \
+    xprintidle \
     xdotool \
+    scrot \
     picom \ # or xcompmgr
     tint2 \
     plank \

@@ -1,3 +1,6 @@
+[Last updated: 05 Oct 2026 @ 09:15 AM][version: 0.3.7]
+update README.md, add xprintidle install;
+
 [Last updated: 05 Oct 2026 @ 08:21 AM][version: 0.3.6]
 add plank-windows-ten-style.ini;
 update README.md, add load plank-windows-ten-style.ini config via dconf load;
