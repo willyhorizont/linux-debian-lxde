@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.3.5" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.3.6" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,13 +12,11 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update README.md, add install dconf-cli, add Plank Setup, replace gnome-screenshot with scrot, add tui0-screenlocker desktop shortcut;
-replace tuxd.sh with screenlockerd.sh;
-add plank config;
-update tint2-bottom-panel, add panel_window_name, replace lxterminal with xterm for tui*;
-update tint2-top-bar, add panel_window_name, replace lxterminal with xterm for tui*;
-update restart-desktop.sh, finally can kill start-desktop.sh and screenlockerd.sh properly, finally can wait tint2-bottom-panel and tint2-top-bar properly;
-update start-desktop.sh, finally can wait tint2-bottom-panel and tint2-top-bar properly;
+add plank-windows-ten-style.ini;
+update README.md, add load plank-windows-ten-style.ini config via dconf load;
+add .kateconfig;
+add .fresh config.json;
+add .vscode settings.json;
 "
 M=$(sed -e '/./,$!d' <<< "$M")
 M="$H

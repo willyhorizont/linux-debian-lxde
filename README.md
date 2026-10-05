@@ -109,6 +109,14 @@ dconf write /net/launchpad/plank/docks/dock1/zoom-enabled false
 dconf write /net/launchpad/plank/docks/dock1/zoom-percent 150
 
 dconf dump /net/launchpad/plank/
+
+# or
+
+cat "$HOME/willyhorizont.github.io/linux-debian-lxde/plank-windows-ten-style.ini" | dconf load /net/launchpad/plank/docks/
+
+dconf read /net/launchpad/plank/enabled-docks
+dconf write /net/launchpad/plank/enabled-docks "['dock1']"
+dconf read /net/launchpad/plank/enabled-docks
 ```
 
 ## Disable Daemon

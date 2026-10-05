@@ -1,0 +1,152 @@
+kate: tab-width 4; indent-width 4; replace-tabs on;
+
+# https://docs.kde.org/trunk_kf6/en/kate/katepart/config-variables.html
+# https://kate-editor.org/syntax/
+
+# 1. JavaScript / TypeScript
+kate-wildcard(*.js): hl "JavaScript";
+
+# 2. Python
+kate-wildcard(*.py): hl "Python";
+
+# 3. PHP
+kate-wildcard(*.php): hl "PHP/PHP";
+
+# 4. Go
+kate-wildcard(*.go): hl "Go";
+
+# 5. Perl
+kate-wildcard(*.pl): hl "Perl";
+
+# 6. Julia
+kate-wildcard(*.jl): hl "Julia";
+
+# 7. Lua
+kate-wildcard(*.lua): hl "Lua";
+
+# 8. Ruby
+kate-wildcard(*.rb): hl "Ruby";
+
+# 9. R
+kate-wildcard(*.r): hl "R Script";
+
+# 10. Kotlin
+kate-wildcard(*.kt): hl "Kotlin";
+
+# 11. Swift
+kate-wildcard(*.swift): hl "Swift";
+
+# 12. Dart
+kate-wildcard(*.dart): hl "Dart";
+
+# 13. VB.NET (Visual Basic dotNET)
+kate-wildcard(*.vb): hl "MonoBasic";
+
+# 14. C# (C Sharp)
+kate-wildcard(*.cs): hl "C#";
+
+# 15. MATLAB / Octave
+# kate-wildcard(*.m): hl "Matlab";
+
+# 16. Wolfram Language (Mathematica)
+kate-wildcard(*.wl): hl "Mathematica";
+
+# 17. Raku
+kate-wildcard(*.raku): hl "Raku";
+
+# 18. Scala
+kate-wildcard(*.scala): hl "Scala";
+
+# 19. Java
+kate-wildcard(*.java): hl "Java";
+
+# 20. Nu
+kate-wildcard(*.nu): hl "Julia";
+
+# 21. Elvish
+kate-wildcard(*.elv): hl "Elvish";
+
+# 22. Vim Script
+kate-wildcard(*.vim): hl "C#";
+
+# 23. Rust
+kate-wildcard(*.rs): hl "Rust";
+
+# 24. Nix
+kate-wildcard(*.nix): hl "Nix";
+
+# 25. Tcl
+kate-wildcard(*.tcl): hl "Tcl/Tk";
+
+# 26. GDScript
+kate-wildcard(*.gd): hl "Godot";
+
+# 27. Typst
+kate-wildcard(*.typ): hl "Typst";
+
+# 28. PowerShell
+kate-wildcard(*.ps1): hl "PowerShell";
+
+# 29. Elixir
+kate-wildcard(*.exs): hl "Elixir";
+
+# 30. OCaml
+kate-wildcard(*.ml): hl "Objective Caml";
+
+# 31. Erlang
+kate-wildcard(*.erl): hl "Erlang";
+
+# 32. Gleam
+kate-wildcard(*.gleam): hl "Gleam";
+
+# 33. Zig
+kate-wildcard(*.zig): hl "Zig";
+
+# 34. Nim
+kate-wildcard(*.nim): hl "Nim";
+
+# 35. Odin
+kate-wildcard(*.odin): hl "Odin";
+
+# 36. C++ (C Plus Plus)
+kate-wildcard(*.cpp): hl "C++";
+
+# 37. Objective C
+kate-wildcard(*.m): hl "Objective-C";
+kate-wildcard(*.h): hl "Objective-C";
+
+# 38. Smalltalk
+kate-wildcard(*.st): hl "Groovy";
+
+# 39. ActionScript
+kate-wildcard(*.as): hl "Rust";
+
+# 40. Groovy
+kate-wildcard(*.groovy): hl "Groovy";
+
+# 41. Cangjie
+kate-wildcard(*.cj): hl "Swift";
+
+# 42. C3
+kate-wildcard(*.c3): hl "Rust";
+
+# 43. C
+kate-wildcard(*.c): hl "C";
+
+# 44. D
+kate-wildcard(*.d): hl "D";
+
+# 45. V
+kate-wildcard(*.v): hl "V";
+
+# 46. Vala
+kate-wildcard(*.vala): hl "Vala";
+
+# 47. Crystal
+kate-wildcard(*.cr): hl "Crystal";
+
+# 48. Wren
+kate-wildcard(*.wren): hl "Rust";
+
+# 49. Pike
+kate-wildcard(*.pike): hl "Pike";

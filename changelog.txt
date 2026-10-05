@@ -1,3 +1,10 @@
+[Last updated: 05 Oct 2026 @ 08:21 AM][version: 0.3.6]
+add plank-windows-ten-style.ini;
+update README.md, add load plank-windows-ten-style.ini config via dconf load;
+add .kateconfig;
+add .fresh config.json;
+add .vscode settings.json;
+
 [Last updated: 05 Oct 2026 @ 07:52 AM][version: 0.3.5]
 update README.md, add install dconf-cli, add Plank Setup, replace gnome-screenshot with scrot, add tui0-screenlocker desktop shortcut;
 replace tuxd.sh with screenlockerd.sh;
