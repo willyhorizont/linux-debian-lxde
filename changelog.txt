@@ -1,3 +1,10 @@
+[Last updated: 07 Oct 2026 @ 06:47 AM][version: 0.3.11]
+rename *screenlocker* to *locker*;
+update README.md;
+update restart-desktop.sh;
+update start-desktop.sh;
+update tint2-bottom-panel;
+
 [Last updated: 06 Oct 2026 @ 07:39 PM][version: 0.3.10]
 update screenshot;
 

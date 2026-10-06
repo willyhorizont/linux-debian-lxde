@@ -456,14 +456,14 @@ Categories=System;Utility;
 EOF
 ```
 
-## Create tui0-screenlocker desktop shortcut
+## Create tui0-locker desktop shortcut
 ```
 mkdir -p ~/.local/share/applications
-cat << 'EOF' > ~/.local/share/applications/tui0-screenlocker.desktop
+cat << 'EOF' > ~/.local/share/applications/tui0-locker.desktop
 [Desktop Entry]
-Name=tui0-screenlocker
-Comment=tui0-screenlocker
-Exec=xterm -geometry 80x28 -bg black -fg white -fa Monospace -fs 8 -e ~/willyhorizont.github.io/linux/tui0-screenlocker.sh
+Name=tui0-locker
+Comment=tui0-locker
+Exec=xterm -geometry 80x28 -bg black -fg white -fa Monospace -fs 8 -e ~/willyhorizont.github.io/linux/tui0-locker.sh
 Terminal=false
 Type=Application
 Icon=system-lock-screen

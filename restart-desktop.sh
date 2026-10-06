@@ -3,7 +3,7 @@
 notify-send "Restarting Desktop..."
 
 pkill -f "$HOME/willyhorizont.github.io/linux/start-desktop.sh" 2>/dev/null
-pkill -f "$HOME/willyhorizont.github.io/linux/screenlockerd.sh" 2>/dev/null
+pkill -f "$HOME/willyhorizont.github.io/linux/lockerd.sh" 2>/dev/null
 pkill -x "xterm"
 pkill -x "xpenguins"
 
