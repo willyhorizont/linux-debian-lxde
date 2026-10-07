@@ -23,9 +23,6 @@ sudo apt install -y \
     pulseaudio-utils \
     ""
 
-# Bluetooth
-sudo apt install -y blueman
-
 # Panel
 sudo apt install -y \
     xfce4-panel \

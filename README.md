@@ -65,7 +65,10 @@ sudo apt install -y \
     ""
 
 # Bluetooth
-sudo apt install -y blueman
+sudo apt install -y \
+    bluez \
+    bluez-tools \
+    ""
 
 # Panel
 sudo apt install -y \

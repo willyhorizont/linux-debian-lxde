@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.3.11" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.3.12" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,11 +12,7 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-rename *screenlocker* to *locker*;
-update README.md;
-update restart-desktop.sh;
-update start-desktop.sh;
-update tint2-bottom-panel;
+update README.md, update bluetooth setup;
 "
 M=$(sed -e '/./,$!d' <<< "$M")
 M="$H
