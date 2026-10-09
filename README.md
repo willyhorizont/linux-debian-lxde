@@ -48,8 +48,13 @@ echo "blacklist uvcvideo" | sudo tee /etc/modprobe.d/block-camera.conf
 
 ## Install packages
 ```
-# Screen locker
-sudo apt install -y xtrlock
+# Locker
+sudo apt install -y \
+    xprintidle \
+    wmctrl \
+    xdotool \
+    xtrlock \
+    ""
 
 # Font
 sudo apt install -y fonts-jetbrains-mono
@@ -73,8 +78,6 @@ sudo apt install -y \
 # Panel
 sudo apt install -y \
     dconf-cli \
-    xprintidle \
-    xdotool \
     scrot \
     picom \ # or xcompmgr
     tint2 \
@@ -522,6 +525,11 @@ sudo apt purge -y system-config-printer system-config-printer-common && sudo apt
 sudo apt purge -y synaptic && sudo apt autoremove -y --purge
 sudo apt install -y transmission-gtk
 sudo apt purge -y deluge deluge-common deluge-gtk && sudo apt autoremove -y --purge
+
+# Screenshot
+sudo apt purge -y \
+    gnome-screenshot \
+    ""
 
 # Screen locker
 sudo apt purge -y \

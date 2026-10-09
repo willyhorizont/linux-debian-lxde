@@ -148,7 +148,7 @@ execp_background_id = 1
 execp_padding = 0 0
 execp_tooltip = 
 
-# --- P: Button to Toggle Show Desktop ---
+# --- P: Button Toggle Show Desktop ---
 button = new
 button_text =  _ 
 button_font = JetBrains Mono Bold 8
@@ -156,7 +156,7 @@ button_font_color = #000000 100
 button_background_id = 1
 button_lclick_command = xdotool key ctrl+super+d
 button_padding = 8 0
-button_tooltip = Desktop
+button_tooltip = Toggle Show Desktop
 
 tooltip_font_color = #000000 100
 tooltip_font = JetBrains Mono Bold 8

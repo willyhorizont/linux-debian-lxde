@@ -1,3 +1,7 @@
+[Last updated: 09 Oct 2026 @ 02:01 PM][version: 0.4.0]
+update README.md, update locker;
+update start-desktop.sh, remove welcome-window, move welcome-window to lockerd.sh;
+
 [Last updated: 07 Oct 2026 @ 08:28 AM][version: 0.3.12]
 update README.md, update bluetooth setup;
 
