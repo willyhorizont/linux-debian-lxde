@@ -12,6 +12,7 @@ border_width = 1
 background_color = #ffffff 100
 border_color = #FF1493 100
 
+#panel_items = PFSEEEEEEEEEPEP
 panel_items = PFSEEEEEEEEPEP
 panel_position = bottom center horizontal
 panel_layer = bottom
@@ -38,6 +39,16 @@ systray_background_id = 1
 systray_sort = descending
 systray_icon_size = 20
 systray_icon_asb = 100 0 -80
+
+## --- E: Indicator Dev ---
+#execp = new
+#execp_command = ~/willyhorizont.github.io/linux-debian-lxde/indic-dev.sh
+#execp_interval = 1
+#execp_has_icon = 0
+#execp_font = JetBrains Mono 11
+#execp_font_color = #000000 100
+#execp_background_id = 1
+#execp_padding = 0 0
 
 # --- E: Indicator Tux ---
 execp = new
