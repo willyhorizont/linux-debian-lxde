@@ -62,6 +62,9 @@ sudo apt install -y fonts-jetbrains-mono
 # Brightness control
 sudo apt install -y brightnessctl
 
+# Blue Light Filter
+sudo apt install -y xsct
+
 # Audio
 sudo apt install -y \
     pipewire-audio \
@@ -151,6 +154,13 @@ systemctl --user --now enable pipewire-pulse
 systemctl --user --now enable wireplumber
 ```
 
+## Blue Light Filter
+```
+crontab -l
+(crontab -l 2>/dev/null | grep -v "blu-lght-fltr.sh"; echo "*/5 * * * * bash -c \"\$HOME/willyhorizont.github.io/linux/blu-lght-fltr.sh\" >/dev/null 2>&1") | crontab -
+crontab -l
+```
+
 ## Add keybinds -> open ```~/.config/openbox/lxde-rc.xml``` and add this:
 ```xml
     <!-- Lock screen -->
@@ -195,7 +205,7 @@ systemctl --user --now enable wireplumber
     <!-- Open Terminal -->
     <keybind key="C-A-t">
       <action name="Execute">
-        <command>lxterminal</command>
+        <command>lxterminal --working-directory=$HOME</command>
       </action>
     </keybind>
 
@@ -469,7 +479,7 @@ cat << 'EOF' > ~/.local/share/applications/tui0-locker.desktop
 [Desktop Entry]
 Name=tui0-locker
 Comment=tui0-locker
-Exec=xterm -geometry 80x28 -bg black -fg white -fa Monospace -fs 8 -e ~/willyhorizont.github.io/linux/tui0-locker.sh
+Exec=lxterminal --geometry=80x28 -e ~/willyhorizont.github.io/linux/tui0-locker.sh
 Terminal=false
 Type=Application
 Icon=system-lock-screen
@@ -548,9 +558,10 @@ mkdir -p ~/.local/share/applications
 if [ -f /usr/share/applications/libreoffice-startcenter.desktop ]; then cp /usr/share/applications/libreoffice-startcenter.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; fi; }; fi
 if [ -f /usr/share/applications/libreoffice-math.desktop ]; then cp /usr/share/applications/libreoffice-math.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-math.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-math.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-math.desktop"; fi; }; fi
 if [ -f /usr/share/applications/libreoffice-draw.desktop ]; then cp /usr/share/applications/libreoffice-draw.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-draw.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-draw.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-draw.desktop"; fi; }; fi
-if [ -f /usr/share/applications/btop.desktop ]; then cp /usr/share/applications/btop.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -geometry 80x28 -bg black -fg white -fa Monospace -fs 8 -e btop|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/btop.desktop"; }; fi
-if [ -f /usr/share/applications/cmatrix.desktop ]; then cp /usr/share/applications/cmatrix.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -geometry 80x24 -bg black -fg white -fa Monospace -fs 8 -bc -uc -e cmatrix -s -u 10 -a|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/cmatrix.desktop"; }; fi
-if [ -f /usr/share/applications/xterm.desktop ]; then cp /usr/share/applications/xterm.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -geometry 88x24 -bc -uc|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/xterm.desktop"; }; fi
+if [ -f /usr/share/applications/btop.desktop ]; then cp /usr/share/applications/btop.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -bg black -fg white -fa Monospace -fs 8 -geometry 80x28 -e btop|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/btop.desktop"; }; fi
+if [ -f /usr/share/applications/cmatrix.desktop ]; then cp /usr/share/applications/cmatrix.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -bg black -fg white -fa Monospace -fs 8 -geometry 80x24 -e cmatrix -s -u 10 -a|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/cmatrix.desktop"; }; fi
+if [ -f /usr/share/applications/xterm.desktop ]; then cp /usr/share/applications/xterm.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -bg black -fg white -fa Monospace -fs 8 -geometry 88x24|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/xterm.desktop"; }; fi
+if [ -f /usr/share/applications/lxterminal.desktop ]; then cp /usr/share/applications/lxterminal.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal --working-directory=$HOME|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/lxterminal.desktop"; }; fi
 
 # Qt
 sudo apt purge -y \
@@ -641,7 +652,12 @@ sudo apt purge -y \
     libfcitx-gclient1 \
     libfcitx-utils0 \
     "" && sudo apt autoremove -y --purge
+sudo apt purge -y im-config && sudo apt autoremove -y --purge
 im-config -n none
+
+# Clipboard
+dpkg -l diodon copyq parcellite rofi-greenclip clipster xclip xsel 2>/dev/null
+sudo apt purge -y diodon && sudo apt autoremove -y --purge
 
 sudo apt install -y xserver-xorg-input-all xserver-xorg-input-libinput libinput-bin
 sudo apt install -y xserver-xorg-input-synaptics

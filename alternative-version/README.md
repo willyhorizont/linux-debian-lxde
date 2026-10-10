@@ -75,7 +75,7 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
     <!-- Open Terminal -->
     <keybind key="C-A-t">
       <action name="Execute">
-        <command>lxterminal</command>
+        <command>lxterminal --working-directory=$HOME</command>
       </action>
     </keybind>
 
