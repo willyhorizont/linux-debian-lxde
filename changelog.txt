@@ -1,3 +1,7 @@
+[Last updated: 10 Oct 2026 @ 04:24 PM][version: 0.4.3]
+fix sync.sh, kill start-desktop.sh and install.sh;
+update restart-desktop.sh, now warranted killed;
+
 [Last updated: 10 Oct 2026 @ 01:56 PM][version: 0.4.2]
 update xterm call;
 update install.sh restart-desktop command;
