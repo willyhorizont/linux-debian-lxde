@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.4.3" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.4.4" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,8 +12,9 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-fix sync.sh, kill start-desktop.sh and install.sh;
-update restart-desktop.sh, now warranted killed;
+update start-desktop.sh change order;
+update restart-desktop.sh, change order;
+try out pid based approach but turned out its worst;
 "
 M=$(sed -e '/./,$!d' <<< "$M")
 M="$H

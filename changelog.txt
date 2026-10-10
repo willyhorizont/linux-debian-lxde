@@ -1,3 +1,8 @@
+[Last updated: 10 Oct 2026 @ 05:49 PM][version: 0.4.4]
+update start-desktop.sh change order;
+update restart-desktop.sh, change order;
+try out pid based approach but turned out its worst;
+
 [Last updated: 10 Oct 2026 @ 04:24 PM][version: 0.4.3]
 fix sync.sh, kill start-desktop.sh and install.sh;
 update restart-desktop.sh, now warranted killed;
