@@ -1,3 +1,8 @@
+[Last updated: 13 Oct 2026 @ 02:28 AM][version: 0.4.7]
+add autostart.csv;
+add README.md, fix .desktop autostart, add purge network-manager-applet command;
+update i3 configr1, update autostart;
+
 [Last updated: 12 Oct 2026 @ 10:01 PM][version: 0.4.6]
 add i3 config init;
 

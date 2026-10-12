@@ -35,6 +35,10 @@ font pango:monospace 8
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id picom --backend=xrender --daemon --no-fading-openclose --no-fading-destroyed-argb --shadow-opacity=0 --blur-method=none --active-opacity=1.0 --inactive-opacity=1.0 --inactive-dim=0 --corner-radius=0
+exec --no-startup-id pcmanfm --desktop --profile LXDE
+exec --no-startup-id dunst
+# exec --no-startup-id bash -c "$HOME/willyhorizont.github.io/linux-debian-lxde/start-desktop.sh"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.

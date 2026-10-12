@@ -423,16 +423,9 @@ crontab -l
 openbox --reconfigure
 ```
 
-## Uncheck this in Default application for LXSession > autostart > Known Applications:
+## Uncheck all except *polkit* in Default application for LXSession > autostart > Known Applications:
 ```
-picom # or xcompmgr
-network
-bluetooth
-Print Queue Applet (system-config-printer)
-User folders update (xdg-user-dirs-gtk)
-Power Manager
-Diodon
-xiccd
+# copy .desktop from /etc/xdg/autostart/ to ~/.config/autostart/ and add NotShowIn=LXDE;i3;
 ```
 
 ## Copy ```./.config/tint2/start-desktop.sh``` to ```~/.config/tint2/start-desktop.sh```
@@ -521,7 +514,42 @@ sudo update-alternatives --config x-terminal-emulator
 
 ## Cleanup:
 ```
+# Panel
 sudo apt purge -y lxpanel && sudo apt autoremove -y --purge
+
+# Network Manager Applet
+sudo apt install -y --no-install-recommends network-manager
+sudo apt purge -y network-manager-applet && sudo apt autoremove -y --purge
+echo "
+Should purge modem:
+    modemmanager*
+    usb-modeswitch*
+    usb-modeswitch-data*
+    libmbim-glib4*
+    libmbim-proxy*
+    libmbim-utils*
+    libqmi-glib5*
+    libqmi-proxy*
+    libqmi-utils*
+    libqrtr-glib0*
+    mobile-broadband-provider-info*
+    libjim0.83*
+and purge this:
+    libayatana-appindicator3-1*
+    nm-connection-editor*
+    network-manager-l10n*
+In case no network, install this to fix:
+    network-manager
+    libmm-glib0
+    libndp0
+    libnm0
+    libteamdctl0
+and re-install this:
+    dns-root-data*
+    dnsmasq-base*
+    libnma-common*
+    libnma0*
+"
 
 # Dictionary stuff
 sudo apt purge -y goldendict-ng kasumi && sudo apt autoremove -y --purge
@@ -543,7 +571,6 @@ sudo apt purge -y \
 
 # Screen locker
 sudo apt purge -y \
-    light-locker \
     xscreensaver \
     gnome-screensaver \
     slock \
@@ -634,7 +661,8 @@ sudo apt purge -y \
 dpkg -l | grep -i -E "mozc|scim|fcitx"
 sudo apt purge -y xiterm+thai && sudo apt autoremove -y --purge
 sudo apt purge -y ibus ibus-gtk3 ibus-gtk4 ibus-hangul && sudo apt autoremove -y --purge
-sudo apt purge -y uim uim-gtk3 uim-mozc mozc-server mozc-data && sudo apt autoremove -y --purge
+sudo apt install -y --no-install-recommends xserver-xorg-input-all xserver-xorg-input-synaptics xserver-xorg-input-libinput libinput-bin
+sudo apt purge -y uim uim-common uim-gtk3 uim-mozc mozc-server mozc-data && sudo apt autoremove -y --purge
 sudo apt purge -y anthy && sudo apt autoremove -y --purge
 sudo apt purge -y \
     fcitx-config-common \
@@ -658,9 +686,6 @@ im-config -n none
 # Clipboard
 dpkg -l diodon copyq parcellite rofi-greenclip clipster xclip xsel 2>/dev/null
 sudo apt purge -y diodon && sudo apt autoremove -y --purge
-
-sudo apt install -y xserver-xorg-input-all xserver-xorg-input-libinput libinput-bin
-sudo apt install -y xserver-xorg-input-synaptics
 ```
 
 ## See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)

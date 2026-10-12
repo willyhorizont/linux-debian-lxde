@@ -1,0 +1,25 @@
+Status       ; Name                                                            ; Exec                                                      ; Notes
+enabled      ; LXPolKit                                                        ; lxpolkit                                                  ; sudo root
+enabled      ; PolicyKit Authentication Agent                                  ; /usr/libexec/polkit-mate-authentication-agent-1           ; sudo root
+
+disabled     ; User folders update                                             ; xdg-user-dirs-gtk-update                                  ; 
+disabled     ; User folders update                                             ; xdg-user-dirs-update                                      ; 
+disabled     ; User folders update                                             ; xdg-user-dirs-update                                      ; 
+             ;                                                                 ;                                                           ; 
+disabled     ; picom                                                           ; picom                                                     ; already handled in start-desktop.sh
+disabled     ; Secret Storage Service                                          ; /usr/bin/gnome-keyring-daemon --start --components=secrets; already auto launch on demand
+disabled     ; Certificate and Key Storage                                     ; /usr/bin/gnome-keyring-daemon --start --components=pkcs11 ; already auto launch on demand
+disabled     ; SSH Key Agent                                                   ; /usr/bin/gnome-keyring-daemon --start --components=ssh    ; already auto launch on demand
+disabled     ; gnome-disk-utility notification plugin for GNOME Settings Daemon; /usr/libexec/gsd-disk-utility-notify                      ; 
+disabled     ; AT-SPI D-Bus Bus                                                ; /usr/libexec/at-spi-bus-launcher --launch-immediately     ; at-spi2-core accessibility framework screen reader
+disabled     ; Spice vdagent                                                   ; /usr/bin/spice-vdagent                                    ; Virtual Machine copy-paste
+disabled     ; Orca Screen Reader                                              ; orca                                                      ; 
+             ;                                                                 ;                                                           ; 
+uninstalled  ; Screen Locker                                                   ; light-locker                                              ; already handled in lockerd.sh
+uninstalled  ; Diodon                                                          ; diodon                                                    ; 
+uninstalled  ; NetworkManager Applet                                           ; nm-applet                                                 ; 
+uninstalled  ; Blueman Applet                                                  ; blueman-applet                                            ; 
+uninstalled  ; Print Queue Applet                                              ; system-config-printer-applet                              ; 
+not installed; Power Manager                                                   ; xfce4-power-manager                                       ; 
+not installed; xcompmgr                                                        ;                                                           ; 
+not installed; xiccd                                                           ;                                                           ; 
