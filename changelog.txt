@@ -1,3 +1,6 @@
+[Last updated: 12 Oct 2026 @ 10:01 PM][version: 0.4.6]
+add i3 config init;
+
 [Last updated: 12 Oct 2026 @ 06:25 AM][version: 0.4.5]
 update desktop.conf;
 
