@@ -1,3 +1,13 @@
+[Last updated: 13 Oct 2026 @ 04:41 PM][version: 0.4.8]
+update plank .ini, alignment start;
+update README.md, add install feh command;
+move blu-lght-fltr.sh to autostart;
+update start-desktop.sh, remove blu-lght-fltr.sh;
+update tint2-bottom-panel, add more version;
+add pcmanfm .conf;
+add i3 shit;
+add i3 configr1, blu-lght-fltr.sh, try start-desktop.sh, add vol keybind, add mic keybind, add brightness keybind, add terminal keybind, add file manager keybind, add lock keybind, add screenshot keybind;
+
 [Last updated: 13 Oct 2026 @ 02:28 AM][version: 0.4.7]
 add autostart.csv;
 add README.md, fix .desktop autostart, add purge network-manager-applet command;

@@ -12,4 +12,3 @@ tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" &
 xdotool search --sync --onlyvisible --name "tint2-top-bar" >/dev/null 2>&1
 
 setsid bash -c "$HOME/willyhorizont.github.io/linux/lockerd.sh" >/dev/null 2>&1 &
-bash -c "$HOME/willyhorizont.github.io/linux/blu-lght-fltr.sh" >/dev/null 2>&1 &

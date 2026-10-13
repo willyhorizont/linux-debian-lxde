@@ -12,26 +12,51 @@ border_width = 1
 background_color = #ffffff 100
 border_color = #FF1493 100
 
-#panel_items = PFSEEEEEEEEEPEP
-panel_items = PFSEEEEEEEEPEP
-panel_position = bottom center horizontal
+panel_items = FSEEEEEEEEPEP
+panel_position = bottom right horizontal
 panel_layer = bottom
 panel_size = 100% 36
+panel_shrink = 0
 panel_margin = 0 0
 panel_padding = 0 0
 panel_background_id = 1
 wm_menu = 1
-strut_policy = follow_window
+strut_policy = follow_size
 panel_window_name = tint2-bottom-panel
 
-# --- P: Bottom Panel App Launcher ---
-button = new
-button_text =  
-button_font = JetBrains Mono Bold 8
-button_font_color = #000000 100
-button_background_id = 1
-button_lclick_command = jgmenu_run
-button_padding = 0 0
+#panel_items = SEEEEEEEEPEP
+#panel_position = bottom right horizontal
+#panel_layer = bottom
+#panel_size = 0 36
+#panel_shrink = 0
+#panel_margin = 0 0
+#panel_padding = 0 0
+#panel_background_id = 1
+#wm_menu = 1
+#strut_policy = none
+#panel_window_name = tint2-bottom-panel
+
+##panel_items = PFSEEEEEEEEEPEP
+#panel_items = PFSEEEEEEEEPEP
+#panel_position = bottom right horizontal
+#panel_layer = bottom
+#panel_size = 100% 36
+#panel_shrink = 0
+#panel_margin = 0 0
+#panel_padding = 0 0
+#panel_background_id = 1
+#wm_menu = 1
+#strut_policy = follow_size
+#panel_window_name = tint2-bottom-panel
+
+## --- P: Bottom Panel App Launcher ---
+#button = new
+#button_text =  
+#button_font = JetBrains Mono Bold 8
+#button_font_color = #000000 100
+#button_background_id = 1
+#button_lclick_command = jgmenu_run
+#button_padding = 0 0
 
 # --- S: Systray ---
 systray_padding = 1 2

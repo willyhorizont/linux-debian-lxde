@@ -48,6 +48,9 @@ echo "blacklist uvcvideo" | sudo tee /etc/modprobe.d/block-camera.conf
 
 ## Install packages
 ```
+# Wallpaper
+sudo apt install -y feh
+
 # Locker
 sudo apt install -y \
     xprintidle \
@@ -97,7 +100,7 @@ sudo apt install -y \
 ```
 dconf dump /net/launchpad/plank/
 
-dconf write /net/launchpad/plank/docks/dock1/alignment "'center'"
+dconf write /net/launchpad/plank/docks/dock1/alignment "'start'"
 dconf write /net/launchpad/plank/docks/dock1/auto-pinning true
 dconf write /net/launchpad/plank/docks/dock1/current-workspace-only false
 dconf write /net/launchpad/plank/docks/dock1/dock-items "['bottom-panel-app-launcher.dockitem', 'lxterminal.dockitem', 'pcmanfm.dockitem', 'firefox-esr.dockitem', 'brave-browser.dockitem', 'vivaldi-stable.dockitem', 'google-chrome.dockitem', 'com.microsoft.VSCode.dockitem']"
@@ -127,6 +130,9 @@ cat "$HOME/willyhorizont.github.io/linux-debian-lxde/plank-windows-ten-style.ini
 dconf read /net/launchpad/plank/enabled-docks
 dconf write /net/launchpad/plank/enabled-docks "['dock1']"
 dconf read /net/launchpad/plank/enabled-docks
+
+# to reset something:
+# dconf reset /net/launchpad/plank/docks/dock1/icon-size
 ```
 
 ## Disable Daemon

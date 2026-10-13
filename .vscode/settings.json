@@ -264,7 +264,7 @@
     "editor.formatOnSave": false,
     "[html]": {
         // "editor.defaultFormatter": "vscode.html-language-features",
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "mohd-akram.vscode-html-format"
     },
     "code-runner.showRunIconInEditorTitleMenu": true,
 
