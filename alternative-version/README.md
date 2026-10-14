@@ -73,14 +73,13 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
     </keybind>
 
     <!-- Open Terminal -->
-    <keybind key="C-A-t">
+    <keybind key="C-W-t">
       <action name="Execute">
-        <command>lxterminal --working-directory=$HOME</command>
+        <command>lxterminal --working-directory=~</command>
       </action>
     </keybind>
-
     <!-- Open File Manager -->
-    <keybind key="C-A-e">
+    <keybind key="C-W-e">
       <action name="Execute">
         <command>pcmanfm</command>
       </action>
@@ -90,6 +89,13 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
     <keybind key="Super_L">
       <action name="Execute">
         <command>xfce4-popup-whiskermenu</command>
+      </action>
+    </keybind>
+
+    <!-- Launch Task Manager with Ctrl+Alt+Del -->
+    <keybind key="A-C-Delete">
+      <action name="Execute">
+        <command>xterm -bc -uc -u8 -bg black -fg white -fa Monospace -fs 8 -geometry 80x28 -e btop</command>
       </action>
     </keybind>
 

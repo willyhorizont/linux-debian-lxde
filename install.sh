@@ -1,5 +1,8 @@
 #!/bin/sh
 
+cp ~/willyhorizont.github.io/linux-debian-lxde/.config/openbox/rc.xml ~/.config/openbox/rc.xml
+cp ~/willyhorizont.github.io/linux-debian-lxde/.config/openbox/lxde-rc.xml ~/.config/openbox/lxde-rc.xml
+cp ~/willyhorizont.github.io/linux-debian-lxde/.config/openbox/autostart ~/.config/openbox/autostart
 cp ~/willyhorizont.github.io/linux-debian-lxde/.config/lxsession/LXDE/autostart ~/.config/lxsession/LXDE/autostart
 cp -r ~/willyhorizont.github.io/linux-debian-lxde/.config/jgmenu/* ~/.config/jgmenu/
 mkdir -p ~/.local/share/plank/themes/WindowsTenStyle/

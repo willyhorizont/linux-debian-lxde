@@ -15,7 +15,7 @@ disabled     ; AT-SPI D-Bus Bus                                                ;
 disabled     ; Spice vdagent                                                   ; /usr/bin/spice-vdagent                                    ; Virtual Machine copy-paste
 disabled     ; Orca Screen Reader                                              ; orca                                                      ; 
              ;                                                                 ;                                                           ; 
-uninstalled  ; Screen Locker                                                   ; light-locker                                              ; already handled in lockerd.sh
+uninstalled  ; Screen Locker                                                   ; light-locker                                              ; already handled in dmn-locker.sh
 uninstalled  ; Diodon                                                          ; diodon                                                    ; 
 uninstalled  ; NetworkManager Applet                                           ; nm-applet                                                 ; 
 uninstalled  ; Blueman Applet                                                  ; blueman-applet                                            ; 

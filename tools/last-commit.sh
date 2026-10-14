@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.4.8" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.4.9" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,14 +12,22 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update plank .ini, alignment start;
-update README.md, add install feh command;
-move blu-lght-fltr.sh to autostart;
-update start-desktop.sh, remove blu-lght-fltr.sh;
-update tint2-bottom-panel, add more version;
-add pcmanfm .conf;
-add i3 shit;
-add i3 configr1, blu-lght-fltr.sh, try start-desktop.sh, add vol keybind, add mic keybind, add brightness keybind, add terminal keybind, add file manager keybind, add lock keybind, add screenshot keybind;
+add openbox rc.xml config;
+add lxde lxde-rc.xml config;
+add openbox autostart config;
+update install.sh, add copy lxde config for openbox command;
+update README.md, change to copy lxde config for openbox command;
+update tint2-top-bar, make height smaller;
+update tint2-bottom-panel, make the width half;
+add tint2-bottom-upper-panel to display workspaces;
+update restart-desktop.sh, add tint2-bottom-upper-panel kill command, add dmn-openbox-wrkspc.sh kill command;
+update start-desktop.sh, add tint2-bottom-upper-panel launch command, add dmn-openbox-wrkspc.sh launch command;
+add more i3 shit, add tint2-bottom-panel-i3, install.sh, restart-desktop.sh, start-desktop.sh, sync-i3.sh;
+small update i3 configr1;
+success make openbox session work like lxde session;
+attempt 1 make i3 session work like lxde session, pcmanfm as desktop wallpaper and desktop icon manager, tint2-bottom-panel, tint2-top-bar, plank, dmn-locker.sh --shw-win false --shw-tux false;
+attempt 1 make lxde and openbox session work like i3 session, infinite workspace;
+add keybinds to openbox-nu-wrkspc.sh, openbox-mov-win-to-wrkspc.sh, tile-cur-wrkspc.sh;
 "
 M=$(sed -e '/./,$!d' <<< "$M")
 M="$H
