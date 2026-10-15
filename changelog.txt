@@ -1,3 +1,19 @@
+[Last updated: 15 Oct 2026 @ 03:05 PM][version: 0.5.0]
+done with i3, openbox match the needs
+finish make lxde and openbox session work like i3 session, infinite workspace with manual auto tiling via keybinds and tile-cur-wrkspc.sh;
+update lxde openbox rc xml config, add tiling keybinds;
+
+TODO:
+create bottom-panel-menu, width follow content, shrink, contain only button menu;
+remove menu from plank;
+check apt install history;
+cleanup *i3*;
+purgex i3;
+remove LXFcDE;
+remove debian netinst based;
+merge willyhorizont.github.io/linux-debian-lxde to willyhorizont.github.io/linux;
+move everything to single install.sh script;
+
 [Last updated: 15 Oct 2026 @ 02:26 AM][version: 0.4.9]
 add openbox rc.xml config;
 add lxde lxde-rc.xml config;

@@ -135,7 +135,7 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
     </keybind>
 
     <!-- Tile window Full + gap -->
-    <keybind key="C-W-e">
+    <keybind key="C-W-g">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <x>center</x>
