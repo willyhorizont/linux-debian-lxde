@@ -254,7 +254,7 @@
     </keybind>
     <!-- Tile window Maximized -->
     <keybind key="C-W-f">
-      <action name="ToggleMaximize"/>
+      <action name="Maximize"/>
     </keybind>
     <!-- Tile window Full + gap -->
     <keybind key="C-W-g">
@@ -1116,6 +1116,10 @@
   <application name="tint2-top-bar" class="Tint2">
     <layer>below</layer>
     <focus>no</focus>
+  </application>
+  <application name="tint2-bottom-panel-menu" class="Tint2">
+    <layer>above</layer>
+    <focus>yes</focus>
   </application>
     <!-- Force Plank Always Floating Above Tint2 -->
     <application name="plank" class="Plank">

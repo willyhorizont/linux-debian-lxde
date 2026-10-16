@@ -5,6 +5,9 @@
 plank &
 xdotool search --sync --onlyvisible --class "plank" >/dev/null 2>&1
 
+tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-menu" &
+xdotool search --sync --onlyvisible --name "tint2-bottom-panel-menu" >/dev/null 2>&1
+
 tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel" &
 xdotool search --sync --onlyvisible --name "tint2-bottom-panel" >/dev/null 2>&1
 

@@ -48,9 +48,6 @@ echo "blacklist uvcvideo" | sudo tee /etc/modprobe.d/block-camera.conf
 
 ## Install packages
 ```
-# Wallpaper
-sudo apt install -y feh
-
 # Locker
 sudo apt install -y \
     xprintidle \
@@ -82,15 +79,32 @@ sudo apt install -y \
     ""
 
 # Panel
+sudo apt install -y tint2
+
+## conf editor
+sudo apt install -y dconf-cli
+
+## Screenshot
+sudo apt install -y scrot
+
+# Compositor
+sudo apt install -y picom
+# sudo apt install -y xcompmgr
+
+# Pinned+Opened app combo
+sudo apt install -y plank
+
+# App menu
+sudo apt install -y jgmenu
+
+# Power
 sudo apt install -y \
-    dconf-cli \
-    scrot \
-    picom \ # or xcompmgr
-    tint2 \
-    plank \
-    jgmenu \
     power-profiles-daemon \
     acpi \
+    ""
+
+# Notification
+sudo apt install -y \
     dunst \
     libnotify-bin \
     ""
@@ -100,7 +114,7 @@ sudo apt install -y \
 ```
 dconf dump /net/launchpad/plank/
 
-dconf write /net/launchpad/plank/docks/dock1/alignment "'start'"
+dconf write /net/launchpad/plank/docks/dock1/alignment "'center'"
 dconf write /net/launchpad/plank/docks/dock1/auto-pinning true
 dconf write /net/launchpad/plank/docks/dock1/current-workspace-only false
 dconf write /net/launchpad/plank/docks/dock1/dock-items "['bottom-panel-app-launcher.dockitem', 'lxterminal.dockitem', 'pcmanfm.dockitem', 'firefox-esr.dockitem', 'brave-browser.dockitem', 'vivaldi-stable.dockitem', 'google-chrome.dockitem', 'com.microsoft.VSCode.dockitem']"
@@ -110,7 +124,7 @@ dconf write /net/launchpad/plank/docks/dock1/icon-size 36
 dconf write /net/launchpad/plank/docks/dock1/items-alignment "'center'"
 dconf write /net/launchpad/plank/docks/dock1/lock-items false
 dconf write /net/launchpad/plank/docks/dock1/monitor "''"
-dconf write /net/launchpad/plank/docks/dock1/offset -100
+dconf write /net/launchpad/plank/docks/dock1/offset -94
 dconf write /net/launchpad/plank/docks/dock1/pinned-only false
 dconf write /net/launchpad/plank/docks/dock1/position "'bottom'"
 dconf write /net/launchpad/plank/docks/dock1/pressure-reveal false
@@ -305,13 +319,27 @@ and re-install this:
 # Dictionary stuff
 sudo apt purge -y goldendict-ng kasumi && sudo apt autoremove -y --purge
 
+# Process Manager
 sudo apt purge -y lxtask && sudo apt autoremove -y --purge
 sudo apt install -y btop
+
+# Video Player
 sudo apt purge -y mplayer && sudo apt autoremove -y --purge
-sudo apt purge -y volumeicon-alsa fdpowermon && sudo apt autoremove -y --purge
+sudo apt install -y mpv
+
+# Power manager
+sudo apt purge -y fdpowermon && sudo apt autoremove -y --purge
+
+# Vol widget
 sudo apt purge -y xsane sane-utils && sudo apt autoremove -y --purge
+
+# Printer
 sudo apt purge -y system-config-printer system-config-printer-common && sudo apt autoremove -y --purge
+
+# App Store
 sudo apt purge -y synaptic && sudo apt autoremove -y --purge
+
+# Torrent
 sudo apt install -y transmission-gtk
 sudo apt purge -y deluge deluge-common deluge-gtk && sudo apt autoremove -y --purge
 
@@ -412,7 +440,8 @@ sudo apt purge -y \
 dpkg -l | grep -i -E "mozc|scim|fcitx"
 sudo apt purge -y xiterm+thai && sudo apt autoremove -y --purge
 sudo apt purge -y ibus ibus-gtk3 ibus-gtk4 ibus-hangul && sudo apt autoremove -y --purge
-sudo apt install -y --no-install-recommends xserver-xorg-input-all xserver-xorg-input-synaptics xserver-xorg-input-libinput libinput-bin
+sudo apt install -y --no-install-recommends xserver-xorg-input-synaptics
+sudo apt install -y --no-install-recommends xserver-xorg-input-all xserver-xorg-input-libinput libinput-bin
 sudo apt purge -y uim uim-common uim-gtk3 uim-mozc mozc-server mozc-data && sudo apt autoremove -y --purge
 sudo apt purge -y anthy && sudo apt autoremove -y --purge
 sudo apt purge -y \
@@ -439,6 +468,18 @@ dpkg -l diodon copyq parcellite rofi-greenclip clipster xclip xsel 2>/dev/null
 sudo apt purge -y diodon && sudo apt autoremove -y --purge
 ```
 
+## Cursor theme
+```
+sudo apt install -y xcur2png
+```
+
 ## See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
 
 ## See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
+
+## i3
+```
+sudo apt install -y i3
+sudo apt install -y autotiling
+sudo apt install -y feh
+```
