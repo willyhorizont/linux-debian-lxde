@@ -554,7 +554,7 @@
     </keybind>
     <keybind key="C-W-plus">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/openbox-nu-wrkspc.sh'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-nu-wrkspc.sh'</command>
         </action>
     </keybind>
     <keybind key="C-W-x">

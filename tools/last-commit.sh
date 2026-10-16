@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.2" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.3" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -21,6 +21,8 @@ update start-desktop.sh, add tint2-bottom-panel-menu launch command;
 update tint2-bottom-panel, update size;
 update tint2-top-bar, update size;
 update lxde openbox rc xml, add tint2-bottom-panel-menu;
+create tint2-bottom-panel-menu, width follow content, shrink, contain only button menu;
+remove jgmenu from plank;
 
 --done with i3--
 --cleanup *i3*--
@@ -32,19 +34,16 @@ progress of making lxde and openbox session work like i3 session:
 ;;
 
 TODO:
-create tint2-bottom-panel-menu, width follow content, shrink, contain only button menu;
-remove jgmenu from plank;
 replace jgmenu with rofi;
 try fzf;
-kb-nu-wrkspc.sh also switch to nu-wrkspc;
-tinkering with i3bar i3status i3blocks;
+remove LXfcDE;
+remove debian netinst based;
 tinkering with dunstrc;
 try to add background image in pcmanfm;
 try desktop icon in i3, try idesk again;
-remove LXfcDE;
-remove debian netinst based;
-merge willyhorizont.github.io/linux-debian-lxde to willyhorizont.github.io/linux;
+tinkering with i3bar i3status i3blocks;
 move everything to single install.sh script;
+merge willyhorizont.github.io/linux-debian-lxde to willyhorizont.github.io/linux;
 "
 M=$(sed -e '/./,$!d' <<< "$M")
 M="$H
