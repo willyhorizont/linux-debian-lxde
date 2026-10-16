@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.3" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.4" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,17 +12,8 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-check apt install history log;
-update plank-windows-ten-style.ini, update position;
-update README.md, update install command, add i3;
-add tint2-bottom-panel-menu;
-update restart-desktop.sh, add tint2-bottom-panel-menu kill command;
-update start-desktop.sh, add tint2-bottom-panel-menu launch command;
-update tint2-bottom-panel, update size;
-update tint2-top-bar, update size;
-update lxde openbox rc xml, add tint2-bottom-panel-menu;
-create tint2-bottom-panel-menu, width follow content, shrink, contain only button menu;
-remove jgmenu from plank;
+try rofi;
+update lxde openbox rc xml, add kb-goto-wrkspc-prompt.sh, change to new rofi based kb-mov-win-to-wrkspc-prompt.sh;
 
 --done with i3--
 --cleanup *i3*--

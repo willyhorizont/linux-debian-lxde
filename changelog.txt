@@ -1,3 +1,28 @@
+[Last updated: 17 Oct 2026 @ 04:16 AM][version: 0.5.4]
+try rofi;
+update lxde openbox rc xml, add kb-goto-wrkspc-prompt.sh, change to new rofi based kb-mov-win-to-wrkspc-prompt.sh;
+
+--done with i3--
+--cleanup *i3*--
+--purgex i3--
+keep i3 session with autotiling feh;
+
+progress of making lxde and openbox session work like i3 session:
+* infinite workspace with manual auto tiling via keybinds and tile-cur-wrkspc.sh;
+;;
+
+TODO:
+replace jgmenu with rofi;
+try fzf;
+remove LXfcDE;
+remove debian netinst based;
+tinkering with dunstrc;
+try to add background image in pcmanfm;
+try desktop icon in i3, try idesk again;
+tinkering with i3bar i3status i3blocks;
+move everything to single install.sh script;
+merge willyhorizont.github.io/linux-debian-lxde to willyhorizont.github.io/linux;
+
 [Last updated: 16 Oct 2026 @ 09:30 PM][version: 0.5.3]
 check apt install history log;
 update plank-windows-ten-style.ini, update position;

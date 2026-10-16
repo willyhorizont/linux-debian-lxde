@@ -557,9 +557,14 @@
             <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-nu-wrkspc.sh'</command>
         </action>
     </keybind>
+    <keybind key="C-S-W-g">
+        <action name="Execute">
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh"'</command>
+        </action>
+    </keybind>
     <keybind key="C-W-x">
         <action name="Execute">
-            <command>sh -c 'TRGT_WIN=$(xdotool getactivewindow); lxterminal --name="openbox-mov-win-to-wrkspc-prompt" --geometry=80x28 -e "$HOME/willyhorizont.github.io/linux/openbox-mov-win-to-wrkspc.sh" "$TRGT_WIN"'</command>
+            <command>sh -c 'TRGT_WIN=$(xdotool getactivewindow); "$HOME/willyhorizont.github.io/linux/kb-mov-win-to-wrkspc-prompt.sh" "$TRGT_WIN"'</command>
         </action>
     </keybind>
     <!-- Keybindings for running applications -->
@@ -1150,11 +1155,5 @@
             <y>center</y>
         </position>
     </application>
-    <applications>
-        <application name="openbox-mov-win-to-wrkspc-prompt" class="Lxterminal">
-            <focus>yes</focus>
-            <layer>above</layer>
-        </application>
-    </applications>
   </applications>
 </openbox_config>
