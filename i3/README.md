@@ -10,4 +10,4 @@
 * welcome-window idle-window
 
 ## i3 working
-* dmn-locker
+* dmn-lockr

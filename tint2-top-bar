@@ -39,10 +39,10 @@ execp_lclick_command = lxterminal --geometry=80x28 -e btop
 
 # --- E: SpaceAvailable ---
 execp = new
-execp_command = echo "SPACE AVAILABLE"
+execp_command = echo "SPACE AVAILABLE SPACE AVAILABLE SPACE AVAILABLE SPACE AVAILABLE SPACE AVAILABLE SPACE AVA"
 execp_interval = 1
 execp_font = JetBrains Mono 6
-execp_font_color = #FF1493 100
+execp_font_color = #00ADD8 100
 execp_padding = 0 0
 execp_tooltip = 
 
@@ -51,7 +51,7 @@ execp = new
 execp_command = echo "| willyhorizont.github.io "
 execp_interval = 0
 execp_font = JetBrains Mono 6
-execp_font_color = #FF1493 100
+execp_font_color = #00ADD8 100
 execp_padding = 0 0
 execp_tooltip = 
 
@@ -66,7 +66,7 @@ execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-c
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 6
-execp_font_color = #FF1493 100
+execp_font_color = #CCFF00 100
 execp_padding = 0 0
 execp_lclick_command = lxterminal --geometry=80x28 -e calcurse
 

@@ -17,6 +17,6 @@ xdotool search --sync --onlyvisible --name "tint2-bottom-upper-panel" >/dev/null
 tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" &
 xdotool search --sync --onlyvisible --name "tint2-top-bar" >/dev/null 2>&1
 
-setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-openbox-wrkspc.sh" >/dev/null 2>&1 &
+setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-wrkspc-mgr.sh" >/dev/null 2>&1 &
 
-setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-locker.sh" >/dev/null 2>&1 &
+setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-lockr.sh" >/dev/null 2>&1 &

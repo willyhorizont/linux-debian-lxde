@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.4" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.5" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,8 +12,8 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-try rofi;
-update lxde openbox rc xml, add kb-goto-wrkspc-prompt.sh, change to new rofi based kb-mov-win-to-wrkspc-prompt.sh;
+update tint2-bottom-upper-panel, change indic0-wrkspc.sh interval to 0, change continuous to 1;
+update tint2-top-bar text color;
 
 --done with i3--
 --cleanup *i3*--
@@ -21,7 +21,7 @@ update lxde openbox rc xml, add kb-goto-wrkspc-prompt.sh, change to new rofi bas
 keep i3 session with autotiling feh;
 
 progress of making lxde and openbox session work like i3 session:
-* infinite workspace with manual auto tiling via keybinds and tile-cur-wrkspc.sh;
+* infinite workspace with manual auto tiling via keybinds and kb-tile-cur-wrkspc.sh;
 ;;
 
 TODO:

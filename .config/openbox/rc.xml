@@ -239,7 +239,7 @@
     <!-- Tile Current Workspace -->
     <keybind key="C-W-t">
       <action name="Execute">
-        <command>sh -c '"$HOME"/willyhorizont.github.io/linux/tile-cur-wrkspc.sh'</command>
+        <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-tile-cur-wrkspc.sh'</command>
       </action>
     </keybind>
     <!-- Tile window Full -->

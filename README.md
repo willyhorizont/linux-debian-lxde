@@ -97,6 +97,9 @@ sudo apt install -y plank
 # App menu
 sudo apt install -y jgmenu
 
+# Prompt menu
+sudo apt install -y rofi
+
 # Power
 sudo apt install -y \
     power-profiles-daemon \
@@ -230,14 +233,14 @@ Categories=System;Utility;
 EOF
 ```
 
-## Create tui0-locker desktop shortcut
+## Create tui0-lockr desktop shortcut
 ```
 mkdir -p ~/.local/share/applications
-cat << 'EOF' > ~/.local/share/applications/tui0-locker.desktop
+cat << 'EOF' > ~/.local/share/applications/tui0-lockr.desktop
 [Desktop Entry]
-Name=tui0-locker
-Comment=tui0-locker
-Exec=lxterminal --geometry=80x28 -e ~/willyhorizont.github.io/linux/tui0-locker.sh
+Name=tui0-lockr
+Comment=tui0-lockr
+Exec=lxterminal --geometry=80x28 -e ~/willyhorizont.github.io/linux/tui0-lockr.sh
 Terminal=false
 Type=Application
 Icon=system-lock-screen

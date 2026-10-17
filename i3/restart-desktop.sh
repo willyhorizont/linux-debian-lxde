@@ -6,7 +6,7 @@ i3-msg restart
 
 pkill -9 -f "$HOME/willyhorizont.github.io/linux-debian-lxde/i3/start-desktop.sh" 2>/dev/null
 pkill -9 -f "$HOME/willyhorizont.github.io/linux/blu-lght-fltr.sh" 2>/dev/null
-pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-locker.sh --shw-tux false --shw-win false" 2>/dev/null
+pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-lockr.sh --shw-tux false --shw-win false" 2>/dev/null
 
 pkill -9 -f "xterm.*-name idle-window" 2>/dev/null
 pkill -9 -f "xterm.*-name welcome-window" 2>/dev/null

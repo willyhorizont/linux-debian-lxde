@@ -39,13 +39,14 @@ panel_window_name = tint2-bottom-upper-panel
 # --- E: Indicator Workspace ---
 execp = new
 execp_command = ~/willyhorizont.github.io/linux/indic0-wrkspc.sh
-execp_interval = 1
+execp_interval = 0
 execp_has_icon = 0
+execp_continuous = 1
 execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 1
 execp_padding = 0 0
-execp_lclick_command = ~/willyhorizont.github.io/linux/cln-trl-wrkspc.sh
+execp_lclick_command = ~/willyhorizont.github.io/linux/kb-cln-wrkspc.sh
 
 tooltip_font_color = #000000 100
 tooltip_font = JetBrains Mono Bold 8
