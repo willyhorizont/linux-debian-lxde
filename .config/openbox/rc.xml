@@ -177,9 +177,9 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Lock screen -->
-    <keybind key="C-W-l">
+    <keybind key="XF86ScreenLock">
         <action name="Execute">
-        <command>xtrlock</command>
+            <command>xtrlock</command>
         </action>
     </keybind>
     <!-- Audio control -->
@@ -1131,25 +1131,22 @@
       <layer>above</layer>
       <focus>yes</focus>
     </application>
-    <application class="X-terminal-emulator">
-        <position force="yes">
-            <x>center</x>
-            <y>center</y>
-        </position>
-    </application>
     <application class="XTerm">
+        <focus>yes</focus>
         <position force="yes">
             <x>center</x>
             <y>center</y>
         </position>
     </application>
     <application class="Lxterminal">
+        <focus>yes</focus>
         <position force="yes">
             <x>center</x>
             <y>center</y>
         </position>
     </application>
     <application class="Pcmanfm">
+        <focus>yes</focus>
         <position force="yes">
             <x>center</x>
             <y>center</y>
