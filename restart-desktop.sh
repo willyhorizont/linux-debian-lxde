@@ -15,18 +15,43 @@ pkill -9 -f "xterm.*-name welcome-window" 2>/dev/null
 pkill -9 -x "xpenguins" 2>/dev/null
 
 pkill -9 -f "tint2 -c .*tint2-top-bar" 2>/dev/null
-xdotool search --name "tint2-top-bar" 2>/dev/null | xargs -I {} xdotool windowwaitunmap {} 2>/dev/null
-
-pkill -9 -f "tint2 -c .*tint2-bottom-panel-menu" 2>/dev/null
-xdotool search --name "tint2-bottom-panel-menu" 2>/dev/null | xargs -I {} xdotool windowwaitunmap {} 2>/dev/null
-
-pkill -9 -f "tint2 -c .*tint2-bottom-panel" 2>/dev/null
-xdotool search --name "tint2-bottom-panel" 2>/dev/null | xargs -I {} xdotool windowwaitunmap {} 2>/dev/null
+while true; do
+    if [ -z "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-top-bar" {print $0}' 2>/dev/null)" ]; then
+        break
+    fi
+    sleep 1
+done
 
 pkill -9 -f "tint2 -c .*tint2-bottom-upper-panel" 2>/dev/null
-xdotool search --name "tint2-bottom-upper-panel" 2>/dev/null | xargs -I {} xdotool windowwaitunmap {} 2>/dev/null
+while true; do
+    if [ -z "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-upper-panel" {print $0}' 2>/dev/null)" ]; then
+        break
+    fi
+    sleep 1
+done
+
+pkill -9 -f "tint2 -c .*tint2-bottom-panel" 2>/dev/null
+while true; do
+    if [ -z "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel" {print $0}' 2>/dev/null)" ]; then
+        break
+    fi
+    sleep 1
+done
+
+pkill -9 -f "tint2 -c .*tint2-bottom-panel-menu" 2>/dev/null
+while true; do
+    if [ -z "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel-menu" {print $0}' 2>/dev/null)" ]; then
+        break
+    fi
+    sleep 1
+done
 
 killall -9 plank 2>/dev/null
-xdotool search --class "plank" 2>/dev/null | xargs -I {} xdotool windowwaitunmap {} 2>/dev/null
+while true; do
+    if [ -z "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "plank.Plank" && $9 == "plank" {print $0}' 2>/dev/null)" ]; then
+        break
+    fi
+    sleep 1
+done
 
 setsid bash -c "$HOME/willyhorizont.github.io/linux-debian-lxde/start-desktop.sh" >/dev/null 2>&1 &

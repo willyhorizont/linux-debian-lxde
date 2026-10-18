@@ -3,19 +3,44 @@
 (until pactl info >/dev/null 2>&1; do true; done && pactl set-source-mute @DEFAULT_SOURCE@ 1) >/dev/null 2>&1 &
 
 plank &
-xdotool search --sync --onlyvisible --class "plank" >/dev/null 2>&1
+while true; do
+    if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "plank.Plank" && $9 == "plank" {print $0}' 2>/dev/null)" ]; then
+        break
+    fi
+    sleep 1
+done
 
 tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-menu" &
-xdotool search --sync --onlyvisible --name "tint2-bottom-panel-menu" >/dev/null 2>&1
+while true; do
+    if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel-menu" {print $0}' 2>/dev/null)" ]; then
+        break
+    fi
+    sleep 1
+done
 
 tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel" &
-xdotool search --sync --onlyvisible --name "tint2-bottom-panel" >/dev/null 2>&1
+while true; do
+    if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel" {print $0}' 2>/dev/null)" ]; then
+        break
+    fi
+    sleep 1
+done
 
 tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-upper-panel" &
-xdotool search --sync --onlyvisible --name "tint2-bottom-upper-panel" >/dev/null 2>&1
+while true; do
+    if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-upper-panel" {print $0}' 2>/dev/null)" ]; then
+        break
+    fi
+    sleep 1
+done
 
 tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" &
-xdotool search --sync --onlyvisible --name "tint2-top-bar" >/dev/null 2>&1
+while true; do
+    if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-top-bar" {print $0}' 2>/dev/null)" ]; then
+        break
+    fi
+    sleep 1
+done
 
 setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-wrkspc-mgr.sh" >/dev/null 2>&1 &
 

@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.5" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.6" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,8 +12,8 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update tint2-bottom-upper-panel, change indic0-wrkspc.sh interval to 0, change continuous to 1;
-update tint2-top-bar text color;
+update restart-desktop.sh, replace xdotool search ... | xargs -I {} xdotool windowwaitunmap {} with wmctrl -l -x -G | awk ... so now is far more lighter;
+update start-desktop.sh, replace xdotool search with wmctrl -l -x -G | awk ... so now is far more lighter;
 
 --done with i3--
 --cleanup *i3*--

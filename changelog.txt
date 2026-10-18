@@ -1,3 +1,28 @@
+[Last updated: 18 Oct 2026 @ 08:00 PM][version: 0.5.6]
+update restart-desktop.sh, replace xdotool search ... | xargs -I {} xdotool windowwaitunmap {} with wmctrl -l -x -G | awk ... so now is far more lighter;
+update start-desktop.sh, replace xdotool search with wmctrl -l -x -G | awk ... so now is far more lighter;
+
+--done with i3--
+--cleanup *i3*--
+--purgex i3--
+keep i3 session with autotiling feh;
+
+progress of making lxde and openbox session work like i3 session:
+* infinite workspace with manual auto tiling via keybinds and kb-tile-cur-wrkspc.sh;
+;;
+
+TODO:
+replace jgmenu with rofi;
+try fzf;
+remove LXfcDE;
+remove debian netinst based;
+tinkering with dunstrc;
+try to add background image in pcmanfm;
+try desktop icon in i3, try idesk again;
+tinkering with i3bar i3status i3blocks;
+move everything to single install.sh script;
+merge willyhorizont.github.io/linux-debian-lxde to willyhorizont.github.io/linux;
+
 [Last updated: 17 Oct 2026 @ 10:40 AM][version: 0.5.5]
 update tint2-bottom-upper-panel, change indic0-wrkspc.sh interval to 0, change continuous to 1;
 update tint2-top-bar text color;
