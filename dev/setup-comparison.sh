@@ -1,0 +1,13 @@
+context = linux debian trixie lxde;
+base = debian trixie lxde;
+session = lxde_or_openbox i3;
+win7or10_style_desktop_wallpaper = desktop wallpaper;
+win7or10_style_desktop_icons = desktop icons;
+win7or10_style_app_menu = win7or10 start menu like app menu;
+win7or10_style_taskbar =  pinned + opened app combined;
+ws_el = tot_opened_wins_in_cur_ws + ws_name;
+ws_swtchr = array of clickable ws_el or ws_name;
+wss_indic = array of non clickable ws_el or ws_name;
+tui_indic = indicator bt net cam mic vol bat ac notif;
+SuckMyClock = my sucless clock;
+SPRM = suckless panel resource monitor;

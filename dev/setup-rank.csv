@@ -1,0 +1,12 @@
+priority                                                                   ; weight       ; 
+SuckMyClock                                                                ; 900          ; 
+SPRM                                                                       ; 800          ; 
+tui_indic                                                                  ; 700          ; 
+win7or10_style_desktop_wallpaper                                           ; 600          ; 
+xtrlock                                                                    ; 500          ; 
+wss_indic                                                                  ; 400          ; 
+auto_tiling                                                                ; 300          ; 
+lightweight                                                                ; 200/heaviness; 
+win7or10_style_desktop_icons win7or10_style_app_menu win7or10_style_taskbar; 50           ; 
+ws_swtchr                                                                  ; 30           ; 
+xpenguins fastfetch                                                        ; 20           ; 

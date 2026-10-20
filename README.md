@@ -11,7 +11,7 @@ sudo mkdir -p /etc/X11/xorg.conf.d && echo -e 'Section "InputClass"\n    Identif
 ```
 xset q
 xset -dpms
-xset s 120 120
+xset s 240 240
 xset s noblank
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo tee /etc/X11/xorg.conf.d/10-monitor.conf << 'EOF'
 Section "Monitor"

@@ -64,7 +64,7 @@ exec --no-startup-id bash -c 'until pactl info >/dev/null 2>&1; do true; done &&
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # exec_always --no-startup-id pkill -9 -f dmn-lockr.sh; ~/willyhorizont.github.io/linux/dmn-lockr.sh --shw-tux false --shw-win false
 exec_always --no-startup-id xset -dpms
-exec_always --no-startup-id xset s 120 120
+exec_always --no-startup-id xset s 240 240
 exec_always --no-startup-id xset s noblank
 exec --no-startup-id xss-lock --transfer-sleep-lock -- xtrlock
 
@@ -109,10 +109,10 @@ bindsym Ctrl+$super+t exec lxterminal --working-directory=~
 bindsym Ctrl+$super+e exec pcmanfm
 
 # screenshot
-bindsym Shift+$super+$prnt_scrn exec mkdir -p ~/Pictures/Screenshots && scrot --border --pointer --quality 100 ~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg
+bindsym Shift+$super+$prnt_scrn exec --no-startup-id mkdir -p ~/Pictures/Screenshots && scrot --border --pointer --quality 100 ~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg
 
 # screenshot area
-bindsym Shift+$super+s exec mkdir -p ~/Pictures/Screenshots && scrot --border --pointer --freeze --select --quality 100 ~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg
+bindsym Shift+$super+s exec --no-startup-id mkdir -p ~/Pictures/Screenshots && scrot --border --pointer --freeze --select --quality 100 ~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg
 
 # kill focused window
 bindsym $alt+F4 kill
@@ -304,7 +304,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #FF1493 #000000 #CCFF00 #FF1493   #FF1493
+client.focused          #FF1493 #FF1493 #000000 #FF1493   #FF1493
 client.focused_inactive #333333 #222222 #888888 #292d2e   #222222
 
 for_window [class="Polybar"] lower

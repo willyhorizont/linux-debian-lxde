@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.8" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.9" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,44 +12,46 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update i3 config;
-add polybar config;
-delete i3 install.sh;
-delete i3 restart-desktop.sh;
-delete i3 start-desktop.sh;
-delete sync-i3.sh;
-update i3 README.md, add bottom panel combo list;
-update install.sh, make it universal, remove openbox, remove restart-desktop.sh, add polybar config;
-update sync.sh, make it universal, remove install.sh;
-rename restart-desktop to openbox-kill-desktop, remove start-desktop;
-update README.md, update disable screen blank and fix idle autolock, add version control, add mate-polkit purge command, update i3 install command add polybar replace feh with hsetroot;
-update tint2-bottom-panel-i3;
-delete polkit-mate-authentication-agent-1.desktop mate-polkit from autostart;
-update vscode settings.json, set window.menuStyle to custom, set window.titleBarStyle to native;
+update tint2-bottom-panel-i3, remove Button Toggle Show Desktop;
+update polybar config.ini, change color;
+update i3 README.md;
+add setup-comparison.sh;
+add setup-comparison.csv;
+add setup-rank.csv;
+fix screenshot kb;
 
---done with i3--
---cleanup *i3*--
---purgex i3--
-keep i3 session with autotiling hsetroot;
-tinkering with i3bar i3status;
+canceled:
+--done with i3--;
+--cleanup *i3*--;
+--purgex i3--;
+--keep i3 session with autotiling hsetroot--;
+--tinkering with i3bar i3status i3blocks--;
+
+TODO i3:
+make C-W-t cycle stacking tiling tabbed floating;
+make alt+F4 also delete cur_wrkspc if tot_open_wins 0;
+lxsession-logout i3 version;
+create tui0-i3session-mgr.sh, to set setup i3-desktop.conf;
 tinkering with i3gaps;
+set pcmanfm background image;
+replace pcmanfm with thunar;
+set thunar background image;
+autostart thunar ~/Desktop;
+try desktop icon in i3, try idesk again;
 
-progress of making lxde and openbox session work like i3 session:
-* infinite workspace with manual auto tiling via keybinds and kb-tile-cur-wrkspc.sh;
-;;
+TODO lxde openbox:
+replace jgmenu with rofi;
 
 TODO:
 try more bottom panel combo;
-make C-W-t cycle stacking tiling tabbed floating
-make alt+F4 also delete cur_wrkspc if tot_open_wins 0
-replace jgmenu with rofi;
+try panels again to see features;
+try starship or any shell prompt;
 try fzf;
 remove LXfcDE;
 remove debian netinst based;
 tinkering with dunstrc;
 try to add background image in pcmanfm;
-try desktop icon in i3, try idesk again;
-tinkering with i3bar i3status i3blocks;
+add run-session*.sh to ~/.bashrc;
 move everything to single install.sh script;
 merge willyhorizont.github.io/linux-debian-lxde to willyhorizont.github.io/linux;
 "
