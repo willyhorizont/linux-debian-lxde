@@ -5,9 +5,10 @@ notify-send "Restarting Desktop..."
 openbox --reconfigure
 
 pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-lockr.sh" 2>/dev/null
+
 pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-wrkspc-mgr.sh" 2>/dev/null
+
 pkill -9 -f "$HOME/willyhorizont.github.io/linux-debian-lxde/start-desktop.sh" 2>/dev/null
-pkill -9 -f "$HOME/willyhorizont.github.io/linux/blu-lght-fltr.sh" 2>/dev/null
 
 pkill -9 -f "xterm.*-name idle-window" 2>/dev/null
 pkill -9 -f "xterm.*-name welcome-window" 2>/dev/null
@@ -53,5 +54,3 @@ while true; do
     fi
     sleep 1
 done
-
-setsid bash -c "$HOME/willyhorizont.github.io/linux-debian-lxde/start-desktop.sh" >/dev/null 2>&1 &

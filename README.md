@@ -9,6 +9,10 @@ sudo mkdir -p /etc/X11/xorg.conf.d && echo -e 'Section "InputClass"\n    Identif
 
 ## Disable Screen Blank
 ```
+xset q
+xset -dpms
+xset s 120 120
+xset s noblank
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo tee /etc/X11/xorg.conf.d/10-monitor.conf << 'EOF'
 Section "Monitor"
     Identifier "Monitor0"
@@ -16,13 +20,14 @@ Section "Monitor"
 EndSection
 
 Section "ServerFlags"
-    Option "BlankTime" "0"
+    Option "BlankTime" "2"
     Option "StandbyTime" "0"
     Option "SuspendTime" "0"
     Option "OffTime" "0"
     Option "NoPM" "true"
 EndSection
 EOF
+xset q
 ```
 
 ## Disable Mouse Acceleration
@@ -48,6 +53,12 @@ echo "blacklist uvcvideo" | sudo tee /etc/modprobe.d/block-camera.conf
 
 ## Install packages
 ```
+# Version Control
+sudo apt install -y \
+    lazygit \
+    git-delta \
+    ""
+
 # Locker
 sudo apt install -y \
     xprintidle \
@@ -469,6 +480,13 @@ im-config -n none
 # Clipboard
 dpkg -l diodon copyq parcellite rofi-greenclip clipster xclip xsel 2>/dev/null
 sudo apt purge -y diodon && sudo apt autoremove -y --purge
+
+# Polkit
+sudo apt purge -y \
+    gnome-system-tools \
+    mate-polkit \
+    mate-polkit-common \
+    "" && sudo apt autoremove -y --purge
 ```
 
 ## Cursor theme
@@ -482,7 +500,11 @@ sudo apt install -y xcur2png
 
 ## i3
 ```
-sudo apt install -y i3
-sudo apt install -y autotiling
-sudo apt install -y feh
+sudo apt install -y \
+    i3 \
+    autotiling \
+    hsetroot \
+    polybar \
+    # i3blocks \
+    ""
 ```

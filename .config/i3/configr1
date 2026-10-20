@@ -24,6 +24,8 @@
 # exec_always --no-startup-id <cmd> will re-run everytime reload or restart i3wm
 # better to always use --no-startup-id
 
+set $mod Mod4
+
 set $Alt Mod1
 set $super Mod4
 set $prnt_scrn Print
@@ -44,17 +46,15 @@ exec --no-startup-id picom --backend=xrender --daemon --no-fading-openclose --no
 
 exec --no-startup-id dunst
 
+exec --no-startup-id hsetroot -fill ~/willyhorizont.github.io/linux/wallpapers/pexels-arina-dmitrieva-66352626-11066411-1.jpg
+
 exec_always --no-startup-id ~/willyhorizont.github.io/linux/blu-lght-fltr.sh
 
-#exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/thumb-1920-1116341.jpg
-
-for_window [class="(?i)tint2"] floating enable, border none, move window to output current
-no_focus [class="(?i)tint2"]
-
-for_window [class="(?i)plank"] floating enable, border none, move window to output current, move position center bottom
-no_focus [class="(?i)plank"]
+exec_always --no-startup-id autotiling
 
 #exec_always --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/start-desktop.sh
+
+exec --no-startup-id bash -c 'until pactl info >/dev/null 2>&1; do true; done && pactl set-source-mute @DEFAULT_SOURCE@ 1' >/dev/null 2>&1 &
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -62,6 +62,11 @@ no_focus [class="(?i)plank"]
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec_always --no-startup-id pkill -9 -f dmn-lockr.sh; ~/willyhorizont.github.io/linux/dmn-lockr.sh --shw-tux false --shw-win false
+exec_always --no-startup-id xset -dpms
+exec_always --no-startup-id xset s 120 120
+exec_always --no-startup-id xset s noblank
+exec --no-startup-id xss-lock --transfer-sleep-lock -- xtrlock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -73,6 +78,8 @@ no_focus [class="(?i)plank"]
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 # bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+#bindsym XF86ScreenLock exec --no-startup-id xtrlock
+bindsym XF86ScreenSaver exec --no-startup-id xtrlock
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -100,9 +107,6 @@ bindsym Ctrl+$super+t exec lxterminal --working-directory=~
 
 # start a file manager
 bindsym Ctrl+$super+e exec pcmanfm
-
-# lock
-bindsym Ctrl+$super+l exec xtrlock
 
 # screenshot
 bindsym Shift+$super+$prnt_scrn exec mkdir -p ~/Pictures/Screenshots && scrot --border --pointer --quality 100 ~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg
@@ -145,10 +149,10 @@ bindsym $super+Shift+Down move down
 bindsym $super+Shift+Up move up
 bindsym $super+Shift+Right move right
 
-# split in horizontal orientation TODO
+# split in horizontal orientation
 bindsym $super+h split h
 
-# split in vertical orientation TODO
+# split in vertical orientation
 bindsym $super+v split v
 
 # enter fullscreen mode for the focused container
@@ -162,7 +166,7 @@ bindsym $super+e layout toggle split
 # toggle tiling / floating
 bindsym $super+Shift+space floating toggle
 
-# change focus between tiling / floating windows TODO
+# change focus between tiling / floating windows
 bindsym $super+space focus mode_toggle
 
 # focus the parent container
@@ -180,40 +184,40 @@ bindsym $super+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-#set $ws1 "1"
-#set $ws2 "2"
-#set $ws3 "3"
-#set $ws4 "4"
-#set $ws5 "5"
-#set $ws6 "6"
-#set $ws7 "7"
-#set $ws8 "8"
-#set $ws9 "9"
-#set $ws10 "10"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
-#bindsym $super+1 workspace number $ws1
-#bindsym $super+2 workspace number $ws2
-#bindsym $super+3 workspace number $ws3
-#bindsym $super+4 workspace number $ws4
-#bindsym $super+5 workspace number $ws5
-#bindsym $super+6 workspace number $ws6
-#bindsym $super+7 workspace number $ws7
-#bindsym $super+8 workspace number $ws8
-#bindsym $super+9 workspace number $ws9
-#bindsym $super+0 workspace number $ws10
+bindsym $super+1 workspace number $ws1
+bindsym $super+2 workspace number $ws2
+bindsym $super+3 workspace number $ws3
+bindsym $super+4 workspace number $ws4
+bindsym $super+5 workspace number $ws5
+bindsym $super+6 workspace number $ws6
+bindsym $super+7 workspace number $ws7
+bindsym $super+8 workspace number $ws8
+bindsym $super+9 workspace number $ws9
+bindsym $super+0 workspace number $ws10
 
 # move focused container to workspace
-#bindsym $super+Shift+1 move container to workspace number $ws1
-#bindsym $super+Shift+2 move container to workspace number $ws2
-#bindsym $super+Shift+3 move container to workspace number $ws3
-#bindsym $super+Shift+4 move container to workspace number $ws4
-#bindsym $super+Shift+5 move container to workspace number $ws5
-#bindsym $super+Shift+6 move container to workspace number $ws6
-#bindsym $super+Shift+7 move container to workspace number $ws7
-#bindsym $super+Shift+8 move container to workspace number $ws8
-#bindsym $super+Shift+9 move container to workspace number $ws9
-#bindsym $super+Shift+0 move container to workspace number $ws10
+bindsym $super+Shift+1 move container to workspace number $ws1
+bindsym $super+Shift+2 move container to workspace number $ws2
+bindsym $super+Shift+3 move container to workspace number $ws3
+bindsym $super+Shift+4 move container to workspace number $ws4
+bindsym $super+Shift+5 move container to workspace number $ws5
+bindsym $super+Shift+6 move container to workspace number $ws6
+bindsym $super+Shift+7 move container to workspace number $ws7
+bindsym $super+Shift+8 move container to workspace number $ws8
+bindsym $super+Shift+9 move container to workspace number $ws9
+bindsym $super+Shift+0 move container to workspace number $ws10
 
 # prev wrkspc
 bindsym $alt+Shift+Tab workspace prev
@@ -222,10 +226,13 @@ bindsym $alt+Shift+Tab workspace prev
 bindsym $alt+Tab workspace next
 
 # new wrkspc
-bindsym Ctrl+Mod4+plus exec --no-startup-id ~/willyhorizont.github.io/linux/i3wm-new-workspace.sh
+bindsym Ctrl+Mod4+plus exec --no-startup-id bash -c "i3-msg workspace \$(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')"
 
 # move win to wrkspc
-bindsym Shift+Mod4+g exec --no-startup-id i3-input -p 'Move window to workspace: ' -F 'move container to workspace %s'
+bindsym Ctrl+Mod4+x exec --no-startup-id i3-input -p 'Move window to workspace: ' -F 'move container to workspace %s'
+
+# go to wrkspc
+bindsym Ctrl+Mod4+g exec --no-startup-id i3-input -p 'Go to workspace: ' -F 'workspace %s'
 
 # reload the configuration file
 bindsym $super+Shift+c reload
@@ -248,10 +255,10 @@ mode "resize" {
         #bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        #bindsym Left resize shrink width 10 px or 10 ppt
-        #bindsym Down resize grow height 10 px or 10 ppt
-        #bindsym Up resize shrink height 10 px or 10 ppt
-        #bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $super+r
         bindsym Return mode "default"
@@ -266,6 +273,13 @@ bindsym $super+r mode "resize"
 #bar {
 #        #status_command i3status
 #}
+#bar {
+#        #status_command i3status
+#        status_command i3blocks
+#}
+exec_always --no-startup-id pkill -x polybar; polybar i3switcher
+exec_always --no-startup-id pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3"
+# exec_always --no-startup-id pkill -x polybar; pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3" & polybar i3switcher
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
@@ -278,3 +292,16 @@ bindsym $super+r mode "resize"
 # Please remove the following exec line:
 #######################################################################
 #exec i3-config-wizard
+
+## class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #FF1493 #000000 #CCFF00 #FF1493   #FF1493
+client.focused_inactive #333333 #222222 #888888 #292d2e   #222222

@@ -40,17 +40,17 @@ while [ "$#" -gt 0 ]; do
                 exit 1
             fi
             ;;
-        --show-tux)
+        --shw-tux)
             if [ -n "$2" ] && echo "$2" | grep -qE -i '^(true|false)$'; then
                 FLAG_TUX=$(echo "$2" | tr '[:upper:]' '[:lower:]')
                 shift 2
             else
-                echo "Error: Invalid --show-tux value!"
+                echo "Error: Invalid --shw-tux value!"
                 exit 1
             fi
             ;;
         *)
-            echo "Usage: lockerd.sh [--idle-sec <seconds>] [--lock-mnt <minutes>] [--show-tux <true|false>]"
+            echo "Usage: lockerd.sh [--idle-sec <seconds>] [--lock-mnt <minutes>] [--shw-tux <true|false>]"
             exit 1
             ;;
     esac
