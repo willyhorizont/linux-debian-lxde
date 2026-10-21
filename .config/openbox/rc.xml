@@ -226,6 +226,11 @@
         <command>lxterminal --working-directory=~</command>
       </action>
     </keybind>
+    <keybind key="C-A-t">
+      <action name="Execute">
+        <command>lxterminal --working-directory=~</command>
+      </action>
+    </keybind>
     <!-- Open File Manager -->
     <keybind key="W-e">
       <action name="Execute">

@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.10" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.11" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,13 +12,9 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update i3 config, update kb;
-update lxde openbox config rc xml, update kb, fix quotation, update kb-goto-wrkspc-prompt.sh, add -p workspace_number;
-change lxsession-logout to lxsession-logout -p SPACE80 --hide-button hibernate --hide-button switch_user;
-broke lxde openbox autostart;
+fix lxde openbox autostart;
 
 TODO i3 #1:
-fix lxde openbox autostart;
 create tui0-powr-mnu-prompt.sh lxsession-logout i3 version;
 change dmenu to use .desktop or use rofi;
 fix i3 logo not showing in lightdm;
@@ -66,5 +62,5 @@ git add .
 git commit -m "$M"
 git tag -d "$V" 2>/dev/null
 git tag -a "$V" -m "$M"
-git push origin main
-git push origin --tags
+git push origin main --force
+git push origin --tags --force

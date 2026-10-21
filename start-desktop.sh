@@ -6,8 +6,6 @@ pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-lockr.sh" 2>/dev/null
 
 pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-wrkspc-mgr.sh" 2>/dev/null
 
-pkill -9 -f "$HOME/willyhorizont.github.io/linux-debian-lxde/start-desktop.sh" 2>/dev/null
-
 pkill -9 -f "xterm.*-name idle-window" 2>/dev/null
 pkill -9 -f "xterm.*-name welcome-window" 2>/dev/null
 
