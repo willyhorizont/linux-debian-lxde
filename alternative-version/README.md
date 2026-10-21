@@ -95,7 +95,7 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
     <!-- Launch Task Manager with Ctrl+Alt+Del -->
     <keybind key="A-C-Delete">
       <action name="Execute">
-        <command>xterm -bc -uc -u8 -bg black -fg white -fa Monospace -fs 8 -geometry 80x28 -e btop</command>
+        <command>lxterminal --geometry=80x28 -e btop</command>
       </action>
     </keybind>
 
@@ -305,7 +305,7 @@ xfce4-notifyd-config
 14. whiskermenu > commands:
 ```
 # logout
-lxsession-logout
+lxsession-logout -p "$(printf '%0.s ' {1..80})" --hide-button hibernate --hide-button switch_user
 
 # lock screen
 lxlock

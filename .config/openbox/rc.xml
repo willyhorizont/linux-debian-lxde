@@ -176,8 +176,14 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <!-- Lock screen -->
-    <keybind key="XF86ScreenLock">
+    <!-- Power Menu -->
+    <keybind key="C-A-Delete">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh "lxsession-logout" "xtrlock"'</command>
+        </action>
+    </keybind>
+    <!-- Lock -->
+    <keybind key="XF86ScreenSaver">
         <action name="Execute">
             <command>xtrlock</command>
         </action>
@@ -215,25 +221,51 @@
       </action>
     </keybind>
     <!-- Open Terminal -->
-    <keybind key="C-W-r">
+    <keybind key="W-Return">
       <action name="Execute">
         <command>lxterminal --working-directory=~</command>
       </action>
     </keybind>
     <!-- Open File Manager -->
-    <keybind key="C-W-e">
+    <keybind key="W-e">
       <action name="Execute">
         <command>pcmanfm</command>
       </action>
     </keybind>
-    <!-- Super key toggle menu -->
-    <keybind key="Super_L">
+    <!-- toggle win7or10_style_app_menu -->
+    <keybind key="A-F1">
+      <action name="Execute">
+        <command>jgmenu_run</command>
+      </action>
+    </keybind>
+    <keybind key="F4">
+      <action name="Execute">
+        <command>jgmenu_run</command>
+      </action>
+    </keybind>
+    <keybind key="W-a">
+      <action name="Execute">
+        <command>jgmenu_run</command>
+      </action>
+    </keybind>
+    <keybind key="C-Escape">
+      <action name="Execute">
+        <command>jgmenu_run</command>
+      </action>
+    </keybind>
+    <keybind key="W-BackSpace">
       <action name="Execute">
         <command>jgmenu_run</command>
       </action>
     </keybind>
     <!-- Toggle Show Desktop -->
     <keybind key="C-W-d">
+      <action name="ToggleShowDesktop"/>
+    </keybind>
+    <keybind key="C-A-d">
+      <action name="ToggleShowDesktop"/>
+    </keybind>
+    <keybind key="W-F3">
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Tile Current Workspace -->
@@ -467,34 +499,61 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-F1">
-      <action name="Desktop">
-        <desktop>1</desktop>
-      </action>
+    <keybind key="W-1">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 1'</command>
+        </action>
     </keybind>
-    <keybind key="W-F2">
-      <action name="Desktop">
-        <desktop>2</desktop>
-      </action>
+    <keybind key="W-2">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 2'</command>
+        </action>
     </keybind>
-    <keybind key="W-F3">
-      <action name="Desktop">
-        <desktop>3</desktop>
-      </action>
+    <keybind key="W-3">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 3'</command>
+        </action>
     </keybind>
-    <keybind key="W-F4">
-      <action name="Desktop">
-        <desktop>4</desktop>
-      </action>
+    <keybind key="W-4">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 4'</command>
+        </action>
     </keybind>
-    <keybind key="W-d">
-      <action name="ToggleShowDesktop"/>
+    <keybind key="W-5">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 5'</command>
+        </action>
     </keybind>
-    <keybind key="C-A-d">
-      <action name="ToggleShowDesktop"/>
+    <keybind key="W-6">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 6'</command>
+        </action>
+    </keybind>
+    <keybind key="W-7">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 7'</command>
+        </action>
+    </keybind>
+    <keybind key="W-8">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 8'</command>
+        </action>
+    </keybind>
+    <keybind key="W-9">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 9'</command>
+        </action>
+    </keybind>
+    <keybind key="W-0">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 0'</command>
+        </action>
     </keybind>
     <!-- Keybindings for windows -->
     <keybind key="A-F4">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="W-q">
       <action name="Close"/>
     </keybind>
     <keybind key="A-Escape">
@@ -502,11 +561,13 @@
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
+    <!--
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
       </action>
     </keybind>
+    -->
     <!-- Keybindings for window switching -->
     <!--
     <keybind key="A-Tab">
@@ -557,9 +618,9 @@
             <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-nu-wrkspc.sh'</command>
         </action>
     </keybind>
-    <keybind key="C-S-W-g">
+    <keybind key="C-W-Return">
         <action name="Execute">
-            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh"'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh'</command>
         </action>
     </keybind>
     <keybind key="C-W-x">
@@ -575,12 +636,6 @@
           <name>PCManFM</name>
         </startupnotify>
         <command>pcmanfm</command>
-      </action>
-    </keybind>
-    <!-- Keybindings for finding files -->
-    <keybind key="W-f">
-      <action name="Execute">
-        <command>pcmanfm --find-files</command>
       </action>
     </keybind>
     <!--keybindings for LXPanel -->
@@ -607,13 +662,7 @@
     <keybind key="A-F11">
       <action name="ToggleFullscreen"/>
     </keybind>
-    <!-- Launch Task Manager with Ctrl+Alt+Del -->
-    <keybind key="A-C-Delete">
-      <action name="Execute">
-        <command>xterm -bc -uc -u8 -bg black -fg white -fa Monospace -fs 8 -geometry 80x28 -e btop</command>
-      </action>
-    </keybind>
-        <!-- Super+Shift+S to Screenshot area -->
+    <!-- Super+Shift+S to Screenshot area -->
     <keybind key="S-W-s">
         <action name="Execute">
             <command>bash -c 'mkdir -p "$HOME/Pictures/Screenshots" &amp;&amp; scrot --border --pointer --freeze --select --quality 100 "$HOME/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg"'</command>
@@ -635,43 +684,6 @@
     <keybind key="XF86Display">
       <action name="Execute">
         <command>lxrandr</command>
-      </action>
-    </keybind>
-    <!-- Put a window into a half screen -->
-    <keybind key="W-Left">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <width>50%</width>
-        <height>100%</height>
-      </action>
-    </keybind>
-    <keybind key="W-Right">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>0</y>
-        <width>50%</width>
-        <height>100%</height>
-      </action>
-    </keybind>
-    <keybind key="W-Up">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <width>100%</width>
-        <height>50%</height>
-      </action>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>-0</y>
-        <width>100%</width>
-        <height>50%</height>
       </action>
     </keybind>
   </keyboard>

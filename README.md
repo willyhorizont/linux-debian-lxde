@@ -223,7 +223,7 @@ sudo update-alternatives --config x-cursor-theme
 ## create logout.desktop and lock.desktop:
 ```
 ## logout
-lxsession-logout
+lxsession-logout -p "$(printf '%0.s ' {1..80})" --hide-button hibernate --hide-button switch_user
 
 ## lock screen
 lxlock
@@ -378,7 +378,7 @@ mkdir -p ~/.local/share/applications
 if [ -f /usr/share/applications/libreoffice-startcenter.desktop ]; then cp /usr/share/applications/libreoffice-startcenter.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; fi; }; fi
 if [ -f /usr/share/applications/libreoffice-math.desktop ]; then cp /usr/share/applications/libreoffice-math.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-math.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-math.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-math.desktop"; fi; }; fi
 if [ -f /usr/share/applications/libreoffice-draw.desktop ]; then cp /usr/share/applications/libreoffice-draw.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-draw.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-draw.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-draw.desktop"; fi; }; fi
-if [ -f /usr/share/applications/btop.desktop ]; then cp /usr/share/applications/btop.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -bg black -fg white -fa Monospace -fs 8 -geometry 80x28 -e btop|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/btop.desktop"; }; fi
+if [ -f /usr/share/applications/btop.desktop ]; then cp /usr/share/applications/btop.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal --geometry=80x28 -e btop|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/btop.desktop"; }; fi
 if [ -f /usr/share/applications/cmatrix.desktop ]; then cp /usr/share/applications/cmatrix.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -bg black -fg white -fa Monospace -fs 8 -geometry 80x24 -e cmatrix -s -u 10 -a|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/cmatrix.desktop"; }; fi
 if [ -f /usr/share/applications/xterm.desktop ]; then cp /usr/share/applications/xterm.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -bg black -fg white -fa Monospace -fs 8 -geometry 88x24|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/xterm.desktop"; }; fi
 if [ -f /usr/share/applications/lxterminal.desktop ]; then cp /usr/share/applications/lxterminal.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal --working-directory=$HOME|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/lxterminal.desktop"; }; fi
