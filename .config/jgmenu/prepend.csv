@@ -22,8 +22,8 @@
 @text  ,                                                                                                                               ,   9, 284, 142,  35, 2, left, top, #000000 100, #000000 0 , Settings
 @rect  , ^filter(#System #Emulator #FileManager #TerminalEmulator #Filesystem #Monitor )                                               ,   4, 319, 142,  35, 2, left, top, #000000 0  , #000000 0 , 
 @text  ,                                                                                                                               ,   9, 319, 142,  35, 2, left, top, #000000 100, #000000 0 , System
-@rect  , lxsession-logout -p "$(printf '%0.s ' {1..80})" --hide-button hibernate --hide-button switch_user                             ,   4, 359, 142,  35, 2, left, top, #000000 0  , #000000 0 , 
-@text  , lxsession-logout -p "$(printf '%0.s ' {1..80})" --hide-button hibernate --hide-button switch_user                             ,   9, 359, 142,  35, 2, left, top, #000000 100, #000000 0 , ⏻
+@rect  , sh -c '"$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh"'                                                 ,   4, 359, 142,  35, 2, left, top, #000000 0  , #000000 0 , 
+@text  , sh -c '"$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh"'                                                 ,   9, 359, 142,  35, 2, left, top, #000000 100, #000000 0 , ⏻
 
 ^tag(lx-apps)
 -- Pinned --,,,#Pinned

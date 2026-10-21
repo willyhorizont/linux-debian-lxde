@@ -176,10 +176,16 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+    <!-- Restart Desktop -->
+    <keybind key="W-S-r">
+        <action name="Execute">
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux-debian-lxde/start-desktop.sh"'</command>
+        </action>
+    </keybind>
     <!-- Power Menu -->
     <keybind key="C-A-Delete">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh "lxsession-logout" "xtrlock"'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh -y" "xtrlock"'</command>
         </action>
     </keybind>
     <!-- Lock -->
@@ -603,15 +609,14 @@
     <keybind key="A-S-Tab">
         <action name="PreviousWindow"/>
     </keybind>
-   
-    <keybind key="A-grave">
+    <keybind key="W-Tab">
         <action name="GoToDesktop">
             <to>right</to>
             <wrap>yes</wrap>
             <popup>no</popup>
         </action>
     </keybind>
-    <keybind key="A-S-grave">
+    <keybind key="W-S-Tab">
         <action name="GoToDesktop">
             <to>left</to>
             <wrap>yes</wrap>

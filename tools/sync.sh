@@ -6,4 +6,3 @@ rm -rf "$HOME/willyhorizont.github.io/linux-debian-lxde"
 mkdir -p "$HOME/willyhorizont.github.io/linux-debian-lxde/"
 # cp -r . "$HOME/willyhorizont.github.io/linux-debian-lxde/"
 cp -r "$RD/." "$HOME/willyhorizont.github.io/linux-debian-lxde/"
-clear

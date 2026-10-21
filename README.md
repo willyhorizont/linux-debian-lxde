@@ -9,10 +9,6 @@ sudo mkdir -p /etc/X11/xorg.conf.d && echo -e 'Section "InputClass"\n    Identif
 
 ## Disable Screen Blank
 ```
-xset q
-xset -dpms
-xset s 240 240
-xset s noblank
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo tee /etc/X11/xorg.conf.d/10-monitor.conf << 'EOF'
 Section "Monitor"
     Identifier "Monitor0"
@@ -20,14 +16,13 @@ Section "Monitor"
 EndSection
 
 Section "ServerFlags"
-    Option "BlankTime" "2"
+    Option "BlankTime" "0"
     Option "StandbyTime" "0"
     Option "SuspendTime" "0"
     Option "OffTime" "0"
     Option "NoPM" "true"
 EndSection
 EOF
-xset q
 ```
 
 ## Disable Mouse Acceleration
@@ -191,7 +186,7 @@ systemctl --user --now enable wireplumber
 ## Blue Light Filter
 ```
 crontab -l
-(crontab -l 2>/dev/null | grep -v "blu-lght-fltr.sh"; echo "*/5 * * * * bash -c \"\$HOME/willyhorizont.github.io/linux/blu-lght-fltr.sh\" >/dev/null 2>&1") | crontab -
+(crontab -l 2>/dev/null | grep -v "blu-lght-fltr.sh"; echo "*/5 * * * * DISPLAY=:0 bash -c \"\$HOME/willyhorizont.github.io/linux/blu-lght-fltr.sh\" >/dev/null 2>&1") | crontab -
 crontab -l
 ```
 
@@ -223,7 +218,8 @@ sudo update-alternatives --config x-cursor-theme
 ## create logout.desktop and lock.desktop:
 ```
 ## logout
-lxsession-logout -p "$(printf '%0.s ' {1..80})" --hide-button hibernate --hide-button switch_user
+lxsession-logout -p "$(printf '%0.s ' $(seq 1 80))" --hide-button hibernate --hide-button switch_user
+"$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh"
 
 ## lock screen
 lxlock

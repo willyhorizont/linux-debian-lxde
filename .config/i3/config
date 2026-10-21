@@ -227,11 +227,11 @@ bindsym $super+Shift+0 move container to workspace number $ws10
 
 # prev wrkspc
 bindsym $meta+Shift+Tab workspace prev
-bindsym $meta+Shift+grave workspace prev
+bindsym $super+Shift+Tab workspace prev
 
 # next wrkspc
 bindsym $meta+Tab workspace next
-bindsym $meta+grave workspace next
+bindsym $super+Tab workspace next
 
 # new wrkspc
 bindsym Ctrl+$super+plus exec --no-startup-id bash -c "i3-msg workspace \$(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')"
@@ -249,6 +249,7 @@ bindsym $super+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $super+Shift+e exec --no-startup-id $HOME/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh "i3-msg exit" "xtrlock"
+bindsym Ctrl+$meta+Delete exec --no-startup-id $HOME/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh "i3-msg exit" "xtrlock"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -289,7 +290,8 @@ bindsym Ctrl+$super+r mode "resize"
 # exec_always --no-startup-id pkill -x polybar; polybar i3switcher
 # exec_always --no-startup-id pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3"
 # exec_always --no-startup-id pkill -x polybar; pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3" & polybar i3switcher
-exec_always --no-startup-id pkill -x polybar; pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & polybar i3switcher & bash -c "sleep 0.5 && tint2 -c \$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3"
+# exec_always --no-startup-id pkill -x polybar; pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & polybar i3switcher & bash -c "sleep 1 && tint2 -c \$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3"
+exec_always --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/start-desktop.sh
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a

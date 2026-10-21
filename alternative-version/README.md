@@ -305,7 +305,8 @@ xfce4-notifyd-config
 14. whiskermenu > commands:
 ```
 # logout
-lxsession-logout -p "$(printf '%0.s ' {1..80})" --hide-button hibernate --hide-button switch_user
+lxsession-logout -p "$(printf '%0.s ' $(seq 1 80))" --hide-button hibernate --hide-button switch_user
+"$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh"
 
 # lock screen
 lxlock

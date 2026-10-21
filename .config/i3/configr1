@@ -289,7 +289,7 @@ bindsym Ctrl+$super+r mode "resize"
 # exec_always --no-startup-id pkill -x polybar; polybar i3switcher
 # exec_always --no-startup-id pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3"
 # exec_always --no-startup-id pkill -x polybar; pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3" & polybar i3switcher
-exec_always --no-startup-id pkill -x polybar; pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & polybar i3switcher & bash -c "sleep 0.5 && tint2 -c \$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3"
+exec_always --no-startup-id pkill -x polybar; pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & polybar i3switcher & bash -c "sleep 1 && tint2 -c \$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3"
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
