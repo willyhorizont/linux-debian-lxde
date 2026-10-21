@@ -179,7 +179,7 @@
     <!-- Power Menu -->
     <keybind key="C-A-Delete">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh "lxsession-logout" "xtrlock"'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh lxsession-logout xtrlock"'</command>
         </action>
     </keybind>
     <!-- Lock -->
@@ -222,6 +222,11 @@
     </keybind>
     <!-- Open Terminal -->
     <keybind key="W-Return">
+      <action name="Execute">
+        <command>lxterminal --working-directory=~</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-t">
       <action name="Execute">
         <command>lxterminal --working-directory=~</command>
       </action>
@@ -271,7 +276,7 @@
     <!-- Tile Current Workspace -->
     <keybind key="C-W-t">
       <action name="Execute">
-        <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-tile-cur-wrkspc.sh'</command>
+        <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-tile-cur-wrkspc.sh"'</command>
       </action>
     </keybind>
     <!-- Tile window Full -->
@@ -501,52 +506,52 @@
     </keybind>
     <keybind key="W-1">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 1'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 1"'</command>
         </action>
     </keybind>
     <keybind key="W-2">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 2'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 2"'</command>
         </action>
     </keybind>
     <keybind key="W-3">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 3'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 3"'</command>
         </action>
     </keybind>
     <keybind key="W-4">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 4'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 4"'</command>
         </action>
     </keybind>
     <keybind key="W-5">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 5'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 5"'</command>
         </action>
     </keybind>
     <keybind key="W-6">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 6'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 6"'</command>
         </action>
     </keybind>
     <keybind key="W-7">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 7'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 7"'</command>
         </action>
     </keybind>
     <keybind key="W-8">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 8'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 8"'</command>
         </action>
     </keybind>
     <keybind key="W-9">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 9'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 9"'</command>
         </action>
     </keybind>
     <keybind key="W-0">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 0'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 0"'</command>
         </action>
     </keybind>
     <!-- Keybindings for windows -->
@@ -615,12 +620,12 @@
     </keybind>
     <keybind key="C-W-plus">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-nu-wrkspc.sh'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-nu-wrkspc.sh"'</command>
         </action>
     </keybind>
     <keybind key="C-W-Return">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh'</command>
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh"'</command>
         </action>
     </keybind>
     <keybind key="C-W-x">
