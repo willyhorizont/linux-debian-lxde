@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.14" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.15" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,19 +12,10 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update install.sh, add refresh .desktop;
-update lxsession-logout.sh, add --lock --logout --suspend --reboot --shutdown;
-update README.md, link lxlock to xtrlock, add create lxsession-logout.sh .desktop;
-replace jgmenu with rofi;
-remove rofi main-menu.sh;
-use vanilla rofi -show drun for all lxde openbox i3;
-update jgmenurc, delete it soon;
-update jgmenu prepend.csv, delete it soon;
-update lxde openbox rc xml config, replace jgmenu_run with rofi -show drun;
-update i3 config, add more rofi kb;
-update rofi config, disable history, disable sorting, disable scrollbar, hide scrollbar;
-update tint2-bottom-panel-menu, replace jgmenu_run with rofi -show drun;
-update tint2-bottom-panel, replace jgmenu_run with rofi -show drun;
+delete jgmenurc;
+delete jgmenu prepend.csv;
+update plank config;
+update README.md, update plank config;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;

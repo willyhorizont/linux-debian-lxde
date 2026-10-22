@@ -126,7 +126,7 @@ dconf dump /net/launchpad/plank/
 dconf write /net/launchpad/plank/docks/dock1/alignment "'center'"
 dconf write /net/launchpad/plank/docks/dock1/auto-pinning true
 dconf write /net/launchpad/plank/docks/dock1/current-workspace-only false
-dconf write /net/launchpad/plank/docks/dock1/dock-items "['bottom-panel-app-launcher.dockitem', 'lxterminal.dockitem', 'pcmanfm.dockitem', 'firefox-esr.dockitem', 'brave-browser.dockitem', 'vivaldi-stable.dockitem', 'google-chrome.dockitem', 'com.microsoft.VSCode.dockitem']"
+dconf write /net/launchpad/plank/docks/dock1/dock-items "['lxterminal.dockitem', 'pcmanfm.dockitem', 'firefox-esr.dockitem', 'brave-browser.dockitem', 'vivaldi-stable.dockitem', 'chromium.dockitem', 'com.microsoft.VSCode.dockitem']"
 dconf write /net/launchpad/plank/docks/dock1/hide-delay 0
 dconf write /net/launchpad/plank/docks/dock1/hide-mode "'none'"
 dconf write /net/launchpad/plank/docks/dock1/icon-size 36
