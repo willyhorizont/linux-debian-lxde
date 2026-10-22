@@ -5,7 +5,6 @@ cp ~/willyhorizont.github.io/linux-debian-lxde/.config/openbox/rc.xml ~/.config/
 cp ~/willyhorizont.github.io/linux-debian-lxde/.config/openbox/autostart ~/.config/openbox/autostart
 cp ~/willyhorizont.github.io/linux-debian-lxde/.config/lxsession/LXDE/autostart ~/.config/lxsession/LXDE/autostart
 cp ~/willyhorizont.github.io/linux-debian-lxde/.config/lxsession/LXDE/desktop.conf ~/.config/lxsession/LXDE/desktop.conf
-mkdir -p ~/.config/jgmenu && cp -r ~/willyhorizont.github.io/linux-debian-lxde/.config/jgmenu/* ~/.config/jgmenu/
 mkdir -p ~/.config/rofi && cp -r ~/willyhorizont.github.io/linux-debian-lxde/.config/rofi/* ~/.config/rofi/
 mkdir -p ~/.config/polybar && cp -r ~/willyhorizont.github.io/linux-debian-lxde/.config/polybar/* ~/.config/polybar/
 mkdir -p ~/.local/share/plank/themes/WindowsTenStyle/

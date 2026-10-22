@@ -100,9 +100,6 @@ sudo apt install -y picom
 # Pinned+Opened app combo
 sudo apt install -y plank
 
-# App menu
-sudo apt install -y jgmenu
-
 # Prompt menu
 sudo apt install -y rofi
 
@@ -316,8 +313,6 @@ EOF
 
 update-desktop-database ~/.local/share/applications && sudo update-desktop-database /usr/share/applications
 ```
-
-## Copy jgmenu to ~/.config
 
 ## Setup App Tray -> run ```sudo mousepad /usr/share/plank/themes/Transparent/dock.theme``` and change ```BottomPadding=2``` to:
 ```
