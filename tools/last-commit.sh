@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.12" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.13" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,29 +12,22 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-fix lxde openbox autostart;
-create tui0-powr-mnu-prompt.sh lxsession-logout i3 version;
-add lxsession-logout.sh;
-update README.md, revert disable scren blank command remove xset, fix cron job;
-update jgmenu config, update power menu to use lxsession-logout.sh;
-update lxsession desktop.conf, update quit_manager command to use lxsession-logout.sh;
-update lxsession lxde autostart, add xset, update blu-lght-fltr.sh start-desktop.sh launch command;
-update openbox autostart, add xset, update blu-lght-fltr.sh start-desktop.sh launch command;
-update lxde openbox rc xml config, update kb to use lxsession-logout.sh;
-update sleep;
-update openbox-kill-desktop.sh, update sleep;
-update start-desktop.sh, update sleep, add xset to disable blank screen;
-add i3 start-desktop.sh;
+add rofi main-menu.sh;
+add rofi main-menu-categorized.sh;
+update install.sh, add rofi main-menu.sh;
+change dmenu to use .desktop and rofi;
+update i3 config, change dmenu_run to rofi main-menu.sh;
+update rofi config, customize theme;
 
-TODO i3 #1:
-change dmenu to use .desktop or use rofi;
+TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
 make alt+F4 also delete cur_wrkspc if tot_open_wins 0;
 create tui0-i3session-mgr.sh, to set setup i3-desktop.conf;
 update i3 config to read i3-desktop.conf;
 
-TODO lxde openbox #1:
+TODO #1 lxde openbox:
 add refresh-desktop.sh to desktop RMB menu;
+
 TODO #1:
 search xtrlock alternative;
 on idle autolock show Windows Update or Windows BSOD;

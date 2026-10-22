@@ -7,6 +7,7 @@ cp ~/willyhorizont.github.io/linux-debian-lxde/.config/lxsession/LXDE/autostart 
 cp ~/willyhorizont.github.io/linux-debian-lxde/.config/lxsession/LXDE/desktop.conf ~/.config/lxsession/LXDE/desktop.conf
 cp -r ~/willyhorizont.github.io/linux-debian-lxde/.config/jgmenu/* ~/.config/jgmenu/
 mkdir -p ~/.config/rofi && cp ~/willyhorizont.github.io/linux-debian-lxde/.config/rofi/config.rasi ~/.config/rofi/config.rasi
+mkdir -p ~/.config/rofi && cp ~/willyhorizont.github.io/linux-debian-lxde/.config/rofi/main-menu.sh ~/.config/rofi/main-menu.sh
 mkdir -p ~/.config/polybar && cp ~/willyhorizont.github.io/linux-debian-lxde/.config/polybar/config.ini ~/.config/polybar/config.ini
 mkdir -p ~/.local/share/plank/themes/WindowsTenStyle/
 cp ~/willyhorizont.github.io/linux-debian-lxde/.local/share/plank/themes/WindowsTenStyle/dock.theme ~/.local/share/plank/themes/WindowsTenStyle/dock.theme
