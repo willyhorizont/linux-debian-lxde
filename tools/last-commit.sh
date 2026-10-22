@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.16" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.17" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,12 +12,13 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update install.sh, remove jgmenu;
-update README.md, remove jgmenu;
+update i3 config, remove resize kb;
+update tint2-top-bar, update text color;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
 make alt+F4 also delete cur_wrkspc if tot_open_wins 0;
+try limit tile per ws;
 create tui0-i3session-mgr.sh, to set setup i3-desktop.conf;
 update i3 config to read i3-desktop.conf;
 
@@ -48,6 +49,7 @@ find panel that have can communicate via some signal;
 try tint2 taskbar_mode multi_desktop pager;
 try starship or any shell prompt;
 try fzf;
+try sxhkdrc;
 TODO #3:
 remove LXfcDE;
 remove debian netinst based;
