@@ -1,25 +1,26 @@
 #!/bin/sh
 
-AUTO_CONFIRM=false
+ACTION=""
+
 for arg in "$@"; do
     case "$arg" in
-        -y)
-            AUTO_CONFIRM=true
-            ;;
-        *)
-            ;;
+        --lock)     ACTION="lock" ;;
+        --logout)   ACTION="logout" ;;
+        --suspend)  ACTION="suspend" ;;
+        --reboot)   ACTION="reboot" ;;
+        --shutdown) ACTION="shutdown" ;;
+        *) ;;
     esac
 done
 
-if [ "$AUTO_CONFIRM" = true ]; then
-    lxsession-logout -p "$(printf '%0.s ' $(seq 1 80))" \
-        --hide-button hibernate \
-        --hide-button switch_user \
-        --hide-button shutdown \
-        --hide-button reboot \
-        --hide-button suspend \
-        --hide-button lock_screen \
-        &
+if [ -n "$ACTION" ]; then
+    HIDE_ARGS="--hide-button hibernate --hide-button switch_user"
+    [ "$ACTION" != "lock" ]     && HIDE_ARGS="$HIDE_ARGS --hide-button lock_screen"
+    [ "$ACTION" != "logout" ]   && HIDE_ARGS="$HIDE_ARGS --hide-button logout"
+    [ "$ACTION" != "suspend" ]  && HIDE_ARGS="$HIDE_ARGS --hide-button suspend"
+    [ "$ACTION" != "reboot" ]   && HIDE_ARGS="$HIDE_ARGS --hide-button reboot"
+    [ "$ACTION" != "shutdown" ] && HIDE_ARGS="$HIDE_ARGS --hide-button shutdown"
+    lxsession-logout -p "$(printf '%0.s ' $(seq 1 80))" $HIDE_ARGS &
 
     WID_TARGET=""
 

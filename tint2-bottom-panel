@@ -56,7 +56,7 @@ panel_window_name = tint2-bottom-panel
 #button_font_color = #000000 100
 #button_icon = distributor-logo-debian
 #button_background_id = 1
-#button_lclick_command = jgmenu_run
+#button_lclick_command = rofi -show drun
 #button_padding = 0 0
 
 # --- S: Systray ---

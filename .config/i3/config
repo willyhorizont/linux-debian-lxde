@@ -131,12 +131,13 @@ bindsym $super+q kill
 # bindsym $super+d exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
 # bindsym $super+r exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
 # bindsym $meta+space exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
-# bindsym $super+d exec --no-startup-id rofi -show drun
-# bindsym $super+r exec --no-startup-id rofi -show drun
-# bindsym $meta+space exec --no-startup-id rofi -show drun
-bindsym $super+d exec --no-startup-id ~/.config/rofi/main-menu.sh
-bindsym $super+r exec --no-startup-id ~/.config/rofi/main-menu.sh
-bindsym $meta+space exec --no-startup-id ~/.config/rofi/main-menu.sh
+bindsym $super+d exec --no-startup-id rofi -show drun
+bindsym $super+r exec --no-startup-id rofi -show drun
+bindsym $meta+space exec --no-startup-id rofi -show drun
+bindsym $meta-F1 --no-startup-id rofi -show drun
+bindsym F4 --no-startup-id rofi -show drun
+bindsym $super-a --no-startup-id rofi -show drun
+bindsym Ctrl-Escape --no-startup-id rofi -show drun
 
 # change focus
 #bindsym $super+j focus left

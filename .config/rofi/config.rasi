@@ -16,6 +16,8 @@ configuration {
     hover-select: false;
     ml-row-up: "";
     ml-row-down: "";
+    disable-history: true;
+    sort: false;
 }
 window {
     background-color: #000000;
@@ -70,6 +72,7 @@ textbox-num-rows {
 listview {
     border:       2px dash 0px 0px; 
     border-color: #FF1493; 
+    scrollbar: false;
 }
 entry {
     placeholder:       "Search";

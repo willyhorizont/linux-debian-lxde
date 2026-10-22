@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.13" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.14" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,12 +12,19 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-add rofi main-menu.sh;
-add rofi main-menu-categorized.sh;
-update install.sh, add rofi main-menu.sh;
-change dmenu to use .desktop and rofi;
-update i3 config, change dmenu_run to rofi main-menu.sh;
-update rofi config, customize theme;
+update install.sh, add refresh .desktop;
+update lxsession-logout.sh, add --lock --logout --suspend --reboot --shutdown;
+update README.md, link lxlock to xtrlock, add create lxsession-logout.sh .desktop;
+replace jgmenu with rofi;
+remove rofi main-menu.sh;
+use vanilla rofi -show drun for all lxde openbox i3;
+update jgmenurc, delete it soon;
+update jgmenu prepend.csv, delete it soon;
+update lxde openbox rc xml config, replace jgmenu_run with rofi -show drun;
+update i3 config, add more rofi kb;
+update rofi config, disable history, disable sorting, disable scrollbar, hide scrollbar;
+update tint2-bottom-panel-menu, replace jgmenu_run with rofi -show drun;
+update tint2-bottom-panel, replace jgmenu_run with rofi -show drun;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
@@ -44,7 +51,6 @@ try desktop icon in i3, try idesk again;
 
 TODO lxde openbox #2:
 TODO lxde openbox #3:
-replace jgmenu with rofi;
 
 TODO #2:
 try more bottom panel combo;
