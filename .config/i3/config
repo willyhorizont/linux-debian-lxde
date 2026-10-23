@@ -28,6 +28,11 @@ set $mod Mod4
 
 set $meta Mod1
 set $super Mod4
+set $control Ctrl
+set $shift Shift
+set $return Return
+set $space space
+set $escape Escape
 set $prtsc Print
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -95,29 +100,31 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 #set $right semicolon
 
 # use Mouse+$super to drag floating windows to their wanted position
-#floating_modifier $super
+floating_modifier $super
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
-bindsym $super+Return exec lxterminal --working-directory=~
+## open terminal
+#bindsym $mod+$return exec i3-sensible-terminal
+bindsym $super+$return exec lxterminal --working-directory=~
 bindsym $super+$meta+t exec lxterminal --working-directory=~
 
-# start a file manager
+# open file manager
 bindsym $super+e exec pcmanfm
 
 # screenshot
 bindsym $super+$prtsc exec --no-startup-id mkdir -p ~/Pictures/Screenshots && scrot --border --pointer --quality 100 ~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg
 
 # screenshot area
-bindsym $super+Shift+s exec --no-startup-id mkdir -p ~/Pictures/Screenshots && scrot --border --pointer --freeze --select --quality 100 ~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg
+bindsym $super+$shift+s exec --no-startup-id mkdir -p ~/Pictures/Screenshots && scrot --border --pointer --freeze --select --quality 100 ~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg
 
-# kill focused window
+## kill focused window
 bindsym $meta+F4 kill
 bindsym $super+q kill
+bindsym $meta+q kill
+bindsym $super+$shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
@@ -129,14 +136,19 @@ bindsym $super+q kill
 # bindsym $super+d exec --no-startup-id i3-dmenu-desktop
 # bindsym $super+d exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
 # bindsym $super+r exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
-# bindsym $meta+space exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
+# bindsym $meta+$space exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
+
+## open Windows Start menu / Mac launchpad / xfce4-popup-whiskermenu
+bindsym F4 exec --no-startup-id rofi -show drun
+bindsym $meta+F1 exec --no-startup-id rofi -show drun
+bindsym $super+a exec --no-startup-id rofi -show drun
+bindsym $control+$escape exec --no-startup-id rofi -show drun
+
+## open Windows Run / Mac spotlight / dmenu or rofi
 bindsym $super+d exec --no-startup-id rofi -show drun
 bindsym $super+r exec --no-startup-id rofi -show drun
-bindsym $meta+space exec --no-startup-id rofi -show drun
-bindsym $meta-F1 --no-startup-id rofi -show drun
-bindsym F4 --no-startup-id rofi -show drun
-bindsym $super-a --no-startup-id rofi -show drun
-bindsym Ctrl-Escape --no-startup-id rofi -show drun
+bindsym $meta+$space exec --no-startup-id rofi -show drun
+bindsym $super+$space exec --no-startup-id rofi -show drun
 
 # change focus
 #bindsym $super+j focus left
@@ -151,45 +163,45 @@ bindsym Ctrl-Escape --no-startup-id rofi -show drun
 # bindsym $super+Right focus right
 
 # move focused window
-#bindsym $super+Shift+j move left
-#bindsym $super+Shift+k move down
-#bindsym $super+Shift+l move up
-#bindsym $super+Shift+semicolon move right
+#bindsym $super+$shift+j move left
+#bindsym $super+$shift+k move down
+#bindsym $super+$shift+l move up
+#bindsym $super+$shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
-# bindsym Ctrl+$super+Left move left
-# bindsym Ctrl+$super+Down move down
-# bindsym Ctrl+$super+Up move up
-# bindsym Ctrl+$super+Right move right
+# bindsym $control+$super+Left move left
+# bindsym $control+$super+Down move down
+# bindsym $control+$super+Up move up
+# bindsym $control+$super+Right move right
 
 # split in horizontal orientation
-#bindsym Ctrl+$super+h split h
+#bindsym $control+$super+h split h
 
 # split in vertical orientation
-#bindsym Ctrl+$super+v split v
+#bindsym $control+$super+v split v
 
 # enter fullscreen mode for the focused container
-#bindsym Ctrl+$super+f fullscreen toggle
+#bindsym $control+$super+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Ctrl+$super+s layout stacking
-bindsym Ctrl+$super+w layout tabbed
-bindsym Ctrl+$super+Shift+s layout toggle split
+bindsym $control+$super+s layout stacking
+bindsym $control+$super+w layout tabbed
+bindsym $control+$super+$shift+s layout toggle split
 
 # toggle tiling / floating
-#bindsym Ctrl+$super+t floating toggle
+#bindsym $control+$super+t floating toggle
 
 # change focus between tiling / floating windows
-#bindsym Shift+$super+t focus mode_toggle
+#bindsym $shift+$super+t focus mode_toggle
 
 # focus the parent container
-#bindsym Ctrl+$super+a focus parent
+#bindsym $control+$super+a focus parent
 
 # focus the child container
 #bindsym $super+d focus child
 
 # move the currently focused window to the scratchpad
-#bindsym $super+Shift+minus move scratchpad
+#bindsym $super+$shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
@@ -221,42 +233,42 @@ bindsym $super+9 workspace number $ws9
 bindsym $super+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $super+Shift+1 move container to workspace number $ws1
-bindsym $super+Shift+2 move container to workspace number $ws2
-bindsym $super+Shift+3 move container to workspace number $ws3
-bindsym $super+Shift+4 move container to workspace number $ws4
-bindsym $super+Shift+5 move container to workspace number $ws5
-bindsym $super+Shift+6 move container to workspace number $ws6
-bindsym $super+Shift+7 move container to workspace number $ws7
-bindsym $super+Shift+8 move container to workspace number $ws8
-bindsym $super+Shift+9 move container to workspace number $ws9
-bindsym $super+Shift+0 move container to workspace number $ws10
+bindsym $super+$shift+1 move container to workspace number $ws1
+bindsym $super+$shift+2 move container to workspace number $ws2
+bindsym $super+$shift+3 move container to workspace number $ws3
+bindsym $super+$shift+4 move container to workspace number $ws4
+bindsym $super+$shift+5 move container to workspace number $ws5
+bindsym $super+$shift+6 move container to workspace number $ws6
+bindsym $super+$shift+7 move container to workspace number $ws7
+bindsym $super+$shift+8 move container to workspace number $ws8
+bindsym $super+$shift+9 move container to workspace number $ws9
+bindsym $super+$shift+0 move container to workspace number $ws10
 
 # prev wrkspc
-bindsym $meta+Shift+Tab workspace prev
-bindsym $super+Shift+Tab workspace prev
+bindsym $meta+$shift+Tab workspace prev
+bindsym $super+$shift+Tab workspace prev
 
 # next wrkspc
 bindsym $meta+Tab workspace next
 bindsym $super+Tab workspace next
 
 # new wrkspc
-bindsym Ctrl+$super+plus exec --no-startup-id bash -c "i3-msg workspace \$(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')"
+bindsym $control+$super+plus exec --no-startup-id bash -c "i3-msg workspace \$(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')"
 
 # move win to wrkspc
-bindsym Ctrl+$super+x exec --no-startup-id i3-input -p 'Move window to workspace: ' -F 'move container to workspace %s'
+bindsym $control+$super+x exec --no-startup-id i3-input -p 'Move window to workspace: ' -F 'move container to workspace %s'
 
 # go to wrkspc
-bindsym Ctrl+$super+Return exec --no-startup-id i3-input -p 'Go to workspace: ' -F 'workspace %s'
+bindsym $control+$super+$return exec --no-startup-id i3-input -p 'Go to workspace: ' -F 'workspace %s'
 
 # reload the configuration file
-#bindsym $super+Shift+c reload
+#bindsym $super+$shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $super+Shift+r restart
+bindsym $super+$shift+r restart
 # exit i3 (logs you out of your X session)
-#bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-bindsym $super+Shift+e exec --no-startup-id $HOME/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh "i3-msg exit" "xtrlock"
-bindsym Ctrl+$meta+Delete exec --no-startup-id $HOME/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh "i3-msg exit" "xtrlock"
+#bindsym $super+$shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $super+$shift+e exec --no-startup-id $HOME/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh "i3-msg exit" "xtrlock"
+bindsym $control+$meta+Delete exec --no-startup-id $HOME/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh "i3-msg exit" "xtrlock"
 
 # resize window (you can also use the mouse for that)
 #mode "resize" {
@@ -277,13 +289,13 @@ bindsym Ctrl+$meta+Delete exec --no-startup-id $HOME/willyhorizont.github.io/lin
         # bindsym Up resize shrink height 10 px or 10 ppt
         # bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or Ctrl+$super+r
-#         bindsym Return mode "default"
-#         bindsym Escape mode "default"
-#         bindsym Ctrl+$super+r mode "default"
+        # back to normal: Enter or $escape or $control+$super+r
+#         bindsym $return mode "default"
+#         bindsym $escape mode "default"
+#         bindsym $control+$super+r mode "default"
 # }
 
-# bindsym Ctrl+$super+r mode "resize"
+# bindsym $control+$super+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

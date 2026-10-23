@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.17" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.18" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,8 +12,8 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update i3 config, remove resize kb;
-update tint2-top-bar, update text color;
+update lxde openbox rc xml config, update kb;
+update i3 config, update kb;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
