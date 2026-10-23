@@ -9,3 +9,5 @@ pcmanfm --desktop --profile LXDE &
 bash -c "$HOME/willyhorizont.github.io/linux/blu-lght-fltr.sh" >/dev/null 2>&1 &
 
 bash -c "$HOME/willyhorizont.github.io/linux-debian-lxde/start-desktop.sh" >/dev/null 2>&1 &
+
+# xss-lock --transfer-sleep-lock -- xtrlock &

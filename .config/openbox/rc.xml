@@ -727,93 +727,102 @@
        screen while moving a window, in milliseconds (1000 = 1 second).
        Set this to 0 to disable warping -->
     <context name="Frame">
-      <!-- <mousebind button="A-Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind> -->
-      <!-- <mousebind button="A-Left" action="Click">
-        <action name="Unshade"/>
-      </mousebind> -->
-      <mousebind button="A-Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </mousebind>
-      <!-- move window -->
-      <!--
-    <mousebind button="A-Left" action="Drag">
-    <action name="Move"/>
-    </mousebind>
-    -->
-      <mousebind button="C-W-Left" action="Drag">
+        <!--
+        <mousebind button="A-Left" action="Press">
+            <action name="Focus"/>
+            <action name="Raise"/>
+        </mousebind>
+        -->
+        <!--
+        <mousebind button="A-Left" action="Click">
+            <action name="Unshade"/>
+        </mousebind>
+        -->
+        <mousebind button="A-Right" action="Press">
+            <action name="Focus"/>
+            <action name="Raise"/>
+            <action name="Unshade"/>
+        </mousebind>
+        <!-- move window -->
+        <!--
+        <mousebind button="A-Left" action="Drag">
         <action name="Move"/>
-      </mousebind>
-      <!-- resize window -->
-      <!--
-    <mousebind button="A-Right" action="Drag">
-    <action name="Resize"/>
-    </mousebind>
-    -->
-      <mousebind button="C-W-Right" action="Drag">
+        </mousebind>
+        -->
+        
+        <mousebind button="W-Left" action="Drag">
+            <action name="Move"/>
+        </mousebind>
+       
+        <!-- resize window -->
+        <!--
+        <mousebind button="A-Right" action="Drag">
         <action name="Resize"/>
-      </mousebind>
-      <mousebind button="A-Middle" action="Press">
-        <action name="Lower"/>
-        <action name="FocusToBottom"/>
-        <action name="Unfocus"/>
-      </mousebind>
-      <!-- <mousebind button="A-Up" action="Click">
-        <action name="DesktopPrevious"/>
-      </mousebind>
-      <mousebind button="A-Down" action="Click">
-        <action name="DesktopNext"/>
-      </mousebind>
-      <mousebind button="C-A-Up" action="Click">
-        <action name="DesktopPrevious"/>
-      </mousebind>
-      <mousebind button="C-A-Down" action="Click">
-        <action name="DesktopNext"/>
-      </mousebind>
-      <mousebind button="A-S-Up" action="Click">
-        <action name="SendToDesktopPrevious"/>
-      </mousebind>
-      <mousebind button="A-S-Down" action="Click">
-        <action name="SendToDesktopNext"/>
-      </mousebind> -->
+        </mousebind>
+        -->
+        
+        <mousebind button="W-Right" action="Drag">
+            <action name="Resize"/>
+        </mousebind>
+       
+        <mousebind button="A-Middle" action="Press">
+            <action name="Lower"/>
+            <action name="FocusToBottom"/>
+            <action name="Unfocus"/>
+        </mousebind>
+        <!-- <mousebind button="A-Up" action="Click">
+            <action name="DesktopPrevious"/>
+        </mousebind>
+        <mousebind button="A-Down" action="Click">
+            <action name="DesktopNext"/>
+        </mousebind>
+        <mousebind button="C-A-Up" action="Click">
+            <action name="DesktopPrevious"/>
+        </mousebind>
+        <mousebind button="C-A-Down" action="Click">
+            <action name="DesktopNext"/>
+        </mousebind>
+        <mousebind button="A-S-Up" action="Click">
+            <action name="SendToDesktopPrevious"/>
+        </mousebind>
+        <mousebind button="A-S-Down" action="Click">
+            <action name="SendToDesktopNext"/>
+        </mousebind> -->
     </context>
     <context name="Titlebar">
-      <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind>
-      <mousebind button="Left" action="Drag">
-        <action name="Move"/>
-      </mousebind>
-      <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximizeFull"/>
-      </mousebind>
-      <mousebind button="Middle" action="Press">
-        <action name="Lower"/>
-        <action name="FocusToBottom"/>
-        <action name="Unfocus"/>
-      </mousebind>
-      <mousebind button="Up" action="Click">
-        <action name="Shade"/>
-        <action name="FocusToBottom"/>
-        <action name="Unfocus"/>
-        <action name="Lower"/>
-      </mousebind>
-      <mousebind button="Down" action="Click">
-        <action name="Unshade"/>
-        <action name="Raise"/>
-      </mousebind>
-      <mousebind button="Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="ShowMenu">
-          <menu>client-menu</menu>
-        </action>
-      </mousebind>
+        <mousebind button="Left" action="Press">
+            <action name="Focus"/>
+            <action name="Raise"/>
+        </mousebind>
+        <mousebind button="Left" action="Drag">
+            <action name="Move"/>
+            <!-- <action name="Focus"/> -->
+        </mousebind>
+        <mousebind button="Left" action="DoubleClick">
+            <action name="ToggleMaximizeFull"/>
+        </mousebind>
+        <mousebind button="Middle" action="Press">
+            <action name="Lower"/>
+            <action name="FocusToBottom"/>
+            <action name="Unfocus"/>
+        </mousebind>
+        <mousebind button="Up" action="Click">
+            <action name="Shade"/>
+            <action name="FocusToBottom"/>
+            <action name="Unfocus"/>
+            <action name="Lower"/>
+        </mousebind>
+        <mousebind button="Down" action="Click">
+            <action name="Unshade"/>
+            <action name="Raise"/>
+        </mousebind>
+        <mousebind button="Right" action="Press">
+            <action name="Focus"/>
+            <action name="Raise"/>
+            <action name="ShowMenu">
+                <menu>client-menu</menu>
+            </action>
+        </mousebind>
     </context>
     <context name="Top">
       <mousebind button="Left" action="Press">
@@ -822,9 +831,12 @@
         <action name="Unshade"/>
       </mousebind>
       <mousebind button="Left" action="Drag">
+        
         <action name="Resize">
           <edge>top</edge>
         </action>
+       
+        <!-- <action name="Focus"/> -->
       </mousebind>
     </context>
     <context name="Left">
@@ -833,9 +845,12 @@
         <action name="Raise"/>
       </mousebind>
       <mousebind button="Left" action="Drag">
+        
         <action name="Resize">
           <edge>left</edge>
         </action>
+       
+        <!-- <action name="Focus"/> -->
       </mousebind>
     </context>
     <context name="Right">
@@ -844,9 +859,12 @@
         <action name="Raise"/>
       </mousebind>
       <mousebind button="Left" action="Drag">
+        
         <action name="Resize">
           <edge>right</edge>
         </action>
+       
+        <!-- <action name="Focus"/> -->
       </mousebind>
     </context>
     <context name="Bottom">
@@ -855,9 +873,12 @@
         <action name="Raise"/>
       </mousebind>
       <mousebind button="Left" action="Drag">
+        
         <action name="Resize">
           <edge>bottom</edge>
         </action>
+       
+        <!-- <action name="Focus"/> -->
       </mousebind>
       <mousebind button="Middle" action="Press">
         <action name="Lower"/>
@@ -888,6 +909,7 @@
       </mousebind>
       <mousebind button="Left" action="Drag">
         <action name="Resize"/>
+        <!-- <action name="Focus"/> -->
       </mousebind>
     </context>
     <context name="TLCorner">
@@ -898,6 +920,7 @@
       </mousebind>
       <mousebind button="Left" action="Drag">
         <action name="Resize"/>
+        <!-- <action name="Focus"/> -->
       </mousebind>
     </context>
     <context name="TRCorner">
@@ -908,6 +931,7 @@
       </mousebind>
       <mousebind button="Left" action="Drag">
         <action name="Resize"/>
+        <!-- <action name="Focus"/> -->
       </mousebind>
     </context>
     <context name="Client">
@@ -1151,28 +1175,6 @@
 
   # end of the example
 -->
-    <!-- Force Tint2 Bottom Stay Below Surface (Anti-Raise) -->
-  <application name="tint2-bottom-panel" class="Tint2">
-    <layer>below</layer>
-    <focus>no</focus>
-  </application>
-  <application name="tint2-bottom-upper-panel" class="Tint2">
-    <layer>below</layer>
-    <focus>no</focus>
-  </application>
-  <application name="tint2-top-bar" class="Tint2">
-    <layer>below</layer>
-    <focus>no</focus>
-  </application>
-  <application name="tint2-bottom-panel-menu" class="Tint2">
-    <layer>above</layer>
-    <focus>yes</focus>
-  </application>
-    <!-- Force Plank Always Floating Above Tint2 -->
-    <application name="plank" class="Plank">
-      <layer>above</layer>
-      <focus>yes</focus>
-    </application>
     <application class="XTerm">
         <focus>yes</focus>
         <position force="yes">
@@ -1193,6 +1195,32 @@
             <x>center</x>
             <y>center</y>
         </position>
+    </application>
+    <!-- Force Tint2 Bottom Stay Below Surface (Anti-Raise) -->
+    <!-- <application class="*">
+        <layer>above</layer>
+        <iconic>no</iconic>
+    </application> -->
+    <application name="tint2-bottom-panel" class="Tint2">
+        <layer>below</layer>
+        <focus>no</focus>
+    </application>
+    <application name="tint2-bottom-upper-panel" class="Tint2">
+        <layer>below</layer>
+        <focus>no</focus>
+    </application>
+    <application name="tint2-top-bar" class="Tint2">
+        <layer>below</layer>
+        <focus>no</focus>
+    </application>
+    <application name="tint2-bottom-panel-menu" class="Tint2">
+        <layer>below</layer>
+        <focus>no</focus>
+    </application>
+    <!-- Force Plank Always Floating Above Tint2 -->
+    <application name="plank" class="Plank">
+        <layer>above</layer>
+        <focus>yes</focus>
     </application>
   </applications>
 </openbox_config>

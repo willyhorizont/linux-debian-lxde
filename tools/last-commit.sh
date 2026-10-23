@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.18" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.21" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,8 +12,9 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update lxde openbox rc xml config, update kb;
-update i3 config, update kb;
+update lxsession-logout.sh, try replace xdotool windowactivate --sync WID to wmctrl -i -a WID;
+update start-desktop.sh, try replace xdotool windowactivate --sync WID to wmctrl -i -a WID, add focus to plank after tint2 launched;
+update lxde openbox rc xml config, fix plank;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
@@ -40,6 +41,7 @@ autostart thunar ~/Desktop;
 try desktop icon in i3, try idesk again;
 
 TODO lxde openbox #2:
+make lxde openbox, make all windows always on top, make all windows can not be minimized, make all windows can not be resized, make it extremely auto tiling;
 TODO lxde openbox #3:
 
 TODO #2:

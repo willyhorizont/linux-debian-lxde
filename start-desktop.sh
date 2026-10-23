@@ -59,7 +59,8 @@ xset s noblank >/dev/null 2>&1 &
 
 plank &
 while true; do
-    if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "plank.Plank" && $9 == "plank" {print $0}' 2>/dev/null)" ]; then
+    wid_plank=$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "plank.Plank" && $9 == "plank" {print $1}' 2>/dev/null)
+    if [ -n "$wid_plank" ]; then
         break
     fi
     sleep 0.2
@@ -96,6 +97,10 @@ while true; do
     fi
     sleep 0.2
 done
+
+xdotool windowactivate --sync "$wid_plank"
+# wmctrl -x -a "plank.Plank"
+# wmctrl -i -a "$wid_plank"
 
 setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-wrkspc-mgr.sh" >/dev/null 2>&1 &
 

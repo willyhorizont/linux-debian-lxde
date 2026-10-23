@@ -33,6 +33,7 @@ if [ -n "$ACTION" ]; then
     done
 
     xdotool windowactivate --sync "$WID_TARGET"
+    # wmctrl -i -a "$WID_TARGET"
 
     sleep 0.2
 
