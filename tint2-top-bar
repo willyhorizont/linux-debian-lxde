@@ -37,9 +37,9 @@ execp_font_color = #FF1493 100
 execp_padding = 0 0
 execp_lclick_command = lxterminal --geometry=80x28 -e btop
 
-# --- E: SpaceAvailable ---
+# --- E: FreeText ---
 execp = new
-execp_command = echo "SPACE AVAILABLE SPACE AVAILABLE SPACE AVAILABLE SPACE AVAILABLE SPACE AVAILABLE SPACE AVA"
+execp_command = $HOME/willyhorizont.github.io/top-bar-free-text.sh
 execp_interval = 1
 execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100

@@ -4,7 +4,7 @@
 
 ## Reverse scroll and Turn on touchpad tapping
 ```
-sudo mkdir -p /etc/X11/xorg.conf.d && echo -e 'Section "InputClass"\n    Identifier "touchpad catchall"\n    MatchIsTouchpad "on"\n    MatchDevicePath "/dev/input/event*"\n    Driver "libinput"\n    Option "NaturalScrolling" "true"\n    Option "Tapping" "on"\nEndSection' | sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf
+sudo mkdir -p /etc/X11/xorg.conf.d/ && echo -e 'Section "InputClass"\n    Identifier "touchpad catchall"\n    MatchIsTouchpad "on"\n    MatchDevicePath "/dev/input/event*"\n    Driver "libinput"\n    Option "NaturalScrolling" "true"\n    Option "Tapping" "on"\nEndSection' | sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf
 ```
 
 ## Disable Screen Blank
@@ -223,9 +223,20 @@ sudo mv /usr/bin/lxlock /usr/bin/lxlock.bak
 sudo ln -s /usr/bin/xtrlock /usr/bin/lxlock
 ```
 
+## Create top-bar-free-text.sh
+```
+mkdir -p ~/willyhorizont.github.io/
+cat << 'EOF' > ~/willyhorizont.github.io/top-bar-free-text.sh
+#!/bin/bash
+
+echo "Free Text"
+EOF
+chmod +x ~/willyhorizont.github.io/top-bar-free-text.sh
+```
+
 ## Create tui0-lockr desktop shortcut
 ```
-mkdir -p ~/.local/share/applications
+mkdir -p ~/.local/share/applications/
 cat << 'EOF' > ~/.local/share/applications/tui0-lockr.desktop
 [Desktop Entry]
 Name=tui0-lockr
@@ -240,7 +251,7 @@ EOF
 
 ## Create desktop shortcuts
 ```
-mkdir -p ~/.local/share/applications
+mkdir -p ~/.local/share/applications/
 
 cat << EOF > ~/.local/share/applications/exit.desktop
 [Desktop Entry]
@@ -427,7 +438,7 @@ sudo apt purge -y \
     xsecurelock \
     && sudo apt autoremove -y --purge
 
-mkdir -p ~/.local/share/applications
+mkdir -p ~/.local/share/applications/
 if [ -f /usr/share/applications/display-im7.q16.desktop ]; then cp /usr/share/applications/display-im7.q16.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/display-im7.q16.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/display-im7.q16.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/display-im7.q16.desktop"; fi; }; fi
 if [ -f /usr/share/applications/libreoffice-startcenter.desktop ]; then cp /usr/share/applications/libreoffice-startcenter.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; fi; }; fi
 if [ -f /usr/share/applications/libreoffice-math.desktop ]; then cp /usr/share/applications/libreoffice-math.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-math.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-math.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-math.desktop"; fi; }; fi

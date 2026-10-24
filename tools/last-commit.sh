@@ -2,7 +2,7 @@
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.21" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.5.24" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,9 +12,7 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update lxsession-logout.sh, try replace xdotool windowactivate --sync WID to wmctrl -i -a WID;
-update start-desktop.sh, try replace xdotool windowactivate --sync WID to wmctrl -i -a WID, add focus to plank after tint2 launched;
-update lxde openbox rc xml config, fix plank;
+update tint2-top-bar, make free text use external script;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;

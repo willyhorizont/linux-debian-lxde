@@ -99,8 +99,8 @@ while true; do
 done
 
 xdotool windowactivate --sync "$wid_plank"
-# wmctrl -x -a "plank.Plank"
 # wmctrl -i -a "$wid_plank"
+# wmctrl -x -a "plank.Plank"
 
 setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-wrkspc-mgr.sh" >/dev/null 2>&1 &
 
