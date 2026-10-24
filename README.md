@@ -223,6 +223,28 @@ sudo mv /usr/bin/lxlock /usr/bin/lxlock.bak
 sudo ln -s /usr/bin/xtrlock /usr/bin/lxlock
 ```
 
+## required for kwh in indic6-powr.sh
+```
+cat << 'EOF' | sudo tee /etc/systemd/system/rapl-perm.service > /dev/null
+[Unit]
+Description=Make Intel/AMD RAPL energy_uj readable by user
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "chmod 0444 /sys/class/powercap/intel-rapl/intel-rapl:*/energy_uj"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable --now rapl-perm.service
+# sudo touch /etc/sys_load_mult_factor.txt
+# sudo chmod 0666 /etc/sys_load_mult_factor.txt
+```
+
 ## Create top-bar-free-text.sh
 ```
 mkdir -p ~/willyhorizont.github.io/
