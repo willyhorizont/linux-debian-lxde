@@ -3,7 +3,7 @@
 pkill -x polybar
 pkill -x tint2
 
-tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" &
+tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/i3/tint2-top-bar" &
 polybar i3switcher &
 
 while true; do
@@ -14,4 +14,4 @@ while true; do
     sleep 0.2
 done
 
-tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3" &
+tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/i3/tint2-bottom-panel" &

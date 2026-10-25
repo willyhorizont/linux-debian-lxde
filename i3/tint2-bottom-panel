@@ -1,4 +1,4 @@
-#---- willyhorizont.github.io tint2-bottom-panel-i3 configuration ----
+#---- willyhorizont.github.io tint2-bottom-panel configuration ----
 # https://gitlab.com/o9000/tint2/wikis/Configure
 # https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md
 
@@ -27,7 +27,7 @@ panel_padding = 0 0
 panel_background_id = 1
 wm_menu = 1
 strut_policy = follow_size
-panel_window_name = tint2-bottom-panel-i3
+panel_window_name = tint2-bottom-panel
 
 # --- S: Systray ---
 systray_padding = 0 0

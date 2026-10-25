@@ -135,7 +135,7 @@ dconf write /net/launchpad/plank/docks/dock1/pinned-only false
 dconf write /net/launchpad/plank/docks/dock1/position "'bottom'"
 dconf write /net/launchpad/plank/docks/dock1/pressure-reveal false
 dconf write /net/launchpad/plank/docks/dock1/show-dock-item false
-dconf write /net/launchpad/plank/docks/dock1/theme "'WindowsTenStyle'"
+dconf write /net/launchpad/plank/docks/dock1/theme "'windows-7-or-10-style'"
 dconf write /net/launchpad/plank/docks/dock1/tooltips-enabled true
 dconf write /net/launchpad/plank/docks/dock1/unhide-delay 0
 dconf write /net/launchpad/plank/docks/dock1/zoom-enabled false
@@ -145,7 +145,7 @@ dconf dump /net/launchpad/plank/
 
 # or
 
-cat "$HOME/willyhorizont.github.io/linux-debian-lxde/plank-windows-ten-style.ini" | dconf load /net/launchpad/plank/docks/
+cat "$HOME/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/plank.ini" | dconf load /net/launchpad/plank/docks/
 
 dconf read /net/launchpad/plank/enabled-docks
 dconf write /net/launchpad/plank/enabled-docks "['dock1']"

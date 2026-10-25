@@ -1,3 +1,64 @@
+[Last updated: 26 Oct 2026 @ 01:16 AM][version: 0.6.3]
+move tint2 to styles;
+update install.sh, update plank path and name;
+update README.md, update plank path and name;
+delete i3 configr;
+delete dev lockerd.sh;
+delete dev restart-desktop.sh;
+delete dev start-desktop.sh;
+update i3 start-desktop.sh, update tint2 path and name;
+rename tint2-bottom-panel-i3 to tint2-bottom-panel and move it to i3/styles/;
+add tint2-top-bar to i3/styles/;
+rename plank-windows-ten-style.ini to plank.ini;
+add plank.ini to styles/windows-7-or-10-style/plank.ini
+add plank.ini to styles/windows-7-or-10-style-backup/plank.ini
+update styles/windows-7-or-10-style-backup/start-desktop.sh, update tint2 path, add plank theme install;
+update styles/windows-7-or-10-style/start-desktop.sh, update tint2 path, add plank theme install;
+
+TODO #1 i3:
+fix i3 openbox logo not showing in lightdm session picker;
+make alt+F4 also delete cur_wrkspc if tot_open_wins 0;
+try limit tile per ws;
+create tui0-i3session-mgr.sh, to set setup i3-desktop.conf;
+update i3 config to read i3-desktop.conf;
+
+TODO #1 lxde openbox:
+add refresh-desktop.sh to desktop RMB menu;
+
+TODO #1:
+search xtrlock alternative;
+on idle autolock show Windows Update or Windows BSOD;
+
+TODO i3 #2:
+--make C-W-t cycle stacking tiling tabbed floating--;
+tinkering with i3gaps;
+try to add background image in pcmanfm;
+set pcmanfm background image;
+replace pcmanfm with thunar;
+set thunar background image;
+autostart thunar ~/Desktop;
+try desktop icon in i3, try idesk again;
+
+TODO lxde openbox #2:
+make lxde openbox, make all windows always on top, make all windows can not be minimized, make all windows can not be resized, make it extremely auto tiling;
+TODO lxde openbox #3:
+
+TODO #2:
+try more bottom panel combo;
+try panels again to see features;
+find panel that have can communicate via some signal;
+try tint2 taskbar_mode multi_desktop pager;
+try starship or any shell prompt;
+try fzf;
+try sxhkdrc;
+TODO #3:
+remove LXfcDE;
+remove debian netinst based;
+tinkering with dunstrc;
+add run-session*.sh to ~/.bashrc;
+move everything to single install.sh script;
+merge willyhorizont.github.io/linux-debian-lxde to willyhorizont.github.io/linux;
+
 [Last updated: 25 Oct 2026 @ 04:41 PM][version: 0.6.2]
 rename kb-style-selector-prompt-lxde-openbox.sh to style-selector.sh;
 add default-style.txt;

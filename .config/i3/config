@@ -305,9 +305,6 @@ bindsym $control+$meta+Delete exec --no-startup-id $HOME/willyhorizont.github.io
 #        status_command i3blocks
 #}
 # exec_always --no-startup-id pkill -x polybar; polybar i3switcher
-# exec_always --no-startup-id pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3"
-# exec_always --no-startup-id pkill -x polybar; pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3" & polybar i3switcher
-# exec_always --no-startup-id pkill -x polybar; pkill -x tint2; tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" & polybar i3switcher & bash -c "sleep 1 && tint2 -c \$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-i3"
 exec_always --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/start-desktop.sh
 
 #######################################################################

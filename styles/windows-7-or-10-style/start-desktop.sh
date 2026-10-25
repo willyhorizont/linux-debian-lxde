@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cat "$HOME/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/plank.ini" | dconf load /net/launchpad/plank/docks/
+
 openbox --reconfigure
 
 pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-lockr.sh" 2>/dev/null
@@ -77,7 +79,7 @@ while true; do
     sleep 0.2
 done
 
-tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel-menu" &
+tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/tint2-bottom-panel-menu" &
 while true; do
     if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel-menu" {print $0}' 2>/dev/null)" ]; then
         break
@@ -85,7 +87,7 @@ while true; do
     sleep 0.2
 done
 
-tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-panel" &
+tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/tint2-bottom-panel" &
 while true; do
     if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel" {print $0}' 2>/dev/null)" ]; then
         break
@@ -93,7 +95,7 @@ while true; do
     sleep 0.2
 done
 
-tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-bottom-upper-panel" &
+tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/tint2-bottom-upper-panel" &
 while true; do
     if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-upper-panel" {print $0}' 2>/dev/null)" ]; then
         break
@@ -101,7 +103,7 @@ while true; do
     sleep 0.2
 done
 
-tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar" &
+tint2 -c "$HOME/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/tint2-top-bar" &
 while true; do
     if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-top-bar" {print $0}' 2>/dev/null)" ]; then
         break
