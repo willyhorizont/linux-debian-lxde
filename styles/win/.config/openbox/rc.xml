@@ -179,7 +179,7 @@
     <!-- Restart Desktop -->
     <keybind key="W-S-r">
         <action name="Execute">
-            <command>sh -c '"$HOME/willyhorizont.github.io/linux-debian-lxde/start-desktop.sh"'</command>
+            <command>sh -c '"$HOME/.config/openbox/start-desktop.sh"'</command>
         </action>
     </keybind>
     <!-- Power Menu -->

@@ -51,6 +51,17 @@ while true; do
     sleep 0.2
 done
 
+while [ "$#" -gt 0 ]; do
+    case "$1" in
+        --kill)
+            exit 0
+            ;;
+        *)
+            shift
+            ;;
+    esac
+done
+
 xset -dpms >/dev/null 2>&1 &
 xset s 0 600 >/dev/null 2>&1 &
 xset s noblank >/dev/null 2>&1 &

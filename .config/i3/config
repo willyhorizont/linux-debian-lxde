@@ -58,8 +58,6 @@ exec_always --no-startup-id ~/willyhorizont.github.io/linux/blu-lght-fltr.sh
 
 exec_always --no-startup-id autotiling
 
-#exec_always --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/start-desktop.sh
-
 exec --no-startup-id bash -c 'until pactl info >/dev/null 2>&1; do true; done && pactl set-source-mute @DEFAULT_SOURCE@ 1' >/dev/null 2>&1 &
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so

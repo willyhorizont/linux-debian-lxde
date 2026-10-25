@@ -199,7 +199,7 @@ openbox --reconfigure
 # copy .desktop from /etc/xdg/autostart/ to ~/.config/autostart/ and add NotShowIn=LXDE;i3;
 ```
 
-## Copy ```./.config/tint2/start-desktop.sh``` to ```~/.config/tint2/start-desktop.sh```
+## Copy ```./.config/tint2/start-desktop-.*.sh``` to ```~/.config/tint2/start-desktop-.*.sh```
 
 ## Copy ```./.config/lxsession/LXDE/autostart``` to ```~/.config/lxsession/LXDE/autostart```
 
