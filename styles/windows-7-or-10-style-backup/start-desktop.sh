@@ -4,9 +4,7 @@ cat "$HOME/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-styl
 
 openbox --reconfigure
 
-pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-lockr.sh" 2>/dev/null
-
-pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-wrkspc-mgr.sh" 2>/dev/null
+pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-screensavr.sh" 2>/dev/null
 
 pkill -9 -f "xterm.*-name idle-window" 2>/dev/null
 pkill -9 -f "xterm.*-name welcome-window" 2>/dev/null
@@ -65,8 +63,9 @@ while [ "$#" -gt 0 ]; do
 done
 
 xset -dpms >/dev/null 2>&1 &
-xset s 0 600 >/dev/null 2>&1 &
+xset s 240 240 >/dev/null 2>&1 &
 xset s noblank >/dev/null 2>&1 &
+xss-lock --transfer-sleep-lock -- xtrlock &
 
 (until pactl info >/dev/null 2>&1; do true; done && pactl set-source-mute @DEFAULT_SOURCE@ 1) >/dev/null 2>&1 &
 
@@ -115,6 +114,4 @@ xdotool windowactivate --sync "$wid_plank"
 # wmctrl -i -a "$wid_plank"
 # wmctrl -x -a "plank.Plank"
 
-setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-wrkspc-mgr.sh" >/dev/null 2>&1 &
-
-setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-lockr.sh" >/dev/null 2>&1 &
+setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-screensavr.sh" >/dev/null 2>&1 &

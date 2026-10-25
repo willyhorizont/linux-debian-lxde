@@ -9,9 +9,6 @@
 * tux xpenguins
 * welcome-window idle-window
 
-## i3 working
-* dmn-lockr
-
 ## manual i3-workspaces / i3 IPC (Inter-Process Communication) Socket integration
 ```
 i3-msg -t subscribe '["workspace"]' | while read -r event; do

@@ -256,14 +256,14 @@ EOF
 chmod +x ~/willyhorizont.github.io/top-bar-free-text.sh
 ```
 
-## Create tui0-lockr desktop shortcut
+## Create tui0-screensavr desktop shortcut
 ```
 mkdir -p ~/.local/share/applications/
-cat << 'EOF' > ~/.local/share/applications/tui0-lockr.desktop
+cat << 'EOF' > ~/.local/share/applications/tui0-screensavr.desktop
 [Desktop Entry]
-Name=tui0-lockr
-Comment=tui0-lockr
-Exec=lxterminal --geometry=80x28 -e ~/willyhorizont.github.io/linux/tui0-lockr.sh
+Name=tui0-screensavr
+Comment=tui0-screensavr
+Exec=lxterminal --geometry=80x28 -e ~/willyhorizont.github.io/linux/tui0-screensavr.sh
 Terminal=false
 Type=Application
 Icon=system-lock-screen

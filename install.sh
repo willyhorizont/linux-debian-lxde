@@ -8,7 +8,7 @@ LX_RC="$HOME/.config/openbox/lxde-rc.xml"
 OB_AUTOSTART="$HOME/.config/openbox/autostart"
 OB_RC="$HOME/.config/openbox/rc.xml"
 
-DEFAULT_STYLE_FILE="$HOME/willyhorizont.github.io/linux-debian-lxde/default-style.txt"
+DEFAULT_STYLE_FILE="$HOME/willyhorizont.github.io/linux-debian-lxde/styles/default.txt"
 
 DEFAULT_STYLE=$(cat "$DEFAULT_STYLE_FILE" | xargs)
 
@@ -37,7 +37,8 @@ ln -sf "$STYLE_DIR/$DEFAULT_STYLE/start-desktop.sh" "$HOME/.config/openbox/start
 
 mkdir -p ~/.local/share/plank/themes/windows-7-or-10-style/
 cp ~/willyhorizont.github.io/linux-debian-lxde/.local/share/plank/themes/windows-7-or-10-style/dock.theme ~/.local/share/plank/themes/windows-7-or-10-style/dock.theme
-cp ~/willyhorizont.github.io/linux-debian-lxde/.Xresources ~/.Xresources
+# cp ~/willyhorizont.github.io/linux-debian-lxde/.Xresources ~/.Xresources
+# xrdb -merge ~/.Xresources
 mkdir -p ~/.config/lxterminal/ && cp ~/willyhorizont.github.io/linux-debian-lxde/.config/lxterminal/lxterminal.conf ~/.config/lxterminal/lxterminal.conf
 mkdir -p ~/.config/rofi/ && cp -r ~/willyhorizont.github.io/linux-debian-lxde/.config/rofi/* ~/.config/rofi/
 mkdir -p ~/.config/polybar/ && cp -r ~/willyhorizont.github.io/linux-debian-lxde/.config/polybar/* ~/.config/polybar/

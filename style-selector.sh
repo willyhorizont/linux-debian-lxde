@@ -15,7 +15,7 @@ esac
 
 STYLE_DIR="$HOME/willyhorizont.github.io/linux-debian-lxde/styles"
 
-DEFAULT_STYLE_FILE="$HOME/willyhorizont.github.io/linux-debian-lxde/default-style.txt"
+DEFAULT_STYLE_FILE="$HOME/willyhorizont.github.io/linux-debian-lxde/styles/default.txt"
 
 DEFAULT_STYLE=$(cat "$DEFAULT_STYLE_FILE" | xargs)
 

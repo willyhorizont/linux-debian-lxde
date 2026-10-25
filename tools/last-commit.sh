@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.4" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.5" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,11 +35,13 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update README.md, remove create desktop shortcut, update xterm call;
-add create-desktop-shortcut.sh, add create shutdown reboot suspend logout lock .desktop for each lxde openbox i3;
-add lxterminal config;
-add xterm config;
-update install.sh, add install lxterminal config, add install xterm config;
+mv default-style.txt to style/default.txt;
+update install.sh, update default style path;
+update style-selector.sh, update default style path;
+update start-desktop.sh, remove dmn-wrkspc-mgr.sh, rename dmn-lockr.sh to dmn-screensavr.sh;
+handle locking with xset s 240 240 and xss-lock --transfer-sleep-lock -- xtrlock;
+update tint2-bottom-panel, rename tui0-lockr.sh to tui0-screensavr.sh;
+update tint2-bottom-upper-panel, remove kb-cln-wrkspc.sh execp_lclick_command;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
