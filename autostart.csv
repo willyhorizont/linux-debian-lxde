@@ -6,7 +6,7 @@ disabled     ; User folders update                                             ;
 disabled     ; User folders update                                             ; xdg-user-dirs-update                                      ; 
 disabled     ; User folders update                                             ; xdg-user-dirs-update                                      ; 
              ;                                                                 ;                                                           ; 
-disabled     ; picom                                                           ; picom                                                     ; already handled in start-desktop.sh
+disabled     ; picom                                                           ; picom                                                     ; already handled in start-desktop-.*.sh
 disabled     ; Secret Storage Service                                          ; /usr/bin/gnome-keyring-daemon --start --components=secrets; already auto launch on demand
 disabled     ; Certificate and Key Storage                                     ; /usr/bin/gnome-keyring-daemon --start --components=pkcs11 ; already auto launch on demand
 disabled     ; SSH Key Agent                                                   ; /usr/bin/gnome-keyring-daemon --start --components=ssh    ; already auto launch on demand

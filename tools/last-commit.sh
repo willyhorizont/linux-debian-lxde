@@ -1,8 +1,31 @@
 #!/bin/bash
 
+while true; do
+    read -sp "ARE YOU SURE: " PASS1
+    echo ""
+    
+    if [ -z "$PASS1" ]; then
+        echo "❌ Password empty! Please try again."
+        echo ""
+        continue
+    fi
+
+    read -sp "ARE YOU SUPER SURE: " PASS2
+    echo ""
+
+    if [ "$PASS1" == "$PASS2" ]; then
+        echo "✅ Password match. I hope you super duper sure..."
+        echo ""
+        break
+    else
+        echo "❌ Password not match! Please try again."
+        echo ""
+    fi
+done
+
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.5.25" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.0" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -12,8 +35,15 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update tint2-top-bar, add uptime;
-update README.md, add rapl-perm.service setup command;
+update install.sh, replace lxde openbox config with symlink;
+add kb-style-selector-prompt-lxde-openbox.sh;
+delete openbox-kill-desktop.sh;
+update start-desktop.sh, add --kill, move it to styles/win/start-desktop.sh;
+move .config/openbox/autostart to styles/win/.config/openbox/autostart;
+move .config/openbox/rc.xml to styles/win/.config/openbox/rc.xml;
+move .config/lxsession/LXDE/desktop.conf to styles/win/.config/lxsession/LXDE/desktop.conf;
+move .config/lxsession/LXDE/autostart to styles/win/.config/lxsession/LXDE/autostart;
+update last-commit.sh, add super confirmation;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
