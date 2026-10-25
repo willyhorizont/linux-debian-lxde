@@ -1,0 +1,6 @@
+@picom --backend=xrender --daemon --no-fading-openclose --no-fading-destroyed-argb --shadow-opacity=0 --blur-method=none --active-opacity=1.0 --inactive-opacity=1.0 --inactive-dim=0 --corner-radius=0
+@dunst
+@pcmanfm --desktop --profile LXDE
+@bash -c "$HOME/willyhorizont.github.io/linux/blu-lght-fltr.sh" >/dev/null 2>&1 &
+@bash -c "$HOME/.config/openbox/start-desktop.sh" >/dev/null 2>&1 &
+# @xss-lock --transfer-sleep-lock -- xtrlock

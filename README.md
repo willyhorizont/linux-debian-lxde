@@ -290,7 +290,7 @@ cat << EOF > ~/.local/share/applications/lock.desktop
 [Desktop Entry]
 Name=Lock
 Comment=lock
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --lock"
+Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh" --lock
 Terminal=false
 Type=Application
 Icon=system-lock-screen
@@ -301,7 +301,7 @@ cat << EOF > ~/.local/share/applications/suspend.desktop
 [Desktop Entry]
 Name=Suspend
 Comment=suspend
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --suspend"
+Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh" --suspend
 Terminal=false
 Type=Application
 Icon=system-suspend
@@ -313,7 +313,7 @@ cat << EOF > ~/.local/share/applications/logout.desktop
 [Desktop Entry]
 Name=Logout
 Comment=logout
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout"
+Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh" --logout
 Terminal=false
 Type=Application
 Icon=system-log-out
@@ -324,7 +324,7 @@ cat << EOF > ~/.local/share/applications/reboot.desktop
 [Desktop Entry]
 Name=Reboot
 Comment=reboot
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --reboot"
+Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh" --reboot
 Terminal=false
 Type=Application
 Icon=system-reboot
@@ -336,7 +336,7 @@ cat << EOF > ~/.local/share/applications/shutdown.desktop
 [Desktop Entry]
 Name=Shutdown
 Comment=shutdown
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --shutdown"
+Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh" --shutdown
 Terminal=false
 Type=Application
 Icon=system-shutdown

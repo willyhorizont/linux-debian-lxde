@@ -1,5 +1,18 @@
 #!/bin/sh
 
+case 0 in
+    $(pgrep -x "lxsession" >/dev/null; echo $?))
+        CURRENT_SESSION="lxde"
+        ;;
+    $(pgrep -x "openbox" >/dev/null; echo $?))
+        CURRENT_SESSION="openbox"
+        ;;
+    *)
+        notify-send "$SCRIPT_NAME" "Error: Session not match!"
+        exit 1
+        ;;
+esac
+
 ACTION=""
 
 for arg in "$@"; do
@@ -14,6 +27,10 @@ for arg in "$@"; do
 done
 
 if [ -n "$ACTION" ]; then
+    if [ "$ACTION" = "logout" ] && [ "$CURRENT_SESSION" = "openbox" ]; then
+        openbox --exit
+        exit 0
+    fi
     HIDE_ARGS="--hide-button hibernate --hide-button switch_user"
     [ "$ACTION" != "lock" ]     && HIDE_ARGS="$HIDE_ARGS --hide-button lock_screen"
     [ "$ACTION" != "logout" ]   && HIDE_ARGS="$HIDE_ARGS --hide-button logout"

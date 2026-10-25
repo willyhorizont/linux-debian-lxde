@@ -350,7 +350,7 @@
     "code-runner.ignoreSelection": true,
     "code-runner.runInTerminal": true,
     "files.associations": {
-        "last-commit.sh": "plaintext",
+        // "last-commit.sh": "plaintext",
         "**/i3/**/*conf*": "shellscript",
         "**/LXDE/**/*conf*": "shellscript",
         "**/LXDE/**/*autostart*": "shellscript",

@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.1" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.2" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,15 +35,14 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update install.sh, replace lxde openbox config with symlink;
-add kb-style-selector-prompt-lxde-openbox.sh;
-delete openbox-kill-desktop.sh;
-update start-desktop.sh, add --kill, move it to styles/win/start-desktop.sh;
-move .config/openbox/autostart to styles/win/.config/openbox/autostart;
-move .config/openbox/rc.xml to styles/win/.config/openbox/rc.xml;
-move .config/lxsession/LXDE/desktop.conf to styles/win/.config/lxsession/LXDE/desktop.conf;
-move .config/lxsession/LXDE/autostart to styles/win/.config/lxsession/LXDE/autostart;
-update last-commit.sh, add super confirmation;
+rename kb-style-selector-prompt-lxde-openbox.sh to style-selector.sh;
+add default-style.txt;
+replace hardcoded style with default-style.txt;
+update install.sh, replace hardcoded style with default-style.txt;
+update lxsession-logout, add session detection, update --logout for openbox;
+add styles/windows-7-or-10-style-backup/;
+add styles/windows-7-or-10-style/;
+add run-session.sh;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
@@ -98,5 +97,5 @@ git add .
 git commit -m "$M"
 git tag -d "$V" 2>/dev/null
 git tag -a "$V" -m "$M"
-git push origin main --force
-git push origin --tags --force
+git push origin main
+git push origin --tags
