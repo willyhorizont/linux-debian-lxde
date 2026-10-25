@@ -89,7 +89,7 @@ ln -sf "$SRC_OB_RC" "$LX_RC"
 ln -sf "$SRC_OB_AUTOSTART" "$OB_AUTOSTART"
 ln -sf "$SRC_OB_RC" "$OB_RC"
 
-bash -c "$HOME/.config/openbox/start-desktop.sh" --kill >/dev/null 2>&1
+bash -c "$HOME/.config/openbox/start-desktop.sh --kill" >/dev/null 2>&1
 ln -sf "$STYLE_DIR/$STYLE_SUBDIR/start-desktop.sh" "$HOME/.config/openbox/start-desktop.sh"
 bash -c "$HOME/.config/openbox/start-desktop.sh" >/dev/null 2>&1 &
 

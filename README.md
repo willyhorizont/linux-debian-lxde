@@ -271,81 +271,7 @@ Categories=Settings;
 EOF
 ```
 
-## Create desktop shortcuts
-```
-mkdir -p ~/.local/share/applications/
-
-cat << EOF > ~/.local/share/applications/exit.desktop
-[Desktop Entry]
-Name=Exit
-Comment=exit
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh"
-Terminal=false
-Type=Application
-Icon=system-shutdown
-Categories=System;Utility;Settings;
-EOF
-
-cat << EOF > ~/.local/share/applications/lock.desktop
-[Desktop Entry]
-Name=Lock
-Comment=lock
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh" --lock
-Terminal=false
-Type=Application
-Icon=system-lock-screen
-Categories=System;Utility;Settings;
-EOF
-
-cat << EOF > ~/.local/share/applications/suspend.desktop
-[Desktop Entry]
-Name=Suspend
-Comment=suspend
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh" --suspend
-Terminal=false
-Type=Application
-Icon=system-suspend
-Categories=System;Utility;Settings;
-Keywords=sleep;
-EOF
-
-cat << EOF > ~/.local/share/applications/logout.desktop
-[Desktop Entry]
-Name=Logout
-Comment=logout
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh" --logout
-Terminal=false
-Type=Application
-Icon=system-log-out
-Categories=System;Utility;Settings;
-EOF
-
-cat << EOF > ~/.local/share/applications/reboot.desktop
-[Desktop Entry]
-Name=Reboot
-Comment=reboot
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh" --reboot
-Terminal=false
-Type=Application
-Icon=system-reboot
-Categories=System;Utility;Settings;
-Keywords=restart;
-EOF
-
-cat << EOF > ~/.local/share/applications/shutdown.desktop
-[Desktop Entry]
-Name=Shutdown
-Comment=shutdown
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh" --shutdown
-Terminal=false
-Type=Application
-Icon=system-shutdown
-Categories=System;Utility;Settings;
-Keywords=poweroff;
-EOF
-
-update-desktop-database ~/.local/share/applications && sudo update-desktop-database /usr/share/applications
-```
+## Create desktop shortcuts -> run ```create-desktop-shortcuts.sh```
 
 ## Setup App Tray -> run ```sudo mousepad /usr/share/plank/themes/Transparent/dock.theme``` and change ```BottomPadding=2``` to:
 ```
@@ -466,8 +392,8 @@ if [ -f /usr/share/applications/libreoffice-startcenter.desktop ]; then cp /usr/
 if [ -f /usr/share/applications/libreoffice-math.desktop ]; then cp /usr/share/applications/libreoffice-math.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-math.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-math.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-math.desktop"; fi; }; fi
 if [ -f /usr/share/applications/libreoffice-draw.desktop ]; then cp /usr/share/applications/libreoffice-draw.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-draw.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-draw.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-draw.desktop"; fi; }; fi
 if [ -f /usr/share/applications/btop.desktop ]; then cp /usr/share/applications/btop.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal --geometry=80x28 -e btop|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/btop.desktop"; }; fi
-if [ -f /usr/share/applications/cmatrix.desktop ]; then cp /usr/share/applications/cmatrix.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -bg black -fg white -fa Monospace -fs 8 -geometry 80x24 -e cmatrix -s -u 10 -a|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/cmatrix.desktop"; }; fi
-if [ -f /usr/share/applications/xterm.desktop ]; then cp /usr/share/applications/xterm.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -bg black -fg white -fa Monospace -fs 8 -geometry 88x24|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/xterm.desktop"; }; fi
+if [ -f /usr/share/applications/cmatrix.desktop ]; then cp /usr/share/applications/cmatrix.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -fa Monospace -fs 8 -geometry 80x24 -e cmatrix -s -u 10 -a|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/cmatrix.desktop"; }; fi
+if [ -f /usr/share/applications/xterm.desktop ]; then cp /usr/share/applications/xterm.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -fa Monospace -fs 8 -geometry 88x24|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/xterm.desktop"; }; fi
 if [ -f /usr/share/applications/lxterminal.desktop ]; then cp /usr/share/applications/lxterminal.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal --working-directory=$HOME|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/lxterminal.desktop"; }; fi
 update-desktop-database ~/.local/share/applications && sudo update-desktop-database /usr/share/applications
 
