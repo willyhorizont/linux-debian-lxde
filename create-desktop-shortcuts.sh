@@ -4,110 +4,92 @@ mkdir -p ~/.local/share/applications/
 
 cat << EOF > ~/.local/share/applications/exit-lxde.desktop
 [Desktop Entry]
-Name=Exit
-Comment=exit
+Name=Exit LXDE
+Comment=Exit LXDE
 Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh"
 Terminal=false
 Type=Application
 Icon=system-shutdown
 Categories=System;Utility;Settings;
 OnlyShowIn=LXDE;
+NotShowIn=openbox;i3;
 EOF
 
 cat << EOF > ~/.local/share/applications/logout-lxde.desktop
 [Desktop Entry]
-Name=Logout
-Comment=logout
+Name=Logout LXDE
+Comment=Logout LXDE
 Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout"
 Terminal=false
 Type=Application
 Icon=system-log-out
 Categories=System;Utility;Settings;
 OnlyShowIn=LXDE;
+NotShowIn=openbox;i3;
 EOF
 
-cat << EOF > ~/.local/share/applications/lock-lxde.desktop
+cat << EOF > ~/.local/share/applications/lock.desktop
 [Desktop Entry]
 Name=Lock
-Comment=lock
+Comment=Lock
 Exec=xtrlock
 Terminal=false
 Type=Application
 Icon=system-lock-screen
 Categories=System;Utility;Settings;
-OnlyShowIn=LXDE;
+OnlyShowIn=LXDE;openbox;i3;
 EOF
 
 cat << EOF > ~/.local/share/applications/exit-openbox.desktop
 [Desktop Entry]
-Name=Exit
-Comment=exit
+Name=Exit Openbox
+Comment=Exit Openbox
 Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh"
 Terminal=false
 Type=Application
 Icon=system-shutdown
 Categories=System;Utility;Settings;
 OnlyShowIn=openbox;
+NotShowIn=LXDE;i3;
 EOF
 
 cat << EOF > ~/.local/share/applications/logout-openbox.desktop
 [Desktop Entry]
-Name=Logout
-Comment=logout
+Name=Logout Openbox
+Comment=Logout Openbox
 Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout"
 Terminal=false
 Type=Application
 Icon=system-log-out
 Categories=System;Utility;Settings;
 OnlyShowIn=openbox;
-EOF
-
-cat << EOF > ~/.local/share/applications/lock-openbox.desktop
-[Desktop Entry]
-Name=Lock
-Comment=lock
-Exec=xtrlock
-Terminal=false
-Type=Application
-Icon=system-lock-screen
-Categories=System;Utility;Settings;
-OnlyShowIn=openbox;
+NotShowIn=LXDE;i3;
 EOF
 
 cat << EOF > ~/.local/share/applications/exit-i3.desktop
 [Desktop Entry]
-Name=Exit
-Comment=exit
+Name=Exit i3
+Comment=Exit i3
 Exec=sh -c '"$HOME/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh" "i3-msg exit" "xtrlock"'
 Terminal=false
 Type=Application
 Icon=system-shutdown
 Categories=System;Utility;Settings;
 OnlyShowIn=i3;
+NotShowIn=openbox;LXDE;
 EOF
 
 cat << EOF > ~/.local/share/applications/logout-i3.desktop
 [Desktop Entry]
-Name=Logout
-Comment=logout
+Name=Logout i3
+Comment=Logout i3
 Exec=i3-msg exit
 Terminal=false
 Type=Application
 Icon=system-log-out
 Categories=System;Utility;Settings;
 OnlyShowIn=i3;
-EOF
-
-cat << EOF > ~/.local/share/applications/lock-i3.desktop
-[Desktop Entry]
-Name=Lock
-Comment=lock
-Exec=xtrlock
-Terminal=false
-Type=Application
-Icon=system-lock-screen
-Categories=System;Utility;Settings;
-OnlyShowIn=i3;
+NotShowIn=openbox;LXDE;
 EOF
 
 cat << EOF > ~/.local/share/applications/shutdown.desktop

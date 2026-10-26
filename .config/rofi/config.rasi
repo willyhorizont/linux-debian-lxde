@@ -12,12 +12,17 @@ configuration {
     show-icons: true;
     icon-theme: "Papirus";
     matching: "fuzzy";
-    scroll-method: 0;
     hover-select: false;
-    ml-row-up: "";
-    ml-row-down: "";
     disable-history: true;
     sort: false;
+
+    /* ---
+    scroll-method: 0;
+    ml-row-up: "";
+    ml-row-down: "";
+    me-select-entry: "MousePrimary";
+    me-accept-entry: "MouseDPrimary";
+    --- */
 }
 window {
     background-color: #000000;
@@ -46,7 +51,7 @@ element alternate.normal {
     text-color:       #CCFF00;
 }
 element selected.normal {
-    background-color: #00ADD8;
+    background-color: #FF1493;
     text-color:       #000000;
 }
 element-text {
@@ -71,17 +76,20 @@ textbox-num-rows {
 }
 listview {
     border:       2px dash 0px 0px; 
-    border-color: #FF1493; 
-    scrollbar: false;
+    border-color: #FF1493;
+
+    scrollbar:    false;
 }
 entry {
     placeholder:       "Search";
     placeholder-color: #555555;
 }
 scrollbar {
+    /* ---
     width:            4px;
     border:           0;
     handle-width:     8px;
+    --- */
     handle-color:     #FF1493;
     background-color: #111111;
 }

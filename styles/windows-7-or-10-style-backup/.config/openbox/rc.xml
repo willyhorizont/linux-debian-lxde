@@ -237,6 +237,11 @@
         <command>lxterminal --working-directory=~</command>
       </action>
     </keybind>
+    <keybind key="W-t">
+      <action name="Execute">
+        <command>lxterminal --working-directory=~</command>
+      </action>
+    </keybind>
     <!-- Open File Manager -->
     <keybind key="W-e">
       <action name="Execute">
@@ -246,22 +251,22 @@
     <!-- open Windows Start menu / Mac launchpad / xfce4-popup-whiskermenu -->
     <keybind key="F4">
       <action name="Execute">
-        <command>rofi -show drun</command>
+        <command>rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi</command>
       </action>
     </keybind>
     <keybind key="A-F1">
       <action name="Execute">
-        <command>rofi -show drun</command>
+        <command>rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi</command>
       </action>
     </keybind>
     <keybind key="W-a">
       <action name="Execute">
-        <command>rofi -show drun</command>
+        <command>rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi</command>
       </action>
     </keybind>
     <keybind key="C-Escape">
       <action name="Execute">
-        <command>rofi -show drun</command>
+        <command>rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi</command>
       </action>
     </keybind>
     <!-- open Windows Run / Mac spotlight / dmenu or rofi -->
