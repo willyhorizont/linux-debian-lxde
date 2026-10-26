@@ -29,7 +29,7 @@ configuration {
     --- */
 }
 window {
-    background-color: #000000;
+    background-color: #FFFFFF;
     border-color:     #FF1493;
     border:           2px;
     width:            360px;
@@ -37,7 +37,7 @@ window {
 }
 inputbar {
     background-color: transparent;
-    text-color:       #CCFF00;
+    text-color:       #FF1493;
 }
 prompt {
     background-color: transparent;
@@ -46,15 +46,15 @@ prompt {
 }
 entry {
     background-color: transparent;
-    text-color:       #CCFF00;
+    text-color:       #000000;
 }
 element normal.normal {
-    background-color: #000000;
-    text-color:       #CCFF00;
+    background-color: #FFFFFF;
+    text-color:       #000000;
 }
 element alternate.normal {
-    background-color: #000000;
-    text-color:       #CCFF00;
+    background-color: #FFFFFF;
+    text-color:       #000000;
 }
 element selected.normal {
     background-color: #FF1493;
@@ -96,6 +96,6 @@ scrollbar {
     border:           0;
     handle-width:     8px;
     --- */
-    handle-color:     #FF1493;
-    background-color: #111111;
+    handle-color:     #CCFF00;
+    background-color: #FFFFFF;
 }

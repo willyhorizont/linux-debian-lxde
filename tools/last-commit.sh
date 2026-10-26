@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.7" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.8" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,16 +35,16 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update create-desktop-shortcut.sh;
-add set-env-current-desktop.sh;
-update install.sh, add set-env-current-desktop.sh;
-update rofi show -drun to use env XDG_CURRENT_DESKTOP;
-update i3 conifg, update rofi show -drun to use env XDG_CURRENT_DESKTOP;
-update lxde openbox rc xml config, update rofi show -drun to use env XDG_CURRENT_DESKTOP;
-update tint2-bottom-panel, update rofi show -drun to use env XDG_CURRENT_DESKTOP, rename indic0-tux.sh to indic0-screensavr.sh;
-update tint2-bottom-panel-menu, update rofi show -drun to use env XDG_CURRENT_DESKTOP;
+change i3 polybar name;
+update polybar config.ini, change i3 polybar name;
+update i3 README.md, add more panel + IPC combo;
+update rofi-config-windows-start-menu.rasi;
+update tint2-bottom-upper-panel, add --rev to indic0-wrkspc.sh, add kb-goto-wrkspc-prompt.sh, add execp_markup;
+add ipc-inter-process-communication.md;
+update i3 start-desktop.sh, change i3 polybar name;
 
 TODO #1 i3:
+make i3 style-selector.sh;
 fix i3 openbox logo not showing in lightdm session picker;
 make alt+F4 also delete cur_wrkspc if tot_open_wins 0;
 try limit tile per ws;
@@ -52,9 +52,15 @@ create tui0-i3session-mgr.sh, to set setup i3-desktop.conf;
 update i3 config to read i3-desktop.conf;
 
 TODO #1 lxde openbox:
+update kb next prev wrkspc to use kb-goto-wrkspc-prompt.sh --prev --next so the desktop name use number;
 add refresh-desktop.sh to desktop RMB menu;
 
 TODO #1:
+add Pango Markup;
+add --pango to tint2;
+execp_markup = 1 to tint2;
+use kb-goto-wrkspc-prompt.sh;
+use kb-mov-win-to-wrkspc-prompt.sh;
 search xtrlock alternative;
 on idle autolock show Windows Update or Windows BSOD;
 

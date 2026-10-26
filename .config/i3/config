@@ -304,7 +304,7 @@ bindsym $control+$meta+Delete exec --no-startup-id $HOME/willyhorizont.github.io
 #        #status_command i3status
 #        status_command i3blocks
 #}
-# exec_always --no-startup-id pkill -x polybar; polybar i3switcher
+# exec_always --no-startup-id pkill -x polybar; polybar workspace-switcher
 exec_always --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/start-desktop.sh
 
 #######################################################################

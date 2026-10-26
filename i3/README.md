@@ -63,3 +63,10 @@ hoverable = true
 <!-- exec_always --no-startup-id pkill -x lxpanel; lxpanel -->
 <!-- ### lb_panel any + rb_panel mate-panel -->
 <!-- exec_always --no-startup-id pkill -x mate-panel; mate-panel -->
+i3bar + i3status
+i3bar + i3blocks
+i3bar + py3status
+i3bar + i3status-rust (i3status-rs)
+i3bar + bumblebee-status
+xfce4-panel + i3wm
+mate-panel + i3wm
