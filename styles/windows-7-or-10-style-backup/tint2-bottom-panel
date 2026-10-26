@@ -56,7 +56,7 @@ panel_window_name = tint2-bottom-panel
 #button_font_color = #000000 100
 #button_icon = distributor-logo-debian
 #button_background_id = 1
-#button_lclick_command = rofi -show drun
+#button_lclick_command = sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"
 #button_padding = 0 0
 
 # --- S: Systray ---
@@ -76,9 +76,9 @@ systray_icon_asb = 100 0 -80
 #execp_background_id = 1
 #execp_padding = 0 0
 
-# --- E: Indicator Tux ---
+# --- E: Indicator Screensaver ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indic0-tux.sh
+execp_command = ~/willyhorizont.github.io/linux/indic0-screensavr.sh
 execp_interval = 2
 execp_has_icon = 0
 execp_font = JetBrains Mono 11

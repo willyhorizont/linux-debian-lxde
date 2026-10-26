@@ -137,16 +137,16 @@ bindsym $super+$shift+q kill
 # bindsym $meta+$space exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
 
 ## open Windows Start menu / Mac launchpad / xfce4-popup-whiskermenu
-bindsym F4 exec --no-startup-id rofi -show drun
-bindsym $meta+F1 exec --no-startup-id rofi -show drun
-bindsym $super+a exec --no-startup-id rofi -show drun
-bindsym $control+$escape exec --no-startup-id rofi -show drun
+bindsym F4 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
+bindsym $meta+F1 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
+bindsym $super+a exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
+bindsym $control+$escape exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 
 ## open Windows Run / Mac spotlight / dmenu or rofi
-bindsym $super+d exec --no-startup-id rofi -show drun
-bindsym $super+r exec --no-startup-id rofi -show drun
-bindsym $meta+$space exec --no-startup-id rofi -show drun
-bindsym $super+$space exec --no-startup-id rofi -show drun
+bindsym $super+d exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
+bindsym $super+r exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
+bindsym $meta+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
+bindsym $super+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 
 # change focus
 #bindsym $super+j focus left

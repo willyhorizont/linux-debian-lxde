@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.6" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.7" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,12 +35,14 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update create-desktop-shortcut.sh, merge lock;
-update i3 config, fix open terminal kb;
-update rofi config;
-update lxde openbox rc xml config, add missing open terminal kb;
-add rofi-config-windows-start-menu.rasi;
-update tint2-bottom-panel menu, use rofi-config-windows-start-menu.rasi config;
+update create-desktop-shortcut.sh;
+add set-env-current-desktop.sh;
+update install.sh, add set-env-current-desktop.sh;
+update rofi show -drun to use env XDG_CURRENT_DESKTOP;
+update i3 conifg, update rofi show -drun to use env XDG_CURRENT_DESKTOP;
+update lxde openbox rc xml config, update rofi show -drun to use env XDG_CURRENT_DESKTOP;
+update tint2-bottom-panel, update rofi show -drun to use env XDG_CURRENT_DESKTOP, rename indic0-tux.sh to indic0-screensavr.sh;
+update tint2-bottom-panel-menu, update rofi show -drun to use env XDG_CURRENT_DESKTOP;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
@@ -79,6 +81,7 @@ try starship or any shell prompt;
 try fzf;
 try sxhkdrc;
 TODO #3:
+backup ~/.profile after another setup;
 remove LXfcDE;
 remove debian netinst based;
 tinkering with dunstrc;

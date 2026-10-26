@@ -251,43 +251,43 @@
     <!-- open Windows Start menu / Mac launchpad / xfce4-popup-whiskermenu -->
     <keybind key="F4">
       <action name="Execute">
-        <command>rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi</command>
+        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi"</command>
       </action>
     </keybind>
     <keybind key="A-F1">
       <action name="Execute">
-        <command>rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi</command>
+        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi"</command>
       </action>
     </keybind>
     <keybind key="W-a">
       <action name="Execute">
-        <command>rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi</command>
+        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi"</command>
       </action>
     </keybind>
     <keybind key="C-Escape">
       <action name="Execute">
-        <command>rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi</command>
+        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi"</command>
       </action>
     </keybind>
     <!-- open Windows Run / Mac spotlight / dmenu or rofi -->
     <keybind key="W-d">
       <action name="Execute">
-        <command>rofi -show drun</command>
+        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"</command>
       </action>
     </keybind>
     <keybind key="W-r">
       <action name="Execute">
-        <command>rofi -show drun</command>
+        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"</command>
       </action>
     </keybind>
     <keybind key="A-space">
       <action name="Execute">
-        <command>rofi -show drun</command>
+        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"</command>
       </action>
     </keybind>
     <keybind key="W-space">
       <action name="Execute">
-        <command>rofi -show drun</command>
+        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"</command>
       </action>
     </keybind>
     <!-- Toggle Show Desktop -->
