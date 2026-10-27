@@ -188,6 +188,11 @@
             <command>sh -c '"$HOME/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout" "xtrlock"'</command>
         </action>
     </keybind>
+    <keybind key="S-W-e">
+        <action name="Execute">
+            <command>sh -c '"$HOME/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout" "xtrlock"'</command>
+        </action>
+    </keybind>
     <!-- Lock -->
     <keybind key="XF86ScreenSaver">
         <action name="Execute">

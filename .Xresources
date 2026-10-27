@@ -1,6 +1,12 @@
 ! XTerm config
-XTerm*background:      #000000
-XTerm*foreground:      #00ADD8
+XTerm*blinkCursor:     true
+XTerm*underlineCursor: true
+XTerm*utf8:            1
+XTerm*faceName:        Monospace
+XTerm*faceSize:        8
+XTerm*geometry:        80x26
+! XTerm*background:      #000000
+! XTerm*foreground:      #00ADD8
 XTerm*color0:          #000000
 XTerm*color1:          #00ADD8
 XTerm*color2:          #00ADD8
