@@ -38,7 +38,7 @@ set $prtsc Print
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
-font pango:JetBrains Mono 8
+font pango:JetBrains Mono 6
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -305,7 +305,7 @@ bindsym $control+$meta+Delete exec --no-startup-id $HOME/willyhorizont.github.io
 #        status_command i3blocks
 #}
 # exec_always --no-startup-id pkill -x polybar; polybar workspace-switcher
-exec_always --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/start-desktop.sh
+exec_always --no-startup-id $HOME/.config/i3/start-desktop.sh
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
@@ -320,8 +320,8 @@ exec_always --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/s
 #exec i3-config-wizard
 
 ## class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+# client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
@@ -333,3 +333,4 @@ client.focused          #FF1493 #FF1493 #000000 #FF1493   #FF1493
 client.focused_inactive #333333 #222222 #888888 #292d2e   #222222
 
 for_window [class="Polybar"] lower
+focus_follows_mouse no

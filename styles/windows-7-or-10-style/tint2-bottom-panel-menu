@@ -31,7 +31,7 @@ button_font = JetBrains Mono Bold 8
 button_font_color = #000000 100
 button_icon = distributor-logo-debian
 button_background_id = 1
-button_lclick_command = sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/rofi-config-windows-start-menu.rasi"
+button_lclick_command = sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config '$HOME/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'"
 button_padding = 0 0
 
 tooltip_font_color = #000000 100

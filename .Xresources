@@ -1,19 +1,28 @@
-! xterm config
-xterm*background:      #000000
-xterm*foreground:      #00ADD8
-xterm*color0:          #000000
-xterm*color1:          #00ADD8
-xterm*color2:          #00ADD8
-xterm*color3:          #AA5500
-xterm*color4:          #FF1493
-xterm*color5:          #AA00AA
-xterm*color6:          #00AAAA
-xterm*color7:          #FF1493
-xterm*color8:          #555555
-xterm*color9:          #00ADD8
-xterm*color10:         #55FF55
-xterm*color11:         #FFFF55
-xterm*color12:         #5555FF
-xterm*color13:         #FF55FF
-xterm*color14:         #55FFFF
-xterm*color15:         #FF1493
+! XTerm config
+XTerm*background:      #000000
+XTerm*foreground:      #00ADD8
+XTerm*color0:          #000000
+XTerm*color1:          #00ADD8
+XTerm*color2:          #00ADD8
+XTerm*color3:          #AA5500
+XTerm*color4:          #FF1493
+XTerm*color5:          #AA00AA
+XTerm*color6:          #00AAAA
+XTerm*color7:          #FF1493
+XTerm*color8:          #555555
+XTerm*color9:          #00ADD8
+XTerm*color10:         #55FF55
+XTerm*color11:         #FFFF55
+XTerm*color12:         #5555FF
+XTerm*color13:         #FF55FF
+XTerm*color14:         #55FFFF
+XTerm*color15:         #FF1493
+
+! URxvt config
+URxvt.font: xft:JetBrains Mono:size=8
+URxvt.scrollBar: false
+URxvt.background: #000000
+URxvt.foreground: #00ADD8
+URxvt.iso14755: false
+URxvt.keysym.Shift-Control-C: eval:copy
+URxvt.keysym.Shift-Control-V: eval:paste

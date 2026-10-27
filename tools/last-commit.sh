@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.8" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.9" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,16 +35,12 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-change i3 polybar name;
-update polybar config.ini, change i3 polybar name;
-update i3 README.md, add more panel + IPC combo;
-update rofi-config-windows-start-menu.rasi;
-update tint2-bottom-upper-panel, add --rev to indic0-wrkspc.sh, add kb-goto-wrkspc-prompt.sh, add execp_markup;
-add ipc-inter-process-communication.md;
-update i3 start-desktop.sh, change i3 polybar name;
+major update to style-selector.sh;
+make i3 style-selector.sh;
+update style-selector.sh, add --default, major update;
+update install.sh, add style-selector.sh --default, add i3 style-selector.sh --default;
 
 TODO #1 i3:
-make i3 style-selector.sh;
 fix i3 openbox logo not showing in lightdm session picker;
 make alt+F4 also delete cur_wrkspc if tot_open_wins 0;
 try limit tile per ws;

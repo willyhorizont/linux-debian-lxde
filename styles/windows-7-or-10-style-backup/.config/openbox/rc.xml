@@ -251,22 +251,22 @@
     <!-- open Windows Start menu / Mac launchpad / xfce4-popup-whiskermenu -->
     <keybind key="F4">
       <action name="Execute">
-        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style-backup/rofi-config-windows-start-menu.rasi"</command>
+        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config '$HOME/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'"</command>
       </action>
     </keybind>
     <keybind key="A-F1">
       <action name="Execute">
-        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style-backup/rofi-config-windows-start-menu.rasi"</command>
+        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config '$HOME/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'"</command>
       </action>
     </keybind>
     <keybind key="W-a">
       <action name="Execute">
-        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style-backup/rofi-config-windows-start-menu.rasi"</command>
+        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config '$HOME/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'"</command>
       </action>
     </keybind>
     <keybind key="C-Escape">
       <action name="Execute">
-        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config ~/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style-backup/rofi-config-windows-start-menu.rasi"</command>
+        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun -config '$HOME/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'"</command>
       </action>
     </keybind>
     <!-- open Windows Run / Mac spotlight / dmenu or rofi -->
