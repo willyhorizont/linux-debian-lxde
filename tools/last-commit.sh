@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.9" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.10" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,10 +35,8 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-major update to style-selector.sh;
-make i3 style-selector.sh;
-update style-selector.sh, add --default, major update;
-update install.sh, add style-selector.sh --default, add i3 style-selector.sh --default;
+update -config rofi-config-windows-start-menu.rasi rofi -show drun call;
+update README.md, update i3 install command, lock i3 install command;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;

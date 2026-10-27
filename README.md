@@ -514,9 +514,12 @@ sudo apt install -y xcur2png
 
 ## i3
 ```
-sudo apt install -y \
+sudo apt install -y --no-install-recommends \
     i3 \
     autotiling \
+    xss-lock \
+    xssproxy \
+    libxcb-screensaver0 \
     hsetroot \
     polybar \
     # i3blocks \
