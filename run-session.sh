@@ -37,14 +37,6 @@ xdotool set_desktop_for_window "$wid_brv" 0
 xdotool set_desktop 0
 xdotool key "ctrl+super+f"
 
-wids_fm=$(wmctrl -l -x -G -p | awk '$8 == "pcmanfm.Pcmanfm" && $10 != "pcmanfm" {print $1}' 2>/dev/null)
-if [ -n "$wids_fm" ]; then
-    echo "$wids_fm" | while read -r wid_fm; do
-        if [ -n "$wid_fm" ]; then
-            kill -9 $(xdotool getwindowpid "$wid_fm")
-        fi
-    done
-fi
 pcmanfm "$HOME/Codes/linux-debian-lxde/" &
 pcmanfm "$HOME/Codes/linux/" &
 pcmanfm "$HOME/Pictures/Screenshots" &
