@@ -1,4 +1,8 @@
-# i3 trial
+# i3
+
+![Debian LXDE i3 Screenshot 1](https://github.com/willyhorizont/linux-debian-lxde/blob/main/i3/screenshot1.jpg)  
+![Debian LXDE i3 Screenshot 2](https://github.com/willyhorizont/linux-debian-lxde/blob/main/i3/screenshot2.jpg)  
+![Debian LXDE i3 Screenshot 3](https://github.com/willyhorizont/linux-debian-lxde/blob/main/i3/screenshot3.jpg)  
 
 ## i3 not working
 * pcmanfm --desktop for desktop icon

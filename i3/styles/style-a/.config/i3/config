@@ -105,9 +105,9 @@ tiling_drag modifier titlebar
 
 ## open terminal
 #bindsym $mod+$return exec i3-sensible-terminal
-bindsym $super+$return exec lxterminal --working-directory=~
-bindsym $control+$meta+t exec lxterminal --working-directory=~
-bindsym $super+t exec lxterminal --working-directory=~
+bindsym $super+$return exec lxterminal --geometry=88x28 --working-directory=~
+bindsym $control+$meta+t exec lxterminal --geometry=88x28 --working-directory=~
+bindsym $super+t exec lxterminal --geometry=88x28 --working-directory=~
 
 # open file manager
 bindsym $super+e exec pcmanfm

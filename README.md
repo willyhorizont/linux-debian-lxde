@@ -1,6 +1,11 @@
 # Debian LXDE Post Install
 
-![Debian LXDE Screenshot](https://github.com/willyhorizont/linux-debian-lxde/blob/main/screenshot.jpg)  
+![Debian LXDE Screenshot 1](https://github.com/willyhorizont/linux-debian-lxde/blob/main/screenshot1.jpg)  
+![Debian LXDE Screenshot 2](https://github.com/willyhorizont/linux-debian-lxde/blob/main/screenshot2.jpg)  
+![Debian LXDE Screenshot 3](https://github.com/willyhorizont/linux-debian-lxde/blob/main/screenshot3.jpg)  
+![Debian LXDE i3 Screenshot 1](https://github.com/willyhorizont/linux-debian-lxde/blob/main/i3/screenshot1.jpg)  
+![Debian LXDE i3 Screenshot 2](https://github.com/willyhorizont/linux-debian-lxde/blob/main/i3/screenshot2.jpg)  
+![Debian LXDE i3 Screenshot 3](https://github.com/willyhorizont/linux-debian-lxde/blob/main/i3/screenshot3.jpg)  
 
 ## Reverse scroll and Turn on touchpad tapping
 ```
@@ -263,7 +268,7 @@ cat << 'EOF' > ~/.local/share/applications/tui0-screensavr.desktop
 [Desktop Entry]
 Name=tui0-screensavr
 Comment=tui0-screensavr
-Exec=lxterminal --geometry=80x28 -e ~/willyhorizont.github.io/linux/tui0-screensavr.sh
+Exec=lxterminal --geometry=88x28 --working-directory=$HOME -e ~/willyhorizont.github.io/linux/tui0-screensavr.sh
 Terminal=false
 Type=Application
 Icon=system-lock-screen
@@ -391,10 +396,10 @@ if [ -f /usr/share/applications/display-im7.q16.desktop ]; then cp /usr/share/ap
 if [ -f /usr/share/applications/libreoffice-startcenter.desktop ]; then cp /usr/share/applications/libreoffice-startcenter.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; fi; }; fi
 if [ -f /usr/share/applications/libreoffice-math.desktop ]; then cp /usr/share/applications/libreoffice-math.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-math.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-math.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-math.desktop"; fi; }; fi
 if [ -f /usr/share/applications/libreoffice-draw.desktop ]; then cp /usr/share/applications/libreoffice-draw.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-draw.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-draw.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-draw.desktop"; fi; }; fi
-if [ -f /usr/share/applications/btop.desktop ]; then cp /usr/share/applications/btop.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal --geometry=80x28 -e btop|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/btop.desktop"; }; fi
-if [ -f /usr/share/applications/cmatrix.desktop ]; then cp /usr/share/applications/cmatrix.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -fa Monospace -fs 8 -geometry 80x26 -bg black -fg green -e cmatrix -s -u 10 -a|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/cmatrix.desktop"; }; fi
-if [ -f /usr/share/applications/xterm.desktop ]; then cp /usr/share/applications/xterm.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -fa Monospace -fs 8 -geometry 88x26|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/xterm.desktop"; }; fi
-if [ -f /usr/share/applications/lxterminal.desktop ]; then cp /usr/share/applications/lxterminal.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal --working-directory=$HOME|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/lxterminal.desktop"; }; fi
+if [ -f /usr/share/applications/btop.desktop ]; then cp /usr/share/applications/btop.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal --geometry=88x28 --working-directory=$HOME -e btop|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/btop.desktop"; }; fi
+if [ -f /usr/share/applications/cmatrix.desktop ]; then cp /usr/share/applications/cmatrix.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -fa Monospace -fs 8 -geometry 88x28 -bg black -fg green -e cmatrix -s -u 10 -a|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/cmatrix.desktop"; }; fi
+if [ -f /usr/share/applications/xterm.desktop ]; then cp /usr/share/applications/xterm.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -fa Monospace -fs 8 -geometry 88x28|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/xterm.desktop"; }; fi
+if [ -f /usr/share/applications/lxterminal.desktop ]; then cp /usr/share/applications/lxterminal.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal --geometry=88x28 --working-directory=$HOME|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/lxterminal.desktop"; }; fi
 update-desktop-database ~/.local/share/applications && sudo update-desktop-database /usr/share/applications
 
 # Qt

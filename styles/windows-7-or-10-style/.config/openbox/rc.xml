@@ -234,17 +234,17 @@
     <!-- open terminal -->
     <keybind key="W-Return">
       <action name="Execute">
-        <command>lxterminal --working-directory=~</command>
+        <command>lxterminal --geometry=88x28 --working-directory=~</command>
       </action>
     </keybind>
     <keybind key="C-A-t">
       <action name="Execute">
-        <command>lxterminal --working-directory=~</command>
+        <command>lxterminal --geometry=88x28 --working-directory=~</command>
       </action>
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>lxterminal --working-directory=~</command>
+        <command>lxterminal --geometry=88x28 --working-directory=~</command>
       </action>
     </keybind>
     <!-- Open File Manager -->
@@ -716,14 +716,14 @@
     <keybind key="A-F11">
       <action name="ToggleFullscreen"/>
     </keybind>
-    <!-- Super+Shift+S to Screenshot area -->
-    <keybind key="S-W-s">
+    <!-- Screenshot area -->
+    <keybind key="W-S-s">
         <action name="Execute">
             <command>bash -c 'mkdir -p "$HOME/Pictures/Screenshots" &amp;&amp; scrot --border --pointer --freeze --select --quality 100 "$HOME/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg"'</command>
         </action>
     </keybind>
-    <!-- Shift+PrtSc to Screenshot -->
-    <keybind key="S-Print">
+    <!-- Screenshot -->
+    <keybind key="W-Print">
         <action name="Execute">
             <command>bash -c 'mkdir -p "$HOME/Pictures/Screenshots" &amp;&amp; scrot --border --pointer --quality 100 "$HOME/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg"'</command>
         </action>

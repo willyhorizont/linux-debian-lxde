@@ -4,7 +4,7 @@ XTerm*underlineCursor: true
 XTerm*utf8:            1
 XTerm*faceName:        Monospace
 XTerm*faceSize:        8
-XTerm*geometry:        80x26
+XTerm*geometry:        88x28
 ! XTerm*background:      #000000
 ! XTerm*foreground:      #00ADD8
 ! XTerm*color0:          #000000
