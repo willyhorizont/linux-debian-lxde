@@ -538,67 +538,67 @@
     </keybind>
     <keybind key="W-1">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 1'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 1'</command>
         </action>
     </keybind>
     <keybind key="W-2">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 2'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 2'</command>
         </action>
     </keybind>
     <keybind key="W-3">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 3'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 3'</command>
         </action>
     </keybind>
     <keybind key="W-4">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 4'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 4'</command>
         </action>
     </keybind>
     <keybind key="W-5">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 5'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 5'</command>
         </action>
     </keybind>
     <keybind key="W-6">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 6'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 6'</command>
         </action>
     </keybind>
     <keybind key="W-7">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 7'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 7'</command>
         </action>
     </keybind>
     <keybind key="W-8">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 8'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 8'</command>
         </action>
     </keybind>
     <keybind key="W-9">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 9'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 9'</command>
         </action>
     </keybind>
     <keybind key="W-0">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh -p 0'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 10'</command>
         </action>
     </keybind>
     <!-- Keybindings for windows -->
     <!-- kill focused window -->
     <keybind key="A-F4">
-      <action name="Close"/>
+        <action name="Close"/>
     </keybind>
     <keybind key="W-q">
-      <action name="Close"/>
+        <action name="Close"/>
     </keybind>
     <keybind key="A-q">
-      <action name="Close"/>
+        <action name="Close"/>
     </keybind>
     <keybind key="S-W-q">
-      <action name="Close"/>
+        <action name="Close"/>
     </keybind>
     <keybind key="A-Escape">
       <action name="Lower"/>
@@ -635,13 +635,7 @@
         </action>
     </keybind>
     -->
-    
-    <keybind key="A-Tab">
-        <action name="NextWindow"/>
-    </keybind>
-    <keybind key="A-S-Tab">
-        <action name="PreviousWindow"/>
-    </keybind>
+    <!--
     <keybind key="W-Tab">
         <action name="GoToDesktop">
             <to>right</to>
@@ -656,19 +650,39 @@
             <popup>no</popup>
         </action>
     </keybind>
+    -->
+
+    <keybind key="A-Tab">
+        <action name="NextWindow"/>
+    </keybind>
+    <keybind key="A-S-Tab">
+        <action name="PreviousWindow"/>
+    </keybind>
+
+    <keybind key="W-Tab">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --next'</command>
+        </action>
+    </keybind>
+    <keybind key="W-S-Tab">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --prev'</command>
+        </action>
+    </keybind>
+
     <keybind key="C-W-plus">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-nu-wrkspc.sh'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --plus'</command>
         </action>
     </keybind>
     <keybind key="C-W-Return">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --goto'</command>
         </action>
     </keybind>
     <keybind key="C-W-x">
         <action name="Execute">
-            <command>sh -c 'TRGT_WIN=$(xdotool getactivewindow); "$HOME/willyhorizont.github.io/linux/kb-mov-win-to-wrkspc-prompt.sh" "$TRGT_WIN"'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --mov'</command>
         </action>
     </keybind>
     <!-- Keybindings for running applications -->

@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.11" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.13" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,31 +35,33 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update lxde openbox rc xml config, update kb;
-update xterm geometry;
+--make alt+F4 also delete cur_wrkspc if tot_open_wins 0--;
+--create tui0-i3session-mgr.sh, to set setup i3-desktop.conf--;
+--update i3 config to read i3-desktop.conf--;
+--update kb next prev wrkspc to use kb-goto-wrkspc-prompt.sh --prev --next so the desktop name use number--;
+--use kb-goto-wrkspc-prompt.sh--;
+--use kb-mov-win-to-wrkspc-prompt.sh--;
+--make C-W-t cycle stacking tiling tabbed floating--;
+use wrkspc-mgr.sh;
+replace kb-goto-wrkspc-prompt.sh with wrkspc-mgr.sh;
+update tint2-bottom-upper-panel, replace kb-goto-wrkspc-prompt.sh with wrkspc-mgr.sh --goto;
+update lxde openbox rc xml config, replace kb-goto-wrkspc-prompt.sh -p with wrkspc-mgr.sh --name, replace kb-goto-wrkspc-prompt.sh with wrkspc-mgr.sh --goto, replace kb-mov-win-to-wrkspc-prompt.sh with wrkspc-mgr.sh --mov, use wrkspc-mgr.sh --plus, use wrkspc-mgr.sh --next, use wrkspc-mgr.sh --prev;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
-make alt+F4 also delete cur_wrkspc if tot_open_wins 0;
 try limit tile per ws;
-create tui0-i3session-mgr.sh, to set setup i3-desktop.conf;
-update i3 config to read i3-desktop.conf;
 
 TODO #1 lxde openbox:
-update kb next prev wrkspc to use kb-goto-wrkspc-prompt.sh --prev --next so the desktop name use number;
 add refresh-desktop.sh to desktop RMB menu;
 
 TODO #1:
 add Pango Markup;
 add --pango to tint2;
 execp_markup = 1 to tint2;
-use kb-goto-wrkspc-prompt.sh;
-use kb-mov-win-to-wrkspc-prompt.sh;
 search xtrlock alternative;
 on idle autolock show Windows Update or Windows BSOD;
 
 TODO i3 #2:
---make C-W-t cycle stacking tiling tabbed floating--;
 tinkering with i3gaps;
 try to add background image in pcmanfm;
 set pcmanfm background image;

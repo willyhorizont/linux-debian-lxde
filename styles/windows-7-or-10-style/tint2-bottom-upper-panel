@@ -46,7 +46,7 @@ execp_font = JetBrains Mono Bold 9
 execp_font_color = #000000 100
 execp_background_id = 1
 execp_padding = 0 0
-execp_lclick_command = ~/willyhorizont.github.io/linux/kb-goto-wrkspc-prompt.sh
+execp_lclick_command = ~/willyhorizont.github.io/linux/wrkspc-mgr.sh --goto
 execp_markup = 1
 
 tooltip_font_color = #000000 100
