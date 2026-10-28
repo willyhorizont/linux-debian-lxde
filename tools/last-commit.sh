@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.17" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.18" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,7 +35,8 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update run-session.sh;
+tinkering with dunstrc;
+add dunstrc dunst config;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
@@ -76,7 +77,6 @@ TODO #3:
 backup ~/.profile after another setup;
 remove LXfcDE;
 remove debian netinst based;
-tinkering with dunstrc;
 add run-session*.sh to ~/.bashrc;
 move everything to single install.sh script;
 merge willyhorizont.github.io/linux-debian-lxde to willyhorizont.github.io/linux;
