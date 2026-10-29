@@ -109,7 +109,7 @@ bindsym $super+$return exec lxterminal --geometry=88x28 --working-directory=~
 bindsym $control+$meta+t exec lxterminal --geometry=88x28 --working-directory=~
 bindsym $super+t exec lxterminal --geometry=88x28 --working-directory=~
 
-# open file manager
+# open Windows File Explorer / Mac Finder / Linux Thunar or PCManFM
 bindsym $super+e exec pcmanfm
 
 # screenshot
@@ -136,17 +136,21 @@ bindsym $super+$shift+q kill
 # bindsym $super+r exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
 # bindsym $meta+$space exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
 
-## open Windows Start menu / Mac launchpad / xfce4-popup-whiskermenu
+## open Windows Start menu / Mac Launchpad / Linux xfce4-popup-whiskermenu or jgmenu or dmenu or rofi
 bindsym F4 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 bindsym $meta+F1 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 bindsym $super+a exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 bindsym $control+$escape exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 
-## open Windows Run / Mac spotlight / dmenu or rofi
+## open Windows Run / Mac Spotlight / Linux dmenu or rofi
 bindsym $super+d exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 bindsym $super+r exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 bindsym $meta+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 bindsym $super+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
+
+# open Windows Task Manager / Mac Activity Monitor / Linux btop
+bindsym $control+$shift+$escape exec --no-startup-id lxterminal --geometry=88x28 --working-directory=~ -e btop
+bindsym $super+$meta+$escape exec --no-startup-id lxterminal --geometry=88x28 --working-directory=~ -e btop
 
 # change focus
 #bindsym $super+j focus left

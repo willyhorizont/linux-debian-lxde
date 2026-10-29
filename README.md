@@ -354,6 +354,10 @@ sudo apt purge -y \
     lxlauncher \
     && sudo apt autoremove -y --purge
 
+# GUI user management tools
+sudo apt install -y --no-install-recommends libuser1
+sudo apt purge -y usermode && sudo apt autoremove -y --purge
+
 # Network Manager Applet
 sudo apt install -y --no-install-recommends network-manager
 sudo apt purge -y network-manager-applet && sudo apt autoremove -y --purge
@@ -443,6 +447,8 @@ if [ -f /usr/share/applications/debian-xterm.desktop ]; then cp /usr/share/appli
 if [ -f /usr/share/applications/lxterminal.desktop ]; then cp /usr/share/applications/lxterminal.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal --geometry=88x28 --working-directory=$HOME|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/lxterminal.desktop"; }; fi
 if [ -f /usr/share/applications/rxvt-unicode.desktop ]; then cp /usr/share/applications/rxvt-unicode.desktop ~/.local/share/applications/ && { sed -i 's|^Icon=.*|Icon=utilities-terminal|; s|^Name=.*|Name=URxvt|; s|^Exec=.*|Exec=urxvt -bc -uc -pt root -fn "xft:Monospace:size=8" -geometry 88x28|' "$HOME/.local/share/applications/rxvt-unicode.desktop"; }; fi
 if [ -f /usr/share/applications/Alacritty.desktop ]; then cp /usr/share/applications/Alacritty.desktop ~/.local/share/applications/ && { sed -i 's|^Icon=.*|Icon=utilities-terminal|' "$HOME/.local/share/applications/Alacritty.desktop"; }; fi
+if [ -f /usr/share/applications/rofi-theme-selector.desktop ]; then cp /usr/share/applications/rofi-theme-selector.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/rofi-theme-selector.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/rofi-theme-selector.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/rofi-theme-selector.desktop"; fi; }; fi
+if [ -f /usr/share/applications/rofi.desktop ]; then cp /usr/share/applications/rofi.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/rofi.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/rofi.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/rofi.desktop"; fi; }; fi
 update-desktop-database ~/.local/share/applications && sudo update-desktop-database /usr/share/applications
 
 # Qt

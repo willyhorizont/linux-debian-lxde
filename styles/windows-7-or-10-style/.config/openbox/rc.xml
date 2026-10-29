@@ -253,7 +253,7 @@
         <command>pcmanfm</command>
       </action>
     </keybind>
-    <!-- open Windows Start menu / Mac launchpad / xfce4-popup-whiskermenu -->
+    <!-- open Windows Start menu / Mac Launchpad / Linux xfce4-popup-whiskermenu or jgmenu or dmenu or rofi -->
     <keybind key="F4">
       <action name="Execute">
         <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -show drun -config "$HOME"/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'</command>
@@ -274,7 +274,7 @@
         <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -show drun -config "$HOME"/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'</command>
       </action>
     </keybind>
-    <!-- open Windows Run / Mac spotlight / dmenu or rofi -->
+    <!-- open Windows Run / Mac Spotlight / Linux dmenu or rofi -->
     <keybind key="W-d">
       <action name="Execute">
         <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"</command>
@@ -293,6 +293,17 @@
     <keybind key="W-space">
       <action name="Execute">
         <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"</command>
+      </action>
+    </keybind>
+    <!-- open Windows Task Manager / Mac Activity Monitor / Linux btop -->
+    <keybind key="C-S-Escape">
+      <action name="Execute">
+        <command>lxterminal --geometry=88x28 --working-directory=~ -e btop</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-Escape">
+      <action name="Execute">
+        <command>lxterminal --geometry=88x28 --working-directory=~ -e btop</command>
       </action>
     </keybind>
     <!-- Toggle Show Desktop -->
@@ -686,7 +697,7 @@
         </action>
     </keybind>
     <!-- Keybindings for running applications -->
-    <!-- open file manager -->
+    <!-- open Windows File Explorer / Mac Finder / Linux Thunar or PCManFM -->
     <keybind key="W-e">
       <action name="Execute">
         <command>pcmanfm</command>
