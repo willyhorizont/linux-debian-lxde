@@ -38,7 +38,7 @@ panel_window_name = tint2-bottom-upper-panel
 
 # --- E: Indicator Workspace ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indic0-wrkspc.sh --rev
+execp_command = ~/willyhorizont.github.io/linux/indic0-wrkspc.sh --rev --pango
 execp_interval = 0
 execp_has_icon = 0
 execp_continuous = 1

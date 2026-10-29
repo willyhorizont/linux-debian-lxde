@@ -1199,6 +1199,20 @@
 
   # end of the example
 -->
+    <application class="Mousepad">
+        <focus>yes</focus>
+        <position force="yes">
+            <x>center</x>
+            <y>center</y>
+        </position>
+    </application>
+    <application class="URxvt">
+        <focus>yes</focus>
+        <position force="yes">
+            <x>center</x>
+            <y>center</y>
+        </position>
+    </application>
     <application class="XTerm">
         <focus>yes</focus>
         <position force="yes">
@@ -1207,6 +1221,13 @@
         </position>
     </application>
     <application class="Lxterminal">
+        <focus>yes</focus>
+        <position force="yes">
+            <x>center</x>
+            <y>center</y>
+        </position>
+    </application>
+    <application class="Alacritty">
         <focus>yes</focus>
         <position force="yes">
             <x>center</x>

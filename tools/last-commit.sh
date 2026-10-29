@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.19" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.20" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,7 +35,22 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update dunstrc dunst config, update icon-theme;
+add .bashrc;
+add .fzfrc;
+update .Xresources, update XTerm color, update URxvt color;
+update install.sh, add .fzfrc, add lazygit config.yml, add btop.conf, add alacritty.toml;
+add .fzfrc;
+add lazygit config.yml;
+add btop.conf;
+add alacritty.toml;
+add fastfetch config.jsonc;
+update lxterminal.conf, update color;
+update .vscode settings.json, add terminal color;
+update lxde openbox rc xml config, add Mousepad URxvt Alacritty window config;
+try fzf;
+try starship or any shell prompt;
+add timestamp to shell prompt via PROMPT_COMMAND PS1;
+update README.md, add micro, add alacritty, add fzf, add .bashrc shell prompt PROMPT_COMMAND PS1;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
@@ -69,9 +84,7 @@ try more bottom panel combo;
 try panels again to see features;
 find panel that have can communicate via some signal;
 try tint2 taskbar_mode multi_desktop pager;
-try starship or any shell prompt;
-try fzf;
-try sxhkdrc;
+try sxhkd sxhkdrc;
 TODO #3:
 backup ~/.profile after another setup;
 remove LXfcDE;

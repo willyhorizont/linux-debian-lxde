@@ -1,0 +1,44 @@
+[general]
+live_config_reload = false
+
+[font]
+size = 6.0
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[colors.primary]
+background = "#000000"
+foreground = "#CCFF00"
+
+[colors.normal]
+black   = "#000000"  # color 0
+red     = "#00ADD8"  # color 1
+green   = "#00ADD8"  # color 2
+yellow  = "#CCFF00"  # color 3
+blue    = "#FF1493"  # color 4
+magenta = "#00ADD8"  # color 5
+cyan    = "#00ADD8"  # color 6
+white   = "#FF1493"  # color 7
+
+[colors.bright]
+black   = "#555555"  # color 8
+red     = "#FF5555"  # color 9
+green   = "#55FF55"  # color 10
+yellow  = "#FFFF55"  # color 11
+blue    = "#5555FF"  # color 12
+magenta = "#FF55FF"  # color 13
+cyan    = "#55FFFF"  # color 14
+white   = "#FFFFFF"  # color 15
+
+[cursor]
+style = { shape = "Beam", blinking = "Always" }
+
+[window]
+opacity = 1.0
+blur = false
+
+[window.dimensions]
+columns = 88
+lines = 28
