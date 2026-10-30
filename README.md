@@ -137,25 +137,25 @@ sudo apt install -y \
 ### ~/.bashrc
 ```
 PROMPT_COMMAND='PROMPT_TIME=$(date "+%a-%d-%b-%Y|%I:%M:%S%p")'
-PS1="\[\e[1;33m\]\u\[\e[1;31m\]@\[\e[1;34m\]\h\[\e[1;31m\]@\[\e[1;33m\][\$PROMPT_TIME]\[\e[1;31m\]:\[\e[1;34m\]\w/\[\e[0m\]\n\[\e[1;31m\]\$\[\e[0m\] "
+PS1="\[\e[1;96m\]\u\[\e[1;94m\]@\[\e[1;95m\]\h\[\e[1;94m\]@\[\e[1;96m\][\$PROMPT_TIME]\[\e[1;94m\]:\[\e[1;95m\]\w/\[\e[0m\]\n\[\e[1;94m\]\$\[\e[0m\] "
 ```
 
 ### /root/.bashrc
 ```
 PROMPT_COMMAND='PROMPT_TIME=$(date "+%a-%d-%b-%Y|%I:%M:%S%p")'
-PS1="\[\e[1;33m\]\u\[\e[1;31m\]@\[\e[1;34m\]\h\[\e[1;31m\]@\[\e[1;33m\][\$PROMPT_TIME]\[\e[1;31m\]:\[\e[1;34m\]\w/\[\e[0m\]\n\[\e[1;31m\]#\[\e[0m\] "
+PS1="\[\e[1;96m\]\u\[\e[1;94m\]@\[\e[1;95m\]\h\[\e[1;94m\]@\[\e[1;96m\][\$PROMPT_TIME]\[\e[1;94m\]:\[\e[1;95m\]\w/\[\e[0m\]\n\[\e[1;94m\]#\[\e[0m\] "
 ```
 
 ### description
 ```
-# \[\e[1;33m\]\u = user #CCFF00 (Slot 3).
-# \[\e[1;31m\]@ = @ #00ADD8 (Slot 1).
-# \[\e[1;34m\]\h = hostname #FF1493 (Slot 4).
-# \[\e[1;31m\]@ = @ #00ADD8 (Slot 1).
-# \[\e[1;33m\][\$PROMPT_TIME] = [timestamp] #CCFF00 (Slot 3).
-# \[\e[1;31m\]: = : #00ADD8 (Slot 1).
-# \[\e[1;34m\]\w/ = dir #FF1493 (Slot 4) + Suffix /.
-# \n\[\e[1;31m\]\$ atau \# = Newline and $ or # #00ADD8 (Slot 1).
+# \[\e[1;96m\]\u = user #CCFF00 (Slot 11).
+# \[\e[1;94m\]@ = @ #00ADD8 (Slot 9).
+# \[\e[1;95m\]\h = hostname #FF1493 (Slot 10).
+# \[\e[1;94m\]@ = @ #00ADD8 (Slot 9).
+# \[\e[1;96m\][\$PROMPT_TIME] = [timestamp] #CCFF00 (Slot 11).
+# \[\e[1;94m\]: = : #00ADD8 (Slot 9).
+# \[\e[1;95m\]\w/ = dir #FF1493 (Slot 10) + Suffix /.
+# \n\[\e[1;94m\]\$ atau \# = Newline and $ or # #00ADD8 (Slot 9).
 # \[\e[0m\]  = last space and command #CCFF00 (Reset to default).
 ```
 
@@ -306,7 +306,7 @@ cat << 'EOF' > ~/.local/share/applications/tui0-screensavr.desktop
 [Desktop Entry]
 Name=tui0-screensavr
 Comment=tui0-screensavr
-Exec=lxterminal --geometry=88x28 --working-directory=$HOME -e ~/willyhorizont.github.io/linux/tui0-screensavr.sh
+Exec=lxterminal -e ~/willyhorizont.github.io/linux/tui0-screensavr.sh
 Terminal=false
 Type=Application
 Icon=system-lock-screen
@@ -441,11 +441,11 @@ if [ -f /usr/share/applications/display-im7.q16.desktop ]; then cp /usr/share/ap
 if [ -f /usr/share/applications/libreoffice-startcenter.desktop ]; then cp /usr/share/applications/libreoffice-startcenter.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-startcenter.desktop"; fi; }; fi
 if [ -f /usr/share/applications/libreoffice-math.desktop ]; then cp /usr/share/applications/libreoffice-math.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-math.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-math.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-math.desktop"; fi; }; fi
 if [ -f /usr/share/applications/libreoffice-draw.desktop ]; then cp /usr/share/applications/libreoffice-draw.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/libreoffice-draw.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/libreoffice-draw.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/libreoffice-draw.desktop"; fi; }; fi
-if [ -f /usr/share/applications/btop.desktop ]; then cp /usr/share/applications/btop.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal --geometry=88x28 --working-directory=$HOME -e btop|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/btop.desktop"; }; fi
-if [ -f /usr/share/applications/cmatrix.desktop ]; then cp /usr/share/applications/cmatrix.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -fa Monospace -fs 8 -geometry 88x28 -xrm "XTerm*color2: #008000" -xrm "XTerm*color7: #FFFFFF" -e cmatrix -s -u 10 -a|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/cmatrix.desktop"; }; fi
-if [ -f /usr/share/applications/debian-xterm.desktop ]; then cp /usr/share/applications/debian-xterm.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -fa Monospace -fs 8 -geometry 88x28|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/debian-xterm.desktop"; }; fi
-if [ -f /usr/share/applications/lxterminal.desktop ]; then cp /usr/share/applications/lxterminal.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal --geometry=88x28 --working-directory=$HOME|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/lxterminal.desktop"; }; fi
-if [ -f /usr/share/applications/rxvt-unicode.desktop ]; then cp /usr/share/applications/rxvt-unicode.desktop ~/.local/share/applications/ && { sed -i 's|^Icon=.*|Icon=utilities-terminal|; s|^Name=.*|Name=URxvt|; s|^Exec=.*|Exec=urxvt -bc -uc -pt root -fn "xft:Monospace:size=8" -geometry 88x28|' "$HOME/.local/share/applications/rxvt-unicode.desktop"; }; fi
+if [ -f /usr/share/applications/btop.desktop ]; then cp /usr/share/applications/btop.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal -e btop|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/btop.desktop"; }; fi
+if [ -f /usr/share/applications/cmatrix.desktop ]; then cp /usr/share/applications/cmatrix.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -fa Monospace -fs 8 -xrm "XTerm*color2: #008000" -xrm "XTerm*color7: #FFFFFF" -e cmatrix -s -u 10 -a|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/cmatrix.desktop"; }; fi
+if [ -f /usr/share/applications/debian-xterm.desktop ]; then cp /usr/share/applications/debian-xterm.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=xterm -bc -uc -u8 -fa Monospace -fs 8|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/debian-xterm.desktop"; }; fi
+if [ -f /usr/share/applications/lxterminal.desktop ]; then cp /usr/share/applications/lxterminal.desktop ~/.local/share/applications/ && { sed -i 's|^Exec=.*|Exec=lxterminal|; s|^Terminal=.*|Terminal=false|' "$HOME/.local/share/applications/lxterminal.desktop"; }; fi
+if [ -f /usr/share/applications/rxvt-unicode.desktop ]; then cp /usr/share/applications/rxvt-unicode.desktop ~/.local/share/applications/ && { sed -i 's|^Icon=.*|Icon=utilities-terminal|; s|^Name=.*|Name=URxvt|; s|^Exec=.*|Exec=urxvt -bc -uc -pt root -fn "xft:Monospace:size=8"|' "$HOME/.local/share/applications/rxvt-unicode.desktop"; }; fi
 if [ -f /usr/share/applications/Alacritty.desktop ]; then cp /usr/share/applications/Alacritty.desktop ~/.local/share/applications/ && { sed -i 's|^Icon=.*|Icon=utilities-terminal|' "$HOME/.local/share/applications/Alacritty.desktop"; }; fi
 if [ -f /usr/share/applications/rofi-theme-selector.desktop ]; then cp /usr/share/applications/rofi-theme-selector.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/rofi-theme-selector.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/rofi-theme-selector.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/rofi-theme-selector.desktop"; fi; }; fi
 if [ -f /usr/share/applications/rofi.desktop ]; then cp /usr/share/applications/rofi.desktop ~/.local/share/applications/ && { if grep -q "^NoDisplay=" "$HOME/.local/share/applications/rofi.desktop"; then sed -i 's/^NoDisplay=.*/NoDisplay=true/' "$HOME/.local/share/applications/rofi.desktop"; else sed -i '/^\[Desktop Entry\]/a NoDisplay=true' "$HOME/.local/share/applications/rofi.desktop"; fi; }; fi

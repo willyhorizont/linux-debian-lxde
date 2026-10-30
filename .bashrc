@@ -1,7 +1,7 @@
 # -- willyhorizont.github.io config start here --
 
 PROMPT_COMMAND='PROMPT_TIME=$(date "+%a-%d-%b-%Y|%I:%M:%S%p")'
-PS1="\[\e[1;33m\]\u\[\e[1;31m\]@\[\e[1;34m\]\h\[\e[1;31m\]@\[\e[1;33m\][\$PROMPT_TIME]\[\e[1;31m\]:\[\e[1;34m\]\w/\[\e[0m\]\n\[\e[1;31m\]\$\[\e[0m\] "
+PS1="\[\e[1;96m\]\u\[\e[1;94m\]@\[\e[1;95m\]\h\[\e[1;94m\]@\[\e[1;96m\][\$PROMPT_TIME]\[\e[1;94m\]:\[\e[1;95m\]\w/\[\e[0m\]\n\[\e[1;94m\]\$\[\e[0m\] "
 
 alias upgrayedd='sudo apt update && sudo apt upgrade -y && sudo apt autoremove --purge'
 purgex() {

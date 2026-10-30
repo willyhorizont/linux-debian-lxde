@@ -102,4 +102,12 @@ ln -sf "$SRC_TOP_BAR" "$TOP_BAR"
 
 ln -sf "$STYLE_DIR/$STYLE_SUBDIR/start-desktop.sh" "$HOME/.config/i3/start-desktop.sh"
 
+case 0 in
+    $(pgrep -x "i3" >/dev/null; echo $?))
+        ;;
+    *)
+        exit 0
+        ;;
+esac
+
 notify-send "$SCRIPT_NAME" "$SELECTION applied"

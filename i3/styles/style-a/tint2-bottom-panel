@@ -66,7 +66,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 3
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/tui1-bt.sh
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui1-bt.sh
 
 # --- E: Indicator Network ---
 execp = new
@@ -77,7 +77,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 3
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/tui2-net.sh
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui2-net.sh
 
 # --- E: Indicator Cam ---
 execp = new
@@ -88,7 +88,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 3
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/tui3-cam.sh
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui3-cam.sh
 
 # --- E: Indicator Mic ---
 execp = new
@@ -99,7 +99,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 3
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/tui4-mic.sh
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui4-mic.sh
 
 # --- E: Indicator Volume ---
 execp = new
@@ -110,7 +110,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 3
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/tui5-vol.sh
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui5-vol.sh
 
 # --- E: Indicator Power ---
 execp = new
@@ -121,7 +121,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 3
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/tui6-powr.sh
+execp_lclick_command = lxterminal -e ~/willyhorizont.github.io/linux/tui6-powr.sh
 
 # --- P: Button to Show Notification History ---
 button = new

@@ -75,7 +75,7 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
     <!-- Open Terminal -->
     <keybind key="C-W-t">
       <action name="Execute">
-        <command>lxterminal --geometry=88x28 --working-directory=~</command>
+        <command>lxterminal --working-directory=~</command>
       </action>
     </keybind>
     <!-- Open File Manager -->
@@ -95,7 +95,7 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber
     <!-- Launch Task Manager with Ctrl+Alt+Del -->
     <keybind key="A-C-Delete">
       <action name="Execute">
-        <command>lxterminal --geometry=88x28 --working-directory=~ -e btop</command>
+        <command>lxterminal -e btop</command>
       </action>
     </keybind>
 

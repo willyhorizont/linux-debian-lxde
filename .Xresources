@@ -7,44 +7,48 @@ XTerm*faceSize:        8
 XTerm*geometry:        88x28
 XTerm*background:      #000000
 XTerm*foreground:      #CCFF00
+
 XTerm*color0:          #000000
-XTerm*color1:          #00ADD8
-XTerm*color2:          #00ADD8
-XTerm*color3:          #FF0000
-XTerm*color4:          #FF1493
-XTerm*color5:          #FF0000
-XTerm*color6:          #FF0000
-XTerm*color7:          #FF1493
-XTerm*color8:          #FF0000
-XTerm*color9:          #00ADD8
-XTerm*color10:         #FF0000
-XTerm*color11:         #CCFF00
-XTerm*color12:         #FF1493
-XTerm*color13:         #FF0000
-XTerm*color14:         #FF0000
-XTerm*color15:         #FF1493
+XTerm*color1:          #666666
+XTerm*color2:          #FF1493
+XTerm*color3:          #00ADD8
+XTerm*color4:          #CCFF00
+XTerm*color5:          #CCFF00
+XTerm*color6:          #FF1493
+XTerm*color7:          #CCFF00
+
+XTerm*color8:          #00ADD8
+XTerm*color9:          #FF1493
+XTerm*color10:         #FF1493
+XTerm*color11:         #FF1493
+XTerm*color12:         #00ADD8
+XTerm*color13:         #FF1493
+XTerm*color14:         #CCFF00
+XTerm*color15:         #CCFF00
 
 ! URxvt config
 URxvt.font: xft:JetBrains Mono:size=8
 URxvt.scrollBar: false
-URxvt.background: #000000
-URxvt.foreground: #CCFF00
+URxvt.background:      #000000
+URxvt.foreground:      #CCFF00
+
 URxvt.color0:          #000000
-URxvt.color1:          #00ADD8
-URxvt.color2:          #00ADD8
-URxvt.color3:          #FF0000
-URxvt.color4:          #FF1493
-URxvt.color5:          #FF0000
-URxvt.color6:          #FF0000
-URxvt.color7:          #FF1493
-URxvt.color8:          #FF0000
-URxvt.color9:          #00ADD8
-URxvt.color10:         #FF0000
-URxvt.color11:         #CCFF00
-URxvt.color12:         #FF1493
-URxvt.color13:         #FF0000
-URxvt.color14:         #FF0000
-URxvt.color15:         #FF1493
+URxvt.color1:          #666666
+URxvt.color2:          #FF1493
+URxvt.color3:          #00ADD8
+URxvt.color4:          #CCFF00
+URxvt.color5:          #CCFF00
+URxvt.color6:          #FF1493
+URxvt.color7:          #CCFF00
+
+URxvt.color8:          #00ADD8
+URxvt.color9:          #FF1493
+URxvt.color10:         #FF1493
+URxvt.color11:         #FF1493
+URxvt.color12:         #00ADD8
+URxvt.color13:         #FF1493
+URxvt.color14:         #CCFF00
+URxvt.color15:         #CCFF00
 URxvt.iso14755: false
 URxvt.keysym.Shift-Control-C: eval:copy
 URxvt.keysym.Shift-Control-V: eval:paste

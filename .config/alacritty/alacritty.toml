@@ -14,23 +14,23 @@ foreground = "#CCFF00"
 
 [colors.normal]
 black   = "#000000"  # color 0
-red     = "#00ADD8"  # color 1
-green   = "#00ADD8"  # color 2
-yellow  = "#CCFF00"  # color 3
-blue    = "#FF1493"  # color 4
-magenta = "#00ADD8"  # color 5
-cyan    = "#00ADD8"  # color 6
-white   = "#FF1493"  # color 7
+red     = "#666666"  # color 1
+green   = "#FF1493"  # color 2
+yellow  = "#00ADD8"  # color 3
+blue    = "#CCFF00"  # color 4
+magenta = "#CCFF00"  # color 5
+cyan    = "#FF1493"  # color 6
+white   = "#CCFF00"  # color 7
 
 [colors.bright]
-black   = "#555555"  # color 8
-red     = "#FF5555"  # color 9
-green   = "#55FF55"  # color 10
-yellow  = "#FFFF55"  # color 11
-blue    = "#5555FF"  # color 12
-magenta = "#FF55FF"  # color 13
-cyan    = "#55FFFF"  # color 14
-white   = "#FFFFFF"  # color 15
+black   = "#00ADD8"  # color 8
+red     = "#FF1493"  # color 9
+green   = "#FF1493"  # color 10
+yellow  = "#FF1493"  # color 11
+blue    = "#00ADD8"  # color 12
+magenta = "#FF1493"  # color 13
+cyan    = "#CCFF00"  # color 14
+white   = "#CCFF00"  # color 15
 
 [cursor]
 style = { shape = "Beam", blinking = "Always" }

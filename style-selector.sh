@@ -123,4 +123,14 @@ ln -sf "$SRC_TOP_BAR" "$TOP_BAR"
 
 ln -sf "$STYLE_DIR/$STYLE_SUBDIR/start-desktop.sh" "$HOME/.config/openbox/start-desktop.sh"
 
+case 0 in
+    $(pgrep -x "lxsession" >/dev/null; echo $?))
+        ;;
+    $(pgrep -x "openbox" >/dev/null; echo $?))
+        ;;
+    *)
+        exit 0
+        ;;
+esac
+
 notify-send "$SCRIPT_NAME" "$SELECTION applied"
