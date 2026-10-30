@@ -1218,7 +1218,7 @@
         </position>
         <size>
             <width>94%</width>
-            <height>91%</height>
+            <height>84%</height>
         </size>
     </application>
     <application class="URxvt">
@@ -1229,7 +1229,7 @@
         </position>
         <size>
             <width>94%</width>
-            <height>91%</height>
+            <height>84%</height>
         </size>
     </application>
     <application class="XTerm">
@@ -1240,7 +1240,7 @@
         </position>
         <size>
             <width>94%</width>
-            <height>91%</height>
+            <height>84%</height>
         </size>
     </application>
     <application class="Lxterminal">
@@ -1251,7 +1251,7 @@
         </position>
         <size>
             <width>94%</width>
-            <height>91%</height>
+            <height>84%</height>
         </size>
     </application>
     <application class="Alacritty">
@@ -1262,7 +1262,7 @@
         </position>
         <size>
             <width>94%</width>
-            <height>91%</height>
+            <height>84%</height>
         </size>
     </application>
     <application class="Pcmanfm">
@@ -1273,7 +1273,7 @@
         </position>
         <size>
             <width>94%</width>
-            <height>91%</height>
+            <height>84%</height>
         </size>
     </application>
     <!-- Force Tint2 Bottom Stay Below Surface (Anti-Raise) -->

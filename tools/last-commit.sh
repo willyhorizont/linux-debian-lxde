@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.22" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.23" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,17 +35,8 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update .bashrc, update shell prompt PROMPT_COMMAND PS1;
-update .Xresources, update XTerm color, update URxvt color;
-update alacritty.toml, update color;
-update lxterminal.conf, update color;
-update btop.conf, update color;
-update fastfetch config.jsonc, update color;
-update README.md, update .bashrc shell prompt PROMPT_COMMAND PS1, update terminall .desktop;
-update tint2, update terminall call;
-update i3 config, update terminal call;
-update LXDE desktop.conf, update terminall call;
-update LXDE openbox rc xml config, update terminal call;
+update btop.conf, hide cpu net disk;
+update LXDE openbox rc xml config, update terminal window height;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
