@@ -14,7 +14,7 @@ foreground = "#CCFF00"
 
 [colors.normal]
 black   = "#000000"  # color 0
-red     = "#666666"  # color 1
+red     = "#00ADD8"  # color 1
 green   = "#FF1493"  # color 2
 yellow  = "#00ADD8"  # color 3
 blue    = "#CCFF00"  # color 4
@@ -30,7 +30,7 @@ yellow  = "#FF1493"  # color 11
 blue    = "#00ADD8"  # color 12
 magenta = "#FF1493"  # color 13
 cyan    = "#CCFF00"  # color 14
-white   = "#CCFF00"  # color 15
+white   = "#FFFFFF"  # color 15
 
 [cursor]
 style = { shape = "Beam", blinking = "Always" }

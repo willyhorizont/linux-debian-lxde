@@ -35,7 +35,7 @@ execp_has_icon = 0
 execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100
 execp_padding = 0 0
-execp_lclick_command = lxterminal -e btop
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e btop
 
 # --- E: UpTime ---
 execp = new
@@ -77,7 +77,7 @@ execp_has_icon = 0
 execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100
 execp_padding = 0 0
-execp_lclick_command = lxterminal -e calcurse
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e calcurse
 
 tooltip_font_color = #000000 100
 tooltip_font = JetBrains Mono Bold 8

@@ -105,9 +105,9 @@ tiling_drag modifier titlebar
 
 ## open terminal
 #bindsym $mod+$return exec i3-sensible-terminal
-bindsym $super+$return exec lxterminal
-bindsym $control+$meta+t exec lxterminal
-bindsym $super+t exec lxterminal
+bindsym $super+$return exec lxterminal --geometry=88x28 --working-directory=~
+bindsym $control+$meta+t exec lxterminal --geometry=88x28 --working-directory=~
+bindsym $super+t exec lxterminal --geometry=88x28 --working-directory=~
 
 # open Windows File Explorer / Mac Finder / Linux Thunar or PCManFM
 bindsym $super+e exec pcmanfm
@@ -149,8 +149,8 @@ bindsym $meta+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSI
 bindsym $super+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 
 # open Windows Task Manager / Mac Activity Monitor / Linux btop
-bindsym $control+$shift+$escape exec --no-startup-id lxterminal -e btop
-bindsym $super+$meta+$escape exec --no-startup-id lxterminal -e btop
+bindsym $control+$shift+$escape exec --no-startup-id lxterminal --geometry=88x28 --working-directory=~ -e btop
+bindsym $super+$meta+$escape exec --no-startup-id lxterminal --geometry=88x28 --working-directory=~ -e btop
 
 # change focus
 #bindsym $super+j focus left

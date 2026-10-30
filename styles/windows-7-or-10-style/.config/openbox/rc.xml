@@ -234,17 +234,17 @@
     <!-- open terminal -->
     <keybind key="W-Return">
       <action name="Execute">
-        <command>lxterminal</command>
+        <command>lxterminal --geometry=88x28 --working-directory=~</command>
       </action>
     </keybind>
     <keybind key="C-A-t">
       <action name="Execute">
-        <command>lxterminal</command>
+        <command>lxterminal --geometry=88x28 --working-directory=~</command>
       </action>
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>lxterminal</command>
+        <command>lxterminal --geometry=88x28 --working-directory=~</command>
       </action>
     </keybind>
     <!-- Open File Manager -->
@@ -298,12 +298,12 @@
     <!-- open Windows Task Manager / Mac Activity Monitor / Linux btop -->
     <keybind key="C-S-Escape">
       <action name="Execute">
-        <command>lxterminal -e btop</command>
+        <command>lxterminal --geometry=88x28 --working-directory=~ -e btop</command>
       </action>
     </keybind>
     <keybind key="W-A-Escape">
       <action name="Execute">
-        <command>lxterminal -e btop</command>
+        <command>lxterminal --geometry=88x28 --working-directory=~ -e btop</command>
       </action>
     </keybind>
     <!-- Toggle Show Desktop -->
@@ -1216,10 +1216,6 @@
             <x>center</x>
             <y>center</y>
         </position>
-        <size>
-            <width>94%</width>
-            <height>84%</height>
-        </size>
     </application>
     <application class="URxvt">
         <focus>yes</focus>
@@ -1227,10 +1223,6 @@
             <x>center</x>
             <y>center</y>
         </position>
-        <size>
-            <width>94%</width>
-            <height>84%</height>
-        </size>
     </application>
     <application class="XTerm">
         <focus>yes</focus>
@@ -1238,10 +1230,6 @@
             <x>center</x>
             <y>center</y>
         </position>
-        <size>
-            <width>94%</width>
-            <height>84%</height>
-        </size>
     </application>
     <application class="Lxterminal">
         <focus>yes</focus>
@@ -1249,10 +1237,6 @@
             <x>center</x>
             <y>center</y>
         </position>
-        <size>
-            <width>94%</width>
-            <height>84%</height>
-        </size>
     </application>
     <application class="Alacritty">
         <focus>yes</focus>
@@ -1260,10 +1244,6 @@
             <x>center</x>
             <y>center</y>
         </position>
-        <size>
-            <width>94%</width>
-            <height>84%</height>
-        </size>
     </application>
     <application class="Pcmanfm">
         <focus>yes</focus>
@@ -1271,10 +1251,6 @@
             <x>center</x>
             <y>center</y>
         </position>
-        <size>
-            <width>94%</width>
-            <height>84%</height>
-        </size>
     </application>
     <!-- Force Tint2 Bottom Stay Below Surface (Anti-Raise) -->
     <!-- <application class="*">

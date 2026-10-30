@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.23" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.24" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,12 +35,19 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update btop.conf, hide cpu net disk;
-update LXDE openbox rc xml config, update terminal window height;
+--update btop color--;
+--touch btop individual config for each process cpu mem disk--;
+undo update terminal call, add geometry back;
+undo update terminal window height;
+update terminal color;
+
+working on:
+i3 goto mov use wrkspc-mgr.sh;
+update alsamixer color;
+update nmtui color;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
-i3 goto mov use wrkspc-mgr.sh;
 try limit tile per ws;
 
 TODO #1 lxde openbox:
@@ -48,10 +55,6 @@ add refresh-desktop.sh to desktop RMB menu;
 
 TODO #1:
 add i3 openbox lxde logo to wallpaper;
-touch btop individual config for each process cpu mem disk;
-update btop color;
-update alsamixer color;
-update nmtui color;
 add Pango Markup;
 add --pango to tint2;
 execp_markup = 1 to tint2;

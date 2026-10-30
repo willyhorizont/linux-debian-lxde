@@ -9,7 +9,7 @@ XTerm*background:      #000000
 XTerm*foreground:      #CCFF00
 
 XTerm*color0:          #000000
-XTerm*color1:          #666666
+XTerm*color1:          #00ADD8
 XTerm*color2:          #FF1493
 XTerm*color3:          #00ADD8
 XTerm*color4:          #CCFF00
@@ -24,7 +24,7 @@ XTerm*color11:         #FF1493
 XTerm*color12:         #00ADD8
 XTerm*color13:         #FF1493
 XTerm*color14:         #CCFF00
-XTerm*color15:         #CCFF00
+XTerm*color15:         #FFFFFF
 
 ! URxvt config
 URxvt.font: xft:JetBrains Mono:size=8
@@ -33,7 +33,7 @@ URxvt.background:      #000000
 URxvt.foreground:      #CCFF00
 
 URxvt.color0:          #000000
-URxvt.color1:          #666666
+URxvt.color1:          #00ADD8
 URxvt.color2:          #FF1493
 URxvt.color3:          #00ADD8
 URxvt.color4:          #CCFF00
@@ -48,7 +48,7 @@ URxvt.color11:         #FF1493
 URxvt.color12:         #00ADD8
 URxvt.color13:         #FF1493
 URxvt.color14:         #CCFF00
-URxvt.color15:         #CCFF00
+URxvt.color15:         #FFFFFF
 URxvt.iso14755: false
 URxvt.keysym.Shift-Control-C: eval:copy
 URxvt.keysym.Shift-Control-V: eval:paste
