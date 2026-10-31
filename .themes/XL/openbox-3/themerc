@@ -32,84 +32,84 @@ window.active.label.bg: Parentrelative
 window.active.label.text.color: #000000
 
 window.active.button.iconify.unpressed.bg: Flat Border Solid
-window.active.button.iconify.unpressed.bg.color: #FFBD44
+window.active.button.iconify.unpressed.bg.color: #CCFF00
 window.active.button.iconify.unpressed.bg.border.color: #000000
 window.active.button.iconify.unpressed.image.color: #000000
 
 window.active.button.iconify.pressed.bg: Flat Border Solid
-window.active.button.iconify.pressed.bg.color: #FFBD44
+window.active.button.iconify.pressed.bg.color: #CCFF00
 window.active.button.iconify.pressed.bg.border.color: #000000
 window.active.button.iconify.pressed.image.color: #000000
 
 window.active.button.iconify.disabled.bg: Flat Border Solid
-window.active.button.iconify.disabled.bg.color: #FFBD44
+window.active.button.iconify.disabled.bg.color: #CCFF00
 window.active.button.iconify.disabled.bg.border.color: #000000
 window.active.button.iconify.disabled.image.color: #000000
 
 window.active.button.iconify.toggled.bg: Flat Border Solid
-window.active.button.iconify.toggled.bg.color: #FFBD44
+window.active.button.iconify.toggled.bg.color: #CCFF00
 window.active.button.iconify.toggled.bg.border.color: #000000
 window.active.button.iconify.toggled.image.color: #000000
 
 window.active.button.iconify.hover.bg: Flat Border Solid
 window.active.button.iconify.hover.bg.color: #000000
-window.active.button.iconify.hover.bg.border.color: #FFBD44
-window.active.button.iconify.hover.image.color: #FFBD44
+window.active.button.iconify.hover.bg.border.color: #CCFF00
+window.active.button.iconify.hover.image.color: #CCFF00
 
 window.active.button.max.unpressed.bg: Flat Border Solid
-window.active.button.max.unpressed.bg.color: #00CA4E
+window.active.button.max.unpressed.bg.color: #00ADD8
 window.active.button.max.unpressed.bg.border.color: #000000
 window.active.button.max.unpressed.image.color: #000000
 
 window.active.button.max.pressed.bg: Flat Border Solid
-window.active.button.max.pressed.bg.color: #00CA4E
+window.active.button.max.pressed.bg.color: #00ADD8
 window.active.button.max.pressed.bg.border.color: #000000
 window.active.button.max.pressed.image.color: #000000
 
 window.active.button.max.disabled.bg: Flat Border Solid
-window.active.button.max.disabled.bg.color: #00CA4E
+window.active.button.max.disabled.bg.color: #00ADD8
 window.active.button.max.disabled.bg.border.color: #000000
 window.active.button.max.disabled.image.color: #000000
 
 window.active.button.max.toggled.bg: Flat Border Solid
-window.active.button.max.toggled.bg.color: #00CA4E
+window.active.button.max.toggled.bg.color: #00ADD8
 window.active.button.max.toggled.bg.border.color: #000000
 window.active.button.max.toggled.image.color: #000000
 
 window.active.button.max.hover.bg: Flat Border Solid
 window.active.button.max.hover.bg.color: #000000
-window.active.button.max.hover.bg.border.color: #00CA4E
-window.active.button.max.hover.image.color: #00CA4E
+window.active.button.max.hover.bg.border.color: #00ADD8
+window.active.button.max.hover.image.color: #00ADD8
 
 window.active.button.max.toggled.hover.bg: Flat Border Solid
 window.active.button.max.toggled.hover.bg.color: #000000
-window.active.button.max.toggled.hover.bg.border.color: #00CA4E
-window.active.button.max.toggled.hover.image.color: #00CA4E
+window.active.button.max.toggled.hover.bg.border.color: #00ADD8
+window.active.button.max.toggled.hover.image.color: #00ADD8
 
 window.active.button.close.unpressed.bg: Flat Border Solid
-window.active.button.close.unpressed.bg.color: #FF605C
+window.active.button.close.unpressed.bg.color: #FF1493
 window.active.button.close.unpressed.bg.border.color: #000000
 window.active.button.close.unpressed.image.color: #000000
 
 window.active.button.close.pressed.bg: Flat Border Solid
-window.active.button.close.pressed.bg.color: #FF605C
+window.active.button.close.pressed.bg.color: #FF1493
 window.active.button.close.pressed.bg.border.color: #000000
 window.active.button.close.pressed.image.color: #000000
 
 window.active.button.close.disabled.bg: Flat Border Solid
-window.active.button.close.disabled.bg.color: #FF605C
+window.active.button.close.disabled.bg.color: #FF1493
 window.active.button.close.disabled.bg.border.color: #000000
 window.active.button.close.disabled.image.color: #000000
 
 window.active.button.close.toggled.bg: Flat Border Solid
-window.active.button.close.toggled.bg.color: #FF605C
+window.active.button.close.toggled.bg.color: #FF1493
 window.active.button.close.toggled.bg.border.color: #000000
 window.active.button.close.toggled.image.color: #000000
 
 window.active.button.close.hover.bg: Flat Border Solid
 window.active.button.close.hover.bg.color: #000000
-window.active.button.close.hover.bg.border.color: #FF605C
-window.active.button.close.hover.image.color: #FF605C
+window.active.button.close.hover.bg.border.color: #FF1493
+window.active.button.close.hover.image.color: #FF1493
 
 
 ### Window inactive
@@ -124,84 +124,89 @@ window.inactive.label.bg: Parentrelative
 window.inactive.label.text.color: #000000
 
 window.inactive.button.iconify.unpressed.bg: Flat Border Solid
-window.inactive.button.iconify.unpressed.bg.color: #FFBD44
+window.inactive.button.iconify.unpressed.bg.color: #CCFF00
 window.inactive.button.iconify.unpressed.bg.border.color: #000000
 window.inactive.button.iconify.unpressed.image.color: #000000
 
 window.inactive.button.iconify.pressed.bg: Flat Border Solid
-window.inactive.button.iconify.pressed.bg.color: #FFBD44
+window.inactive.button.iconify.pressed.bg.color: #CCFF00
 window.inactive.button.iconify.pressed.bg.border.color: #000000
 window.inactive.button.iconify.pressed.image.color: #000000
 
 window.inactive.button.iconify.disabled.bg: Flat Border Solid
-window.inactive.button.iconify.disabled.bg.color: #FFBD44
+window.inactive.button.iconify.disabled.bg.color: #CCFF00
 window.inactive.button.iconify.disabled.bg.border.color: #000000
 window.inactive.button.iconify.disabled.image.color: #000000
 
 window.inactive.button.iconify.toggled.bg: Flat Border Solid
-window.inactive.button.iconify.toggled.bg.color: #FFBD44
+window.inactive.button.iconify.toggled.bg.color: #CCFF00
 window.inactive.button.iconify.toggled.bg.border.color: #000000
 window.inactive.button.iconify.toggled.image.color: #000000
 
 window.inactive.button.iconify.hover.bg: Flat Border Solid
 window.inactive.button.iconify.hover.bg.color: #000000
-window.inactive.button.iconify.hover.bg.border.color: #FFBD44
-window.inactive.button.iconify.hover.image.color: #FFBD44
+window.inactive.button.iconify.hover.bg.border.color: #CCFF00
+window.inactive.button.iconify.hover.image.color: #CCFF00
 
 window.inactive.button.max.unpressed.bg: Flat Border Solid
-window.inactive.button.max.unpressed.bg.color: #00CA4E
+window.inactive.button.max.unpressed.bg.color: #00ADD8
 window.inactive.button.max.unpressed.bg.border.color: #000000
 window.inactive.button.max.unpressed.image.color: #000000
 
 window.inactive.button.max.pressed.bg: Flat Border Solid
-window.inactive.button.max.pressed.bg.color: #00CA4E
+window.inactive.button.max.pressed.bg.color: #00ADD8
 window.inactive.button.max.pressed.bg.border.color: #000000
 window.inactive.button.max.pressed.image.color: #000000
 
 window.inactive.button.max.disabled.bg: Flat Border Solid
-window.inactive.button.max.disabled.bg.color: #00CA4E
+window.inactive.button.max.disabled.bg.color: #00ADD8
 window.inactive.button.max.disabled.bg.border.color: #000000
 window.inactive.button.max.disabled.image.color: #000000
 
+window.inactive.button.max.toggled.unpressed.bg: Flat Border Solid
+window.inactive.button.max.toggled.unpressed.bg.color: #00ADD8
+window.inactive.button.max.toggled.unpressed.bg.border.color: #000000
+window.inactive.button.max.toggled.unpressed.image.color: #000000
+
 window.inactive.button.max.toggled.bg: Flat Border Solid
-window.inactive.button.max.toggled.bg.color: #00CA4E
+window.inactive.button.max.toggled.bg.color: #00ADD8
 window.inactive.button.max.toggled.bg.border.color: #000000
 window.inactive.button.max.toggled.image.color: #000000
 
 window.inactive.button.max.hover.bg: Flat Border Solid
 window.inactive.button.max.hover.bg.color: #000000
-window.inactive.button.max.hover.bg.border.color: #00CA4E
-window.inactive.button.max.hover.image.color: #00CA4E
+window.inactive.button.max.hover.bg.border.color: #00ADD8
+window.inactive.button.max.hover.image.color: #00ADD8
 
 window.inactive.button.max.toggled.hover.bg: Flat Border Solid
 window.inactive.button.max.toggled.hover.bg.color: #000000
-window.inactive.button.max.toggled.hover.bg.border.color: #00CA4E
-window.inactive.button.max.toggled.hover.image.color: #00CA4E
+window.inactive.button.max.toggled.hover.bg.border.color: #00ADD8
+window.inactive.button.max.toggled.hover.image.color: #00ADD8
 
 window.inactive.button.close.unpressed.bg: Flat Border Solid
-window.inactive.button.close.unpressed.bg.color: #FF605C
+window.inactive.button.close.unpressed.bg.color: #FF1493
 window.inactive.button.close.unpressed.bg.border.color: #000000
 window.inactive.button.close.unpressed.image.color: #000000
 
 window.inactive.button.close.pressed.bg: Flat Border Solid
-window.inactive.button.close.pressed.bg.color: #FF605C
+window.inactive.button.close.pressed.bg.color: #FF1493
 window.inactive.button.close.pressed.bg.border.color: #000000
 window.inactive.button.close.pressed.image.color: #000000
 
 window.inactive.button.close.disabled.bg: Flat Border Solid
-window.inactive.button.close.disabled.bg.color: #FF605C
+window.inactive.button.close.disabled.bg.color: #FF1493
 window.inactive.button.close.disabled.bg.border.color: #000000
 window.inactive.button.close.disabled.image.color: #000000
 
 window.inactive.button.close.toggled.bg: Flat Border Solid
-window.inactive.button.close.toggled.bg.color: #FF605C
+window.inactive.button.close.toggled.bg.color: #FF1493
 window.inactive.button.close.toggled.bg.border.color: #000000
 window.inactive.button.close.toggled.image.color: #000000
 
 window.inactive.button.close.hover.bg: Flat Border Solid
 window.inactive.button.close.hover.bg.color: #000000
-window.inactive.button.close.hover.bg.border.color: #FF605C
-window.inactive.button.close.hover.image.color: #FF605C
+window.inactive.button.close.hover.bg.border.color: #FF1493
+window.inactive.button.close.hover.image.color: #FF1493
 
 
 ### Everything else

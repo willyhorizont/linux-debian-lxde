@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.25" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.26" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,8 +35,8 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-add XL window border theme;
-update lxde openbox rc xml config, update new window placement to Mouse, change theme to XL, update titleLayout to IMCNL, hide openbox default menu;
+update and fix XL window border theme;
+update lxde openbox rc xml config, hide openbox default menu on title bar, completely hide openbox default menu;
 
 working on:
 i3 goto mov use wrkspc-mgr.sh;
@@ -55,6 +55,7 @@ add refresh-desktop.sh to desktop RMB menu;
 TODO #1:
 fix screenshot, maybe try flameshot scrot i3-scrot;
 add screen recorder, maybe obs screen recorder via flatpak;
+add /bin/bash to shell prompt, maybe add distro and session also;
 add i3 openbox lxde logo to wallpaper;
 add Pango Markup;
 add --pango to tint2;

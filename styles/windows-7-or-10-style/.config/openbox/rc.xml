@@ -854,9 +854,11 @@
         <mousebind button="Right" action="Press">
             <action name="Focus"/>
             <action name="Raise"/>
+            <!--
             <action name="ShowMenu">
                 <menu>client-menu</menu>
             </action>
+            -->
         </mousebind>
     </context>
     <context name="Top">
@@ -923,9 +925,11 @@
       <mousebind button="Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
+        <!--
         <action name="ShowMenu">
           <menu>client-menu</menu>
         </action>
+        -->
       </mousebind>
     </context>
     <context name="BLCorner">
@@ -988,16 +992,20 @@
         <action name="Focus"/>
         <action name="Raise"/>
         <action name="Unshade"/>
+        <!--
         <action name="ShowMenu">
           <menu>client-menu</menu>
         </action>
+        -->
       </mousebind>
       <mousebind button="Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
+        <!--
         <action name="ShowMenu">
           <menu>client-menu</menu>
         </action>
+        -->
       </mousebind>
     </context>
     <context name="AllDesktops">
