@@ -8,6 +8,7 @@ mkdir -p ~/.config/btop/ && cp ~/willyhorizont.github.io/linux-debian-lxde/.conf
 mkdir -p ~/.config/alacritty/ && cp ~/willyhorizont.github.io/linux-debian-lxde/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 mkdir -p ~/.config/lxterminal/ && cp ~/willyhorizont.github.io/linux-debian-lxde/.config/lxterminal/lxterminal.conf ~/.config/lxterminal/lxterminal.conf
 mkdir -p ~/.config/dunst/ && cp ~/willyhorizont.github.io/linux-debian-lxde/.config/dunst/dunstrc ~/.config/dunst/dunstrc
+mkdir -p ~/.themes/XL/ && cp -r ~/willyhorizont.github.io/linux-debian-lxde/.themes/XL/* ~/.themes/XL/
 mkdir -p ~/.config/rofi/ && cp -r ~/willyhorizont.github.io/linux-debian-lxde/.config/rofi/* ~/.config/rofi/
 mkdir -p ~/.config/polybar/ && cp -r ~/willyhorizont.github.io/linux-debian-lxde/.config/polybar/* ~/.config/polybar/
 cp ~/willyhorizont.github.io/linux-debian-lxde/.Xresources ~/.Xresources

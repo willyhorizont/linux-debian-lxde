@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.24" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.25" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,16 +35,15 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
---update btop color--;
---touch btop individual config for each process cpu mem disk--;
-undo update terminal call, add geometry back;
-undo update terminal window height;
-update terminal color;
+add XL window border theme;
+update lxde openbox rc xml config, update new window placement to Mouse, change theme to XL, update titleLayout to IMCNL, hide openbox default menu;
 
 working on:
 i3 goto mov use wrkspc-mgr.sh;
 update alsamixer color;
 update nmtui color;
+add confirm-cmd.sh;
+update decorate undecorate;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
@@ -54,6 +53,8 @@ TODO #1 lxde openbox:
 add refresh-desktop.sh to desktop RMB menu;
 
 TODO #1:
+fix screenshot, maybe try flameshot scrot i3-scrot;
+add screen recorder, maybe obs screen recorder via flatpak;
 add i3 openbox lxde logo to wallpaper;
 add Pango Markup;
 add --pango to tint2;
@@ -78,6 +79,7 @@ TODO #2:
 try more bottom panel combo;
 try panels again to see features;
 find panel that have can communicate via some signal;
+find panel that have can communicate via some signal, maybe try dwmblocks xsetroot dwmblocks-async i3blocks;
 try tint2 taskbar_mode multi_desktop pager;
 try sxhkd sxhkdrc;
 TODO #3:

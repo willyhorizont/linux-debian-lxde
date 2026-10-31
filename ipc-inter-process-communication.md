@@ -68,4 +68,5 @@ i3.main()
 ```
 
 4. xprop -root -spy _NET_CURRENT_DESKTOP
-5. xdotool search --onlyvisible
+5. xev -root -event property | grep --line-buffered "_NET_CURRENT_DESKTOP"
+6. xdotool search --onlyvisible
