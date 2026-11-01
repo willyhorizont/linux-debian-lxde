@@ -49,7 +49,7 @@ execp_tooltip =
 # --- E: FreeText ---
 execp = new
 execp_command = $HOME/willyhorizont.github.io/top-bar-free-text.sh
-execp_interval = 1
+execp_interval = 0
 execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100
 execp_padding = 0 0

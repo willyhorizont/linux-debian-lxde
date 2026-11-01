@@ -54,7 +54,7 @@ cat << EOF > ~/.local/share/applications/exit-i3.desktop
 [Desktop Entry]
 Name=Exit
 Comment=Exit
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/tui0-powr-mnu-prompt.sh" "i3-msg exit" "xtrlock"'
+Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock"'
 Terminal=false
 Type=Application
 Icon=system-shutdown

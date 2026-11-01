@@ -266,7 +266,7 @@ sudo mv /usr/bin/lxlock /usr/bin/lxlock.bak
 sudo ln -s /usr/bin/xtrlock /usr/bin/lxlock
 ```
 
-## required for kwh in indic6-powr.sh
+## required for kwh in powr-indctr.sh
 ```
 cat << 'EOF' | sudo tee /etc/systemd/system/rapl-perm.service > /dev/null
 [Unit]
@@ -299,14 +299,14 @@ EOF
 chmod +x ~/willyhorizont.github.io/top-bar-free-text.sh
 ```
 
-## Create tui0-screensavr desktop shortcut
+## Create screensavr-mgr desktop shortcut
 ```
 mkdir -p ~/.local/share/applications/
-cat << 'EOF' > ~/.local/share/applications/tui0-screensavr.desktop
+cat << 'EOF' > ~/.local/share/applications/screensavr-mgr.desktop
 [Desktop Entry]
-Name=tui0-screensavr
-Comment=tui0-screensavr
-Exec=lxterminal --geometry=88x28 --working-directory=$HOME -e ~/willyhorizont.github.io/linux/tui0-screensavr.sh
+Name=screensavr-mgr
+Comment=screensavr-mgr
+Exec=lxterminal --geometry=88x28 --working-directory=$HOME -e ~/willyhorizont.github.io/linux/screensavr-mgr.sh
 Terminal=false
 Type=Application
 Icon=system-lock-screen

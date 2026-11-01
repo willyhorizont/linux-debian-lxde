@@ -59,69 +59,71 @@ execp_tooltip =
 
 # --- E: Indicator Bluetooth ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indic1-bt.sh
+execp_command = ~/willyhorizont.github.io/linux/bt.sh --indicator
 execp_interval = 4
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 3
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/tui1-bt.sh
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/bt.sh
 
 # --- E: Indicator Network ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indic2-net.sh
+execp_command = ~/willyhorizont.github.io/linux/net.sh --indicator
 execp_interval = 5
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 3
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/tui2-net.sh
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/net.sh
 
 # --- E: Indicator Cam ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indic3-cam.sh
+execp_command = ~/willyhorizont.github.io/linux/cam.sh --indicator
 execp_interval = 2
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 3
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/tui3-cam.sh
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/cam.sh
 
 # --- E: Indicator Mic ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indic4-mic.sh
-execp_interval = 1
+execp_command = ~/willyhorizont.github.io/linux/mic.sh --indicator
+execp_interval = 0
 execp_has_icon = 0
+execp_continuous = 1
 execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 3
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/tui4-mic.sh
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/mic.sh
 
 # --- E: Indicator Volume ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indic5-vol.sh
-execp_interval = 1
+execp_command = ~/willyhorizont.github.io/linux/vol.sh --indicator
+execp_interval = 0
 execp_has_icon = 0
+execp_continuous = 1
 execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 3
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/tui5-vol.sh
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/vol.sh
 
 # --- E: Indicator Power ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/indic6-powr.sh
+execp_command = ~/willyhorizont.github.io/linux/powr-indctr.sh
 execp_interval = 5
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 3
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/tui6-powr.sh
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/powr-mgr.sh
 
 # --- P: Button to Show Notification History ---
 button = new
