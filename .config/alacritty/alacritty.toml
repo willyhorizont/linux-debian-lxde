@@ -14,13 +14,13 @@ foreground = "#CCFF00"
 
 [colors.normal]
 black   = "#000000"  # color 0
-red     = "#00ADD8"  # color 1
+red     = "#FF1493"  # color 1
 green   = "#FF1493"  # color 2
 yellow  = "#00ADD8"  # color 3
 blue    = "#CCFF00"  # color 4
 magenta = "#CCFF00"  # color 5
 cyan    = "#FF1493"  # color 6
-white   = "#CCFF00"  # color 7
+white   = "#00ADD8"  # color 7
 
 [colors.bright]
 black   = "#00ADD8"  # color 8

@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.6.26" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.6.27" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,15 +35,20 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update and fix XL window border theme;
-update lxde openbox rc xml config, hide openbox default menu on title bar, completely hide openbox default menu;
+--update decorate undecorate--;
+update alsamixer color;
+update nmtui color;
+update .Xresources, update alsamixer color, update nmtui color;
+update alacritty.toml, update alsamixer color, update nmtui color;
+update fastfetch config.jsonc, update alsamixer color, update nmtui color;
+update lxterminal.conf, update alsamixer color, update nmtui color;
+update vscode settings.json, update alsamixer color, update nmtui color;
+update i3 config, disable kb F4;
+update lxde openbox rc xml config, disable kb F4;
 
 working on:
 i3 goto mov use wrkspc-mgr.sh;
-update alsamixer color;
-update nmtui color;
 add confirm-cmd.sh;
-update decorate undecorate;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;

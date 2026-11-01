@@ -399,6 +399,9 @@ sudo apt purge -y goldendict-ng kasumi && sudo apt autoremove -y --purge
 sudo apt purge -y lxtask && sudo apt autoremove -y --purge
 sudo apt install -y btop
 
+# Calendar
+sudo apt install -y calcurse
+
 # Video Player
 sudo apt purge -y mplayer && sudo apt autoremove -y --purge
 sudo apt install -y mpv
