@@ -24,27 +24,34 @@ panel_window_name = tint2-top-bar
 
 # --- E: SPRM ---
 execp = new
-execp_command = $HOME/willyhorizont.github.io/linux/SPRM-c
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM-cpp
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.awk
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.pl
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.py
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.sh
+execp_command = $HOME/willyhorizont.github.io/linux/SPRM-c --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM-cpp --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.awk --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.pl --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.py --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.sh --pango
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100
 execp_padding = 0 0
 execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e btop
+execp_markup = 1
 
-# --- E: UpTime ---
+# --- E: Uptime ---
 execp = new
-execp_command = $HOME/willyhorizont.github.io/linux/uptime.sh
+execp_command = $HOME/willyhorizont.github.io/linux/uptime-c --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/uptime-cpp --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/uptime.awk --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/uptime.pl --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/uptime.py --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/uptime.sh --pango
 execp_interval = 30
 execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100
 execp_padding = 0 0
 execp_tooltip = 
+execp_markup = 1
 
 # --- E: FreeText ---
 execp = new
@@ -57,27 +64,29 @@ execp_tooltip =
 
 # --- E: WhoAmI ---
 execp = new
-execp_command = echo "| willyhorizont.github.io "
+execp_command = echo "<span background='#000000' foreground='#00ADD8'>|</span><span background='#00ADD8' foreground='#000000'> willyhorizont.github.io </span>"
 execp_interval = 0
-execp_font = JetBrains Mono 6
+execp_font = JetBrains Mono Bold 6
 execp_font_color = #FF1493 100
 execp_padding = 0 0
 execp_tooltip = 
+execp_markup = 1
 
 # --- E: SuckMyClock ---
 execp = new
-execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-c
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-cpp
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.awk
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.pl
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.py
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.sh
+execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-c --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-cpp --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.awk --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.pl --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.py --pango
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.sh --pango
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100
 execp_padding = 0 0
 execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e calcurse
+execp_markup = 1
 
 tooltip_font_color = #000000 100
 tooltip_font = JetBrains Mono Bold 8
