@@ -34,6 +34,13 @@ set $return Return
 set $space space
 set $escape Escape
 set $prtsc Print
+set $tab Tab
+set $grave grave
+set $delete Delete
+set $left Left
+set $down Down
+set $up Up
+set $right Right
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -136,13 +143,13 @@ bindsym $super+$shift+q kill
 # bindsym $super+r exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
 # bindsym $meta+$space exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
 
-## open Windows Start menu / Mac Launchpad / Linux xfce4-popup-whiskermenu or jgmenu or dmenu or rofi
+## open Windows Start Menu / Mac Launchpad / Linux xfce4-popup-whiskermenu or jgmenu or dmenu or rofi
 # bindsym F4 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
-bindsym $meta+F1 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 bindsym $super+a exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
+bindsym $meta+F1 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 bindsym $control+$escape exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 
-## open Windows Run / Mac Spotlight / Linux dmenu or rofi
+## open Windows Run or PowerToys Run / Mac Spotlight or Alfred / Linux dmenu or rofi
 bindsym $super+d exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 bindsym $super+r exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
 bindsym $meta+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
@@ -246,21 +253,29 @@ bindsym $super+$shift+8 move container to workspace number $ws8
 bindsym $super+$shift+9 move container to workspace number $ws9
 bindsym $super+$shift+0 move container to workspace number $ws10
 
-# prev wrkspc
-bindsym $meta+$shift+Tab workspace prev
-bindsym $super+$shift+Tab workspace prev
+# cycle through Windows Tasks / Mac applications / Linux windows
+bindsym $meta+$tab workspace next
+bindsym $super+$tab workspace next
+bindsym $meta+$grave workspace next
+bindsym $super+$grave workspace next
+bindsym $meta+$shift+$tab workspace prev
+bindsym $super+$shift+$tab workspace prev
+bindsym $meta+$shift+$grave workspace prev
+bindsym $super+$shift+$grave workspace prev
 
-# next wrkspc
-bindsym $meta+Tab workspace next
-bindsym $super+Tab workspace next
+# cycle between Windows Virtual Desktops / Mac Spaces / Linux Workspaces
+bindsym $control+$meta+$right workspace next
+bindsym $control+$super+$right workspace next
+bindsym $control+$meta+$left workspace prev
+bindsym $control+$super+$left workspace prev
 
-# new wrkspc
+# new Windows Virtual Desktops / Mac Spaces / Linux Workspaces
 bindsym $control+$super+plus exec --no-startup-id bash -c "i3-msg workspace \$(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')"
 
-# move win to wrkspc
+# move window to Windows Virtual Desktop / Mac Space / Linux Workspace
 bindsym $control+$super+x exec --no-startup-id i3-input -p 'Move window to workspace: ' -F 'move container to workspace %s'
 
-# go to wrkspc
+# go to Windows Virtual Desktop / Mac Space / Linux Workspace
 bindsym $control+$super+$return exec --no-startup-id i3-input -p 'Go to workspace: ' -F 'workspace %s'
 
 # reload the configuration file
@@ -270,7 +285,7 @@ bindsym $super+$shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $super+$shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $super+$shift+e exec --no-startup-id $HOME/willyhorizont.github.io/linux/powr-mnu.sh "i3-msg exit" "xtrlock"
-bindsym $control+$meta+Delete exec --no-startup-id $HOME/willyhorizont.github.io/linux/powr-mnu.sh "i3-msg exit" "xtrlock"
+bindsym $control+$meta+$delete exec --no-startup-id $HOME/willyhorizont.github.io/linux/powr-mnu.sh "i3-msg exit" "xtrlock"
 
 # resize window (you can also use the mouse for that)
 #mode "resize" {

@@ -253,7 +253,7 @@
         <command>pcmanfm</command>
       </action>
     </keybind>
-    <!-- open Windows Start menu / Mac Launchpad / Linux xfce4-popup-whiskermenu or jgmenu or dmenu or rofi -->
+    <!-- open Windows Start Menu / Mac Launchpad / Linux xfce4-popup-whiskermenu or jgmenu or dmenu or rofi -->
     <!--
     <keybind key="F4">
       <action name="Execute">
@@ -261,12 +261,12 @@
       </action>
     </keybind>
     -->
-    <keybind key="A-F1">
+    <keybind key="W-a">
       <action name="Execute">
         <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -show drun -config "$HOME"/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'</command>
       </action>
     </keybind>
-    <keybind key="W-a">
+    <keybind key="A-F1">
       <action name="Execute">
         <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -show drun -config "$HOME"/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'</command>
       </action>
@@ -276,7 +276,7 @@
         <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -show drun -config "$HOME"/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'</command>
       </action>
     </keybind>
-    <!-- open Windows Run / Mac Spotlight / Linux dmenu or rofi -->
+    <!-- open Windows Run or PowerToys Run / Mac Spotlight or Alfred / Linux dmenu or rofi -->
     <keybind key="W-d">
       <action name="Execute">
         <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"</command>
@@ -308,7 +308,7 @@
         <command>lxterminal --geometry=88x28 --working-directory=~ -e btop</command>
       </action>
     </keybind>
-    <!-- Toggle Show Desktop -->
+    <!-- toggle show dekstop -->
     <keybind key="C-W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
@@ -324,183 +324,192 @@
         <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-tile-cur-wrkspc.sh'</command>
       </action>
     </keybind>
-    <!-- Tile window Full -->
+    <!-- Tile window F Full -->
     <keybind key="C-W-z">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>0</x>
+            <y>0</y>
         <width>100%</width>
         <height>100%</height>
-      </action>
+        </action>
     </keybind>
-    <!-- Tile window Maximized -->
+    <!-- Tile window M Maximized -->
     <keybind key="C-W-f">
-      <action name="Maximize"/>
+        <action name="Maximize"/>
     </keybind>
-    <!-- Tile window Full + gap -->
+    <!-- Tile window CG Center Gap -->
     <keybind key="C-W-g">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>center</x>
-        <y>center</y>
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>center</x>
+            <y>center</y>
         <width>94%</width>
         <height>91%</height>
-      </action>
+        </action>
     </keybind>
-    <!-- Tile window Left -->
-    <keybind key="C-W-Left">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
+    <!-- Tile window L Left -->
+    <keybind key="W-Left">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>0</x>
+            <y>0</y>
         <width>50%</width>
         <height>100%</height>
-      </action>
+        </action>
     </keybind>
-    <!-- Tile window Right -->
-    <keybind key="C-W-Right">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>0</y>
+    <!-- Tile window R Right -->
+    <keybind key="W-Right">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>-0</x>
+            <y>0</y>
         <width>50%</width>
         <height>100%</height>
-      </action>
+        </action>
     </keybind>
-    <!-- Tile window Top -->
-    <keybind key="C-W-Up">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
+    <!-- Tile window T Top -->
+    <keybind key="W-Up">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>0</x>
+            <y>0</y>
         <width>100%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <!-- Tile window Bottom -->
-    <keybind key="C-W-Down">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>-0</y>
+    <!-- Tile window B Bottom -->
+    <keybind key="W-Down">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>0</x>
+            <y>-0</y>
         <width>100%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <!-- Tile window Top-Left -->
-    <keybind key="C-W-q">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
+    <!-- Tile window LT Left Top -->
+    <keybind key="C-W-S-u">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>0</x>
+            <y>0</y>
         <width>50%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <keybind key="C-W-S-q">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
+    <!-- Tile window LT_L Left Top - Left -->
+    <keybind key="C-W-S-t">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>0</x>
+            <y>0</y>
         <width>25%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <keybind key="C-W-S-1">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>402</x>
-        <y>0</y>
+    <!-- Tile window LT_R Left Top - Right -->
+    <keybind key="C-W-S-y">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>402</x>
+            <y>0</y>
         <width>25%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <!-- Tile window Bottom-Left -->
-    <keybind key="C-W-a">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>-0</y>
+    <!-- Tile window LB Left Bottom -->
+    <keybind key="C-W-S-h">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>0</x>
+            <y>-0</y>
         <width>50%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <keybind key="C-W-S-a">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>-0</y>
+    <!-- Tile window LB_L Left Bottom - Left -->
+    <keybind key="C-W-S-f">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>0</x>
+            <y>-0</y>
         <width>25%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <keybind key="C-W-S-z">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>402</x>
-        <y>-0</y>
+    <!-- Tile window LB_R Left Bottom - Right -->
+    <keybind key="C-W-S-g">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>402</x>
+            <y>-0</y>
         <width>25%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <!-- Tile window Top-Right -->
-    <keybind key="C-W-w">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>0</y>
+    <!-- Tile window RT Right Top -->
+    <keybind key="C-W-S-i">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>-0</x>
+            <y>0</y>
         <width>50%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <keybind key="C-W-S-2">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>0</y>
+    <!-- Tile window RT_L Right Top - Left -->
+    <keybind key="C-W-S-o">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>802</x>
+            <y>0</y>
         <width>25%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <keybind key="C-W-S-w">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>802</x>
-        <y>0</y>
+    <!-- Tile window RT_R Right Top - Right -->
+    <keybind key="C-W-S-p">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>-0</x>
+            <y>0</y>
         <width>25%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <!-- Tile window Bottom-Right -->
-    <keybind key="C-W-s">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>-0</y>
+    <!-- Tile window RB Right Bottom -->
+    <keybind key="C-W-S-j">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>-0</x>
+            <y>-0</y>
         <width>50%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <keybind key="C-W-S-x">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>-0</y>
+    <!-- Tile window RB_L Right Bottom - Left -->
+    <keybind key="C-W-S-k">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>802</x>
+            <y>-0</y>
         <width>25%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
-    <keybind key="C-W-S-s">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>802</x>
-        <y>-0</y>
+    <!-- Tile window RB_R Right Bottom - Right -->
+    <keybind key="C-W-S-l">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+            <x>-0</x>
+            <y>-0</y>
         <width>25%</width>
         <height>50%</height>
-      </action>
+        </action>
     </keybind>
     <!-- Keybindings for desktop switching -->
+    <!--
     <keybind key="C-A-Left">
       <action name="DesktopLeft">
         <dialog>no</dialog>
@@ -513,6 +522,7 @@
         <wrap>no</wrap>
       </action>
     </keybind>
+    -->
     <keybind key="C-A-Up">
       <action name="DesktopUp">
         <dialog>no</dialog>
@@ -610,7 +620,7 @@
     <keybind key="A-q">
         <action name="Close"/>
     </keybind>
-    <keybind key="S-W-q">
+    <keybind key="W-S-q">
         <action name="Close"/>
     </keybind>
     <keybind key="A-Escape">
@@ -665,19 +675,51 @@
     </keybind>
     -->
 
+    <!-- cycle through Windows Tasks / Mac applications / Linux windows -->
+
     <keybind key="A-Tab">
+        <action name="NextWindow"/>
+    </keybind>
+    <keybind key="W-Tab">
+        <action name="NextWindow"/>
+    </keybind>
+    <keybind key="A-grave">
+        <action name="NextWindow"/>
+    </keybind>
+    <keybind key="W-grave">
         <action name="NextWindow"/>
     </keybind>
     <keybind key="A-S-Tab">
         <action name="PreviousWindow"/>
     </keybind>
+    <keybind key="W-S-Tab">
+        <action name="PreviousWindow"/>
+    </keybind>
+    <keybind key="A-S-grave">
+        <action name="PreviousWindow"/>
+    </keybind>
+    <keybind key="W-S-grave">
+        <action name="PreviousWindow"/>
+    </keybind>
 
-    <keybind key="W-Tab">
+    <!-- cycle between Windows Virtual Desktops / Mac Spaces / Linux Workspaces -->
+
+    <keybind key="C-A-Right">
         <action name="Execute">
             <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --next'</command>
         </action>
     </keybind>
-    <keybind key="W-S-Tab">
+    <keybind key="C-W-Right">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --next'</command>
+        </action>
+    </keybind>
+    <keybind key="C-A-Left">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --prev'</command>
+        </action>
+    </keybind>
+    <keybind key="C-W-Left">
         <action name="Execute">
             <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --prev'</command>
         </action>

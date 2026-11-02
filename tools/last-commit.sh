@@ -25,7 +25,7 @@ done
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.7.1" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.7.2" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,24 +35,19 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update tint2-top-bar, update SPRM, update SuckMyClock, update uptime, update tooltip;
-fix SPRM.sh, fix download and upload stuck;
-add --pref --suff --pango to SPRM;
-add --pref --suff --pango to SuckMyClock;
-add uptime.c;
-add uptime.cpp;
-add uptime.awk;
-add uptime.pl;
-add uptime.py;
-update uptime.sh;
+update kb-tile-cur-wrkspc.sh, update tile keybind;
+update lxde openbox rc xml config, update kb;
+update i3 config, update kb;
 
 working on:
 i3 goto mov use wrkspc-mgr.sh;
 add confirm-cmd.sh;
 change tooltip to black on white;
 change start menu to black on white;
-add --pango to --indicator *indctr;
+create pinned+opened apps combo rofi;
+create other opened apps rofi;
 create windows-7-or-10-style i3;
+add --pango to --indicator *indctr;
 
 TODO #1 i3:
 fix i3 openbox logo not showing in lightdm session picker;
@@ -86,6 +81,7 @@ make lxde openbox, make all windows always on top, make all windows can not be m
 TODO lxde openbox #3:
 
 TODO #2:
+make window font size smaller;
 try more bottom panel combo;
 try panels again to see features;
 find panel that have can communicate via some signal;
