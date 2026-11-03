@@ -1,31 +1,10 @@
 #!/bin/bash
 
-while true; do
-    read -sp "ARE YOU SURE: " PASS1
-    echo ""
-    
-    if [ -z "$PASS1" ]; then
-        echo "❌ Password empty! Please try again."
-        echo ""
-        continue
-    fi
-
-    read -sp "ARE YOU SUPER SURE: " PASS2
-    echo ""
-
-    if [ "$PASS1" == "$PASS2" ]; then
-        echo "✅ Password match. I hope you super duper sure..."
-        echo ""
-        break
-    else
-        echo "❌ Password not match! Please try again."
-        echo ""
-    fi
-done
+$HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.7.2" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.7.3" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -35,17 +14,18 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-update kb-tile-cur-wrkspc.sh, update tile keybind;
-update lxde openbox rc xml config, update kb;
-update i3 config, update kb;
+add confirm-cmd.sh;
+update last-commit.sh, integrate confirm-cmd.sh;
+update powr-mu.sh, integrate confirm-cmd.sh;
+update lxsession-logout.sh, integrate confirm-cmd.sh;
+update create-desktop-shortcuts.sh, integrate new powr-mnu.sh with confirm-cmd.sh;
 
 working on:
 i3 goto mov use wrkspc-mgr.sh;
-add confirm-cmd.sh;
 change tooltip to black on white;
 change start menu to black on white;
 create pinned+opened apps combo rofi;
-create other opened apps rofi;
+create non pinned opened apps rofi;
 create windows-7-or-10-style i3;
 add --pango to --indicator *indctr;
 

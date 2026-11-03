@@ -6,6 +6,8 @@ openbox --reconfigure
 
 pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-screensavr.sh" 2>/dev/null
 
+# pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-auto-tiling.sh" 2>/dev/null
+
 pkill -9 -f "xterm.*-name idle-window" 2>/dev/null
 pkill -9 -f "xterm.*-name welcome-window" 2>/dev/null
 
@@ -113,5 +115,7 @@ done
 xdotool windowactivate --sync "$wid_plank"
 # wmctrl -i -a "$wid_plank"
 # wmctrl -x -a "plank.Plank"
+
+# setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-auto-tiling.sh" >/dev/null 2>&1 &
 
 setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-screensavr.sh" >/dev/null 2>&1 &

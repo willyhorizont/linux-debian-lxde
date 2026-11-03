@@ -66,7 +66,7 @@ cat << EOF > ~/.local/share/applications/logout-i3.desktop
 [Desktop Entry]
 Name=Logout
 Comment=Logout
-Exec=i3-msg exit
+Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock"' --logout
 Terminal=false
 Type=Application
 Icon=system-log-out
@@ -78,7 +78,7 @@ cat << EOF > ~/.local/share/applications/lock.desktop
 [Desktop Entry]
 Name=Lock
 Comment=Lock
-Exec=xtrlock
+Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock"' --lock
 Terminal=false
 Type=Application
 Icon=system-lock-screen
@@ -90,7 +90,7 @@ cat << EOF > ~/.local/share/applications/shutdown.desktop
 [Desktop Entry]
 Name=Shutdown
 Comment=shutdown
-Exec=systemctl poweroff
+Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock"' --shutdown
 Terminal=false
 Type=Application
 Icon=system-shutdown
@@ -103,7 +103,7 @@ cat << EOF > ~/.local/share/applications/reboot.desktop
 [Desktop Entry]
 Name=Reboot
 Comment=reboot
-Exec=systemctl reboot
+Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock"' --reboot
 Terminal=false
 Type=Application
 Icon=system-reboot
@@ -116,7 +116,7 @@ cat << EOF > ~/.local/share/applications/suspend.desktop
 [Desktop Entry]
 Name=Suspend
 Comment=suspend
-Exec=systemctl suspend
+Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock"' --suspend
 Terminal=false
 Type=Application
 Icon=system-suspend

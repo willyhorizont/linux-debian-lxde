@@ -27,6 +27,9 @@ for arg in "$@"; do
 done
 
 if [ -n "$ACTION" ]; then
+    if [ "$ACTION" = "shutdown" ] || [ "$ACTION" = "reboot" ] || [ "$ACTION" = "suspend" ] || [ "$ACTION" = "logout" ]; then
+        $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
+    fi
     if [ "$ACTION" = "logout" ] && [ "$CURRENT_SESSION" = "openbox" ]; then
         openbox --exit
         exit 0
