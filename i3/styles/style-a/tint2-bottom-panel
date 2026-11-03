@@ -9,7 +9,7 @@ border_color = #ffffff 100
 
 rounded = 0
 border_width = 1
-background_color = #ffffff 100
+background_color = #000000 100
 border_color = #FF1493 100
 
 rounded = 0
@@ -135,6 +135,6 @@ button_lclick_command = dunstctl history-pop
 button_padding = 8 0
 button_tooltip = Notification History
 
-tooltip_font_color = #000000 100
+tooltip_font_color = #CCFF00 100
 tooltip_font = JetBrains Mono Bold 8
 tooltip_background_id = 2

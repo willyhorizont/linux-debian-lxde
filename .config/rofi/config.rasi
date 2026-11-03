@@ -39,6 +39,8 @@ prompt {
     margin:           0px 0.3em 0px 0px;
 }
 entry {
+    placeholder:       "Search";
+    placeholder-color: #666666;
     background-color: transparent;
     text-color:       #CCFF00;
 }
@@ -79,10 +81,6 @@ listview {
     border-color: #FF1493;
 
     scrollbar:    false;
-}
-entry {
-    placeholder:       "Search";
-    placeholder-color: #555555;
 }
 scrollbar {
     /* ---

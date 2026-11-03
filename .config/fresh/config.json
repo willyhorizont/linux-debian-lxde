@@ -1,0 +1,23 @@
+{
+    "active_keybinding_map": "vscode",
+    "plugins": {
+        "vi_mode": {
+            "enabled": false,
+            "settings": {
+                "autoStart": false,
+                "arrowKeys": true,
+                "searchWordUnderCursor": true
+            }
+        },
+        "welcome_screen": {
+            "enabled": true,
+            "settings": {
+                "showOnStartup": true
+            }
+        }
+    },
+    "file_browser": {
+        "show_hidden": true
+    },
+    "default_language": "bash"
+}

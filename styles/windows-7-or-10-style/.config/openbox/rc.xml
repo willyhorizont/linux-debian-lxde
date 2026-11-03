@@ -257,44 +257,44 @@
     <!--
     <keybind key="F4">
       <action name="Execute">
-        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -show drun -config "$HOME"/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'</command>
+        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; height: 320px; }"'</command>
       </action>
     </keybind>
     -->
     <keybind key="W-a">
       <action name="Execute">
-        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -show drun -config "$HOME"/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'</command>
+        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; height: 320px; }"'</command>
       </action>
     </keybind>
     <keybind key="A-F1">
       <action name="Execute">
-        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -show drun -config "$HOME"/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'</command>
+        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; height: 320px; }"'</command>
       </action>
     </keybind>
     <keybind key="C-Escape">
       <action name="Execute">
-        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -show drun -config "$HOME"/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'</command>
+        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; height: 320px; }"'</command>
       </action>
     </keybind>
     <!-- open Windows Run or PowerToys Run / Mac Spotlight or Alfred / Linux dmenu or rofi -->
     <keybind key="W-d">
       <action name="Execute">
-        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"</command>
+        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps'</command>
       </action>
     </keybind>
     <keybind key="W-r">
       <action name="Execute">
-        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"</command>
+        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps'</command>
       </action>
     </keybind>
     <keybind key="A-space">
       <action name="Execute">
-        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"</command>
+        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps'</command>
       </action>
     </keybind>
     <keybind key="W-space">
       <action name="Execute">
-        <command>sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"</command>
+        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps'</command>
       </action>
     </keybind>
     <!-- open Windows Task Manager / Mac Activity Monitor / Linux btop -->
@@ -1264,6 +1264,13 @@
 
   # end of the example
 -->
+    <application class="X-terminal-emulator">
+        <focus>yes</focus>
+        <position force="yes">
+            <x>center</x>
+            <y>center</y>
+        </position>
+    </application>
     <application class="Mousepad">
         <focus>yes</focus>
         <position force="yes">

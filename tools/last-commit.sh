@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.7.3" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.7.4" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -14,29 +14,41 @@ H="
 H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
-add confirm-cmd.sh;
-update last-commit.sh, integrate confirm-cmd.sh;
-update powr-mu.sh, integrate confirm-cmd.sh;
-update lxsession-logout.sh, integrate confirm-cmd.sh;
-update create-desktop-shortcuts.sh, integrate new powr-mnu.sh with confirm-cmd.sh;
-
-working on:
-i3 goto mov use wrkspc-mgr.sh;
+[new]
+update README.md, move hide and modify .desktop to create-desktop-shortcuts.sh;
+update create-desktop-shortcuts.sh, add hide and modify .desktop;
+add fresh config;
+update install.sh, add fresh config;
+add rofi-manage-apps.sh;
+delete rofi-config-windows-start-menu.rasi;
+update lxde openbox style-selector.sh, delete rofi-config-windows-start-menu.rasi;
 change tooltip to black on white;
 change start menu to black on white;
+update i3 tint2-bottom-panel, change tooltip to black on white;
+update i3 tint2-top-bar, change tooltip to black on white;
+update lxde openbox tint2-bottom-panel, change tooltip to black on white;
+update lxde openbox tint2-bottom-upper-panel, change tooltip to black on white;
+update lxde openbox tint2-bottom-panel-menu, change tooltip to black on white, delete rofi-config-windows-start-menu.rasi, integrate add rofi-manage-apps.sh;
+update lxde openbox tint2-top-bar, change tooltip to black on white;
+update lxde openbox rc xml config, delete rofi-config-windows-start-menu.rasi, integrate add rofi-manage-apps.sh;
+
+[working on]
+i3 goto mov use wrkspc-mgr.sh;
+add rofi for Windows Task View / Mac Mission Control;
 create pinned+opened apps combo rofi;
 create non pinned opened apps rofi;
+create system tray rofi;
 create windows-7-or-10-style i3;
-add --pango to --indicator *indctr;
 
-TODO #1 i3:
+[TODO #1 i3]
 fix i3 openbox logo not showing in lightdm session picker;
 try limit tile per ws;
 
-TODO #1 lxde openbox:
+[TODO #1 lxde openbox]
 add refresh-desktop.sh to desktop RMB menu;
 
-TODO #1:
+[TODO #1]
+add --pango to --indicator *indctr;
 fix screenshot, maybe try flameshot scrot i3-scrot;
 add screen recorder, maybe obs screen recorder via flatpak;
 add /bin/bash to shell prompt, maybe add distro and session also;
@@ -47,7 +59,7 @@ execp_markup = 1 to tint2;
 search xtrlock alternative;
 on idle autolock show Windows Update or Windows BSOD;
 
-TODO i3 #2:
+[TODO i3 #2]
 tinkering with i3gaps;
 try to add background image in pcmanfm;
 set pcmanfm background image;
@@ -56,11 +68,11 @@ set thunar background image;
 autostart thunar ~/Desktop;
 try desktop icon in i3, try idesk again;
 
-TODO lxde openbox #2:
+[TODO lxde openbox #2]
 make lxde openbox, make all windows always on top, make all windows can not be minimized, make all windows can not be resized, make it extremely auto tiling;
-TODO lxde openbox #3:
+[TODO lxde openbox #3]
 
-TODO #2:
+[TODO #2]
 make window font size smaller;
 try more bottom panel combo;
 try panels again to see features;
@@ -68,7 +80,7 @@ find panel that have can communicate via some signal;
 find panel that have can communicate via some signal, maybe try dwmblocks xsetroot dwmblocks-async i3blocks;
 try tint2 taskbar_mode multi_desktop pager;
 try sxhkd sxhkdrc;
-TODO #3:
+[TODO #3]
 backup ~/.profile after another setup;
 remove LXfcDE;
 remove debian netinst based;

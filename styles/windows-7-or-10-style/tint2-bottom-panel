@@ -9,7 +9,7 @@ border_color = #ffffff 100
 
 rounded = 0
 border_width = 1
-background_color = #ffffff 100
+background_color = #000000 100
 border_color = #FF1493 100
 
 panel_items = FSEEEEEEEEPEP
@@ -51,12 +51,12 @@ panel_window_name = tint2-bottom-panel
 
 ## --- P: Bottom Panel App Launcher ---
 #button = new
-#button_text =  
+#button_text = ㅤ
 #button_font = JetBrains Mono Bold 8
 #button_font_color = #000000 100
 #button_icon = distributor-logo-debian
 #button_background_id = 1
-#button_lclick_command = sh -c "env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun"
+#button_lclick_command = sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; height: 320px; }"'
 #button_padding = 0 0
 
 # --- S: Systray ---
@@ -76,7 +76,7 @@ systray_icon_asb = 100 0 -80
 #execp_background_id = 1
 #execp_padding = 0 0
 
-# --- E: Indicator Screensaver ---
+# --- E: Indicator Tux ---
 execp = new
 execp_command = ~/willyhorizont.github.io/linux/tux-indctr.sh
 execp_interval = 2
@@ -197,6 +197,6 @@ button_lclick_command = xdotool key ctrl+super+d
 button_padding = 8 0
 button_tooltip = Toggle Show Desktop
 
-tooltip_font_color = #000000 100
+tooltip_font_color = #CCFF00 100
 tooltip_font = JetBrains Mono Bold 8
 tooltip_background_id = 2

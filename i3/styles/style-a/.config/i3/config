@@ -144,16 +144,16 @@ bindsym $super+$shift+q kill
 # bindsym $meta+$space exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
 
 ## open Windows Start Menu / Mac Launchpad / Linux xfce4-popup-whiskermenu or jgmenu or dmenu or rofi
-# bindsym F4 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
-bindsym $super+a exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
-bindsym $meta+F1 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
-bindsym $control+$escape exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
+# bindsym F4 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
+bindsym $super+a exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
+bindsym $meta+F1 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
+bindsym $control+$escape exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
 
 ## open Windows Run or PowerToys Run / Mac Spotlight or Alfred / Linux dmenu or rofi
-bindsym $super+d exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
-bindsym $super+r exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
-bindsym $meta+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
-bindsym $super+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -show drun
+bindsym $super+d exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
+bindsym $super+r exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
+bindsym $meta+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
+bindsym $super+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
 
 # open Windows Task Manager / Mac Activity Monitor / Linux btop
 bindsym $control+$shift+$escape exec --no-startup-id lxterminal --geometry=88x28 --working-directory=~ -e btop

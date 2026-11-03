@@ -9,7 +9,7 @@ border_color = #ffffff 100
 
 rounded = 0
 border_width = 1
-background_color = #ffffff 100
+background_color = #000000 100
 border_color = #FF1493 100
 
 panel_items = P
@@ -31,9 +31,9 @@ button_font = JetBrains Mono Bold 8
 button_font_color = #000000 100
 button_icon = distributor-logo-debian
 button_background_id = 1
-button_lclick_command = sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -show drun -config "$HOME"/willyhorizont.github.io/.config/rofi-config-windows-start-menu.rasi'
+button_lclick_command = sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; height: 320px; }"'
 button_padding = 0 0
 
-tooltip_font_color = #000000 100
+tooltip_font_color = #CCFF00 100
 tooltip_font = JetBrains Mono Bold 8
 tooltip_background_id = 2
