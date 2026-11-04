@@ -8,9 +8,6 @@ pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-screensavr.sh" 2>/dev/null
 
 # pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-auto-tiling.sh" 2>/dev/null
 
-pkill -9 -f "xterm.*-name idle-window" 2>/dev/null
-pkill -9 -f "xterm.*-name welcome-window" 2>/dev/null
-
 pkill -9 -x "xpenguins" 2>/dev/null
 
 pkill -9 -f "tint2 -c .*tint2-top-bar" 2>/dev/null

@@ -29,20 +29,43 @@ window {
     border-color:     #FF1493;
     border:           2px;
 }
+mainbox {
+    background-color: transparent;
+    children:         [ inputbar, listview ];
+}
 inputbar {
     background-color: transparent;
     text-color:       #CCFF00;
+    
+    orientation:      vertical;
+    children:         [ prompt, entry-box ];
+
+    border:           0px;
+    padding:          0px;
+    margin:           0px 0px 0px 0px;
 }
 prompt {
     background-color: transparent;
     text-color:       #FF1493;
-    margin:           0px 0.3em 0px 0px;
+    str:              "";
+    margin:           0px 0px 6px 0px;
+}
+entry-box {
+    orientation:      horizontal;
+    background-color: transparent;
+    children:         [ entry, num-filtered-rows, textbox-num-rows, num-rows ];
+
+    border:           2px solid 0px 2px dash 0px;
+    border-color:     #FF1493;
+    
+    padding:          6px 0px;
+    margin:           0px;
 }
 entry {
     placeholder:       "Search";
     placeholder-color: #666666;
-    background-color: transparent;
-    text-color:       #CCFF00;
+    background-color:  transparent;
+    text-color:        #CCFF00;
 }
 element normal.normal {
     background-color: #000000;
@@ -75,11 +98,12 @@ num-rows {
 textbox-num-rows {
     background-color: transparent;
     text-color:       #00ADD8;
+    expand:           false;
+    str:              "/";
 }
 listview {
-    border:       2px dash 0px 0px; 
-    border-color: #FF1493;
-
+    border:       0px; 
+    padding:      6px 0px 0px 0px;
     scrollbar:    false;
 }
 scrollbar {

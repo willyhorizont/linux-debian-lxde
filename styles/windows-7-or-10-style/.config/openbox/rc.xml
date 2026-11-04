@@ -561,52 +561,52 @@
     </keybind>
     <keybind key="W-1">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 1'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 1'</command>
         </action>
     </keybind>
     <keybind key="W-2">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 2'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 2'</command>
         </action>
     </keybind>
     <keybind key="W-3">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 3'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 3'</command>
         </action>
     </keybind>
     <keybind key="W-4">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 4'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 4'</command>
         </action>
     </keybind>
     <keybind key="W-5">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 5'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 5'</command>
         </action>
     </keybind>
     <keybind key="W-6">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 6'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 6'</command>
         </action>
     </keybind>
     <keybind key="W-7">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 7'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 7'</command>
         </action>
     </keybind>
     <keybind key="W-8">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 8'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 8'</command>
         </action>
     </keybind>
     <keybind key="W-9">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 9'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 9'</command>
         </action>
     </keybind>
     <keybind key="W-0">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --name 10'</command>
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 10'</command>
         </action>
     </keybind>
     <!-- Keybindings for windows -->

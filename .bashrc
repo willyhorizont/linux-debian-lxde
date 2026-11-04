@@ -25,7 +25,7 @@ purgex() {
             done
             ;;
         *)
-            sudo apt purge -y "$@" && sudo apt autoremove --purge
+            sudo apt purge "$@" && sudo apt autoremove --purge
             ;;
     esac
 }

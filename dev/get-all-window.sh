@@ -4,7 +4,7 @@ TARGET_FILE="$HOME/willyhorizont.github.io/all-window.txt"
 
 RESULT_OUTPUT="wid; wcn_xprop; wcn_xdotool"
 
-for wid in $(xdotool search --name ".*" 2>/dev/null); do
+for wid in $(xdotool search --class ".*" 2>/dev/null); do
     wcn_xprop=$(xprop -id "$wid" WM_CLASS 2>/dev/null | awk -F '"' '{print $4}')
     wcn_xdotool=$(xdotool getwindowname "$wid" 2>/dev/null)
     cur_ln="$wid; $wcn_xprop; $wcn_xdotool"
