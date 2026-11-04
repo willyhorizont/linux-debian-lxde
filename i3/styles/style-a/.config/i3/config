@@ -198,7 +198,7 @@ bindsym $control+$super+w layout tabbed
 bindsym $control+$super+$shift+s layout toggle split
 
 # toggle tiling / floating
-#bindsym $control+$super+t floating toggle
+bindsym $control+$super+t floating toggle
 
 # change focus between tiling / floating windows
 #bindsym $shift+$super+t focus mode_toggle
@@ -218,40 +218,40 @@ bindsym $control+$super+$shift+s layout toggle split
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
 
 # switch to workspace
-bindsym $super+1 workspace number $ws1
-bindsym $super+2 workspace number $ws2
-bindsym $super+3 workspace number $ws3
-bindsym $super+4 workspace number $ws4
-bindsym $super+5 workspace number $ws5
-bindsym $super+6 workspace number $ws6
-bindsym $super+7 workspace number $ws7
-bindsym $super+8 workspace number $ws8
-bindsym $super+9 workspace number $ws9
-bindsym $super+0 workspace number $ws10
+bindsym $super+1 workspace number 1
+bindsym $super+2 workspace number 2
+bindsym $super+3 workspace number 3
+bindsym $super+4 workspace number 4
+bindsym $super+5 workspace number 5
+bindsym $super+6 workspace number 6
+bindsym $super+7 workspace number 7
+bindsym $super+8 workspace number 8
+bindsym $super+9 workspace number 9
+bindsym $super+0 workspace number 10
+# bindsym $super+1 exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --number 1
+# bindsym $super+2 exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --number 2
+# bindsym $super+3 exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --number 3
+# bindsym $super+4 exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --number 4
+# bindsym $super+5 exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --number 5
+# bindsym $super+6 exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --number 6
+# bindsym $super+7 exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --number 7
+# bindsym $super+8 exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --number 8
+# bindsym $super+9 exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --number 9
+# bindsym $super+0 exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --number 10
 
 # move focused container to workspace
-bindsym $super+$shift+1 move container to workspace number $ws1
-bindsym $super+$shift+2 move container to workspace number $ws2
-bindsym $super+$shift+3 move container to workspace number $ws3
-bindsym $super+$shift+4 move container to workspace number $ws4
-bindsym $super+$shift+5 move container to workspace number $ws5
-bindsym $super+$shift+6 move container to workspace number $ws6
-bindsym $super+$shift+7 move container to workspace number $ws7
-bindsym $super+$shift+8 move container to workspace number $ws8
-bindsym $super+$shift+9 move container to workspace number $ws9
-bindsym $super+$shift+0 move container to workspace number $ws10
+# bindsym $super+$shift+1 move container to workspace number 1
+# bindsym $super+$shift+2 move container to workspace number 2
+# bindsym $super+$shift+3 move container to workspace number 3
+# bindsym $super+$shift+4 move container to workspace number 4
+# bindsym $super+$shift+5 move container to workspace number 5
+# bindsym $super+$shift+6 move container to workspace number 6
+# bindsym $super+$shift+7 move container to workspace number 7
+# bindsym $super+$shift+8 move container to workspace number 8
+# bindsym $super+$shift+9 move container to workspace number 9
+# bindsym $super+$shift+0 move container to workspace number 10
 
 # cycle through Windows Tasks / Mac applications / Linux windows
 bindsym $meta+$tab workspace next
@@ -262,23 +262,42 @@ bindsym $meta+$shift+$tab workspace prev
 bindsym $super+$shift+$tab workspace prev
 bindsym $meta+$shift+$grave workspace prev
 bindsym $super+$shift+$grave workspace prev
+# bindsym $meta+$tab exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --next
+# bindsym $super+$tab exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --next
+# bindsym $meta+$grave exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --next
+# bindsym $super+$grave exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --next
+# bindsym $meta+$shift+$tab exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --prev
+# bindsym $super+$shift+$tab exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --prev
+# bindsym $meta+$shift+$grave exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --prev
+# bindsym $super+$shift+$grave exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --prev
 
 # cycle between Windows Virtual Desktops / Mac Spaces / Linux Workspaces
 bindsym $control+$meta+$right workspace next
 bindsym $control+$super+$right workspace next
 bindsym $control+$meta+$left workspace prev
 bindsym $control+$super+$left workspace prev
+# bindsym $control+$meta+$right exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --next
+# bindsym $control+$super+$right exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --next
+# bindsym $control+$meta+$left exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --prev
+# bindsym $control+$super+$left exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --prev
+
+# open Windows Task View / Mac Mission Control / Linux rofi
+bindsym $control+$super+$tab exec --no-startup-id $HOME/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
+bindsym $control+$super+$up exec --no-startup-id $HOME/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
 
 # new Windows Virtual Desktops / Mac Spaces / Linux Workspaces
 bindsym $control+$super+plus exec --no-startup-id bash -c "i3-msg workspace \$(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')"
+# bindsym $control+$super+plus exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --plus # not workin on i3
 
 # move window to Windows Virtual Desktop / Mac Space / Linux Workspace
 # bindsym $control+$super+x exec --no-startup-id i3-input -P 'Move window to workspace: ' -F 'move container to workspace %s'
 bindsym $control+$super+x exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --mov
+# bindsym $control+$super+x exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --mov
 
 # go to Windows Virtual Desktop / Mac Space / Linux Workspace
 # bindsym $control+$super+$return exec --no-startup-id i3-input -P 'Go to workspace: ' -F 'workspace %s'
 bindsym $control+$super+$return exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh
+# bindsym $control+$super+$return exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --goto
 
 # reload the configuration file
 #bindsym $super+$shift+c reload

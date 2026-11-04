@@ -28,7 +28,7 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-ROFI_LIST=$(wmctrl -d | awk '{print $9}')
+ROFI_LIST=$(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) print $i}' | tr '\n' '\\' | sed 's/\\/\\n/g' | sed 's/\\n$//')
 
 if [ "$MOV_WIN_MODE" = true ]; then
     FULL_NM=$(xdotool getwindowname "$TRGT_WIN_ID" 2>/dev/null)

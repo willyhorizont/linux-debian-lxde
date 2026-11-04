@@ -17,7 +17,7 @@ border_width = 0
 background_color = #ffffff 100
 border_color = #ffffff 100
 
-panel_items = FSEEEEEEEP
+panel_items = FSEEEEEEP
 panel_position = bottom right horizontal
 panel_layer = top
 panel_size = 100% 18
@@ -45,17 +45,6 @@ systray_icon_asb = 100 0 -80
 #execp_font_color = #000000 100
 #execp_background_id = 3
 #execp_padding = 0 0
-
-# --- E: Separator ---
-execp = new
-execp_command = echo "|"
-execp_interval = 0
-execp_has_icon = 0
-execp_font = JetBrains Mono Bold 8
-execp_font_color = #000000 100
-execp_background_id = 3
-execp_padding = 0 0
-execp_tooltip = 
 
 # --- E: Indicator Bluetooth ---
 execp = new

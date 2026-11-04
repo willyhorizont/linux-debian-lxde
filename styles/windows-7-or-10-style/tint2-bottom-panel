@@ -12,7 +12,7 @@ border_width = 1
 background_color = #000000 100
 border_color = #FF1493 100
 
-panel_items = FEEEEE
+panel_items = FEEE
 panel_position = bottom right horizontal
 panel_layer = bottom
 panel_size = 97% 18
@@ -72,20 +72,9 @@ execp_padding = 0 0
 execp_lclick_command = ~/willyhorizont.github.io/linux/wrkspc-mgr.sh --goto
 execp_markup = 1
 
-# --- E: Separator ---
-execp = new
-execp_command = echo "|"
-execp_interval = 0
-execp_has_icon = 0
-execp_font = JetBrains Mono Bold 9
-execp_font_color = #000000 100
-execp_background_id = 1
-execp_padding = 0 0
-execp_tooltip = 
-
 # --- E: Button to Show Notification History ---
 execp = new
-execp_command = echo ' 🔔 '
+execp_command = echo '| 🔔 '
 execp_interval = 0
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 9
@@ -95,20 +84,9 @@ execp_padding = 0 0
 execp_lclick_command = dunstctl history-pop
 execp_tooltip = Notification History
 
-# --- E: Separator ---
-execp = new
-execp_command = echo "|"
-execp_interval = 0
-execp_has_icon = 0
-execp_font = JetBrains Mono Bold 9
-execp_font_color = #000000 100
-execp_background_id = 1
-execp_padding = 0 0
-execp_tooltip = 
-
 # --- E: Button Toggle Show Desktop ---
 execp = new
-execp_command = echo ' _ '
+execp_command = echo '| _ '
 execp_interval = 0
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 9

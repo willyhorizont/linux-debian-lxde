@@ -725,6 +725,18 @@
         </action>
     </keybind>
 
+    <!-- open Windows Task View / Mac Mission Control / Linux rofi -->
+    <keybind key="C-W-Tab">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh'</command>
+        </action>
+    </keybind>
+    <keybind key="C-W-Up">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh'</command>
+        </action>
+    </keybind>
+
     <keybind key="C-W-plus">
         <action name="Execute">
             <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --plus'</command>
