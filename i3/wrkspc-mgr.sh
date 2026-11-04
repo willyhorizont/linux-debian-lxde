@@ -31,18 +31,15 @@ done
 ROFI_LIST=$(wmctrl -d | awk '{print $9}')
 
 if [ "$MOV_WIN_MODE" = true ]; then
-    WM_CLASS=$(xprop -id "$TRGT_WIN_ID" WM_CLASS 2>/dev/null | awk -F'"' '{print $2"."$4}')
-    if [ "$WM_CLASS" = "." ] || [ -z "$WM_CLASS" ]; then
-        WM_CLASS="N/A"
-    fi
     FULL_NM=$(xdotool getwindowname "$TRGT_WIN_ID" 2>/dev/null)
-    if [ ${#FULL_NM} -gt 69 ]; then
-        WIN_NM="${FULL_NM:0:33}...${FULL_NM: -33}"
+    if [ ${#FULL_NM} -gt 43 ]; then
+        WIN_NM="${FULL_NM:0:20}...${FULL_NM: -20}"
     else
         WIN_NM="$FULL_NM"
     fi
-    if ! [ "$WM_CLASS" = "N/A" ]; then
-        WIN_NM="($WM_CLASS) $WIN_NM"
+    WM_CLASS=$(xprop -id "$TRGT_WIN_ID" WM_CLASS 2>/dev/null | awk -F'"' '{print $4}')
+    if [ -n "$WM_CLASS" ]; then
+        WIN_NM="$WM_CLASS | $WIN_NM"
     fi
     PROMPT_MSG="Move [$WIN_NM] to Workspace"
 else

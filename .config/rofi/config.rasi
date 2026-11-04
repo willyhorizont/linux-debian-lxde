@@ -3,10 +3,6 @@ configuration {
         action: "kb-cancel";
         delay:  0;
     }
-    filebrowser {
-        directories-first: true;
-        sorting-method:    "name";
-    }
     modes: "drun";
     font: "JetBrains Mono 8";
     show-icons: true;
@@ -15,50 +11,52 @@ configuration {
     hover-select: false;
     disable-history: true;
     sort: false;
-
-    /* ---
-    scroll-method: 0;
-    ml-row-up: "";
-    ml-row-down: "";
-    me-select-entry: "MousePrimary";
-    me-accept-entry: "MouseDPrimary";
-    --- */
 }
 window {
     background-color: #000000;
     border-color:     #FF1493;
     border:           2px;
+    padding:          0px;
+    margin:           0px;
 }
 mainbox {
     background-color: transparent;
     children:         [ inputbar, listview ];
+    padding:          0px;
+    margin:           0px;
 }
 inputbar {
     background-color: transparent;
     text-color:       #CCFF00;
-    
     orientation:      vertical;
-    children:         [ prompt, entry-box ];
-
+    children:         [ promptbox, entrybox ];
     border:           0px;
     padding:          0px;
-    margin:           0px 0px 0px 0px;
+    margin:           0px;
+}
+promptbox {
+    orientation:      horizontal;
+    background-color: transparent;
+    expand:           true;
+    children:         [ prompt ];
+    padding:          6px 0px;
+    margin:           0px;
+    border:           0px;
 }
 prompt {
     background-color: transparent;
     text-color:       #FF1493;
     str:              "";
-    margin:           0px 0px 6px 0px;
+    padding:          0px;
+    margin:           2px 8px 0px 8px;
 }
-entry-box {
+entrybox {
     orientation:      horizontal;
     background-color: transparent;
     children:         [ entry, num-filtered-rows, textbox-num-rows, num-rows ];
-
     border:           2px solid 0px 2px dash 0px;
     border-color:     #FF1493;
-    
-    padding:          6px 0px;
+    padding:          6px 8px;
     margin:           0px;
 }
 entry {
@@ -66,6 +64,12 @@ entry {
     placeholder-color: #666666;
     background-color:  transparent;
     text-color:        #CCFF00;
+    padding:           0px;
+    margin:            0px;
+}
+element {
+    padding:          4px 6px; 
+    margin:           0px;
 }
 element normal.normal {
     background-color: #000000;
@@ -76,7 +80,7 @@ element alternate.normal {
     text-color:       #CCFF00;
 }
 element selected.normal {
-    background-color: #FF1493;
+    background-color: #00ADD8;
     text-color:       #000000;
 }
 element-text {
@@ -86,6 +90,7 @@ element-text {
 element-icon {
     background-color: transparent;
     text-color:       inherit;
+    margin:           0px 6px 0px 0px;
 }
 num-filtered-rows {
     background-color: transparent;
@@ -103,15 +108,12 @@ textbox-num-rows {
 }
 listview {
     border:       0px; 
-    padding:      6px 0px 0px 0px;
+    padding:      8px;
+    margin:       0px;
     scrollbar:    false;
+    fixed-height: true;
 }
 scrollbar {
-    /* ---
-    width:            4px;
-    border:           0;
-    handle-width:     8px;
-    --- */
     handle-color:     #FF1493;
     background-color: #111111;
 }

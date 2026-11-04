@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.7.5" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.7.6" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,10 +15,22 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
+--on window count changed run asd1=kb-tile-cur-win.sh. in asd1 firstly check asd2, if geometry unchanged then skip do not press kb, if geometry changed then save wmctrl -l -x - G -p to asd2=asd2.txt--;
+--replace all wmctrl -l -x -G with read win_ls, win_ls is file containing output of wmctrl-lxcapg.sh that update every window count changed. win_ls updated by dmn-wm.sh--;
+--i3 wrkspc-mgr.sh --mov --goto hide cur_ws--;
+--wrkspc-mgr.sh --mov --goto show 1 if empty--;
+wrkspc-mgr.sh --mov --goto also shows cur_ws;
+update wrkspc-mgr.sh, add wm_class;
+add .windowignore to ignore window in wmctrl -l -x -G;
+replace lxsession-logout with powr-mnu.sh;
+update create-desktop-shortcuts.sh, replace lxsession-logout with powr-mnu.sh;
+add star unicode to fav-apps rofi;
+update rofi-manage-apps.sh, add star unicode to fav-apps rofi;
+move systray tux bt net cam mic vol bat ac to tint2-bottom-upper-panel;
+show wrkspc notif tog_show_desktop in tint2-bottom-panel;
+update dunst dunstrc, change to black on white;
+update tint2-top-bar, add --pref --suff;
 update rofi config.rasi;
-add i3 wrkspc-mgr.sh;
---i3 goto mov use wrkspc-mgr.sh--;
-use wrkspc-mgr.sh in i3;
 
 [working on]
 add rofi for Windows Task View / Mac Mission Control;
@@ -26,6 +38,7 @@ create pinned+opened apps combo rofi;
 create non pinned opened apps rofi;
 create system tray rofi;
 create windows-7-or-10-style i3;
+goto desktop open pcmanfm desktop dir;
 
 [TODO #1 i3]
 fix i3 openbox logo not showing in lightdm session picker;

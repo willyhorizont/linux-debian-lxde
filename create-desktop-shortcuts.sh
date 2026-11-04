@@ -6,7 +6,7 @@ cat << EOF > ~/.local/share/applications/exit-lxde.desktop
 [Desktop Entry]
 Name=Exit
 Comment=Exit
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh"
+Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout" "xtrlock"'
 Terminal=false
 Type=Application
 Icon=system-shutdown
@@ -18,7 +18,7 @@ cat << EOF > ~/.local/share/applications/logout-lxde.desktop
 [Desktop Entry]
 Name=Logout
 Comment=Logout
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout"
+Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout" "xtrlock"' --logout
 Terminal=false
 Type=Application
 Icon=system-log-out
@@ -30,7 +30,7 @@ cat << EOF > ~/.local/share/applications/exit-openbox.desktop
 [Desktop Entry]
 Name=Exit
 Comment=Exit
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh"
+Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout" "xtrlock"'
 Terminal=false
 Type=Application
 Icon=system-shutdown
@@ -42,7 +42,7 @@ cat << EOF > ~/.local/share/applications/logout-openbox.desktop
 [Desktop Entry]
 Name=Logout
 Comment=Logout
-Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout"
+Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout" "xtrlock"' --logout
 Terminal=false
 Type=Application
 Icon=system-log-out

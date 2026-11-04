@@ -31,7 +31,7 @@ button_font = JetBrains Mono Bold 8
 button_font_color = #000000 100
 button_icon = distributor-logo-debian
 button_background_id = 1
-button_lclick_command = sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; height: 320px; }"'
+button_lclick_command = sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; }"'
 button_padding = 0 0
 
 tooltip_font_color = #CCFF00 100

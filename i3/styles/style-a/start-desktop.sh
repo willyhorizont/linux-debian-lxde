@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pgrep -f "start-desktop.sh" | grep -v "^$$$" | xargs kill -9 2>/dev/null
+
 pkill -x polybar
 pkill -x tint2
 

@@ -93,7 +93,7 @@ fi
 SRC_CONF="$STYLE_DIR/$STYLE_SUBDIR/.config/i3/config"
 
 SRC_BOTTOM_PANEL="$STYLE_DIR/$STYLE_SUBDIR/tint2-bottom-panel"
-SRC_TOP_BAR="$STYLE_DIR/$STYLE_SUBDIR/tint2-top-bar"
+SRC_TOP_BAR="$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar"
 
 ln -sf "$SRC_CONF" "$CONF"
 

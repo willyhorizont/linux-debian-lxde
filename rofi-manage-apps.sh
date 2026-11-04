@@ -87,14 +87,14 @@ generate_app_list_raw() {
             if app_metadata=$(validate_and_get_metadata "$desktop_path"); then
                 local display_name="${app_metadata%%|*}"
                 local icon_name="${app_metadata#*|}"
-                printf "%s\0icon\x1f%s\x1finfo\x1f%s\n" "$display_name" "$icon_name" "$app"
+                printf "⭐ %s\0icon\x1f%s\x1finfo\x1f%s\n" "$display_name" "$icon_name" "$app"
                 printed_apps["$app"]=1
             fi
         fi
     done
     declare -A processed_files
-    for desktop_shortcut_dir in "$HOME/.local/share/applications/" "/usr/share/applications/"; do
-        [ -d "$desktop_shortcut_dir" ] || continue
+    for desktop_shortcuts_dir in "$HOME/.local/share/applications/" "/usr/share/applications/"; do
+        [ -d "$desktop_shortcuts_dir" ] || continue
         while read -r filepath; do
             local filename
             filename=$(basename "$filepath")
@@ -108,7 +108,7 @@ generate_app_list_raw() {
                 local icon_name="${app_metadata#*|}"
                 echo "${display_name}|${icon_name}|${file_name_with_ext}"
             fi
-        done < <(find "$desktop_shortcut_dir" -name "*.desktop" -type f 2>/dev/null)
+        done < <(find "$desktop_shortcuts_dir" -name "*.desktop" -type f 2>/dev/null)
     done | sort -f | while read -r line; do
         local display_name="${line%%|*}"
         local remainder="${line#*|}"
@@ -121,10 +121,10 @@ generate_app_list_raw() {
 get_app_list() {
     mkdir -p "$CACHE_DIR"
     local cur_mtime=0
-    for dir in "$HOME/.local/share/applications" "/usr/share/applications"; do
-        if [ -d "$dir" ]; then
+    for desktop_shortcuts_dir in "$HOME/.local/share/applications" "/usr/share/applications"; do
+        if [ -d "$desktop_shortcuts_dir" ]; then
             local dir_mtime
-            dir_mtime=$(stat -c %Y "$dir" 2>/dev/null || echo 0)
+            dir_mtime=$(stat -c %Y "$desktop_shortcuts_dir" 2>/dev/null || echo 0)
             cur_mtime=$((cur_mtime + dir_mtime))
         fi
     done

@@ -24,12 +24,12 @@ panel_window_name = tint2-top-bar
 
 # --- E: SPRM ---
 execp = new
-execp_command = $HOME/willyhorizont.github.io/linux/SPRM-c --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM-cpp --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.awk --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.pl --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.py --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.sh --pango
+execp_command = $HOME/willyhorizont.github.io/linux/SPRM-c --pango --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM-cpp --pango --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.awk --pango --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.pl --pango --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.py --pango --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.sh --pango --suff ' |'
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 6
@@ -74,12 +74,12 @@ execp_markup = 1
 
 # --- E: SuckMyClock ---
 execp = new
-execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-c --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-cpp --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.awk --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.pl --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.py --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.sh --pango
+execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-c --pango --pref '| '
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-cpp --pango --pref '| '
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.awk --pango --pref '| '
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.pl --pango --pref '| '
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.py --pango --pref '| '
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.sh --pango --pref '| '
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 6

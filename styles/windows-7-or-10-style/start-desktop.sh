@@ -1,5 +1,7 @@
 #!/bin/sh
 
+pgrep -f "start-desktop.sh" | grep -v "^$$$" | xargs kill -9 2>/dev/null
+
 cat "$HOME/willyhorizont.github.io/.config/plank.ini" | dconf load /net/launchpad/plank/docks/
 
 openbox --reconfigure

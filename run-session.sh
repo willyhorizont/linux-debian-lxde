@@ -21,8 +21,8 @@ xdotool set_desktop_for_window "$CUR_ACTV_WIN_ID" 1
 xdotool set_desktop 1
 xdotool key "ctrl+super+f"
 
-pid_brv=$(wmctrl -l -x -G -p | awk '$8 == "brave-browser.Brave-browser" {print $3}' 2>/dev/null)
-if [ -z "$pid_brv" ]; then
+wid_brv=$(wmctrl -l -x -G | awk '$7 == "brave-browser.Brave-browser" {print $1}' 2>/dev/null)
+if [ -z "$wid_brv" ]; then
     brave-browser &
 fi
 while true; do
@@ -52,8 +52,8 @@ xdotool set_desktop_for_window "$wid_fm" 1
 xdotool set_desktop 1
 xdotool key "ctrl+super+f"
 
-pid_vsc_lxde=$(wmctrl -l -x -G -p | awk '$8 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux-debian-lxde") || index($0, "linux-debian-lxde | ~/Codes/linux-debian-lxde")) {print $3}' 2>/dev/null)
-if [ -z "$pid_vsc_lxde" ]; then
+wid_vsc_lxde=$(wmctrl -l -x -G | awk '$7 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux-debian-lxde") || index($0, "linux-debian-lxde | ~/Codes/linux-debian-lxde")) {print $1}' 2>/dev/null)
+if [ -z "$wid_vsc_lxde" ]; then
     code "$HOME/Codes/linux-debian-lxde/" &
 fi
 while true; do
@@ -68,8 +68,8 @@ xdotool set_desktop_for_window "$wid_vsc_lxde" 3
 xdotool set_desktop 3
 xdotool key "ctrl+super+f"
 
-pid_vsc_lnx=$(wmctrl -l -x -G -p | awk -v wid_blckls="$wid_vsc_lxde" '$8 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux") || index($0, "linux | ~/Codes/linux")) && $1 != wid_blckls {print $3}' 2>/dev/null)
-if [ -z "$pid_vsc_lnx" ]; then
+wid_vsc_lnx=$(wmctrl -l -x -G | awk -v wid_blckls="$wid_vsc_lxde" '$7 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux") || index($0, "linux | ~/Codes/linux")) && $1 != wid_blckls {print $1}' 2>/dev/null)
+if [ -z "$wid_vsc_lnx" ]; then
     code "$HOME/Codes/linux/" &
 fi
 while true; do

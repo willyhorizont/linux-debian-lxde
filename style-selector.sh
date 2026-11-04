@@ -104,7 +104,7 @@ SRC_TASKBAR="$STYLE_DIR/$STYLE_SUBDIR/plank.ini"
 SRC_BOTTOM_PANEL_MENU="$STYLE_DIR/$STYLE_SUBDIR/tint2-bottom-panel-menu"
 SRC_BOTTOM_UPPER_PANEL="$STYLE_DIR/$STYLE_SUBDIR/tint2-bottom-upper-panel"
 SRC_BOTTOM_PANEL="$STYLE_DIR/$STYLE_SUBDIR/tint2-bottom-panel"
-SRC_TOP_BAR="$STYLE_DIR/$STYLE_SUBDIR/tint2-top-bar"
+SRC_TOP_BAR="$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar"
 
 ln -sf "$SRC_LX_DESKTOP_CONF" "$LX_DESKTOP_CONF"
 ln -sf "$SRC_LX_AUTOSTART" "$LX_AUTOSTART"
