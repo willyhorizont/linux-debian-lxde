@@ -15,12 +15,12 @@ border_color = #FF1493 100
 panel_items = FSEEEEEEE
 panel_position = bottom right horizontal
 panel_layer = bottom
-panel_size = 97% 18
+panel_size = 70% 18
 panel_shrink = 0
 panel_margin = 0 18
 panel_padding = 0 0
 panel_background_id = 1
-wm_menu = 1
+wm_menu = 0
 strut_policy = follow_size
 panel_window_name = tint2-bottom-upper-panel
 
@@ -32,7 +32,7 @@ panel_window_name = tint2-bottom-upper-panel
 #panel_margin = 0 18
 #panel_padding = 0 0
 #panel_background_id = 1
-#wm_menu = 1
+#wm_menu = 0
 #strut_policy = none
 #panel_window_name = tint2-bottom-upper-panel
 

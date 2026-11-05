@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.7.7" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.7.8" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,10 +15,9 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-add rofi for Windows Task View / Mac Mission Control;
-update lxde openbox rc xml config, use rofi-windows-task-view-mac-mission-control.sh;
---try combine i3 wrkspc-mgr.sh via xprop -root _NET_DESKTOP_NAMES--;
-update i3 config, use rofi-windows-task-view-mac-mission-control.sh, update kb;
+update tint2;
+update wrkspc-mgr.sh, add --plus;
+update i3 config, try new wrkspc-mgr.sh --plus;
 
 [working on]
 create pinned+opened apps combo rofi;

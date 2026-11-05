@@ -1,6 +1,17 @@
 #!/bin/sh
 
-pgrep -f "start-desktop.sh" | grep -v "^$$$" | xargs kill -9 2>/dev/null
+pgrep -f ".*willyhorizont.*tux-indctr\.sh.*"     | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
+pgrep -f ".*willyhorizont.*wrkspc-indctr\.sh.*"     | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
+
+pgrep -f ".*willyhorizont.*start-desktop\.sh.*"     | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
+pgrep -f ".*willyhorizont.*bt\.sh.*"                | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
+pgrep -f ".*willyhorizont.*net\.sh.*"               | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
+pgrep -f ".*willyhorizont.*cam\.sh.*"               | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
+pgrep -f ".*willyhorizont.*mic\.sh.*"               | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
+pgrep -f ".*willyhorizont.*vol\.sh.*"               | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
+pgrep -f ".*willyhorizont.*powr-indctr\.sh.*"       | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
+pgrep -f ".*willyhorizont.*SuckMyClock.*"           | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
+pgrep -f ".*willyhorizont.*SPRM.*"                  | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
 
 cat "$HOME/willyhorizont.github.io/.config/plank.ini" | dconf load /net/launchpad/plank/docks/
 

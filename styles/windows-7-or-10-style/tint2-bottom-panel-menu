@@ -12,27 +12,120 @@ border_width = 1
 background_color = #000000 100
 border_color = #FF1493 100
 
-panel_items = P
+panel_items = PF
+# panel_items = PPPPPPPPPF
 panel_position = bottom left horizontal
 panel_layer = bottom
-panel_size = 0 36
-panel_shrink = 1
+panel_size = 30% 36
+panel_shrink = 0
 panel_margin = 0 0
 panel_padding = 0 0
 panel_background_id = 1
-wm_menu = 1
+wm_menu = 0
 strut_policy = follow_size
 panel_window_name = tint2-bottom-panel-menu
 
 # --- P: Bottom Panel App Launcher ---
 button = new
-button_text = ㅤ
+button_text = 
 button_font = JetBrains Mono Bold 8
 button_font_color = #000000 100
 button_icon = distributor-logo-debian
 button_background_id = 1
 button_lclick_command = sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; }"'
 button_padding = 0 0
+
+# # --- P: Pinned Or Pinned Opened App ---
+# button = new
+# button_text = 
+# button_font = JetBrains Mono Bold 8
+# button_font_color = #000000 100
+# button_icon = lxterminal
+# button_background_id = 1
+# button_lclick_command = ~/willyhorizont.github.io/linux/rofi-pinned-apps.sh lxterminal
+# button_padding = 0 0
+# button_tooltip = LXTerminal
+
+# # --- P: Pinned Or Pinned Opened App ---
+# button = new
+# button_text = 
+# button_font = JetBrains Mono Bold 8
+# button_font_color = #000000 100
+# button_icon = system-file-manager
+# button_background_id = 1
+# button_lclick_command = ~/willyhorizont.github.io/linux/rofi-pinned-apps.sh pcmanfm
+# button_padding = 0 0
+# button_tooltip = PCMan File Manager
+
+# # --- P: Pinned Or Pinned Opened App ---
+# button = new
+# button_text = 
+# button_font = JetBrains Mono Bold 8
+# button_font_color = #000000 100
+# button_icon = firefox-esr
+# button_background_id = 1
+# button_lclick_command = ~/willyhorizont.github.io/linux/rofi-pinned-apps.sh firefox-esr
+# button_padding = 0 0
+# button_tooltip = Firefox ESR
+
+# # --- P: Pinned Or Pinned Opened App ---
+# button = new
+# button_text = 
+# button_font = JetBrains Mono Bold 8
+# button_font_color = #000000 100
+# button_icon = brave-browser
+# button_background_id = 1
+# button_lclick_command = ~/willyhorizont.github.io/linux/rofi-pinned-apps.sh brave-browser
+# button_padding = 0 0
+# button_tooltip = Brave Web Browser
+
+# # --- P: Pinned Or Pinned Opened App ---
+# button = new
+# button_text = 
+# button_font = JetBrains Mono Bold 8
+# button_font_color = #000000 100
+# button_icon = vivaldi
+# button_background_id = 1
+# button_lclick_command = ~/willyhorizont.github.io/linux/rofi-pinned-apps.sh vivaldi-stable
+# button_padding = 0 0
+# button_tooltip = Vivaldi
+
+# # --- P: Pinned Or Pinned Opened App ---
+# button = new
+# button_text = 
+# button_font = JetBrains Mono Bold 8
+# button_font_color = #000000 100
+# button_icon = chromium
+# button_background_id = 1
+# button_lclick_command = ~/willyhorizont.github.io/linux/rofi-pinned-apps.sh chromium
+# button_padding = 0 0
+# button_tooltip = Chromium Web Browser
+
+# # --- P: Pinned Or Pinned Opened App ---
+# button = new
+# button_text = 
+# button_font = JetBrains Mono Bold 8
+# button_font_color = #000000 100
+# button_icon = vscode
+# button_background_id = 1
+# button_lclick_command = ~/willyhorizont.github.io/linux/rofi-pinned-apps.sh com.microsoft.VSCode
+# button_padding = 0 0
+# button_tooltip = Visual Studio Code
+
+# # --- P: Non Pinned Opened App ---
+# button = new
+# button_text = 
+# button_font = JetBrains Mono Bold 8
+# button_font_color = #000000 100
+# # button_icon = preferences-system-windows
+# # button_icon = view-pages-overview
+# button_icon = workspace-switcher
+# # button_icon = virtual-desktops
+# # button_icon = window-duplicate
+# button_background_id = 1
+# button_lclick_command = ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
+# button_padding = 0 0
+# button_tooltip = rofi Windows Task View / Mac Mission Control
 
 tooltip_font_color = #CCFF00 100
 tooltip_font = JetBrains Mono Bold 8

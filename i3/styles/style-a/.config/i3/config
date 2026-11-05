@@ -65,7 +65,7 @@ exec_always --no-startup-id ~/willyhorizont.github.io/linux/blu-lght-fltr.sh
 
 exec_always --no-startup-id autotiling
 
-exec --no-startup-id bash -c 'until pactl info >/dev/null 2>&1; do true; done && pactl set-source-mute @DEFAULT_SOURCE@ 1' >/dev/null 2>&1 &
+exec --no-startup-id sh -c 'until pactl info >/dev/null 2>&1; do true; done && pactl set-source-mute @DEFAULT_SOURCE@ 1' >/dev/null 2>&1 &
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -286,18 +286,20 @@ bindsym $control+$super+$tab exec --no-startup-id $HOME/willyhorizont.github.io/
 bindsym $control+$super+$up exec --no-startup-id $HOME/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
 
 # new Windows Virtual Desktops / Mac Spaces / Linux Workspaces
-bindsym $control+$super+plus exec --no-startup-id bash -c "i3-msg workspace \$(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')"
+# bindsym $control+$super+plus exec --no-startup-id sh -c "i3-msg workspace \$(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')"
+bindsym $control+$super+plus exec --no-startup-id i3-msg workspace $(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')
 # bindsym $control+$super+plus exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --plus # not workin on i3
+# bindsym $control+$super+plus exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --plus
 
 # move window to Windows Virtual Desktop / Mac Space / Linux Workspace
 # bindsym $control+$super+x exec --no-startup-id i3-input -P 'Move window to workspace: ' -F 'move container to workspace %s'
-bindsym $control+$super+x exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --mov
 # bindsym $control+$super+x exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --mov
+bindsym $control+$super+x exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --mov
 
 # go to Windows Virtual Desktop / Mac Space / Linux Workspace
 # bindsym $control+$super+$return exec --no-startup-id i3-input -P 'Go to workspace: ' -F 'workspace %s'
-bindsym $control+$super+$return exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh
 # bindsym $control+$super+$return exec --no-startup-id $HOME/willyhorizont.github.io/linux/wrkspc-mgr.sh --byname --goto
+bindsym $control+$super+$return exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --goto
 
 # reload the configuration file
 #bindsym $super+$shift+c reload
