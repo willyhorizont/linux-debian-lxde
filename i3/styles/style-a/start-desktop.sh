@@ -1,14 +1,15 @@
 #!/bin/bash
 
-pgrep -f ".*willyhorizont.*start-desktop\.sh.*"     | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*bt\.sh.*"                | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*net\.sh.*"               | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*cam\.sh.*"               | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*mic\.sh.*"               | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*vol\.sh.*"               | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*powr-indctr\.sh.*"       | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*SuckMyClock.*"           | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*SPRM.*"                  | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
+pkill -9 -f ".*willyhorizont.*start-desktop.*"                        2>/dev/null
+pkill -9 -f ".*willyhorizont.*rofi-fav-apps.*"                        2>/dev/null
+pkill -9 -f ".*willyhorizont.*bt.*"                                   2>/dev/null
+pkill -9 -f ".*willyhorizont.*net.*"                                  2>/dev/null
+pkill -9 -f ".*willyhorizont.*cam.*"                                  2>/dev/null
+pkill -9 -f ".*willyhorizont.*mic.*"                                  2>/dev/null
+pkill -9 -f ".*willyhorizont.*vol.*"                                  2>/dev/null
+pkill -9 -f ".*willyhorizont.*powr-indctr.*"                          2>/dev/null
+pkill -9 -f ".*willyhorizont.*SuckMyClock.*"                          2>/dev/null
+pkill -9 -f ".*willyhorizont.*SPRM.*"                                 2>/dev/null
 
 pkill -x polybar
 pkill -x tint2

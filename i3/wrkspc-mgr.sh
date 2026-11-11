@@ -32,8 +32,21 @@ while [[ $# -gt 0 ]]; do
             PROCESSED=1
             shift
             ;;
+        --prev)
+            i3-msg workspace prev
+            exit 0
+            ;;
+        --next)
+            i3-msg workspace next
+            exit 0
+            ;;
+        --number)
+            TRGT_WRKSPC=$2
+            PROCESSED=1
+            shift 2
+            ;;
         *)
-            echo "Usage: $0 [--goto] [--mov] [--plus]"
+            echo "Usage: $0 [--goto] [--mov] [--plus] [--prev] [--next] [--number workspace_number]"
             exit 1
             ;;
     esac

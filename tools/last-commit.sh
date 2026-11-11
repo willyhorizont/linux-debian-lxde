@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.7.8" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.7.9" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,13 +15,22 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-update tint2;
-update wrkspc-mgr.sh, add --plus;
-update i3 config, try new wrkspc-mgr.sh --plus;
+--create pinned+opened apps combo rofi--;
+--create non pinned opened apps rofi--;
+add rofi-fav-apps.sh;
+update tint2-top-bar, add tooltip padding;
+update lxde openbox start-desktop.sh, update kill, comment plank;
+update lxde openbox tint2-bottom-panel, update width, add tooltip padding;
+update lxde openbox tint2-bottom-panel-menu, update width, add tooltip padding, add Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior, add Windows Task View / Mac Mission Control / Linux rofi;
+update lxde openbox tint2-bottom-upper-panel, update width, add tooltip padding;
+update lxde openbox rc xml config, update kb;
+update i3 config, update kb;
+update i3 tint2-bottom-panel, add tooltip padding;
+add i3 wrkspc-indctr.sh;
+update i3 wrkspc-mgr.sh, add --prev --next --number;
+update i3 start-desktop.sh, update kill;
 
 [working on]
-create pinned+opened apps combo rofi;
-create non pinned opened apps rofi;
 create system tray rofi;
 create windows-7-or-10-style i3;
 customize i3 title bar;

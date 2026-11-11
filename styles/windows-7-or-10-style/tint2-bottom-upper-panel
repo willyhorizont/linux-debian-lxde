@@ -15,7 +15,7 @@ border_color = #FF1493 100
 panel_items = FSEEEEEEE
 panel_position = bottom right horizontal
 panel_layer = bottom
-panel_size = 70% 18
+panel_size = 50% 18
 panel_shrink = 0
 panel_margin = 0 18
 panel_padding = 0 0
@@ -135,3 +135,4 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 tooltip_font_color = #CCFF00 100
 tooltip_font = JetBrains Mono Bold 8
 tooltip_background_id = 2
+tooltip_padding = 2 2

@@ -731,7 +731,17 @@
             <command>sh -c '"$HOME"/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh'</command>
         </action>
     </keybind>
+    <keybind key="C-A-Tab">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh'</command>
+        </action>
+    </keybind>
     <keybind key="C-W-Up">
+        <action name="Execute">
+            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh'</command>
+        </action>
+    </keybind>
+    <keybind key="C-A-Up">
         <action name="Execute">
             <command>sh -c '"$HOME"/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh'</command>
         </action>
@@ -1330,6 +1340,7 @@
         <layer>above</layer>
         <iconic>no</iconic>
     </application> -->
+    <!--
     <application name="tint2-bottom-panel" class="Tint2">
         <layer>below</layer>
         <focus>no</focus>
@@ -1346,10 +1357,10 @@
         <layer>below</layer>
         <focus>no</focus>
     </application>
-    <!-- Force Plank Always Floating Above Tint2 -->
     <application name="plank" class="Plank">
         <layer>above</layer>
         <focus>yes</focus>
     </application>
+    -->
   </applications>
 </openbox_config>

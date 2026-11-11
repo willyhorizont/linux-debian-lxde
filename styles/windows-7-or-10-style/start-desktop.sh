@@ -1,27 +1,21 @@
 #!/bin/sh
 
-pgrep -f ".*willyhorizont.*tux-indctr\.sh.*"     | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*wrkspc-indctr\.sh.*"     | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
+# pkill -9 -f ".*willyhorizont.*dmn-auto-tiling.*"                      2>/dev/null
+pkill -9 -f ".*xpenguins.*"                                           2>/dev/null
+pkill -9 -f ".*willyhorizont.*dmn-screensavr.*"                       2>/dev/null
+pkill -9 -f ".*willyhorizont.*tux-indctr.*"                           2>/dev/null
+pkill -9 -f ".*willyhorizont.*wrkspc-indctr.*"                        2>/dev/null
 
-pgrep -f ".*willyhorizont.*start-desktop\.sh.*"     | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*bt\.sh.*"                | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*net\.sh.*"               | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*cam\.sh.*"               | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*mic\.sh.*"               | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*vol\.sh.*"               | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*powr-indctr\.sh.*"       | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*SuckMyClock.*"           | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-pgrep -f ".*willyhorizont.*SPRM.*"                  | grep -v "^$$$" | xargs -r kill -9 2>/dev/null
-
-cat "$HOME/willyhorizont.github.io/.config/plank.ini" | dconf load /net/launchpad/plank/docks/
-
-openbox --reconfigure
-
-pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-screensavr.sh" 2>/dev/null
-
-# pkill -9 -f "$HOME/willyhorizont.github.io/linux/dmn-auto-tiling.sh" 2>/dev/null
-
-pkill -9 -x "xpenguins" 2>/dev/null
+pkill -9 -f ".*willyhorizont.*start-desktop.*"                        2>/dev/null
+pkill -9 -f ".*willyhorizont.*rofi-fav-apps.*"                        2>/dev/null
+pkill -9 -f ".*willyhorizont.*bt.*"                                   2>/dev/null
+pkill -9 -f ".*willyhorizont.*net.*"                                  2>/dev/null
+pkill -9 -f ".*willyhorizont.*cam.*"                                  2>/dev/null
+pkill -9 -f ".*willyhorizont.*mic.*"                                  2>/dev/null
+pkill -9 -f ".*willyhorizont.*vol.*"                                  2>/dev/null
+pkill -9 -f ".*willyhorizont.*powr-indctr.*"                          2>/dev/null
+pkill -9 -f ".*willyhorizont.*SuckMyClock.*"                          2>/dev/null
+pkill -9 -f ".*willyhorizont.*SPRM.*"                                 2>/dev/null
 
 pkill -9 -f "tint2 -c .*tint2-top-bar" 2>/dev/null
 while true; do
@@ -55,13 +49,13 @@ while true; do
     sleep 0.2
 done
 
-killall -9 plank 2>/dev/null
-while true; do
-    if [ -z "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "plank.Plank" && $9 == "plank" {print $0}' 2>/dev/null)" ]; then
-        break
-    fi
-    sleep 0.2
-done
+# pkill -9 -f "plank" 2>/dev/null
+# while true; do
+#     if [ -z "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "plank.Plank" && $9 == "plank" {print $0}' 2>/dev/null)" ]; then
+#         break
+#     fi
+#     sleep 0.2
+# done
 
 while [ "$#" -gt 0 ]; do
     case "$1" in
@@ -74,6 +68,10 @@ while [ "$#" -gt 0 ]; do
     esac
 done
 
+cat "$HOME/willyhorizont.github.io/.config/plank.ini" | dconf load /net/launchpad/plank/docks/
+
+openbox --reconfigure
+
 xset -dpms >/dev/null 2>&1 &
 xset s 240 240 >/dev/null 2>&1 &
 xset s noblank >/dev/null 2>&1 &
@@ -81,14 +79,14 @@ xss-lock --transfer-sleep-lock -- xtrlock &
 
 (until pactl info >/dev/null 2>&1; do true; done && pactl set-source-mute @DEFAULT_SOURCE@ 1) >/dev/null 2>&1 &
 
-plank &
-while true; do
-    wid_plank=$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "plank.Plank" && $9 == "plank" {print $1}' 2>/dev/null)
-    if [ -n "$wid_plank" ]; then
-        break
-    fi
-    sleep 0.2
-done
+# plank &
+# while true; do
+#     wid_plank=$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "plank.Plank" && $9 == "plank" {print $1}' 2>/dev/null)
+#     if [ -n "$wid_plank" ]; then
+#         break
+#     fi
+#     sleep 0.2
+# done
 
 tint2 -c "$HOME/willyhorizont.github.io/.config/tint2-bottom-panel-menu" &
 while true; do
@@ -122,9 +120,9 @@ while true; do
     sleep 0.2
 done
 
-xdotool windowactivate --sync "$wid_plank"
-# wmctrl -i -a "$wid_plank"
-# wmctrl -x -a "plank.Plank"
+#xdotool windowactivate --sync "$wid_plank"
+## wmctrl -i -a "$wid_plank"
+## wmctrl -x -a "plank.Plank"
 
 # setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-auto-tiling.sh" >/dev/null 2>&1 &
 
