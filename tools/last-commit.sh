@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.8.0" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.8.1" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,30 +15,15 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-replace wmctrl -l -x -G with wmctrl-lxcapg.sh;
-update lxsession-logout.sh, replace wmctrl -l -x -G with wmctrl-lxcapg.sh;
-add rofi-app-menu.sh;
-update rofi-fav-apps.sh, add --yoffset --xoffset --number, rename --flip to --invert;
-update run-session.sh, replace wmctrl -l -x -G with wmctrl-lxcapg.sh;
-update i3 run-session.sh, replace wmctrl -l -x -G with wmctrl-lxcapg.sh;
-rename tint2-bottom-panel-menu to tint2-bottom-left-panel;
-rename tint2-bottom-upper-panel to tint2-bottom-right-panel-top;
-rename tint2-bottom-panel to tint2-bottom-right-panel-bottom;
-replace tint2-bottom-left-panel tint2-bottom-right-panel-top tint2-bottom-right-panel-bottom with tint2-bottom-panel;
-move lxde openbox wrkspc-mgr.sh from linux repo to this repo, add --max-width;
-move lxde openbox wrkspc-indctr.sh from linux repo to this repo, add --max-width --pref --suff;
-update i3 wrkspc-indctr.sh, add --max-width --pref --suff;
-fix start-desktop.sh, fix kill;
-fix i3 start-desktop.sh, fix kill;
-update i3 config, use new rofi-app-menu.sh, replace HOME with grave;
-update lxde openbox rc xml config, use new rofi-app-menu.sh, replace HOME with grave;
-create i3 windows-7-or-10-style;
-set i3 default style to windows-7-or-10-style;
+delete ./i3/styles/style-a/;
+--goto desktop open pcmanfm desktop dir--;
+add i3 toggle-show-desktop.sh;
+update i3 config, add toggle show desktop kb, use new toggle-show-desktop.sh;
+update i3 wrkspc-mgr.sh, add --mov-cur-win, add main menu, update rofi title;
+update lxde openbox wrkspc-mgr.sh, add --mov-cur-win, add main menu, update rofi title;
 
 [working on]
-create system tray rofi;
-customize i3 title bar;
-goto desktop open pcmanfm desktop dir;
+
 
 [TODO #1 i3]
 fix i3 openbox logo not showing in lightdm session picker;
@@ -48,6 +33,23 @@ try limit tile per ws;
 add refresh-desktop.sh to desktop RMB menu;
 
 [TODO #1]
+create rofi Windows Notification Area or System Tray / Mac Menu Bar Extras or Status Menus / Linux Status Notifier Area or System Tray;
+customize i3 title bar;
+add icon to rofi-fav-apps.sh;
+create xalendar.py holiday-calendar.py;
+try awesomewm;
+try bspwm;
+try herbstluftwm;
+--try leftwm--, reason: no apt install;
+try qtile;
+try dwm;
+--try Eww (ElKowar's Wacky Widgets - X11 & Wayland) (defpoll/deflisten + :tooltip + :onclick)--, reason no apt install;
+try Conky + lemonbar / dzen2;
+--try MATE Panel (mate-panel + Command Applet mate-applets)--, reason too much bloat;
+try LXPanel;
+try XFCE4 Panel (xfce4-genmon-plugin <txt> + <tool>content</tool> sed 's/&/&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' + <txtclick>cmd_click</txtclick> (or <click> for icon));
+try AwesomeWM (awful.widget.watch + awful.tooltip + widget:buttons(...));
+try Qtile (GenPollText / GenPollCommand + qtile-extras TooltipMixin + mouse_callbacks={'Button1': lazy.spawn(...)});
 add --pango to --indicator *indctr;
 fix screenshot, maybe try flameshot scrot i3-scrot;
 add screen recorder, maybe obs screen recorder via flatpak;
@@ -60,6 +62,7 @@ search xtrlock alternative;
 on idle autolock show Windows Update or Windows BSOD;
 
 [TODO i3 #2]
+[TODO i3 #3]
 tinkering with i3gaps;
 try to add background image in pcmanfm;
 set pcmanfm background image;
@@ -69,8 +72,8 @@ autostart thunar ~/Desktop;
 try desktop icon in i3, try idesk again;
 
 [TODO lxde openbox #2]
-make lxde openbox, make all windows always on top, make all windows can not be minimized, make all windows can not be resized, make it extremely auto tiling;
 [TODO lxde openbox #3]
+make lxde openbox, make all windows always on top, make all windows can not be minimized, make all windows can not be resized, make it extremely auto tiling;
 
 [TODO #2]
 make window font size smaller;

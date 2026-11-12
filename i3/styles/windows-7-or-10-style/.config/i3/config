@@ -160,6 +160,11 @@ bindsym $super+$space exec --no-startup-id ~/willyhorizont.github.io/linux-debia
 bindsym $control+$shift+$escape exec --no-startup-id lxterminal --geometry=88x28 --working-directory=~ -e btop
 bindsym $super+$meta+$escape exec --no-startup-id lxterminal --geometry=88x28 --working-directory=~ -e btop
 
+# toggle show dekstop
+bindsym $control+$super+d exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/toggle-show-desktop.sh
+bindsym $control+$meta+d exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/toggle-show-desktop.sh
+bindsym $super+F3 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/toggle-show-desktop.sh
+
 # change focus
 #bindsym $super+j focus left
 #bindsym $super+k focus down
@@ -295,7 +300,7 @@ bindsym $control+$super+plus exec --no-startup-id ~/willyhorizont.github.io/linu
 
 # move window to Windows Virtual Desktop / Mac Space / Linux Workspace
 # bindsym $control+$super+x exec --no-startup-id i3-input -P 'Move window to workspace: ' -F 'move container to workspace %s'
-bindsym $control+$super+x exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --mov
+bindsym $control+$super+x exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --mov-cur-win
 
 # go to Windows Virtual Desktop / Mac Space / Linux Workspace
 # bindsym $control+$super+$return exec --no-startup-id i3-input -P 'Go to workspace: ' -F 'workspace %s'

@@ -764,7 +764,7 @@
     </keybind>
     <keybind key="C-W-x">
         <action name="Execute">
-            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --mov</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --mov-cur-win</command>
         </action>
     </keybind>
     <!-- Keybindings for running applications -->
@@ -1340,32 +1340,5 @@
             <y>center</y>
         </position>
     </application>
-    <!-- Force Tint2 Bottom Stay Below Surface (Anti-Raise) -->
-    <!-- <application class="*">
-        <layer>above</layer>
-        <iconic>no</iconic>
-    </application> -->
-    <!--
-    <application name="tint2-bottom-left-panel" class="Tint2">
-        <layer>below</layer>
-        <focus>no</focus>
-    </application>
-    <application name="tint2-bottom-right-panel-bottom" class="Tint2">
-        <layer>below</layer>
-        <focus>no</focus>
-    </application>
-    <application name="tint2-bottom-right-panel-top" class="Tint2">
-        <layer>below</layer>
-        <focus>no</focus>
-    </application>
-    <application name="tint2-top-bar" class="Tint2">
-        <layer>below</layer>
-        <focus>no</focus>
-    </application>
-    <application name="plank" class="Plank">
-        <layer>above</layer>
-        <focus>yes</focus>
-    </application>
-    -->
   </applications>
 </openbox_config>

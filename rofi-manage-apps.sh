@@ -140,7 +140,7 @@ get_app_list() {
         cache_mtime=$(head -n 1 "$CACHE_FILE")
         if [ "$cur_mtime" -eq "$cache_mtime" ] 2>/dev/null; then
             tail -n +2 "$CACHE_FILE"
-            return
+            return 0
         fi
     fi
     echo "$cur_mtime" > "$CACHE_FILE"

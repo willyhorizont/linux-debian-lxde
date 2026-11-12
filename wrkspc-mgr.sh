@@ -13,8 +13,13 @@ cur_wrkspc=$(xdotool get_desktop)
 OPEN_WINS_DATA=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk '{print $2}')
 
 PROCESSED=0
+MODE_SELECTED=false
 MOV_WIN_MODE=false
 TRGT_WIN_ID=""
+WIN_DATA=""
+WIN_NM=""
+WIN_META=""
+FULL_NM=""
 BYNAME_MODE=false
 
 while [[ $# -gt 0 ]]; do
@@ -24,16 +29,35 @@ while [[ $# -gt 0 ]]; do
             shift
             ;;
         --goto)
+            MODE_SELECTED=true
             PROCESSED=1
             shift
             ;;
         --mov)
+            MODE_SELECTED=true
+            MOV_WIN_MODE=true
+            WIN_DATA=$("$HOME/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh" --print --title 'Choose Window to Move')
+            TRGT_WIN_ID=$(echo "$WIN_DATA" | awk '{print $1}')
+            if [ -z "$TRGT_WIN_ID" ]; then
+                exit 0
+            fi
+            WIN_META=$(echo "$WIN_DATA" | awk '{print $1 " " $3}')
+            FULL_NM=$(echo "$WIN_DATA" | awk '{$1=$2=$3=""; sub(/^[ \t]+/, ""); print}')
+            PROCESSED=1
+            shift
+            ;;
+        --mov-cur-win)
+            MODE_SELECTED=true
             MOV_WIN_MODE=true
             TRGT_WIN_ID=$(xdotool getactivewindow 2>/dev/null)
             if [ -z "$TRGT_WIN_ID" ]; then
                 notify-send "[$SCRIPT_NAME]" "Error: active window not found!"
                 exit 1
             fi
+            TRGT_WIN_ID_HEX=$(printf "0x%08x" "$TRGT_WIN_ID" 2>/dev/null)
+            WIN_DATA=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk -v wid="$TRGT_WIN_ID" -v widhex="$TRGT_WIN_ID_HEX" 'tolower($1) == tolower(wid) || tolower($1) == tolower(widhex) {print $0}')
+            WIN_META=$(echo "$WIN_DATA" | awk '{print $1 " " $7}')
+            FULL_NM=$(echo "$WIN_DATA" | awk '{$1=$2=$3=$4=$5=$6=$7=$8=""; sub(/^[ \t]+/, ""); print}')
             PROCESSED=1
             shift
             ;;
@@ -144,7 +168,7 @@ while [[ $# -gt 0 ]]; do
             shift 2
             ;;
         *)
-            echo "Usage: $0 [--byname] [--goto] [--mov] [--plus] [--prev] [--next] [--number workspace_number]"
+            echo "Usage: $0 [--byname] [--goto] [--mov] [--mov-cur-win] [--plus] [--prev] [--next] [--number workspace_number]"
             exit 1
             ;;
     esac
@@ -152,6 +176,62 @@ done
 
 if [ -z "$TRGT_WRKSPC" ]; then
     PROCESSED=0
+fi
+
+if [ -z "$WIN_META" ] && [ -z "$FULL_NM" ]; then
+    TRGT_WIN_ID=$(xdotool getactivewindow 2>/dev/null)
+    TRGT_WIN_ID_HEX=$(printf "0x%08x" "$TRGT_WIN_ID" 2>/dev/null)
+    WIN_DATA=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk -v wid="$TRGT_WIN_ID" -v widhex="$TRGT_WIN_ID_HEX" 'tolower($1) == tolower(wid) || tolower($1) == tolower(widhex) {print $0}')
+    WIN_META=$(echo "$WIN_DATA" | awk '{print $1 " " $7}')
+    FULL_NM=$(echo "$WIN_DATA" | awk '{$1=$2=$3=$4=$5=$6=$7=$8=""; sub(/^[ \t]+/, ""); print}')
+fi
+
+if [ -z "$WIN_NM" ]; then
+    if [ ${#FULL_NM} -gt 43 ]; then
+        SHORT_NM="${FULL_NM:0:20}...${FULL_NM: -20}"
+    else
+        SHORT_NM="$FULL_NM"
+    fi
+    WIN_NM="$WIN_META $SHORT_NM"
+    WIN_NM="[${WIN_NM}]"
+fi
+
+MAIN_MENU_OPTIONS=(
+    "Go to Workspace"
+    "Move Window to Workspace"
+    "Move $WIN_NM to Workspace"
+    "New Workspace"
+    "Next Workspace"
+    "Previous Workspace"
+)
+
+if [ $PROCESSED -eq 0 ] && [ "$MODE_SELECTED" = false ]; then
+    MAIN_MENU_CHOICE=$(printf "%s\n" "${MAIN_MENU_OPTIONS[@]}" | rofi -dmenu -p "$SCRIPT_NAME" -theme-str 'window { width: 90%; }')
+    EXTRA_ARGS=()
+    [ "$BYNAME_MODE" = true ] && EXTRA_ARGS+=("--byname")
+    case "$MAIN_MENU_CHOICE" in
+        "${MAIN_MENU_OPTIONS[0]}")
+            exec "$0" "${EXTRA_ARGS[@]}" --goto
+            ;;
+        "${MAIN_MENU_OPTIONS[1]}")
+            exec "$0" "${EXTRA_ARGS[@]}" --mov
+            ;;
+        "${MAIN_MENU_OPTIONS[2]}")
+            exec "$0" "${EXTRA_ARGS[@]}" --mov-cur-win
+            ;;
+        "${MAIN_MENU_OPTIONS[3]}")
+            exec "$0" "${EXTRA_ARGS[@]}" --plus
+            ;;
+        "${MAIN_MENU_OPTIONS[4]}")
+            exec "$0" "${EXTRA_ARGS[@]}" --next
+            ;;
+        "${MAIN_MENU_OPTIONS[5]}")
+            exec "$0" "${EXTRA_ARGS[@]}" --prev
+            ;;
+        *)
+            exit 0
+            ;;
+    esac
 fi
 
 if [ $PROCESSED -eq 0 ]; then
@@ -174,27 +254,16 @@ if [ $PROCESSED -eq 0 ]; then
             fi
         done
     fi
-
     if [ "$MOV_WIN_MODE" = true ]; then
-        FULL_NM=$(xdotool getwindowname "$TRGT_WIN_ID" 2>/dev/null)
-        if [ ${#FULL_NM} -gt 43 ]; then
-            WIN_NM="${FULL_NM:0:20}...${FULL_NM: -20}"
-        else
-            WIN_NM="$FULL_NM"
-        fi
-        WM_CLASS=$(xprop -id "$TRGT_WIN_ID" WM_CLASS 2>/dev/null | awk -F'"' '{print $4}')
-        if [ -n "$WM_CLASS" ]; then
-            WIN_NM="$WM_CLASS | $WIN_NM"
-        fi
-        PROMPT_MSG="Move [$WIN_NM] to Workspace"
+        PROMPT_MSG="Move $WIN_NM to Workspace"
+        ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG" -theme-str 'window { width: 90%; }')
     else
         PROMPT_MSG="Go to Workspace"
+        ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG")
     fi
-    ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG")
     if [ -z "$ROFI_INPUT" ]; then
         exit 0
     fi
-
     if [ "$BYNAME_MODE" = true ]; then
         mapfile -t all_ws_names < <(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) print $i}')
         for i in "${!all_ws_names[@]}"; do

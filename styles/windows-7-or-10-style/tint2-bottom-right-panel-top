@@ -65,7 +65,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Bluetooth ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/bt.sh --indicator --pref "| "
+execp_command = ~/willyhorizont.github.io/linux/bt.sh --indicator --pref '| '
 execp_interval = 4
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
@@ -76,7 +76,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Network ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/net.sh --indicator --pref "| "
+execp_command = ~/willyhorizont.github.io/linux/net.sh --indicator --pref '| '
 execp_interval = 5
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
@@ -87,7 +87,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Cam ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/cam.sh --indicator --pref "| "
+execp_command = ~/willyhorizont.github.io/linux/cam.sh --indicator --pref '| '
 execp_interval = 2
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
@@ -98,7 +98,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Mic ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/mic.sh --indicator --pref "| "
+execp_command = ~/willyhorizont.github.io/linux/mic.sh --indicator --pref '| '
 execp_interval = 0
 execp_has_icon = 0
 execp_continuous = 1
@@ -110,7 +110,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Volume ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/vol.sh --indicator --pref "| "
+execp_command = ~/willyhorizont.github.io/linux/vol.sh --indicator --pref '| '
 execp_interval = 0
 execp_has_icon = 0
 execp_continuous = 1
@@ -122,7 +122,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Power ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/powr-indctr.sh --pref "| "
+execp_command = ~/willyhorizont.github.io/linux/powr-indctr.sh --pref '| ' --sep ' | '
 execp_interval = 5
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8

@@ -23,7 +23,7 @@ border_width = 0
 background_color = #000000 100
 border_color = #000000 100
 
-panel_items = PEEEEEEEEFESEEEEEEEEE
+panel_items = PEEEEEEEEFSEEEEEEEEEE
 panel_position = bottom center horizontal
 panel_layer = bottom
 panel_size = 100% 32
@@ -159,9 +159,15 @@ execp_background_id = 2
 execp_padding = 2 0
 execp_lclick_command = ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
 
+# --- S: Systray ---
+systray_padding = 0 0
+systray_background_id = 2
+systray_sort = descending
+systray_icon_size = 20
+
 # --- E: Indicator Workspace ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-indctr.sh --rev --pango --max-width 20
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-indctr.sh --rev --pango --max-width 20 --pref '|'
 execp_interval = 0
 execp_has_icon = 0
 execp_continuous = 1
@@ -169,14 +175,8 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 2
 execp_padding = 0 0
-execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --goto
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh
 execp_markup = 1
-
-# --- S: Systray ---
-systray_padding = 0 0
-systray_background_id = 2
-systray_sort = descending
-systray_icon_size = 20
 
 # --- E: Indicator Tux ---
 execp = new
@@ -191,7 +191,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Bluetooth ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/bt.sh --indicator --pref "| "
+execp_command = ~/willyhorizont.github.io/linux/bt.sh --indicator --pref '| '
 execp_interval = 4
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
@@ -202,7 +202,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Network ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/net.sh --indicator --pref "| "
+execp_command = ~/willyhorizont.github.io/linux/net.sh --indicator --pref '| '
 execp_interval = 5
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
@@ -213,7 +213,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Cam ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/cam.sh --indicator --pref "| "
+execp_command = ~/willyhorizont.github.io/linux/cam.sh --indicator --pref '| '
 execp_interval = 2
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
@@ -224,7 +224,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Mic ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/mic.sh --indicator --pref "| "
+execp_command = ~/willyhorizont.github.io/linux/mic.sh --indicator --pref '| '
 execp_interval = 0
 execp_has_icon = 0
 execp_continuous = 1
@@ -236,7 +236,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Volume ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/vol.sh --indicator --pref "| "
+execp_command = ~/willyhorizont.github.io/linux/vol.sh --indicator --pref '| '
 execp_interval = 0
 execp_has_icon = 0
 execp_continuous = 1
@@ -248,7 +248,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Power ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/powr-indctr.sh --pref "| "
+execp_command = ~/willyhorizont.github.io/linux/powr-indctr.sh --pref '| ' --sep ' | '
 execp_interval = 5
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8

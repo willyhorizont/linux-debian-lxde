@@ -290,7 +290,7 @@ render_output() {
 }
 
 handle_change() {
-    fetch_workspaces || return
+    fetch_workspaces || return 0
     build_visible_items
     render_output
 }
@@ -307,7 +307,7 @@ fi
 
 TOOLTIP_TXT=$(cat << EOF
 wrkspc-indctr.sh
-click to run wrkspc-mgr.sh --goto
+click to open wrkspc-mgr.sh
 EOF
 )
 printf "%s" "$TOOLTIP_TXT" 1>&2
