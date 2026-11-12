@@ -144,16 +144,17 @@ bindsym $super+$shift+q kill
 # bindsym $meta+$space exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
 
 ## open Windows Start Menu / Mac Launchpad / Linux xfce4-popup-whiskermenu or jgmenu or dmenu or rofi
-# bindsym F4 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
-bindsym $super+a exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
-bindsym $meta+F1 exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
-bindsym $control+$escape exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
+# bindsym F4 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh
+bindsym $super+a exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh
+bindsym $meta+F1 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh
+bindsym $super+F1 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh
+bindsym $control+$escape exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh
 
 ## open Windows Run or PowerToys Run / Mac Spotlight or Alfred / Linux dmenu or rofi
-bindsym $super+d exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
-bindsym $super+r exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
-bindsym $meta+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
-bindsym $super+$space exec --no-startup-id env XDG_CURRENT_DESKTOP=$DESKTOP_SESSION rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps
+bindsym $super+d exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --spotlight
+bindsym $super+r exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --spotlight
+bindsym $meta+$space exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --spotlight
+bindsym $super+$space exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --spotlight
 
 # open Windows Task Manager / Mac Activity Monitor / Linux btop
 bindsym $control+$shift+$escape exec --no-startup-id lxterminal --geometry=88x28 --working-directory=~ -e btop
@@ -230,16 +231,16 @@ bindsym $super+7 workspace number 7
 bindsym $super+8 workspace number 8
 bindsym $super+9 workspace number 9
 bindsym $super+0 workspace number 10
-# bindsym $super+1 exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 1
-# bindsym $super+2 exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 2
-# bindsym $super+3 exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 3
-# bindsym $super+4 exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 4
-# bindsym $super+5 exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 5
-# bindsym $super+6 exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 6
-# bindsym $super+7 exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 7
-# bindsym $super+8 exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 8
-# bindsym $super+9 exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 9
-# bindsym $super+0 exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 10
+# bindsym $super+1 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 1
+# bindsym $super+2 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 2
+# bindsym $super+3 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 3
+# bindsym $super+4 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 4
+# bindsym $super+5 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 5
+# bindsym $super+6 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 6
+# bindsym $super+7 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 7
+# bindsym $super+8 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 8
+# bindsym $super+9 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 9
+# bindsym $super+0 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --number 10
 
 # move focused container to workspace
 # bindsym $super+$shift+1 move container to workspace number 1
@@ -262,43 +263,43 @@ bindsym $meta+$shift+$tab workspace prev
 bindsym $super+$shift+$tab workspace prev
 bindsym $meta+$shift+$grave workspace prev
 bindsym $super+$shift+$grave workspace prev
-# bindsym $meta+$tab exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --next
-# bindsym $super+$tab exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --next
-# bindsym $meta+$grave exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --next
-# bindsym $super+$grave exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --next
-# bindsym $meta+$shift+$tab exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
-# bindsym $super+$shift+$tab exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
-# bindsym $meta+$shift+$grave exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
-# bindsym $super+$shift+$grave exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
+# bindsym $meta+$tab exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --next
+# bindsym $super+$tab exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --next
+# bindsym $meta+$grave exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --next
+# bindsym $super+$grave exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --next
+# bindsym $meta+$shift+$tab exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
+# bindsym $super+$shift+$tab exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
+# bindsym $meta+$shift+$grave exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
+# bindsym $super+$shift+$grave exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
 
 # cycle between Windows Virtual Desktops / Mac Spaces / Linux Workspaces
 bindsym $control+$meta+$right workspace next
 bindsym $control+$super+$right workspace next
 bindsym $control+$meta+$left workspace prev
 bindsym $control+$super+$left workspace prev
-# bindsym $control+$meta+$right exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --next
-# bindsym $control+$super+$right exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --next
-# bindsym $control+$meta+$left exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
-# bindsym $control+$super+$left exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
+# bindsym $control+$meta+$right exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --next
+# bindsym $control+$super+$right exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --next
+# bindsym $control+$meta+$left exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
+# bindsym $control+$super+$left exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
 
 # open Windows Task View / Mac Mission Control / Linux rofi
-bindsym $control+$super+$tab exec --no-startup-id $HOME/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
-bindsym $control+$meta+$tab exec --no-startup-id $HOME/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
-bindsym $control+$super+$up exec --no-startup-id $HOME/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
-bindsym $control+$meta+$up exec --no-startup-id $HOME/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
+bindsym $control+$super+$tab exec --no-startup-id ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
+bindsym $control+$meta+$tab exec --no-startup-id ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
+bindsym $control+$super+$up exec --no-startup-id ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
+bindsym $control+$meta+$up exec --no-startup-id ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
 
 # new Windows Virtual Desktops / Mac Spaces / Linux Workspaces
 # bindsym $control+$super+plus exec --no-startup-id sh -c "i3-msg workspace \$(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')"
 # bindsym $control+$super+plus exec --no-startup-id i3-msg workspace $(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')
-bindsym $control+$super+plus exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --plus
+bindsym $control+$super+plus exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --plus
 
 # move window to Windows Virtual Desktop / Mac Space / Linux Workspace
 # bindsym $control+$super+x exec --no-startup-id i3-input -P 'Move window to workspace: ' -F 'move container to workspace %s'
-bindsym $control+$super+x exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --mov
+bindsym $control+$super+x exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --mov
 
 # go to Windows Virtual Desktop / Mac Space / Linux Workspace
 # bindsym $control+$super+$return exec --no-startup-id i3-input -P 'Go to workspace: ' -F 'workspace %s'
-bindsym $control+$super+$return exec --no-startup-id $HOME/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --goto
+bindsym $control+$super+$return exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --goto
 
 # reload the configuration file
 #bindsym $super+$shift+c reload
@@ -306,8 +307,8 @@ bindsym $control+$super+$return exec --no-startup-id $HOME/willyhorizont.github.
 bindsym $super+$shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $super+$shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-bindsym $super+$shift+e exec --no-startup-id $HOME/willyhorizont.github.io/linux/powr-mnu.sh "i3-msg exit" "xtrlock"
-bindsym $control+$meta+$delete exec --no-startup-id $HOME/willyhorizont.github.io/linux/powr-mnu.sh "i3-msg exit" "xtrlock"
+bindsym $super+$shift+e exec --no-startup-id ~/willyhorizont.github.io/linux/powr-mnu.sh "i3-msg exit" "xtrlock"
+bindsym $control+$meta+$delete exec --no-startup-id ~/willyhorizont.github.io/linux/powr-mnu.sh "i3-msg exit" "xtrlock"
 
 # resize window (you can also use the mouse for that)
 #mode "resize" {
@@ -346,7 +347,7 @@ bindsym $control+$meta+$delete exec --no-startup-id $HOME/willyhorizont.github.i
 #        status_command i3blocks
 #}
 # exec_always --no-startup-id pkill -x polybar; polybar workspace-switcher
-exec_always --no-startup-id $HOME/.config/i3/start-desktop.sh
+exec_always --no-startup-id ~/.config/i3/start-desktop.sh
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a

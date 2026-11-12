@@ -21,12 +21,12 @@ xdotool set_desktop_for_window "$CUR_ACTV_WIN_ID" 1
 xdotool set_desktop 1
 xdotool key "ctrl+super+f"
 
-wid_brv=$(wmctrl -l -x -G | awk '$7 == "brave-browser.Brave-browser" {print $1}' 2>/dev/null)
+wid_brv=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$7 == "brave-browser.Brave-browser" {print $1}' 2>/dev/null)
 if [ -z "$wid_brv" ]; then
     brave-browser &
 fi
 while true; do
-    wid_brv=$(wmctrl -l -x -G | awk '$7 == "brave-browser.Brave-browser" {print $1}' 2>/dev/null)
+    wid_brv=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$7 == "brave-browser.Brave-browser" {print $1}' 2>/dev/null)
     if [ -n "$wid_brv" ]; then
         break
     fi
@@ -41,7 +41,7 @@ pcmanfm "$HOME/Codes/linux-debian-lxde/" &
 pcmanfm "$HOME/Codes/linux/" &
 pcmanfm "$HOME/Pictures/Screenshots" &
 while true; do
-    wid_fm=$(wmctrl -l -x -G | awk '$7 == "pcmanfm.Pcmanfm" && $9 != "pcmanfm" {print $1}' 2>/dev/null)
+    wid_fm=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$7 == "pcmanfm.Pcmanfm" && $9 != "pcmanfm" {print $1}' 2>/dev/null)
     if [ -n "$wid_fm" ]; then
         break
     fi
@@ -52,12 +52,12 @@ xdotool set_desktop_for_window "$wid_fm" 1
 xdotool set_desktop 1
 xdotool key "ctrl+super+f"
 
-wid_vsc_lxde=$(wmctrl -l -x -G | awk '$7 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux-debian-lxde") || index($0, "linux-debian-lxde | ~/Codes/linux-debian-lxde")) {print $1}' 2>/dev/null)
+wid_vsc_lxde=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$7 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux-debian-lxde") || index($0, "linux-debian-lxde | ~/Codes/linux-debian-lxde")) {print $1}' 2>/dev/null)
 if [ -z "$wid_vsc_lxde" ]; then
     code "$HOME/Codes/linux-debian-lxde/" &
 fi
 while true; do
-    wid_vsc_lxde=$(wmctrl -l -x -G | awk '$7 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux-debian-lxde") || index($0, "linux-debian-lxde | ~/Codes/linux-debian-lxde")) {print $1}' 2>/dev/null)
+    wid_vsc_lxde=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$7 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux-debian-lxde") || index($0, "linux-debian-lxde | ~/Codes/linux-debian-lxde")) {print $1}' 2>/dev/null)
     if [ -n "$wid_vsc_lxde" ]; then
         break
     fi
@@ -68,12 +68,12 @@ xdotool set_desktop_for_window "$wid_vsc_lxde" 3
 xdotool set_desktop 3
 xdotool key "ctrl+super+f"
 
-wid_vsc_lnx=$(wmctrl -l -x -G | awk -v wid_blckls="$wid_vsc_lxde" '$7 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux") || index($0, "linux | ~/Codes/linux")) && $1 != wid_blckls {print $1}' 2>/dev/null)
+wid_vsc_lnx=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk -v wid_blckls="$wid_vsc_lxde" '$7 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux") || index($0, "linux | ~/Codes/linux")) && $1 != wid_blckls {print $1}' 2>/dev/null)
 if [ -z "$wid_vsc_lnx" ]; then
     code "$HOME/Codes/linux/" &
 fi
 while true; do
-    wid_vsc_lnx=$(wmctrl -l -x -G | awk -v wid_blckls="$wid_vsc_lxde" '$7 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux") || index($0, "linux | ~/Codes/linux")) && $1 != wid_blckls {print $1}' 2>/dev/null)
+    wid_vsc_lnx=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk -v wid_blckls="$wid_vsc_lxde" '$7 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux") || index($0, "linux | ~/Codes/linux")) && $1 != wid_blckls {print $1}' 2>/dev/null)
     if [ -n "$wid_vsc_lnx" ]; then
         break
     fi

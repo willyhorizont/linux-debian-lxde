@@ -1,12 +1,17 @@
 #!/bin/sh
 
+for pid in $(pgrep -f "start-desktop.sh"); do
+    if [ "$pid" != "$$" ]; then
+        kill -9 "$pid" 2>/dev/null
+    fi
+done
+
 # pkill -9 -f ".*willyhorizont.*dmn-auto-tiling.*"                      2>/dev/null
 pkill -9 -f ".*xpenguins.*"                                           2>/dev/null
 pkill -9 -f ".*willyhorizont.*dmn-screensavr.*"                       2>/dev/null
 pkill -9 -f ".*willyhorizont.*tux-indctr.*"                           2>/dev/null
-pkill -9 -f ".*willyhorizont.*wrkspc-indctr.*"                        2>/dev/null
 
-pkill -9 -f ".*willyhorizont.*start-desktop.*"                        2>/dev/null
+pkill -9 -f ".*willyhorizont.*wrkspc-indctr.*"                        2>/dev/null
 pkill -9 -f ".*willyhorizont.*rofi-fav-apps.*"                        2>/dev/null
 pkill -9 -f ".*willyhorizont.*bt.*"                                   2>/dev/null
 pkill -9 -f ".*willyhorizont.*net.*"                                  2>/dev/null
@@ -17,17 +22,33 @@ pkill -9 -f ".*willyhorizont.*powr-indctr.*"                          2>/dev/nul
 pkill -9 -f ".*willyhorizont.*SuckMyClock.*"                          2>/dev/null
 pkill -9 -f ".*willyhorizont.*SPRM.*"                                 2>/dev/null
 
+# pkill -9 -f "tint2 -c .*tint2-bottom-right-panel-top" 2>/dev/null
+# while true; do
+#     if [ -z "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-right-panel-top" {print $0}' 2>/dev/null)" ]; then
+#         break
+#     fi
+#     sleep 0.2
+# done
+
+# pkill -9 -f "tint2 -c .*tint2-bottom-right-panel-bottom" 2>/dev/null
+# while true; do
+#     if [ -z "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-right-panel-bottom" {print $0}' 2>/dev/null)" ]; then
+#         break
+#     fi
+#     sleep 0.2
+# done
+
+# pkill -9 -f "tint2 -c .*tint2-bottom-left-panel" 2>/dev/null
+# while true; do
+#     if [ -z "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-left-panel" {print $0}' 2>/dev/null)" ]; then
+#         break
+#     fi
+#     sleep 0.2
+# done
+
 pkill -9 -f "tint2 -c .*tint2-top-bar" 2>/dev/null
 while true; do
-    if [ -z "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-top-bar" {print $0}' 2>/dev/null)" ]; then
-        break
-    fi
-    sleep 0.2
-done
-
-pkill -9 -f "tint2 -c .*tint2-bottom-upper-panel" 2>/dev/null
-while true; do
-    if [ -z "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-upper-panel" {print $0}' 2>/dev/null)" ]; then
+    if [ -z "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-top-bar" {print $0}' 2>/dev/null)" ]; then
         break
     fi
     sleep 0.2
@@ -35,15 +56,7 @@ done
 
 pkill -9 -f "tint2 -c .*tint2-bottom-panel" 2>/dev/null
 while true; do
-    if [ -z "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel" {print $0}' 2>/dev/null)" ]; then
-        break
-    fi
-    sleep 0.2
-done
-
-pkill -9 -f "tint2 -c .*tint2-bottom-panel-menu" 2>/dev/null
-while true; do
-    if [ -z "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel-menu" {print $0}' 2>/dev/null)" ]; then
+    if [ -z "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel" {print $0}' 2>/dev/null)" ]; then
         break
     fi
     sleep 0.2
@@ -51,7 +64,7 @@ done
 
 # pkill -9 -f "plank" 2>/dev/null
 # while true; do
-#     if [ -z "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "plank.Plank" && $9 == "plank" {print $0}' 2>/dev/null)" ]; then
+#     if [ -z "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "plank.Plank" && $9 == "plank" {print $0}' 2>/dev/null)" ]; then
 #         break
 #     fi
 #     sleep 0.2
@@ -81,32 +94,40 @@ xss-lock --transfer-sleep-lock -- xtrlock &
 
 # plank &
 # while true; do
-#     wid_plank=$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "plank.Plank" && $9 == "plank" {print $1}' 2>/dev/null)
+#     wid_plank=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "plank.Plank" && $9 == "plank" {print $1}' 2>/dev/null)
 #     if [ -n "$wid_plank" ]; then
 #         break
 #     fi
 #     sleep 0.2
 # done
 
-tint2 -c "$HOME/willyhorizont.github.io/.config/tint2-bottom-panel-menu" &
-while true; do
-    if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel-menu" {print $0}' 2>/dev/null)" ]; then
-        break
-    fi
-    sleep 0.2
-done
+# tint2 -c "$HOME/willyhorizont.github.io/.config/tint2-bottom-left-panel" &
+# while true; do
+#     if [ -n "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-left-panel" {print $0}' 2>/dev/null)" ]; then
+#         break
+#     fi
+#     sleep 0.2
+# done
+
+# tint2 -c "$HOME/willyhorizont.github.io/.config/tint2-bottom-right-panel-bottom" &
+# while true; do
+#     if [ -n "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-right-panel-bottom" {print $0}' 2>/dev/null)" ]; then
+#         break
+#     fi
+#     sleep 0.2
+# done
+
+# tint2 -c "$HOME/willyhorizont.github.io/.config/tint2-bottom-right-panel-top" &
+# while true; do
+#     if [ -n "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-right-panel-top" {print $0}' 2>/dev/null)" ]; then
+#         break
+#     fi
+#     sleep 0.2
+# done
 
 tint2 -c "$HOME/willyhorizont.github.io/.config/tint2-bottom-panel" &
 while true; do
-    if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel" {print $0}' 2>/dev/null)" ]; then
-        break
-    fi
-    sleep 0.2
-done
-
-tint2 -c "$HOME/willyhorizont.github.io/.config/tint2-bottom-upper-panel" &
-while true; do
-    if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-upper-panel" {print $0}' 2>/dev/null)" ]; then
+    if [ -n "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel" {print $0}' 2>/dev/null)" ]; then
         break
     fi
     sleep 0.2
@@ -114,7 +135,7 @@ done
 
 tint2 -c "$HOME/willyhorizont.github.io/.config/tint2-top-bar" &
 while true; do
-    if [ -n "$(wmctrl -l -x -G | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-top-bar" {print $0}' 2>/dev/null)" ]; then
+    if [ -n "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-top-bar" {print $0}' 2>/dev/null)" ]; then
         break
     fi
     sleep 0.2

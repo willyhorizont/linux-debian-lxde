@@ -1,21 +1,47 @@
 #!/bin/bash
 
 SCRIPT_NAME="rofi-fav-apps.sh"
-ICON_W=36
+YOFFSET=36
+XOFFSET=$((YOFFSET + 1))
+
+INVERT_MODE=false
+INDICATOR_MODE=false
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --invert)
+            INVERT_MODE=true
+            shift
+        ;;
+        --indicator)
+            INDICATOR_MODE=true
+            shift
+        ;;
+        --number)
+            APP_ORDER="$2"
+            shift 2
+        ;;
+        --yoffset)
+            YOFFSET="$2"
+            shift 2
+        ;;
+        --xoffset)
+            XOFFSET="$2"
+            shift 2
+        ;;
+        *)                                            shift ;;
+    esac
+done
+
 ARG1="$1"
 ARG2="$2"
 
-FLIP_MODE=0
-if [ "$ARG1" = "--flip" ]; then
-    FLIP_MODE=1
-    MODE="$ARG2"
+if [ "$INVERT_MODE" = true ]; then
+    INVERT_MODE=true
     FILE_NAME="rofi-windows-task-view-mac-mission-control.sh"
 else
-    APP_ORDER="$ARG1"
-    MODE="$ARG2"
-
     if [ -z "$APP_ORDER" ]; then
-        notify-send "[$SCRIPT_NAME]" "Usage: $SCRIPT_NAME fav-app-order|--flip [--indicator]"
+        notify-send "[$SCRIPT_NAME]" "Usage: $SCRIPT_NAME [--number fav-app-order] [--invert] [--indicator]"
         exit 1
     fi
 
@@ -77,17 +103,20 @@ if [ -z "$WM_CLASS" ]; then
 fi
 
 FAV_CLASSES_REGEX=""
-for key in "${!APP_WM_CLASS[@]}"; do
-    FAV_CLASSES_REGEX+="${APP_WM_CLASS[$key]}|"
+for k in "${!APP_WM_CLASS[@]}"; do
+    if [ "$k" != "rofi-windows-task-view-mac-mission-control.sh" ]; then
+        FAV_CLASSES_REGEX+="${APP_WM_CLASS[$k]}|"
+    fi
 done
-FAV_CLASSES_REGEX="${FAV_CLASSES_REGEX%|}"
+FAV_CLASSES_REGEX="^(${FAV_CLASSES_REGEX%|})$"
 
 get_wids() {
-    "$GET_OPEN_WINS_SCRIPT" | awk -v flip="$FLIP_MODE" -v fav_regex="$FAV_CLASSES_REGEX" -v tgt_wm_class="$WM_CLASS" '
+    "$GET_OPEN_WINS_SCRIPT" | awk -v invert_mode="$INVERT_MODE" -v fav_regex="$FAV_CLASSES_REGEX" -v tgt_wm_class="$WM_CLASS" '
     {
+        if ($2 == -1) next;
         wm_classname_class = split($7, wm_class_parts, ".");
         wm_class_nu = (wm_classname_class > 0) ? wm_class_parts[wm_classname_class] : $7;
-        if (flip == 1) {
+        if (invert_mode == "true") {
             if (tolower(wm_class_nu) !~ tolower(fav_regex)) {
                 print $1
             }
@@ -99,8 +128,8 @@ get_wids() {
     }'
 }
 
-if ! [ "$MODE" = "--indicator" ]; then
-    if [ "$FLIP_MODE" -eq 1 ]; then
+if [ "$INDICATOR_MODE" = false ]; then
+    if [ "$INVERT_MODE" = true ]; then
         exit 0
     fi
     WIDS=$(get_wids)
@@ -159,10 +188,8 @@ if ! [ "$MODE" = "--indicator" ]; then
         exit 0
     fi
 
-    X_OFFSET=37
-
     ROFI_THEME="
-        configuration { location: 7; anchor: 7; yoffset: -${ICON_W}; xoffset: ${X_OFFSET}; }
+        configuration { location: 7; anchor: 7; yoffset: -${YOFFSET}; xoffset: ${XOFFSET}; }
         window { width: 90%; }
     "
 
@@ -214,7 +241,7 @@ else
     INDICATOR="<span background='#FFFFFF' foreground='#00ADD8'>0</span>]"
 fi
 printf "%s\n%s\n" "$ICON_PATH" "$INDICATOR"
-if [ "$FLIP_MODE" -eq 1 ]; then
+if [ "$INVERT_MODE" = true ]; then
     TOOLTIP_TXT=$(cat << EOF
 [other opened wins] x $WID_COUNT
 click to open rofi-windows-task-view-mac-mission-control.sh;
@@ -235,7 +262,7 @@ xprop -root -spy _NET_CLIENT_LIST | while read -r line; do
             INDICATOR="<span background='#FFFFFF' foreground='#00ADD8'>0</span>]"
         fi
         printf "%s\n%s\n" "$ICON_PATH" "$INDICATOR"
-        if [ "$FLIP_MODE" -eq 1 ]; then
+        if [ "$INVERT_MODE" = true ]; then
     TOOLTIP_TXT=$(cat << EOF
 [other opened wins] x $WID_COUNT
 click to open rofi-windows-task-view-mac-mission-control.sh

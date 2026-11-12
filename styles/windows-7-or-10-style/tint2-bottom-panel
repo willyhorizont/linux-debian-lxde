@@ -3,6 +3,12 @@
 # https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md
 
 rounded = 0
+border_width = 2
+border_sides = T
+background_color = #ffffff 100
+border_color = #00ADD8 100
+
+rounded = 0
 border_width = 0
 background_color = #ffffff 100
 border_color = #ffffff 100
@@ -12,10 +18,15 @@ border_width = 1
 background_color = #000000 100
 border_color = #FF1493 100
 
-panel_items = FEEE
-panel_position = bottom right horizontal
+rounded = 0
+border_width = 0
+background_color = #000000 100
+border_color = #000000 100
+
+panel_items = PEEEEEEEEFESEEEEEEEEE
+panel_position = bottom center horizontal
 panel_layer = bottom
-panel_size = 50% 18
+panel_size = 100% 32
 panel_shrink = 0
 panel_margin = 0 0
 panel_padding = 0 0
@@ -24,62 +35,236 @@ wm_menu = 0
 strut_policy = follow_size
 panel_window_name = tint2-bottom-panel
 
-#panel_items = SEEEEEEEEPEP
-#panel_position = bottom right horizontal
-#panel_layer = bottom
-#panel_size = 0 18
-#panel_shrink = 1
-#panel_margin = 0 0
-#panel_padding = 0 0
-#panel_background_id = 1
-#wm_menu = 0
-#strut_policy = none
-#panel_window_name = tint2-bottom-panel
+# --- P: Bottom Panel App Launcher ---
+button = new
+button_text = 
+button_font = JetBrains Mono Bold 8
+button_font_color = #000000 100
+button_icon = distributor-logo-debian
+button_max_icon_size = 30
+button_background_id = 4
+button_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --yoffset 32
+button_padding = 2 0
+button_tooltip = rofi Windows Start Menu
 
-##panel_items = PFSEEEEEEEEEPEP
-#panel_items = PFSEEEEEEEEPEP
-#panel_position = bottom right horizontal
-#panel_layer = bottom
-#panel_size = 100% 18
-#panel_shrink = 0
-#panel_margin = 0 0
-#panel_padding = 0 0
-#panel_background_id = 1
-#wm_menu = 0
-#strut_policy = follow_size
-#panel_window_name = tint2-bottom-panel
+# --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 1 --indicator
+execp_interval = 0
+execp_continuous = 2
+execp_has_icon = 1
+execp_icon_w = 30
+execp_markup = 1
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 2 0
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 1
 
-## --- P: Bottom Panel App Launcher ---
-#button = new
-#button_text = ㅤ
-#button_font = JetBrains Mono Bold 8
-#button_font_color = #000000 100
-#button_icon = distributor-logo-debian
-#button_background_id = 1
-#button_lclick_command = sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; }"'
-#button_padding = 0 0
+# --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 2 --indicator
+execp_interval = 0
+execp_continuous = 2
+execp_has_icon = 1
+execp_icon_w = 30
+execp_markup = 1
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 2 0
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 2
+
+# --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 3 --indicator
+execp_interval = 0
+execp_continuous = 2
+execp_has_icon = 1
+execp_icon_w = 30
+execp_markup = 1
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 2 0
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 3
+
+# --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 4 --indicator
+execp_interval = 0
+execp_continuous = 2
+execp_has_icon = 1
+execp_icon_w = 30
+execp_markup = 1
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 2 0
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 4
+
+# --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 5 --indicator
+execp_interval = 0
+execp_continuous = 2
+execp_has_icon = 1
+execp_icon_w = 30
+execp_markup = 1
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 2 0
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 5
+
+# --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 6 --indicator
+execp_interval = 0
+execp_continuous = 2
+execp_has_icon = 1
+execp_icon_w = 30
+execp_markup = 1
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 2 0
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 6
+
+# --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 7 --indicator
+execp_interval = 0
+execp_continuous = 2
+execp_has_icon = 1
+execp_icon_w = 30
+execp_markup = 1
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 2 0
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --number 7
+
+# --- E: Windows Task View / Mac Mission Control / Linux rofi ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --yoffset 32 --invert --indicator
+execp_interval = 0
+execp_continuous = 2
+execp_has_icon = 1
+execp_icon_w = 30
+execp_markup = 1
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 2 0
+execp_lclick_command = ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
 
 # --- E: Indicator Workspace ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux/wrkspc-indctr.sh --rev --pango
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-indctr.sh --rev --pango --max-width 20
 execp_interval = 0
 execp_has_icon = 0
 execp_continuous = 1
-execp_font = JetBrains Mono Bold 9
+execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
-execp_background_id = 1
+execp_background_id = 2
 execp_padding = 0 0
-execp_lclick_command = ~/willyhorizont.github.io/linux/wrkspc-mgr.sh --goto
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --goto
 execp_markup = 1
+
+# --- S: Systray ---
+systray_padding = 0 0
+systray_background_id = 2
+systray_sort = descending
+systray_icon_size = 20
+
+# --- E: Indicator Tux ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux/tux-indctr.sh
+execp_interval = 2
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 0 0
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/screensavr-mgr.sh
+
+# --- E: Indicator Bluetooth ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux/bt.sh --indicator --pref "| "
+execp_interval = 4
+execp_has_icon = 0
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 0 0
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/bt.sh
+
+# --- E: Indicator Network ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux/net.sh --indicator --pref "| "
+execp_interval = 5
+execp_has_icon = 0
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 0 0
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/net.sh
+
+# --- E: Indicator Cam ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux/cam.sh --indicator --pref "| "
+execp_interval = 2
+execp_has_icon = 0
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 0 0
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/cam.sh
+
+# --- E: Indicator Mic ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux/mic.sh --indicator --pref "| "
+execp_interval = 0
+execp_has_icon = 0
+execp_continuous = 1
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 0 0
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/mic.sh
+
+# --- E: Indicator Volume ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux/vol.sh --indicator --pref "| "
+execp_interval = 0
+execp_has_icon = 0
+execp_continuous = 1
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 0 0
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/vol.sh
+
+# --- E: Indicator Power ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux/powr-indctr.sh --pref "| "
+execp_interval = 5
+execp_has_icon = 0
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 0 0
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/powr-mgr.sh
 
 # --- E: Button to Show Notification History ---
 execp = new
 execp_command = echo '| 🔔 '
 execp_interval = 0
 execp_has_icon = 0
-execp_font = JetBrains Mono Bold 9
+execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
-execp_background_id = 1
+execp_background_id = 2
 execp_padding = 0 0
 execp_lclick_command = dunstctl history-pop
 execp_tooltip = Notification History
@@ -89,14 +274,14 @@ execp = new
 execp_command = echo '| _ '
 execp_interval = 0
 execp_has_icon = 0
-execp_font = JetBrains Mono Bold 9
+execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
-execp_background_id = 1
+execp_background_id = 2
 execp_padding = 0 0
 execp_lclick_command = xdotool key ctrl+super+d
 execp_tooltip = Toggle Show Desktop
 
 tooltip_font_color = #CCFF00 100
 tooltip_font = JetBrains Mono Bold 8
-tooltip_background_id = 2
+tooltip_background_id = 3
 tooltip_padding = 2 2

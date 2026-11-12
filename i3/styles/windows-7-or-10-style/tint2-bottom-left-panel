@@ -1,4 +1,4 @@
-#---- willyhorizont.github.io tint2-bottom-panel-menu configuration ----
+#---- willyhorizont.github.io tint2-bottom-left-panel configuration ----
 # https://gitlab.com/o9000/tint2/wikis/Configure
 # https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md
 
@@ -28,7 +28,7 @@ panel_padding = 0 0
 panel_background_id = 1
 wm_menu = 0
 strut_policy = follow_size
-panel_window_name = tint2-bottom-panel-menu
+panel_window_name = tint2-bottom-left-panel
 
 # --- P: Bottom Panel App Launcher ---
 button = new
@@ -38,13 +38,13 @@ button_font_color = #000000 100
 button_icon = distributor-logo-debian
 button_max_icon_size = 32
 button_background_id = 3
-button_lclick_command = sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; }"'
+button_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh
 button_padding = 2 0
-button_tooltip = rofi Windows Start Menu / Mac Launchpad
+button_tooltip = rofi Windows Start Menu
 
 # --- E: Windows Task View / Mac Mission Control / Linux rofi ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --flip --indicator
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --invert --indicator
 execp_interval = 0
 execp_continuous = 2
 execp_has_icon = 1
@@ -58,7 +58,7 @@ execp_lclick_command = ~/willyhorizont.github.io/linux/rofi-windows-task-view-ma
 
 # --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 1 --indicator
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 1 --indicator
 execp_interval = 0
 execp_continuous = 2
 execp_has_icon = 1
@@ -68,11 +68,11 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 1
 execp_padding = 2 0
-execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 1
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 1
 
 # --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 2 --indicator
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 2 --indicator
 execp_interval = 0
 execp_continuous = 2
 execp_has_icon = 1
@@ -82,11 +82,11 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 1
 execp_padding = 2 0
-execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 2
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 2
 
 # --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 3 --indicator
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 3 --indicator
 execp_interval = 0
 execp_continuous = 2
 execp_has_icon = 1
@@ -96,11 +96,11 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 1
 execp_padding = 2 0
-execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 3
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 3
 
 # --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 4 --indicator
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 4 --indicator
 execp_interval = 0
 execp_continuous = 2
 execp_has_icon = 1
@@ -110,11 +110,11 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 1
 execp_padding = 2 0
-execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 4
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 4
 
 # --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 5 --indicator
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 5 --indicator
 execp_interval = 0
 execp_continuous = 2
 execp_has_icon = 1
@@ -124,11 +124,11 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 1
 execp_padding = 2 0
-execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 5
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 5
 
 # --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 6 --indicator
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 6 --indicator
 execp_interval = 0
 execp_continuous = 2
 execp_has_icon = 1
@@ -138,11 +138,11 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 1
 execp_padding = 2 0
-execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 6
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 6
 
 # --- E: Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 7 --indicator
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 7 --indicator
 execp_interval = 0
 execp_continuous = 2
 execp_has_icon = 1
@@ -152,7 +152,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 1
 execp_padding = 2 0
-execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh 7
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/rofi-fav-apps.sh --number 7
 
 tooltip_font_color = #CCFF00 100
 tooltip_font = JetBrains Mono Bold 8

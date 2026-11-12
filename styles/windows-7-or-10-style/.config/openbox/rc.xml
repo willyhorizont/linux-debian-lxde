@@ -179,18 +179,18 @@
     <!-- Restart Desktop -->
     <keybind key="W-S-r">
         <action name="Execute">
-            <command>sh -c '"$HOME/.config/openbox/start-desktop.sh"'</command>
+            <command>~/.config/openbox/start-desktop.sh</command>
         </action>
     </keybind>
     <!-- Power Menu -->
     <keybind key="C-A-Delete">
         <action name="Execute">
-            <command>sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout" "xtrlock"'</command>
+            <command>~/willyhorizont.github.io/linux/powr-mnu.sh '~/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout' xtrlock</command>
         </action>
     </keybind>
     <keybind key="S-W-e">
         <action name="Execute">
-            <command>sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout" "xtrlock"'</command>
+            <command>~/willyhorizont.github.io/linux/powr-mnu.sh '~/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout' xtrlock</command>
         </action>
     </keybind>
     <!-- Lock -->
@@ -257,44 +257,49 @@
     <!--
     <keybind key="F4">
       <action name="Execute">
-        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; }"'</command>
+        <command>~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh</command>
       </action>
     </keybind>
     -->
     <keybind key="W-a">
       <action name="Execute">
-        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; }"'</command>
+        <command>~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --yoffset 32</command>
       </action>
     </keybind>
     <keybind key="A-F1">
       <action name="Execute">
-        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; }"'</command>
+        <command>~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --yoffset 32</command>
+      </action>
+    </keybind>
+    <keybind key="W-F1">
+      <action name="Execute">
+        <command>~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --yoffset 32</command>
       </action>
     </keybind>
     <keybind key="C-Escape">
       <action name="Execute">
-        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps -theme-str "configuration { location: 7; yoffset: -36; xoffset: 0; } window { width: 360px; }"'</command>
+        <command>~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --yoffset 32</command>
       </action>
     </keybind>
     <!-- open Windows Run or PowerToys Run / Mac Spotlight or Alfred / Linux dmenu or rofi -->
     <keybind key="W-d">
       <action name="Execute">
-        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps'</command>
+        <command>~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --spotlight</command>
       </action>
     </keybind>
     <keybind key="W-r">
       <action name="Execute">
-        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps'</command>
+        <command>~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --spotlight</command>
       </action>
     </keybind>
     <keybind key="A-space">
       <action name="Execute">
-        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps'</command>
+        <command>~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --spotlight</command>
       </action>
     </keybind>
     <keybind key="W-space">
       <action name="Execute">
-        <command>sh -c 'env XDG_CURRENT_DESKTOP="$DESKTOP_SESSION" rofi -modi "Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show Apps'</command>
+        <command>~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --spotlight</command>
       </action>
     </keybind>
     <!-- open Windows Task Manager / Mac Activity Monitor / Linux btop -->
@@ -321,7 +326,7 @@
     <!-- Tile Current Workspace -->
     <keybind key="C-W-t">
       <action name="Execute">
-        <command>sh -c '"$HOME"/willyhorizont.github.io/linux/kb-tile-cur-wrkspc.sh'</command>
+        <command>~/willyhorizont.github.io/linux/kb-tile-cur-wrkspc.sh</command>
       </action>
     </keybind>
     <!-- Tile window F Full -->
@@ -561,52 +566,52 @@
     </keybind>
     <keybind key="W-1">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 1'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --number 1</command>
         </action>
     </keybind>
     <keybind key="W-2">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 2'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --number 2</command>
         </action>
     </keybind>
     <keybind key="W-3">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 3'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --number 3</command>
         </action>
     </keybind>
     <keybind key="W-4">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 4'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --number 4</command>
         </action>
     </keybind>
     <keybind key="W-5">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 5'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --number 5</command>
         </action>
     </keybind>
     <keybind key="W-6">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 6'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --number 6</command>
         </action>
     </keybind>
     <keybind key="W-7">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 7'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --number 7</command>
         </action>
     </keybind>
     <keybind key="W-8">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 8'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --number 8</command>
         </action>
     </keybind>
     <keybind key="W-9">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 9'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --number 9</command>
         </action>
     </keybind>
     <keybind key="W-0">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --number 10'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --number 10</command>
         </action>
     </keybind>
     <!-- Keybindings for windows -->
@@ -706,60 +711,60 @@
 
     <keybind key="C-A-Right">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --next'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --next</command>
         </action>
     </keybind>
     <keybind key="C-W-Right">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --next'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --next</command>
         </action>
     </keybind>
     <keybind key="C-A-Left">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --prev'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --prev</command>
         </action>
     </keybind>
     <keybind key="C-W-Left">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --prev'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --prev</command>
         </action>
     </keybind>
 
     <!-- open Windows Task View / Mac Mission Control / Linux rofi -->
     <keybind key="C-W-Tab">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh'</command>
+            <command>~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh</command>
         </action>
     </keybind>
     <keybind key="C-A-Tab">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh'</command>
+            <command>~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh</command>
         </action>
     </keybind>
     <keybind key="C-W-Up">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh'</command>
+            <command>~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh</command>
         </action>
     </keybind>
     <keybind key="C-A-Up">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh'</command>
+            <command>~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh</command>
         </action>
     </keybind>
 
     <keybind key="C-W-plus">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --plus'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --plus</command>
         </action>
     </keybind>
     <keybind key="C-W-Return">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --goto'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --goto</command>
         </action>
     </keybind>
     <keybind key="C-W-x">
         <action name="Execute">
-            <command>sh -c '"$HOME"/willyhorizont.github.io/linux/wrkspc-mgr.sh --mov'</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --mov</command>
         </action>
     </keybind>
     <!-- Keybindings for running applications -->
@@ -1341,19 +1346,19 @@
         <iconic>no</iconic>
     </application> -->
     <!--
-    <application name="tint2-bottom-panel" class="Tint2">
+    <application name="tint2-bottom-left-panel" class="Tint2">
         <layer>below</layer>
         <focus>no</focus>
     </application>
-    <application name="tint2-bottom-upper-panel" class="Tint2">
+    <application name="tint2-bottom-right-panel-bottom" class="Tint2">
+        <layer>below</layer>
+        <focus>no</focus>
+    </application>
+    <application name="tint2-bottom-right-panel-top" class="Tint2">
         <layer>below</layer>
         <focus>no</focus>
     </application>
     <application name="tint2-top-bar" class="Tint2">
-        <layer>below</layer>
-        <focus>no</focus>
-    </application>
-    <application name="tint2-bottom-panel-menu" class="Tint2">
         <layer>below</layer>
         <focus>no</focus>
     </application>

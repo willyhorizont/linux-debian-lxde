@@ -1,6 +1,11 @@
 #!/bin/bash
 
-pkill -9 -f ".*willyhorizont.*start-desktop.*"                        2>/dev/null
+for pid in $(pgrep -f "start-desktop.sh"); do
+    if [ "$pid" != "$$" ]; then
+        kill -9 "$pid" 2>/dev/null
+    fi
+done
+
 pkill -9 -f ".*willyhorizont.*rofi-fav-apps.*"                        2>/dev/null
 pkill -9 -f ".*willyhorizont.*bt.*"                                   2>/dev/null
 pkill -9 -f ".*willyhorizont.*net.*"                                  2>/dev/null

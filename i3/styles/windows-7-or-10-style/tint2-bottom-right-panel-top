@@ -1,4 +1,4 @@
-#---- willyhorizont.github.io tint2-bottom-upper-panel configuration ----
+#---- willyhorizont.github.io tint2-bottom-right-panel-top configuration ----
 # https://gitlab.com/o9000/tint2/wikis/Configure
 # https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md
 
@@ -12,17 +12,17 @@ border_width = 1
 background_color = #000000 100
 border_color = #FF1493 100
 
-panel_items = FSEEEEEEE
+panel_items = FSEEEEEE
 panel_position = bottom right horizontal
 panel_layer = bottom
 panel_size = 50% 18
 panel_shrink = 0
-panel_margin = 0 18
+panel_margin = 0 0
 panel_padding = 0 0
 panel_background_id = 1
 wm_menu = 0
 strut_policy = follow_size
-panel_window_name = tint2-bottom-upper-panel
+panel_window_name = tint2-bottom-right-panel-top
 
 #panel_items = E
 #panel_position = bottom right horizontal
@@ -34,14 +34,13 @@ panel_window_name = tint2-bottom-upper-panel
 #panel_background_id = 1
 #wm_menu = 0
 #strut_policy = none
-#panel_window_name = tint2-bottom-upper-panel
+#panel_window_name = tint2-bottom-right-panel-top
 
 # --- S: Systray ---
 systray_padding = 0 0
 systray_background_id = 1
 systray_sort = descending
 systray_icon_size = 20
-systray_icon_asb = 100 0 -80
 
 ## --- E: Indicator Dev ---
 #execp = new
@@ -52,17 +51,6 @@ systray_icon_asb = 100 0 -80
 #execp_font_color = #000000 100
 #execp_background_id = 1
 #execp_padding = 0 0
-
-# --- E: Indicator Tux ---
-execp = new
-execp_command = ~/willyhorizont.github.io/linux/tux-indctr.sh
-execp_interval = 2
-execp_has_icon = 0
-execp_font = JetBrains Mono 8
-execp_font_color = #000000 100
-execp_background_id = 1
-execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/screensavr-mgr.sh
 
 # --- E: Indicator Bluetooth ---
 execp = new

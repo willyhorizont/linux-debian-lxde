@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.7.9" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.8.0" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,24 +15,28 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
---create pinned+opened apps combo rofi--;
---create non pinned opened apps rofi--;
-add rofi-fav-apps.sh;
-update tint2-top-bar, add tooltip padding;
-update lxde openbox start-desktop.sh, update kill, comment plank;
-update lxde openbox tint2-bottom-panel, update width, add tooltip padding;
-update lxde openbox tint2-bottom-panel-menu, update width, add tooltip padding, add Windows 7 or 10 or 11 Taskbar behavior / Mac Dock behavior / Linux xfce4-docklike-plugin or plank behavior, add Windows Task View / Mac Mission Control / Linux rofi;
-update lxde openbox tint2-bottom-upper-panel, update width, add tooltip padding;
-update lxde openbox rc xml config, update kb;
-update i3 config, update kb;
-update i3 tint2-bottom-panel, add tooltip padding;
-add i3 wrkspc-indctr.sh;
-update i3 wrkspc-mgr.sh, add --prev --next --number;
-update i3 start-desktop.sh, update kill;
+replace wmctrl -l -x -G with wmctrl-lxcapg.sh;
+update lxsession-logout.sh, replace wmctrl -l -x -G with wmctrl-lxcapg.sh;
+add rofi-app-menu.sh;
+update rofi-fav-apps.sh, add --yoffset --xoffset --number, rename --flip to --invert;
+update run-session.sh, replace wmctrl -l -x -G with wmctrl-lxcapg.sh;
+update i3 run-session.sh, replace wmctrl -l -x -G with wmctrl-lxcapg.sh;
+rename tint2-bottom-panel-menu to tint2-bottom-left-panel;
+rename tint2-bottom-upper-panel to tint2-bottom-right-panel-top;
+rename tint2-bottom-panel to tint2-bottom-right-panel-bottom;
+replace tint2-bottom-left-panel tint2-bottom-right-panel-top tint2-bottom-right-panel-bottom with tint2-bottom-panel;
+move lxde openbox wrkspc-mgr.sh from linux repo to this repo, add --max-width;
+move lxde openbox wrkspc-indctr.sh from linux repo to this repo, add --max-width --pref --suff;
+update i3 wrkspc-indctr.sh, add --max-width --pref --suff;
+fix start-desktop.sh, fix kill;
+fix i3 start-desktop.sh, fix kill;
+update i3 config, use new rofi-app-menu.sh, replace HOME with grave;
+update lxde openbox rc xml config, use new rofi-app-menu.sh, replace HOME with grave;
+create i3 windows-7-or-10-style;
+set i3 default style to windows-7-or-10-style;
 
 [working on]
 create system tray rofi;
-create windows-7-or-10-style i3;
 customize i3 title bar;
 goto desktop open pcmanfm desktop dir;
 

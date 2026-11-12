@@ -45,7 +45,7 @@ if [ -n "$ACTION" ]; then
     WID_TARGET=""
 
     while true; do
-        WID_TARGET=$(wmctrl -l -x -G | awk '$7 == "lxsession-logout.Lxsession-logout" && $9 == "lxsession-logout" {print $1}' 2>/dev/null)
+        WID_TARGET=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$7 == "lxsession-logout.Lxsession-logout" && $9 == "lxsession-logout" {print $1}' 2>/dev/null)
         if [ -n "$WID_TARGET" ]; then
             break
         fi
