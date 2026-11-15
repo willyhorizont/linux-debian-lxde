@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.8.1" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.8.2" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,12 +15,10 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-delete ./i3/styles/style-a/;
---goto desktop open pcmanfm desktop dir--;
-add i3 toggle-show-desktop.sh;
-update i3 config, add toggle show desktop kb, use new toggle-show-desktop.sh;
-update i3 wrkspc-mgr.sh, add --mov-cur-win, add main menu, update rofi title;
-update lxde openbox wrkspc-mgr.sh, add --mov-cur-win, add main menu, update rofi title;
+update fastfetch config.jsonc, update color;
+update i3 start-desktop.sh, kill non lxde openbox start-desktop.sh shits;
+update lxde openbox tint2-bottom-panel, small order update;
+update screenshots;
 
 [working on]
 

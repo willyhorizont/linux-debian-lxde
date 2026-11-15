@@ -6,6 +6,11 @@ for pid in $(pgrep -f "start-desktop.sh"); do
     fi
 done
 
+# pkill -9 -f ".*willyhorizont.*dmn-auto-tiling.*"                      2>/dev/null
+pkill -9 -f ".*xpenguins.*"                                           2>/dev/null
+pkill -9 -f ".*willyhorizont.*dmn-screensavr.*"                       2>/dev/null
+pkill -9 -f ".*willyhorizont.*tux-indctr.*"                           2>/dev/null
+
 pkill -9 -f ".*willyhorizont.*wrkspc-indctr.*"                        2>/dev/null
 pkill -9 -f ".*willyhorizont.*rofi-fav-apps.*"                        2>/dev/null
 pkill -9 -f ".*willyhorizont.*bt.*"                                   2>/dev/null

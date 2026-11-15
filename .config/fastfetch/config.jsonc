@@ -10,13 +10,13 @@
     "logo": {
         "color": {
             // "8": "#000000", // 30 // black
-            "1": "#FF1493", // 31 // red
+            "1": "#FFFFFF", // 31 // red
             "2": "#FF1493", // 32 // green
-            "3": "#00ADD8", // 33 // yellow
-            "4": "#CCFF00", // 34 // blue
-            "5": "#CCFF00", // 35 // magenta
-            "6": "#FF1493", // 36 // cyan
-            "7": "#00ADD8", // 37 // white
+            // "3": "#FFFFFF", // 33 // yellow
+            // "4": "#FFFFFF", // 34 // blue
+            // "5": "#FFFFFF", // 35 // magenta
+            // "6": "#FFFFFF", // 36 // cyan
+            // "7": "#FFFFFF", // 37 // white
             // "9": "#FFFFFF", // reset
         }
     },
@@ -127,10 +127,6 @@
             "type": "terminal",
             "format": "lxterminal",
             // "format": "alacritty",
-        },
-        {
-            "key": "Uptime",
-            "type": "uptime"
         },
 
         {

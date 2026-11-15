@@ -165,6 +165,17 @@ systray_background_id = 2
 systray_sort = descending
 systray_icon_size = 20
 
+# --- E: Indicator Tux ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux/tux-indctr.sh
+execp_interval = 2
+execp_has_icon = 0
+execp_font = JetBrains Mono 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 0 0
+execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/screensavr-mgr.sh
+
 # --- E: Indicator Workspace ---
 execp = new
 execp_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-indctr.sh --rev --pango --max-width 20 --pref '|'
@@ -177,17 +188,6 @@ execp_background_id = 2
 execp_padding = 0 0
 execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh
 execp_markup = 1
-
-# --- E: Indicator Tux ---
-execp = new
-execp_command = ~/willyhorizont.github.io/linux/tux-indctr.sh
-execp_interval = 2
-execp_has_icon = 0
-execp_font = JetBrains Mono 8
-execp_font_color = #000000 100
-execp_background_id = 2
-execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/screensavr-mgr.sh
 
 # --- E: Indicator Bluetooth ---
 execp = new
