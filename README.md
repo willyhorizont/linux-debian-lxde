@@ -1,7 +1,7 @@
 # Debian LXDE Post Install
 
-![Debian LXDE Screenshot 1](https://github.com/willyhorizont/linux-debian-lxde/blob/main/screenshot.jpg)  
-![Debian LXDE i3 Screenshot 1](https://github.com/willyhorizont/linux-debian-lxde/blob/main/i3/screenshot.jpg)  
+![Debian LXDE Screenshot](https://github.com/willyhorizont/linux-debian-lxde/blob/main/screenshot.jpg)  
+![Debian LXDE i3 Screenshot](https://github.com/willyhorizont/linux-debian-lxde/blob/main/i3/screenshot.jpg)  
 
 ## Reverse scroll and Turn on touchpad tapping
 ```

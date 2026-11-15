@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.8.2" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.8.3" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,13 +15,10 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-update fastfetch config.jsonc, update color;
-update i3 start-desktop.sh, kill non lxde openbox start-desktop.sh shits;
-update lxde openbox tint2-bottom-panel, small order update;
-update screenshots;
+update README.md;
 
 [working on]
-
+create tiling wm autotiling program;
 
 [TODO #1 i3]
 fix i3 openbox logo not showing in lightdm session picker;
@@ -36,10 +33,11 @@ customize i3 title bar;
 add icon to rofi-fav-apps.sh;
 create xalendar.py holiday-calendar.py;
 try awesomewm;
+try qtile;
 try bspwm;
+try spectrwm;
 try herbstluftwm;
 --try leftwm--, reason: no apt install;
-try qtile;
 try dwm;
 --try Eww (ElKowar's Wacky Widgets - X11 & Wayland) (defpoll/deflisten + :tooltip + :onclick)--, reason no apt install;
 try Conky + lemonbar / dzen2;
