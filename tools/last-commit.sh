@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.8.3" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.8.4" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,9 +15,23 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-update README.md;
+update notes;
+update wrkspc-indctr.sh, fix truncation;
+update i3 wrkspc-indctr.sh, fix truncation;
 
 [working on]
+create base i3 start-desktop.sh;
+create base i3 config;
+create base lxde openbox rc xml config;
+create base lxde openbox start-desktop.sh;
+create base lxde openbox autostart;
+rename styles windows-7-or-10-style to tint2-top-bar + tint2-bottom-panel + rofi-app-menu.sh + rofi-fav-apps.sh + rofi-windows-task-view-mac-mission-control.sh;
+add styles tint2-top-bar + tint2-bottom-panel + rofi-app-menu.sh + plank;
+add styles tint2-top-bar + tint2-bottom-left-panel + tint2-bottom-right-panel-top + tint2-bottom-right-panel-bottom + rofi-app-menu.sh + plank;
+rename i3 styles windows-7-or-10-style to tint2-top-bar + tint2-bottom-panel + rofi-app-menu.sh + rofi-fav-apps.sh + rofi-windows-task-view-mac-mission-control.sh;
+add styles xfce4-panel + xfce4-genmon-plugin + xfce4-whiskermenu-plugin + xfce4-docklike-plugin;
+add i3 styles xfce4-panel + xfce4-genmon-plugin + xfce4-whiskermenu-plugin + xfce4-docklike-plugin;
+update wrkspc-indctr.sh, add --mode xfce4-panel <txt></txt>\n<txtclick></txtclick>\n<tool></tool>;
 create tiling wm autotiling program;
 
 [TODO #1 i3]

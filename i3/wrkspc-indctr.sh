@@ -86,7 +86,7 @@ item_visual_width() {
     local is_focused="$2"
     local len=${#text}
     if [ "$USE_PANGO" = true ]; then
-        echo $((len + 2))
+        echo "$len"
     else
         [ "$is_focused" = "true" ] && echo $((len + 1)) || echo "$len"
     fi

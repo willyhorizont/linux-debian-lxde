@@ -178,7 +178,7 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 
 # --- E: Indicator Workspace ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-indctr.sh --rev --pango --max-width 20 --pref '|'
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-indctr.sh --rev --max-width 20 --pref '|' --pango
 execp_interval = 0
 execp_has_icon = 0
 execp_continuous = 1
