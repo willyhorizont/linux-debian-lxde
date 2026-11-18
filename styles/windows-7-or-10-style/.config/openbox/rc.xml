@@ -617,16 +617,24 @@
     <!-- Keybindings for windows -->
     <!-- kill focused window -->
     <keybind key="A-F4">
-        <action name="Close"/>
+        <action name="Execute">
+            <command>~/willyhorizont.github.io/linux/close-active-window.sh</command>
+        </action>
     </keybind>
     <keybind key="W-q">
-        <action name="Close"/>
+        <action name="Execute">
+            <command>~/willyhorizont.github.io/linux/close-active-window.sh</command>
+        </action>
     </keybind>
     <keybind key="A-q">
-        <action name="Close"/>
+        <action name="Execute">
+            <command>~/willyhorizont.github.io/linux/close-active-window.sh</command>
+        </action>
     </keybind>
     <keybind key="W-S-q">
-        <action name="Close"/>
+        <action name="Execute">
+            <command>~/willyhorizont.github.io/linux/close-active-window.sh</command>
+        </action>
     </keybind>
     <keybind key="A-Escape">
       <action name="Lower"/>

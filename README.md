@@ -287,12 +287,12 @@ sudo systemctl enable --now rapl-perm.service
 ## Create top-bar-free-text.sh
 ```
 mkdir -p ~/willyhorizont.github.io/
-cat << 'EOF' > ~/willyhorizont.github.io/top-bar-free-text.sh
+cat << 'EOF' > ~/willyhorizont.github.io/.config/top-bar-free-text.sh
 #!/bin/bash
 
-echo "Free Text"
+echo "SPACE   AVAILABLE   SPACE   AVAILABLE   SPACE   AVAILABLE"
 EOF
-chmod +x ~/willyhorizont.github.io/top-bar-free-text.sh
+chmod +x ~/willyhorizont.github.io/.config/top-bar-free-text.sh
 ```
 
 ## Create screensavr-mgr desktop shortcut

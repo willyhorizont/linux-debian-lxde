@@ -23,7 +23,7 @@ border_width = 0
 background_color = #000000 100
 border_color = #000000 100
 
-panel_items = PEEEEEEEEFSEEEEEEEEE
+panel_items = PEEEEEEEEEFSEEEEEEEE
 panel_position = bottom center horizontal
 panel_layer = bottom
 panel_size = 100% 32
@@ -159,15 +159,9 @@ execp_background_id = 2
 execp_padding = 2 0
 execp_lclick_command = ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
 
-# --- S: Systray ---
-systray_padding = 0 0
-systray_background_id = 2
-systray_sort = descending
-systray_icon_size = 20
-
 # --- E: Indicator Workspace ---
 execp = new
-execp_command = ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-indctr.sh --rev --max-width 20 --pref '|' --pango
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-indctr.sh --max-width 20 --pango
 execp_interval = 0
 execp_has_icon = 0
 execp_continuous = 1
@@ -177,6 +171,12 @@ execp_background_id = 2
 execp_padding = 0 0
 execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh
 execp_markup = 1
+
+# --- S: Systray ---
+systray_padding = 0 0
+systray_background_id = 2
+systray_sort = descending
+systray_icon_size = 20
 
 # --- E: Indicator Bluetooth ---
 execp = new

@@ -23,7 +23,7 @@ border_width = 0
 background_color = #000000 100
 border_color = #000000 100
 
-panel_items = PEEEEEEEEFSEEEEEEEEEE
+panel_items = PEEEEEEEEEFSEEEEEEEEE
 panel_position = bottom center horizontal
 panel_layer = bottom
 panel_size = 100% 32
@@ -159,6 +159,19 @@ execp_background_id = 2
 execp_padding = 2 0
 execp_lclick_command = ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
 
+# --- E: Indicator Workspace ---
+execp = new
+execp_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-indctr.sh --max-width 20 --pango
+execp_interval = 0
+execp_has_icon = 0
+execp_continuous = 1
+execp_font = JetBrains Mono Bold 8
+execp_font_color = #000000 100
+execp_background_id = 2
+execp_padding = 0 0
+execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh
+execp_markup = 1
+
 # --- S: Systray ---
 systray_padding = 0 0
 systray_background_id = 2
@@ -175,19 +188,6 @@ execp_font_color = #000000 100
 execp_background_id = 2
 execp_padding = 0 0
 execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/screensavr-mgr.sh
-
-# --- E: Indicator Workspace ---
-execp = new
-execp_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-indctr.sh --rev --max-width 20 --pref '|' --pango
-execp_interval = 0
-execp_has_icon = 0
-execp_continuous = 1
-execp_font = JetBrains Mono Bold 8
-execp_font_color = #000000 100
-execp_background_id = 2
-execp_padding = 0 0
-execp_lclick_command = ~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh
-execp_markup = 1
 
 # --- E: Indicator Bluetooth ---
 execp = new
