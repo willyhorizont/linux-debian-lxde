@@ -293,18 +293,21 @@ bindsym $control+$meta+$tab exec --no-startup-id ~/willyhorizont.github.io/linux
 bindsym $control+$super+$up exec --no-startup-id ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
 bindsym $control+$meta+$up exec --no-startup-id ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
 
-# new Windows Virtual Desktops / Mac Spaces / Linux Workspaces
+# new Windows Virtual Desktop / Mac Space / Linux Workspace
 # bindsym $control+$super+plus exec --no-startup-id sh -c "i3-msg workspace \$(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')"
 # bindsym $control+$super+plus exec --no-startup-id i3-msg workspace $(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')
 bindsym $control+$super+plus exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --plus
+
+# go to Windows Virtual Desktop / Mac Space / Linux Workspace
+# bindsym $control+$super+$return exec --no-startup-id i3-input -P 'Go to workspace: ' -F 'workspace %s'
+bindsym $control+$super+$return exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --goto
 
 # move window to Windows Virtual Desktop / Mac Space / Linux Workspace
 # bindsym $control+$super+x exec --no-startup-id i3-input -P 'Move window to workspace: ' -F 'move container to workspace %s'
 bindsym $control+$super+x exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --mov-cur-win
 
-# go to Windows Virtual Desktop / Mac Space / Linux Workspace
-# bindsym $control+$super+$return exec --no-startup-id i3-input -P 'Go to workspace: ' -F 'workspace %s'
-bindsym $control+$super+$return exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --goto
+# move windows in current Windows Virtual Desktop / Mac Space / Linux Workspace to other
+bindsym $control+$shift+$super+x exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --mov-cur-ws
 
 # reload the configuration file
 #bindsym $super+$shift+c reload

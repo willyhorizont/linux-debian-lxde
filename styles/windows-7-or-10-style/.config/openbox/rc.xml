@@ -760,19 +760,28 @@
         </action>
     </keybind>
 
+    <!-- new Windows Virtual Desktop / Mac Space / Linux Workspace -->
     <keybind key="C-W-plus">
         <action name="Execute">
             <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --plus</command>
         </action>
     </keybind>
+    <!-- go to Windows Virtual Desktop / Mac Space / Linux Workspace -->
     <keybind key="C-W-Return">
         <action name="Execute">
             <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --goto</command>
         </action>
     </keybind>
+    <!-- move window to Windows Virtual Desktop / Mac Space / Linux Workspace -->
     <keybind key="C-W-x">
         <action name="Execute">
             <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --mov-cur-win</command>
+        </action>
+    </keybind>
+    <!-- move windows in current Windows Virtual Desktop / Mac Space / Linux Workspace to other -->
+    <keybind key="C-W-S-x">
+        <action name="Execute">
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --mov-cur-ws</command>
         </action>
     </keybind>
     <!-- Keybindings for running applications -->

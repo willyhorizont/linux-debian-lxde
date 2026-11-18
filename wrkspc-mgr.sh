@@ -7,14 +7,17 @@ if ! command -v xdotool >/dev/null 2>&1 || ! command -v wmctrl >/dev/null 2>&1 |
     exit 1
 fi
 
-tot_wrkspc=$(xdotool get_num_desktops)
-cur_wrkspc=$(xdotool get_desktop)
+tot_wrkspc=$(xdotool get_num_desktops 2>/dev/null)
+cur_wrkspc=$(xdotool get_desktop 2>/dev/null)
 
-OPEN_WINS_DATA=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk '{print $2}')
+OPEN_WINS_DATA=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh")
+WS_NMS=$(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) print $i}')
+OPEN_WINS_WS=$(echo "$OPEN_WINS_DATA" | awk '{print $2}')
 
 PROCESSED=0
 MODE_SELECTED=false
 MOV_WIN_MODE=false
+MOV_WS_MODE=false
 TRGT_WIN_ID=""
 WIN_DATA=""
 WIN_NM=""
@@ -55,28 +58,31 @@ while [[ $# -gt 0 ]]; do
                 exit 1
             fi
             TRGT_WIN_ID_HEX=$(printf "0x%08x" "$TRGT_WIN_ID" 2>/dev/null)
-            WIN_DATA=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk -v wid="$TRGT_WIN_ID" -v widhex="$TRGT_WIN_ID_HEX" 'tolower($1) == tolower(wid) || tolower($1) == tolower(widhex) {print $0}')
+            WIN_DATA=$(echo "$OPEN_WINS_DATA" | awk -v wid="$TRGT_WIN_ID" -v widhex="$TRGT_WIN_ID_HEX" 'tolower($1) == tolower(wid) || tolower($1) == tolower(widhex) {print $0}')
             WIN_META=$(echo "$WIN_DATA" | awk '{print $1 " " $7}')
             FULL_NM=$(echo "$WIN_DATA" | awk '{$1=$2=$3=$4=$5=$6=$7=$8=""; sub(/^[ \t]+/, ""); print}')
             PROCESSED=1
             shift
             ;;
+        --mov-cur-ws)
+            MODE_SELECTED=true
+            MOV_WS_MODE=true
+            PROCESSED=1
+            shift
+            ;;
         --plus)
             if [ "$BYNAME_MODE" = true ]; then
-                max_ws=$(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{
-                    for(i=2; i<=NF; i+=2) {
-                        if (match($i, /[0-9]+/)) {
-                            num = substr($i, RSTART, RLENGTH);
-                            print num;
-                        }
+                max_ws=$(echo "$WS_NMS" | awk '{
+                    if (match($0, /[0-9]+/)) {
+                        print substr($0, RSTART, RLENGTH);
                     }
                 }' | sort -rn | head -n 1)
                 if [ -z "$max_ws" ]; then max_ws=0; fi
                 TRGT_WRKSPC=$(( max_ws + 1 ))
             else
                 max_active_win_ws=-1
-                if [ -n "$OPEN_WINS_DATA" ]; then
-                    max_active_win_ws=$(echo "$OPEN_WINS_DATA" | sort -nu | tail -n 1)
+                if [ -n "$OPEN_WINS_WS" ]; then
+                    max_active_win_ws=$(echo "$OPEN_WINS_WS" | sort -nu | tail -n 1)
                 fi
                 if [ "$cur_wrkspc" -gt "$max_active_win_ws" ]; then
                     max_valid_ws=$cur_wrkspc
@@ -93,7 +99,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --next|--prev)
             if [ "$BYNAME_MODE" = true ]; then
-                mapfile -t valid_workspaces < <(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) print $i}')
+                mapfile -t valid_workspaces < <(echo "$WS_NMS")
                 cur_idx=$(xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}')
                 cur_ws_name=${valid_workspaces[$cur_idx]}
                 tot_valid=${#valid_workspaces[@]}
@@ -119,8 +125,8 @@ while [[ $# -gt 0 ]]; do
                 valid_workspaces=()
                 for ((i=0; i<tot_wrkspc; i++)); do
                     win_count=0
-                    if [ -n "$OPEN_WINS_DATA" ]; then
-                        win_count=$(echo "$OPEN_WINS_DATA" | grep -c -w "$i")
+                    if [ -n "$OPEN_WINS_WS" ]; then
+                        win_count=$(echo "$OPEN_WINS_WS" | grep -c -w "$i")
                     fi
                     if [ "$win_count" -gt 0 ] || [ "$i" -eq "$cur_wrkspc" ]; then
                         valid_workspaces+=("$i")
@@ -150,9 +156,9 @@ while [[ $# -gt 0 ]]; do
                 exit 1
             fi
             if [ "$BYNAME_MODE" = true ] && [ -n "$2" ]; then
-                WS_NAME_BY_IDX=$(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -v idx="$2" -F'"' '{print $(2 * (idx - 1) + 2)}')
+                WS_NAME_BY_IDX=$(echo "$WS_NMS" | awk -v idx="$2" 'NR == idx {print $0}')
                 if [ -n "$WS_NAME_BY_IDX" ]; then
-                    mapfile -t all_ws_names < <(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) print $i}')
+                    mapfile -t all_ws_names < <(echo "$WS_NMS")
                     for i in "${!all_ws_names[@]}"; do
                         if [ "${all_ws_names[$i]}" = "$WS_NAME_BY_IDX" ]; then
                             TRGT_WRKSPC=$i
@@ -168,7 +174,7 @@ while [[ $# -gt 0 ]]; do
             shift 2
             ;;
         *)
-            echo "Usage: $0 [--byname] [--goto] [--mov] [--mov-cur-win] [--plus] [--prev] [--next] [--number workspace_number]"
+            echo "Usage: $0 [--byname] [--goto] [--mov] [--mov-cur-win] [--mov-cur-ws] [--plus] [--prev] [--next] [--number workspace_number]"
             exit 1
             ;;
     esac
@@ -181,7 +187,7 @@ fi
 if [ -z "$WIN_META" ] && [ -z "$FULL_NM" ]; then
     TRGT_WIN_ID=$(xdotool getactivewindow 2>/dev/null)
     TRGT_WIN_ID_HEX=$(printf "0x%08x" "$TRGT_WIN_ID" 2>/dev/null)
-    WIN_DATA=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk -v wid="$TRGT_WIN_ID" -v widhex="$TRGT_WIN_ID_HEX" 'tolower($1) == tolower(wid) || tolower($1) == tolower(widhex) {print $0}')
+    WIN_DATA=$(echo "$OPEN_WINS_DATA" | awk -v wid="$TRGT_WIN_ID" -v widhex="$TRGT_WIN_ID_HEX" 'tolower($1) == tolower(wid) || tolower($1) == tolower(widhex) {print $0}')
     WIN_META=$(echo "$WIN_DATA" | awk '{print $1 " " $7}')
     FULL_NM=$(echo "$WIN_DATA" | awk '{$1=$2=$3=$4=$5=$6=$7=$8=""; sub(/^[ \t]+/, ""); print}')
 fi
@@ -196,10 +202,40 @@ if [ -z "$WIN_NM" ]; then
     WIN_NM="[${WIN_NM}]"
 fi
 
+if [ "$BYNAME_MODE" = true ]; then
+    mapfile -t all_ws_names < <(echo "$WS_NMS")
+    CUR_WS_NM="${all_ws_names[$cur_wrkspc]}"
+    if [ -z "$CUR_WS_NM" ]; then
+        CUR_WS_NM=$((cur_wrkspc + 1))
+    fi
+else
+    CUR_WS_NM=$((cur_wrkspc + 1))
+fi
+WS_NM="[${CUR_WS_NM}]"
+
+CUR_WS_WINS=$(echo "$OPEN_WINS_DATA" | awk -v ws="$cur_wrkspc" '$2 == ws {print $1}')
+
 MAIN_MENU_OPTIONS=(
     "Go to Workspace"
-    "Move Window to Workspace"
-    "Move $WIN_NM to Workspace"
+)
+
+if [ -n "$OPEN_WINS_DATA" ]; then
+    MAIN_MENU_OPTIONS+=(
+        "Move Window to Workspace"
+    )
+    if [ -n "$WIN_DATA" ]; then
+        MAIN_MENU_OPTIONS+=(
+            "Move $WIN_NM to Workspace"
+        )
+    fi
+    if [ -n "$CUR_WS_WINS" ]; then
+        MAIN_MENU_OPTIONS+=(
+            "Move Windows in Workspace $WS_NM to Other Workspace"
+        )
+    fi
+fi
+
+MAIN_MENU_OPTIONS+=(
     "New Workspace"
     "Next Workspace"
     "Previous Workspace"
@@ -210,22 +246,25 @@ if [ $PROCESSED -eq 0 ] && [ "$MODE_SELECTED" = false ]; then
     EXTRA_ARGS=()
     [ "$BYNAME_MODE" = true ] && EXTRA_ARGS+=("--byname")
     case "$MAIN_MENU_CHOICE" in
-        "${MAIN_MENU_OPTIONS[0]}")
+        "Go to Workspace")
             exec "$0" "${EXTRA_ARGS[@]}" --goto
             ;;
-        "${MAIN_MENU_OPTIONS[1]}")
+        "Move Window to Workspace")
             exec "$0" "${EXTRA_ARGS[@]}" --mov
             ;;
-        "${MAIN_MENU_OPTIONS[2]}")
+        "Move $WIN_NM to Workspace")
             exec "$0" "${EXTRA_ARGS[@]}" --mov-cur-win
             ;;
-        "${MAIN_MENU_OPTIONS[3]}")
+        "Move Windows in Workspace $WS_NM to Other Workspace")
+            exec "$0" "${EXTRA_ARGS[@]}" --mov-cur-ws
+            ;;
+        "New Workspace")
             exec "$0" "${EXTRA_ARGS[@]}" --plus
             ;;
-        "${MAIN_MENU_OPTIONS[4]}")
+        "Next Workspace")
             exec "$0" "${EXTRA_ARGS[@]}" --next
             ;;
-        "${MAIN_MENU_OPTIONS[5]}")
+        "Previous Workspace")
             exec "$0" "${EXTRA_ARGS[@]}" --prev
             ;;
         *)
@@ -237,12 +276,12 @@ fi
 if [ $PROCESSED -eq 0 ]; then
     ROFI_LIST=""
     if [ "$BYNAME_MODE" = true ]; then
-        ROFI_LIST=$(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) print $i}' | tr '\n' '\\' | sed 's/\\/\\n/g' | sed 's/\\n$//')
+        ROFI_LIST=$(echo "$WS_NMS" | tr '\n' '\\' | sed 's/\\/\\n/g' | sed 's/\\n$//')
     else
         for ((i=0; i<tot_wrkspc; i++)); do
             win_count=0
-            if [ -n "$OPEN_WINS_DATA" ]; then
-                win_count=$(echo "$OPEN_WINS_DATA" | grep -c -w "$i")
+            if [ -n "$OPEN_WINS_WS" ]; then
+                win_count=$(echo "$OPEN_WINS_WS" | grep -c -w "$i")
             fi
             if [ "$win_count" -gt 0 ]; then
                 display_num=$((i + 1))
@@ -257,6 +296,9 @@ if [ $PROCESSED -eq 0 ]; then
     if [ "$MOV_WIN_MODE" = true ]; then
         PROMPT_MSG="Move $WIN_NM to Workspace"
         ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG" -theme-str 'window { width: 90%; }')
+    elif [ "$MOV_WS_MODE" = true ]; then
+        PROMPT_MSG="Move Windows in Workspace $WS_NM to Other Workspace"
+        ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG" -theme-str 'window { width: 90%; }')
     else
         PROMPT_MSG="Go to Workspace"
         ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG")
@@ -265,7 +307,7 @@ if [ $PROCESSED -eq 0 ]; then
         exit 0
     fi
     if [ "$BYNAME_MODE" = true ]; then
-        mapfile -t all_ws_names < <(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) print $i}')
+        mapfile -t all_ws_names < <(echo "$WS_NMS")
         for i in "${!all_ws_names[@]}"; do
             if [ "${all_ws_names[$i]}" = "$ROFI_INPUT" ]; then
                 TRGT_WRKSPC=$i
@@ -293,6 +335,10 @@ if echo "$TRGT_WRKSPC" | grep -qE '^[0-9]+$'; then
     fi
     if [ "$MOV_WIN_MODE" = true ]; then
         xdotool set_desktop_for_window "$TRGT_WIN_ID" "$TRGT_WRKSPC"
+    elif [ "$MOV_WS_MODE" = true ]; then
+        while read -r WID; do
+            [ -n "$WID" ] && xdotool set_desktop_for_window "$WID" "$TRGT_WRKSPC"
+        done <<< "$CUR_WS_WINS"
     fi
     xdotool set_desktop "$TRGT_WRKSPC"
 else

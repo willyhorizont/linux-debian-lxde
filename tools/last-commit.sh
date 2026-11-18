@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.8.5" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.8.6" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,23 +15,21 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-update create-desktop-shortcuts.sh, update cmatrix;
-update i3 config, use close-active-window.sh;
-update lxde openbox rc xml config, use close-active-window.sh;
+update wrkspc-mgr.sh, add --mov-cur-ws to wrkspc-mgr.sh;
+update i3 wrkspc-mgr.sh, add --mov-cur-ws to wrkspc-mgr.sh;
+update i3 config, use wrkspc-mgr.sh --mov-cur-ws;
+update lxde openbox rc xml config, use wrkspc-mgr.sh --mov-cur-ws;
 
 [working on]
-update wrkspc-mgr.sh, add mov-wrkspc to wrkspc-mgr.sh;
 create base i3 start-desktop.sh;
 create base i3 config;
 create base lxde openbox rc xml config;
 create base lxde openbox start-desktop.sh;
 create base lxde openbox autostart;
-rename styles windows-7-or-10-style to tint2-top-bar + tint2-bottom-panel + rofi-app-menu.sh + rofi-fav-apps.sh + rofi-windows-task-view-mac-mission-control.sh;
-add styles tint2-top-bar + tint2-bottom-panel + rofi-app-menu.sh + plank;
-add styles tint2-top-bar + tint2-bottom-left-panel + tint2-bottom-right-panel-top + tint2-bottom-right-panel-bottom + rofi-app-menu.sh + plank;
-rename i3 styles windows-7-or-10-style to tint2-top-bar + tint2-bottom-panel + rofi-app-menu.sh + rofi-fav-apps.sh + rofi-windows-task-view-mac-mission-control.sh;
-add styles xfce4-panel + xfce4-genmon-plugin + xfce4-whiskermenu-plugin + xfce4-docklike-plugin;
-add i3 styles xfce4-panel + xfce4-genmon-plugin + xfce4-whiskermenu-plugin + xfce4-docklike-plugin;
+rename styles windows-7-or-10-style to tint2;
+rename i3 styles windows-7-or-10-style to tint2;
+add styles xfce4-panel;
+add i3 styles xfce4-panel;
 update wrkspc-indctr.sh, add --mode xfce4-panel <txt></txt>\n<txtclick></txtclick>\n<tool></tool>;
 create tiling wm autotiling program;
 
@@ -55,7 +53,7 @@ try bspwm;
 --try leftwm--, reason: no apt install;
 try dwm;
 --try Eww (ElKowar's Wacky Widgets - X11 & Wayland) (defpoll/deflisten + :tooltip + :onclick)--, reason no apt install;
-try Conky + lemonbar / dzen2;
+try dzen2;
 --try MATE Panel (mate-panel + Command Applet mate-applets)--, reason too much bloat;
 try LXPanel;
 try XFCE4 Panel (xfce4-genmon-plugin <txt> + <tool>content</tool> sed 's/&/&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' + <txtclick>cmd_click</txtclick> (or <click> for icon));
