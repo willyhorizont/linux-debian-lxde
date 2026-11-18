@@ -1,0 +1,23 @@
+i3-wm          + tint2
+i3-wm          + xfce4-panel
+i3-wm          + dzen2
+qtile          + default bar/panel
+qtile          + tint2
+qtile          + xfce4-panel
+qtile          + dzen2
+spectrwm       + tint2
+spectrwm       + xfce4-panel
+spectrwm       + dzen2
+herbstluftwm   + tint2
+herbstluftwm   + xfce4-panel
+herbstluftwm   + dzen2
+awesomewm      + default bar/panel
+awesomewm      + tint2
+awesomewm      + xfce4-panel
+awesomewm      + dzen2
+bspwm          + tint2
+bspwm          + xfce4-panel
+bspwm          + dzen2
+dwm            + tint2
+dwm            + xfce4-panel
+dwm            + dzen2

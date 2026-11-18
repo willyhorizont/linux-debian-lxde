@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.8.6" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.8.7" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,10 +15,7 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-update wrkspc-mgr.sh, add --mov-cur-ws to wrkspc-mgr.sh;
-update i3 wrkspc-mgr.sh, add --mov-cur-ws to wrkspc-mgr.sh;
-update i3 config, use wrkspc-mgr.sh --mov-cur-ws;
-update lxde openbox rc xml config, use wrkspc-mgr.sh --mov-cur-ws;
+small fix in create-desktop-shortcuts.sh;
 
 [working on]
 create base i3 start-desktop.sh;
