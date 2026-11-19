@@ -12,7 +12,7 @@ border_width = 1
 background_color = #000000 100
 border_color = #FF1493 100
 
-panel_items = EEFEFEE
+panel_items = EEFFEFEFEFFEEEE
 panel_position = top center horizontal
 panel_layer = top
 panel_size = 100% 16
@@ -55,12 +55,41 @@ execp_markup = 1
 
 # --- E: FreeText ---
 execp = new
-execp_command = $HOME/willyhorizont.github.io/.config/top-bar-free-text.sh
+execp_command = $HOME/willyhorizont.github.io/.config/top-bar-free-text-1.sh
 execp_interval = 0
 execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100
 execp_padding = 0 0
 execp_tooltip = 
+
+# --- E: Separator ---
+execp = new
+execp_command = echo ""
+execp_interval = 0
+execp_font = JetBrains Mono 6
+execp_font_color = #FF1493 100
+execp_padding = 0 0
+execp_tooltip = 
+execp_markup = 1
+
+# --- E: FreeText ---
+execp = new
+execp_command = $HOME/willyhorizont.github.io/.config/top-bar-free-text-2.sh
+execp_interval = 0
+execp_font = JetBrains Mono 6
+execp_font_color = #FF1493 100
+execp_padding = 0 0
+execp_tooltip = 
+
+# --- E: WhatIsThis ---
+execp = new
+execp_command = echo "<span background='#000000' foreground='#00ADD8'>|</span><span background='#CCFF00' foreground='#000000'> Linux Debian LXDE @ $XDG_CURRENT_DESKTOP </span>"
+execp_interval = 0
+execp_font = JetBrains Mono Bold 6
+execp_font_color = #FF1493 100
+execp_padding = 0 0
+execp_tooltip = 
+execp_markup = 1
 
 # --- E: WhoAmI ---
 execp = new

@@ -126,10 +126,10 @@ bindsym $super+$prtsc exec --no-startup-id mkdir -p ~/Pictures/Screenshots && sc
 bindsym $super+$shift+s exec --no-startup-id mkdir -p ~/Pictures/Screenshots && scrot --border --pointer --freeze --select --quality 100 ~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg
 
 ## kill focused window
-bindsym $meta+F4 exec --no-startup-id ~/willyhorizont.github.io/linux/close-active-window.sh
-bindsym $super+q exec --no-startup-id ~/willyhorizont.github.io/linux/close-active-window.sh
-bindsym $meta+q exec --no-startup-id ~/willyhorizont.github.io/linux/close-active-window.sh
-bindsym $super+$shift+q exec --no-startup-id ~/willyhorizont.github.io/linux/close-active-window.sh
+bindsym $meta+F4 exec --no-startup-id $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --confirm && i3-msg kill
+bindsym $super+q exec --no-startup-id $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --confirm && i3-msg kill
+bindsym $meta+q exec --no-startup-id $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --confirm && i3-msg kill
+bindsym $super+$shift+q exec --no-startup-id $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --confirm && i3-msg kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
