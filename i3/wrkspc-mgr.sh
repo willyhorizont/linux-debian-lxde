@@ -118,11 +118,9 @@ MAIN_MENU_OPTIONS=(
 )
 
 if [ -n "$OPEN_WINS_DATA" ]; then
-    MAIN_MENU_OPTIONS+=(
-        "Move Window to Workspace"
-    )
     if [ -n "$WIN_DATA" ]; then
         MAIN_MENU_OPTIONS+=(
+            "Move Window to Workspace"
             "Move $WIN_NM to Workspace"
         )
     fi

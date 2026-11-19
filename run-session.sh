@@ -2,6 +2,12 @@
 
 SCRIPT_NAME="run-session.sh"
 
+for pid in $(pgrep -f "$SCRIPT_NAME"); do
+    if [ "$pid" != "$$" ]; then
+        kill -9 "$pid" 2>/dev/null
+    fi
+done
+
 case 0 in
     $(pgrep -x "lxsession" >/dev/null; echo $?))
         ;;

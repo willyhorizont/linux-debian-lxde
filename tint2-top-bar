@@ -83,7 +83,7 @@ execp_tooltip =
 
 # --- E: WhatIsThis ---
 execp = new
-execp_command = echo "<span background='#000000' foreground='#00ADD8'>|</span><span background='#CCFF00' foreground='#000000'> Linux Debian LXDE @ $XDG_CURRENT_DESKTOP </span>"
+execp_command = echo "<span background='#000000' foreground='#00ADD8'>|</span><span background='#CCFF00' foreground='#000000'> $DESKTOP_SESSION @ Linux Debian LXDE </span>"
 execp_interval = 0
 execp_font = JetBrains Mono Bold 6
 execp_font_color = #FF1493 100

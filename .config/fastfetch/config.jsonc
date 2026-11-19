@@ -10,7 +10,7 @@
     "logo": {
         "color": {
             // "8": "#000000", // 30 // black
-            "1": "#FFFFFF", // 31 // red
+            "1": "#00ADD8", // 31 // red
             "2": "#FF1493", // 32 // green
             // "3": "#FFFFFF", // 33 // yellow
             // "4": "#FFFFFF", // 34 // blue
