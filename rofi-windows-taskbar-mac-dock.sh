@@ -113,7 +113,7 @@ FAV_CLASSES_REGEX="^(${FAV_CLASSES_REGEX%|})$"
 get_wids() {
     "$GET_OPEN_WINS_SCRIPT" | awk -v invert_mode="$INVERT_MODE" -v fav_regex="$FAV_CLASSES_REGEX" -v tgt_wm_class="$WM_CLASS" '
     {
-        if ($2 == -1) next;
+        if (NF == 0 || $2 == -1) next;
         wm_classname_class = split($7, wm_class_parts, ".");
         wm_class_nu = (wm_classname_class > 0) ? wm_class_parts[wm_classname_class] : $7;
         if (invert_mode == "true") {
@@ -153,7 +153,7 @@ if [ "$INDICATOR_MODE" = false ]; then
             split(names_str, names_arr, "\n");
         }
         {
-            if ($2 == -1) next;
+            if (NF == 0 || $2 == -1) next;
             wm_classname_class = split($7, wm_class_parts, ".");
             wm_class_nu = (wm_classname_class > 0) ? wm_class_parts[wm_classname_class] : $7;
             if (tolower(wm_class_nu) != tolower(tgt_class)) next;
