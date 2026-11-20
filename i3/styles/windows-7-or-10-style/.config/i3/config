@@ -386,5 +386,5 @@ client.background       #ffffff
 client.focused          #FF1493 #FF1493 #000000 #FF1493   #FF1493
 client.focused_inactive #333333 #222222 #888888 #292d2e   #222222
 
-# for_window [class="Polybar"] lower
+for_window [class="Rofi"] floating enable, border none, move position center
 focus_follows_mouse no

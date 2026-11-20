@@ -1361,5 +1361,9 @@
             <y>center</y>
         </position>
     </application>
+    <application class="Rofi">
+        <decor>no</decor>
+        <layer>above</layer>
+    </application>
   </applications>
 </openbox_config>

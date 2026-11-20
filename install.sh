@@ -1,5 +1,6 @@
 #!/bin/sh
 
+$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh --clear-cache
 mkdir -p ~/.local/share/plank/themes/windows-7-or-10-style/
 cp ~/willyhorizont.github.io/linux-debian-lxde/.local/share/plank/themes/windows-7-or-10-style/dock.theme ~/.local/share/plank/themes/windows-7-or-10-style/dock.theme
 cp ~/willyhorizont.github.io/linux-debian-lxde/.fzfrc ~/.fzfrc
