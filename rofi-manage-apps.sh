@@ -10,8 +10,19 @@ if [ -f "$FAV_APPS_LIST_FILE_PATH" ]; then
     done < "$FAV_APPS_LIST_FILE_PATH"
 fi
 
+EXIT_APPS=(
+    "lock"
+    "logout-lxde"
+    "logout-openbox"
+    "logout-i3"
+    "suspend"
+    "reboot"
+    "shutdown"
+)
+
 CACHE_DIR="$HOME/.cache/rofi"
 CACHE_FILE="$CACHE_DIR/apps-list-${XDG_CURRENT_DESKTOP:-default}.cache"
+EXIT_MODE=false
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -19,6 +30,10 @@ while [[ $# -gt 0 ]]; do
             rm -f "$CACHE_FILE"
             echo "[rofi-manage-apps.sh] cache cleared!"
             exit 0
+            ;;
+        --exit-mode)
+            EXIT_MODE=true
+            shift
             ;;
         *)
             break
@@ -77,8 +92,38 @@ find_desktop_file() {
     fi
 }
 
+generate_exit_list() {
+    for app in "${EXIT_APPS[@]}"; do
+        local desktop_path
+        desktop_path=$(find_desktop_file "$app")
+        if [ -n "$desktop_path" ]; then
+            local app_metadata
+            if app_metadata=$(validate_and_get_metadata "$desktop_path"); then
+                local display_name="${app_metadata%%|*}"
+                local icon_name="${app_metadata#*|}"
+                printf "%s\0icon\x1f%s\x1finfo\x1f%s\n" "$display_name" "$icon_name" "$app"
+            fi
+        fi
+    done
+}
+
 generate_app_list_raw() {
     declare -A printed_apps
+    local exclude_exit=(
+        "lock"
+        "logout-lxde"
+        "logout-openbox"
+        "logout-i3"
+        "suspend"
+        "reboot"
+        "shutdown"
+        "exit-lxde"
+        "exit-openbox"
+        "exit-i3"
+    )
+    for ex in "${exclude_exit[@]}"; do
+        printed_apps["$ex"]=1
+    done
     for app in "${FAV_APPS[@]}"; do
         local desktop_path
         desktop_path=$(find_desktop_file "$app")
@@ -149,7 +194,11 @@ get_app_list() {
 }
 
 if [ -z "$1" ]; then
-    get_app_list
+    if [ "$EXIT_MODE" = true ]; then
+        generate_exit_list
+    else
+        get_app_list
+    fi
 else
     TARGET_APP="${ROFI_INFO:-$1}"
     coproc (gtk-launch "$TARGET_APP" > /dev/null 2>&1 || "$TARGET_APP" > /dev/null 2>&1)

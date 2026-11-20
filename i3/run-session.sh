@@ -93,3 +93,5 @@ done
 i3-msg "[class=\"Pcmanfm\"] move container to workspace 3"
 
 i3-msg "workspace 1"
+
+~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32

@@ -144,17 +144,17 @@ bindsym $super+$shift+q exec --no-startup-id $HOME/willyhorizont.github.io/linux
 # bindsym $meta+$space exec --no-startup-id dmenu_run -b -fn 'JetBrains Mono-8' -nb '#000000' -nf '#CCFF00' -sb '#00ADD8' -sf '#000000'
 
 ## open Windows Start Menu / Mac Launchpad / Linux xfce4-popup-whiskermenu or jgmenu or dmenu or rofi
-# bindsym F4 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --yoffset 32
-bindsym $super+a exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --yoffset 32
-bindsym $meta+F1 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --yoffset 32
-bindsym $super+F1 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --yoffset 32
-bindsym $control+$escape exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --yoffset 32
+# bindsym F4 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
+bindsym $super+a exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
+bindsym $meta+F1 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
+bindsym $super+F1 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
+bindsym $control+$escape exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
 
 ## open Windows Run or PowerToys Run / Mac Spotlight or Alfred / Linux dmenu or rofi
-bindsym $super+d exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --spotlight
-bindsym $super+r exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --spotlight
-bindsym $meta+$space exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --spotlight
-bindsym $super+$space exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-app-menu.sh --spotlight
+bindsym $super+d exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --spotlight
+bindsym $super+r exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --spotlight
+bindsym $meta+$space exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --spotlight
+bindsym $super+$space exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --spotlight
 
 # open Windows Task Manager / Mac Activity Monitor / Linux btop
 bindsym $control+$shift+$escape exec --no-startup-id lxterminal --geometry=88x28 --working-directory=~ -e btop
@@ -287,11 +287,15 @@ bindsym $control+$super+$left workspace prev
 # bindsym $control+$meta+$left exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
 # bindsym $control+$super+$left exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh --prev
 
+# open Windows Virtual Desktops / Mac Spaces / Linux Workspaces manager
+bindsym $control+$meta+$space exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh
+bindsym $control+$super+$space exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh
+
 # open Windows Task View / Mac Mission Control / Linux rofi
-bindsym $control+$super+$tab exec --no-startup-id ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
-bindsym $control+$meta+$tab exec --no-startup-id ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
-bindsym $control+$super+$up exec --no-startup-id ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
-bindsym $control+$meta+$up exec --no-startup-id ~/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh
+bindsym $control+$super+$tab exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-task-view-mac-mission-control.sh
+bindsym $control+$meta+$tab exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-task-view-mac-mission-control.sh
+bindsym $control+$super+$up exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-task-view-mac-mission-control.sh
+bindsym $control+$meta+$up exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-task-view-mac-mission-control.sh
 
 # new Windows Virtual Desktop / Mac Space / Linux Workspace
 # bindsym $control+$super+plus exec --no-startup-id sh -c "i3-msg workspace \$(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')"

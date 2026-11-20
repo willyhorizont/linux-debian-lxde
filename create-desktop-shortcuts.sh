@@ -86,16 +86,16 @@ Categories=System;Utility;Settings;
 OnlyShowIn=LXDE;openbox;i3;
 EOF
 
-cat << EOF > ~/.local/share/applications/shutdown.desktop
+cat << EOF > ~/.local/share/applications/suspend.desktop
 [Desktop Entry]
-Name=Shutdown
-Comment=shutdown
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock" --shutdown'
+Name=Suspend
+Comment=suspend
+Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock" --suspend'
 Terminal=false
 Type=Application
-Icon=system-shutdown
+Icon=system-suspend
 Categories=System;Utility;Settings;
-Keywords=poweroff;
+Keywords=sleep;
 OnlyShowIn=LXDE;openbox;i3;
 EOF
 
@@ -112,16 +112,16 @@ Keywords=restart;
 OnlyShowIn=LXDE;openbox;i3;
 EOF
 
-cat << EOF > ~/.local/share/applications/suspend.desktop
+cat << EOF > ~/.local/share/applications/shutdown.desktop
 [Desktop Entry]
-Name=Suspend
-Comment=suspend
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock" --suspend'
+Name=Shutdown
+Comment=shutdown
+Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock" --shutdown'
 Terminal=false
 Type=Application
-Icon=system-suspend
+Icon=system-shutdown
 Categories=System;Utility;Settings;
-Keywords=sleep;
+Keywords=poweroff;
 OnlyShowIn=LXDE;openbox;i3;
 EOF
 

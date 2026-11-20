@@ -110,7 +110,7 @@ sudo apt install -y picom
 # sudo apt install -y xcompmgr
 
 # Pinned+Opened app combo
-sudo apt install -y plank
+# sudo apt install -y plank
 
 # Prompt menu
 sudo apt install -y rofi

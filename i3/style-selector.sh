@@ -34,9 +34,6 @@ CONF="$HOME/.config/i3/config"
 
 mkdir -p "$HOME/willyhorizont.github.io/.config/i3/"
 
-# BOTTOM_LEFT_PANEL="$HOME/willyhorizont.github.io/.config/i3/tint2-bottom-left-panel"
-# BOTTOM_RIGHT_PANEL_TOP="$HOME/willyhorizont.github.io/.config/i3/tint2-bottom-right-panel-top"
-# BOTTOM_RIGHT_PANEL_BOTTOM="$HOME/willyhorizont.github.io/.config/i3/tint2-bottom-right-panel-bottom"
 BOTTOM_PANEL="$HOME/willyhorizont.github.io/.config/i3/tint2-bottom-panel"
 TOP_BAR="$HOME/willyhorizont.github.io/.config/tint2-top-bar"
 
@@ -95,17 +92,11 @@ fi
 
 SRC_CONF="$STYLE_DIR/$STYLE_SUBDIR/.config/i3/config"
 
-# SRC_BOTTOM_LEFT_PANEL="$STYLE_DIR/$STYLE_SUBDIR/tint2-bottom-left-panel"
-# SRC_BOTTOM_RIGHT_PANEL_TOP="$STYLE_DIR/$STYLE_SUBDIR/tint2-bottom-right-panel-top"
-# SRC_BOTTOM_RIGHT_PANEL_BOTTOM="$STYLE_DIR/$STYLE_SUBDIR/tint2-bottom-right-panel-bottom"
 SRC_BOTTOM_PANEL="$STYLE_DIR/$STYLE_SUBDIR/tint2-bottom-panel"
 SRC_TOP_BAR="$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar"
 
 ln -sf "$SRC_CONF" "$CONF"
 
-# ln -sf "$SRC_BOTTOM_LEFT_PANEL" "$BOTTOM_LEFT_PANEL"
-# ln -sf "$SRC_BOTTOM_RIGHT_PANEL_TOP" "$BOTTOM_RIGHT_PANEL_TOP"
-# ln -sf "$SRC_BOTTOM_RIGHT_PANEL_BOTTOM" "$BOTTOM_RIGHT_PANEL_BOTTOM"
 ln -sf "$SRC_BOTTOM_PANEL" "$BOTTOM_PANEL"
 ln -sf "$SRC_TOP_BAR" "$TOP_BAR"
 

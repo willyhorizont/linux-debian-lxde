@@ -113,7 +113,27 @@ listview {
     scrollbar:    false;
     fixed-height: true;
 }
+mode-switcher {
+    orientation:      horizontal;
+    background-color: #000000;
+    border:           2px 0px 0px 0px;
+    border-color:     #FF1493;
+    padding:          6px 8px;
+    spacing:          6px;
+}
+button {
+    background-color: #000000;
+    text-color:       #CCFF00;
+    padding:          4px 8px;
+    border:           1px;
+    border-color:     #FF1493;
+}
+button selected {
+    background-color: #00ADD8;
+    text-color:       #000000;
+    border-color:     #00ADD8;
+}
 scrollbar {
     handle-color:     #FF1493;
-    background-color: #111111;
+    background-color: #000000;
 }

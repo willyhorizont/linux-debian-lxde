@@ -36,10 +36,6 @@ LX_RC="$HOME/.config/openbox/lxde-rc.xml"
 OB_AUTOSTART="$HOME/.config/openbox/autostart"
 OB_RC="$HOME/.config/openbox/rc.xml"
 
-TASKBAR="$HOME/willyhorizont.github.io/.config/plank.ini"
-# BOTTOM_LEFT_PANEL="$HOME/willyhorizont.github.io/.config/tint2-bottom-left-panel"
-# BOTTOM_RIGHT_PANEL_TOP="$HOME/willyhorizont.github.io/.config/tint2-bottom-right-panel-top"
-# BOTTOM_RIGHT_PANEL_BOTTOM="$HOME/willyhorizont.github.io/.config/tint2-bottom-right-panel-bottom"
 BOTTOM_PANEL="$HOME/willyhorizont.github.io/.config/tint2-bottom-panel"
 TOP_BAR="$HOME/willyhorizont.github.io/.config/tint2-top-bar"
 
@@ -101,10 +97,6 @@ SRC_LX_AUTOSTART="$STYLE_DIR/$STYLE_SUBDIR/.config/lxsession/LXDE/autostart"
 SRC_OB_AUTOSTART="$STYLE_DIR/$STYLE_SUBDIR/.config/openbox/autostart"
 SRC_OB_RC="$STYLE_DIR/$STYLE_SUBDIR/.config/openbox/rc.xml"
 
-SRC_TASKBAR="$STYLE_DIR/$STYLE_SUBDIR/plank.ini"
-# SRC_BOTTOM_LEFT_PANEL="$STYLE_DIR/$STYLE_SUBDIR/tint2-bottom-left-panel"
-# SRC_BOTTOM_RIGHT_PANEL_TOP="$STYLE_DIR/$STYLE_SUBDIR/tint2-bottom-right-panel-top"
-# SRC_BOTTOM_RIGHT_PANEL_BOTTOM="$STYLE_DIR/$STYLE_SUBDIR/tint2-bottom-right-panel-bottom"
 SRC_BOTTOM_PANEL="$STYLE_DIR/$STYLE_SUBDIR/tint2-bottom-panel"
 SRC_TOP_BAR="$HOME/willyhorizont.github.io/linux-debian-lxde/tint2-top-bar"
 
@@ -114,10 +106,6 @@ ln -sf "$SRC_OB_AUTOSTART" "$OB_AUTOSTART"
 ln -sf "$SRC_OB_RC" "$LX_RC"
 ln -sf "$SRC_OB_RC" "$OB_RC"
 
-ln -sf "$SRC_TASKBAR" "$TASKBAR"
-# ln -sf "$SRC_BOTTOM_LEFT_PANEL" "$BOTTOM_LEFT_PANEL"
-# ln -sf "$SRC_BOTTOM_RIGHT_PANEL_TOP" "$BOTTOM_RIGHT_PANEL_TOP"
-# ln -sf "$SRC_BOTTOM_RIGHT_PANEL_BOTTOM" "$BOTTOM_RIGHT_PANEL_BOTTOM"
 ln -sf "$SRC_BOTTOM_PANEL" "$BOTTOM_PANEL"
 ln -sf "$SRC_TOP_BAR" "$TOP_BAR"
 

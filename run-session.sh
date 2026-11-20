@@ -107,3 +107,5 @@ xdotool set_desktop_for_window "$wid_fm" "$((3 - 1))"
 xdotool key "ctrl+super+f"
 
 xdotool set_desktop "$((1 - 1))"
+
+~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32

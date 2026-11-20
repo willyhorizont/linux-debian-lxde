@@ -39,7 +39,12 @@ while [[ $# -gt 0 ]]; do
         --mov)
             MODE_SELECTED=true
             MOV_WIN_MODE=true
-            WIN_DATA=$("$HOME/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh" --print --title 'Choose Window to Move')
+            WIN_DATA=$("$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-windows-task-view-mac-mission-control.sh" --print --title "[$SCRIPT_NAME] Choose Window to Move")
+            if [ "$WIN_DATA" = "Back" ]; then
+                EXTRA_ARGS=()
+                [ "$BYNAME_MODE" = true ] && EXTRA_ARGS+=("--byname")
+                exec "$0" "${EXTRA_ARGS[@]}"
+            fi
             TRGT_WIN_ID=$(echo "$WIN_DATA" | awk '{print $1}')
             if [ -z "$TRGT_WIN_ID" ]; then
                 exit 0
@@ -220,9 +225,11 @@ MAIN_MENU_OPTIONS=(
 )
 
 if [ -n "$OPEN_WINS_DATA" ]; then
+    MAIN_MENU_OPTIONS+=(
+        "Move Window to Workspace"
+    )
     if [ -n "$WIN_DATA" ]; then
         MAIN_MENU_OPTIONS+=(
-            "Move Window to Workspace"
             "Move $WIN_NM to Workspace"
         )
     fi
@@ -272,9 +279,10 @@ if [ $PROCESSED -eq 0 ] && [ "$MODE_SELECTED" = false ]; then
 fi
 
 if [ $PROCESSED -eq 0 ]; then
-    ROFI_LIST=""
+    ROFI_LIST="Back"
     if [ "$BYNAME_MODE" = true ]; then
-        ROFI_LIST=$(echo "$WS_NMS" | tr '\n' '\\' | sed 's/\\/\\n/g' | sed 's/\\n$//')
+        WS_LIST=$(echo "$WS_NMS" | tr '\n' '\\' | sed 's/\\/\\n/g' | sed 's/\\n$//')
+        [ -n "$WS_LIST" ] && ROFI_LIST="${ROFI_LIST}\n${WS_LIST}"
     else
         for ((i=0; i<tot_wrkspc; i++)); do
             win_count=0
@@ -283,26 +291,26 @@ if [ $PROCESSED -eq 0 ]; then
             fi
             if [ "$win_count" -gt 0 ]; then
                 display_num=$((i + 1))
-                if [ -z "$ROFI_LIST" ]; then
-                    ROFI_LIST="$display_num"
-                else
-                    ROFI_LIST="${ROFI_LIST}\n${display_num}"
-                fi
+                ROFI_LIST="${ROFI_LIST}\n${display_num}"
             fi
         done
     fi
     if [ "$MOV_WIN_MODE" = true ]; then
-        PROMPT_MSG="Move $WIN_NM to Workspace"
+        PROMPT_MSG="[$SCRIPT_NAME] Move $WIN_NM to Workspace"
         ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG" -theme-str 'window { width: 90%; }')
     elif [ "$MOV_WS_MODE" = true ]; then
-        PROMPT_MSG="Move Windows in Workspace $WS_NM to Other Workspace"
+        PROMPT_MSG="[$SCRIPT_NAME] Move Windows in Workspace $WS_NM to Other Workspace"
         ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG" -theme-str 'window { width: 90%; }')
     else
-        PROMPT_MSG="Go to Workspace"
+        PROMPT_MSG="[$SCRIPT_NAME] Go to Workspace"
         ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG")
     fi
     if [ -z "$ROFI_INPUT" ]; then
         exit 0
+    elif [ "$ROFI_INPUT" = "Back" ]; then
+        EXTRA_ARGS=()
+        [ "$BYNAME_MODE" = true ] && EXTRA_ARGS+=("--byname")
+        exec "$0" "${EXTRA_ARGS[@]}"
     fi
     if [ "$BYNAME_MODE" = true ]; then
         mapfile -t all_ws_names < <(echo "$WS_NMS")

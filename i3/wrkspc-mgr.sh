@@ -29,7 +29,10 @@ while [[ $# -gt 0 ]]; do
         --mov)
             MODE_SELECTED=true
             MOV_WIN_MODE=true
-            WIN_DATA=$("$HOME/willyhorizont.github.io/linux/rofi-windows-task-view-mac-mission-control.sh" --print --title 'Choose Window to Move')
+            WIN_DATA=$("$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-windows-task-view-mac-mission-control.sh" --print --title "[$SCRIPT_NAME] Choose Window to Move")
+            if [ "$WIN_DATA" = "Back" ]; then
+                exec "$0"
+            fi
             TRGT_WIN_ID=$(echo "$WIN_DATA" | awk '{print $1}')
             if [ -z "$TRGT_WIN_ID" ]; then
                 exit 0
@@ -118,9 +121,11 @@ MAIN_MENU_OPTIONS=(
 )
 
 if [ -n "$OPEN_WINS_DATA" ]; then
+    MAIN_MENU_OPTIONS+=(
+        "Move Window to Workspace"
+    )
     if [ -n "$WIN_DATA" ]; then
         MAIN_MENU_OPTIONS+=(
-            "Move Window to Workspace"
             "Move $WIN_NM to Workspace"
         )
     fi
@@ -168,19 +173,23 @@ if [ $PROCESSED -eq 0 ] && [ "$MODE_SELECTED" = false ]; then
 fi
 
 if [ $PROCESSED -eq 0 ]; then
-    ROFI_LIST=$(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) print $i}' | tr '\n' '\\' | sed 's/\\/\\n/g' | sed 's/\\n$//')
+    ROFI_LIST="Back"
+    WS_LIST=$(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) print $i}' | tr '\n' '\\' | sed 's/\\/\\n/g' | sed 's/\\n$//')
+    [ -n "$WS_LIST" ] && ROFI_LIST="${ROFI_LIST}\n${WS_LIST}"
     if [ "$MOV_WIN_MODE" = true ]; then
-        PROMPT_MSG="Move $WIN_NM to Workspace"
+        PROMPT_MSG="[$SCRIPT_NAME] Move $WIN_NM to Workspace"
         ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG" -theme-str 'window { width: 90%; }')
     elif [ "$MOV_WS_MODE" = true ]; then
-        PROMPT_MSG="Move Windows in Workspace $WS_NM to Other Workspace"
+        PROMPT_MSG="[$SCRIPT_NAME] Move Windows in Workspace $WS_NM to Other Workspace"
         ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG" -theme-str 'window { width: 90%; }')
     else
-        PROMPT_MSG="Go to Workspace"
+        PROMPT_MSG="[$SCRIPT_NAME] Go to Workspace"
         ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG")
     fi
     if [ -z "$ROFI_INPUT" ]; then
         exit 0
+    elif [ "$ROFI_INPUT" = "Back" ]; then
+        exec "$0"
     fi
     TRGT_WRKSPC="$ROFI_INPUT"
 fi

@@ -12,7 +12,7 @@ pkill -9 -f ".*willyhorizont.*dmn-screensavr.*"                       2>/dev/nul
 pkill -9 -f ".*willyhorizont.*tux-indctr.*"                           2>/dev/null
 
 pkill -9 -f ".*willyhorizont.*wrkspc-indctr.*"                        2>/dev/null
-pkill -9 -f ".*willyhorizont.*rofi-fav-apps.*"                        2>/dev/null
+pkill -9 -f ".*willyhorizont.*rofi-windows-taskbar-mac-dock.*"        2>/dev/null
 pkill -9 -f ".*willyhorizont.*bt.*"                                   2>/dev/null
 pkill -9 -f ".*willyhorizont.*net.*"                                  2>/dev/null
 pkill -9 -f ".*willyhorizont.*cam.*"                                  2>/dev/null

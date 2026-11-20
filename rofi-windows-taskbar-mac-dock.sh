@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_NAME="rofi-fav-apps.sh"
+SCRIPT_NAME="rofi-windows-taskbar-mac-dock.sh"
 YOFFSET=36
 XOFFSET=$((YOFFSET + 1))
 
@@ -193,7 +193,7 @@ if [ "$INDICATOR_MODE" = false ]; then
         window { width: 90%; }
     "
 
-    ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -i -p "Switch $FILE_NAME" -theme-str "$ROFI_THEME")
+    ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -i -p "[$SCRIPT_NAME] Switch between [$FILE_NAME] windows" -theme-str "$ROFI_THEME")
 
     if [ -z "$ROFI_INPUT" ]; then
         exit 0
@@ -209,7 +209,7 @@ if [ "$INDICATOR_MODE" = false ]; then
 fi
 
 ICON_BASE_NAME="${APP_ICON[$FILE_NAME]}"
-ICON_PATH=$(find /usr/share/icons/Papirus /usr/share/icons/Papirus-Light /usr/share/icons/Papirus-Dark /usr/share/icons /usr/share/pixmaps $HOME/.local/share/icons -name "${ICON_BASE_NAME}.png" -o -name "${ICON_BASE_NAME}.svg" 2>/dev/null | awk '
+ICON_PATH=$(find /usr/share/icons/Papirus /usr/share/icons/Papirus-Light /usr/share/icons/Papirus-Dark /usr/share/icons /usr/share/pixmaps "$HOME/.local/share/icons" -name "${ICON_BASE_NAME}.png" -o -name "${ICON_BASE_NAME}.svg" 2>/dev/null | awk '
 {
     if ($0 ~ /scalable/) {
         size = 9999
@@ -236,20 +236,26 @@ fi
 
 WID_COUNT=$(get_wids | grep -c .)
 if [ "$WID_COUNT" -gt 0 ]; then
-    INDICATOR="<span background='#FFFFFF' foreground='#FF1493'>*</span>]"
+    INDICATOR="<span background='#FFFFFF' foreground='#FF1493'>+</span>]"
 else
     INDICATOR="<span background='#FFFFFF' foreground='#00ADD8'>0</span>]"
 fi
 printf "%s\n%s\n" "$ICON_PATH" "$INDICATOR"
 if [ "$INVERT_MODE" = true ]; then
     TOOLTIP_TXT=$(cat << EOF
+rofi-windows-task-view-mac-mission-control.sh
 [other opened wins] x $WID_COUNT
 click to open rofi-windows-task-view-mac-mission-control.sh;
 EOF
     )
     printf "\e[2J%s" "$TOOLTIP_TXT" 1>&2
 else
-    printf "\e[2J[%s] x %d\n" "${APP_TOOLTIP[$FILE_NAME]}" "$WID_COUNT" 1>&2
+    TOOLTIP_TXT=$(cat << EOF
+rofi-windows-taskbar-mac-dock.sh
+[${APP_TOOLTIP[$FILE_NAME]}] x $WID_COUNT
+EOF
+    )
+    printf "\e[2J%s\n" "$TOOLTIP_TXT" 1>&2
 fi
 LAST_WID_COUNT="$WID_COUNT"
 
@@ -257,20 +263,26 @@ xprop -root -spy _NET_CLIENT_LIST | while read -r line; do
     WID_COUNT=$(get_wids | grep -c .)
     if [ "$WID_COUNT" != "$LAST_WID_COUNT" ]; then
         if [ "$WID_COUNT" -gt 0 ]; then
-            INDICATOR="<span background='#FFFFFF' foreground='#FF1493'>*</span>]"
+            INDICATOR="<span background='#FFFFFF' foreground='#FF1493'>+</span>]"
         else
             INDICATOR="<span background='#FFFFFF' foreground='#00ADD8'>0</span>]"
         fi
         printf "%s\n%s\n" "$ICON_PATH" "$INDICATOR"
         if [ "$INVERT_MODE" = true ]; then
-    TOOLTIP_TXT=$(cat << EOF
+            TOOLTIP_TXT=$(cat << EOF
+rofi-windows-task-view-mac-mission-control.sh
 [other opened wins] x $WID_COUNT
-click to open rofi-windows-task-view-mac-mission-control.sh
+click to open rofi-windows-task-view-mac-mission-control.sh;
 EOF
             )
             printf "\e[2J%s" "$TOOLTIP_TXT" 1>&2
         else
-            printf "\e[2J[%s] x %d\n" "${APP_TOOLTIP[$FILE_NAME]}" "$WID_COUNT" 1>&2
+            TOOLTIP_TXT=$(cat << EOF
+rofi-windows-taskbar-mac-dock.sh
+[${APP_TOOLTIP[$FILE_NAME]}] x $WID_COUNT
+EOF
+            )
+            printf "\e[2J%s\n" "$TOOLTIP_TXT" 1>&2
         fi
         LAST_WID_COUNT="$WID_COUNT"
     fi
