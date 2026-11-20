@@ -1,10 +1,10 @@
 #!/bin/bash
 
-$HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
+$HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm Commit" || exit 1
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.9.0" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.9.1" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,16 +15,8 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-rename rofi-app-menu.sh to rofi-windows-start-menu-mac-launchpad.sh, add exit menu;
-rename rofi-fav-apps.sh to rofi-windows-taskbar-mac-dock.sh;
-move rofi-windows-task-view-mac-mission-control.sh here;
-add dzen2 trial;
-update i3 config, add open Windows Virtual Desktops / Mac Spaces / Linux Workspaces manager kb;
-update lxde openbox rc xml config, add open Windows Virtual Desktops / Mac Spaces / Linux Workspaces manager kb;
-update wrkspc-mgr.sh, add Back;
-update i3 wrkspc-mgr.sh, add Back;
-update rofi-manage-apps.sh, add exit menu;
-update rofi config.rasi, add mode-switcher;
+update lxsession-logout.sh, use confirm-cmd.sh --msg;
+update i3 config, use confirm-cmd.sh --msg;
 
 [working on]
 create base i3 start-desktop.sh;

@@ -77,3 +77,5 @@ done
 # setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-auto-tiling.sh" >/dev/null 2>&1 &
 
 setsid bash -c "$HOME/willyhorizont.github.io/linux/dmn-screensavr.sh" >/dev/null 2>&1 &
+
+~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32

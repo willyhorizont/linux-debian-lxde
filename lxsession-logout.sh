@@ -26,9 +26,18 @@ for arg in "$@"; do
     esac
 done
 
+declare -A ALL_LABELS
+ALL_LABELS=(
+    ["lock"]="Lock"
+    ["logout"]="Logout"
+    ["suspend"]="Suspend"
+    ["reboot"]="Reboot"
+    ["shutdown"]="Shutdown"
+)
+
 if [ -n "$ACTION" ]; then
     if [ "$ACTION" = "shutdown" ] || [ "$ACTION" = "reboot" ] || [ "$ACTION" = "suspend" ] || [ "$ACTION" = "logout" ]; then
-        $HOME/willyhorizont.github.io/linux/confirm-cmd.sh || exit 1
+        $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm ${ALL_LABELS[$ACTION]}" || exit 1
     fi
     if [ "$ACTION" = "logout" ] && [ "$CURRENT_SESSION" = "openbox" ]; then
         openbox --exit

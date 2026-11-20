@@ -73,3 +73,5 @@ while true; do
     fi
     sleep 0.2
 done
+
+~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
