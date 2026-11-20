@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm Commit" || exi
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.9.3" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.9.4" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,7 +15,7 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-small update in rofi-windows-taskbar-mac-dock.sh;
+small fix in lxde openbox rc xml config, fix rofi window rule;
 
 [working on]
 create base i3 start-desktop.sh;
