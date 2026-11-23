@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm Commit" || exi
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.9.5" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.9.6" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,8 +15,8 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-update start-desktop.sh;
-update i3 start-desktop.sh;
+update tint2-bottom-panel, remove interval;
+update i3 tint2-bottom-panel, remove interval;
 
 [working on]
 create base i3 start-desktop.sh;
@@ -43,13 +43,14 @@ create rofi Windows Notification Area or System Tray / Mac Menu Bar Extras or St
 customize i3 title bar;
 add icon to rofi-fav-apps.sh;
 create xalendar.py holiday-calendar.py;
-try qtile;
-try spectrwm;
-try herbstluftwm;
-try awesomewm;
-try bspwm;
+try qtile (EWMH, default panel have my 3 req feature);
+try awesomewm (EWMH, default panel have my 3 req feature);
+try herbstluftwm (EWMH, default panel have my 3 req feature);
+try spectrwm (Not EWMH);
+try bspwm (Not EWMH, need sxhkd);
+try dwm; (Not EWMH, need compile);
+--try xmonad--, reason: haskell;
 --try leftwm--, reason: no apt install;
-try dwm;
 --try Eww (ElKowar's Wacky Widgets - X11 & Wayland) (defpoll/deflisten + :tooltip + :onclick)--, reason no apt install;
 try dzen2;
 --try MATE Panel (mate-panel + Command Applet mate-applets)--, reason too much bloat;

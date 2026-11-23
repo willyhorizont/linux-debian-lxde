@@ -4,12 +4,21 @@
 ![Debian LXDE i3 Screenshot](https://github.com/willyhorizont/linux-debian-lxde/blob/main/i3/screenshot.jpg)  
 
 ## Reverse scroll and Turn on touchpad tapping
-```
-sudo mkdir -p /etc/X11/xorg.conf.d/ && echo -e 'Section "InputClass"\n    Identifier "touchpad catchall"\n    MatchIsTouchpad "on"\n    MatchDevicePath "/dev/input/event*"\n    Driver "libinput"\n    Option "NaturalScrolling" "true"\n    Option "Tapping" "on"\nEndSection' | sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf
+```sh
+sudo mkdir -p /etc/X11/xorg.conf.d/ && cat << 'EOF' | sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf > /dev/null
+Section "InputClass"
+    Identifier "touchpad catchall"
+    MatchIsTouchpad "on"
+    MatchDevicePath "/dev/input/event*"
+    Driver "libinput"
+    Option "NaturalScrolling" "true"
+    Option "Tapping" "on"
+EndSection
+EOF
 ```
 
 ## Disable Screen Blank
-```
+```sh
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo tee /etc/X11/xorg.conf.d/10-monitor.conf << 'EOF'
 Section "Monitor"
     Identifier "Monitor0"
@@ -27,7 +36,7 @@ EOF
 ```
 
 ## Disable Mouse Acceleration
-```
+```sh
 sudo tee /etc/X11/xorg.conf.d/50-mouse-acceleration.conf << 'EOF'
 Section "InputClass"
     Identifier "My Pointer Acceleration Override"
@@ -39,7 +48,7 @@ EOF
 ```
 
 ## Disable Camera Startup
-```
+```sh
 echo "blacklist uvcvideo" | sudo tee /etc/modprobe.d/block-camera.conf
 ```
 
@@ -48,7 +57,7 @@ echo "blacklist uvcvideo" | sudo tee /etc/modprobe.d/block-camera.conf
 ## Do [linux > post-install > debian-apt.md > A](https://github.com/willyhorizont/linux/blob/main/post-install/debian-apt.md#a)
 
 ## Install packages
-```
+```sh
 # Text Editor
 sudo apt install -y \
     micro \
@@ -125,25 +134,26 @@ sudo apt install -y \
 sudo apt install -y \
     dunst \
     libnotify-bin \
+    inotify-tools \
     ""
 ```
 
 ## Setup Shell Prompt
 
 ### ~/.bashrc
-```
+```sh
 PROMPT_COMMAND='PROMPT_TIME=$(date "+%a-%d-%b-%Y|%I:%M:%S%p")'
 PS1="\[\e[1;96m\]\u\[\e[1;94m\]@\[\e[1;95m\]\h\[\e[1;94m\]@\[\e[1;96m\][\$PROMPT_TIME]\[\e[1;94m\]:\[\e[1;95m\]\w/\[\e[0m\]\n\[\e[1;94m\]\$\[\e[0m\] "
 ```
 
 ### /root/.bashrc
-```
+```sh
 PROMPT_COMMAND='PROMPT_TIME=$(date "+%a-%d-%b-%Y|%I:%M:%S%p")'
 PS1="\[\e[1;96m\]\u\[\e[1;94m\]@\[\e[1;95m\]\h\[\e[1;94m\]@\[\e[1;96m\][\$PROMPT_TIME]\[\e[1;94m\]:\[\e[1;95m\]\w/\[\e[0m\]\n\[\e[1;94m\]#\[\e[0m\] "
 ```
 
 ### description
-```
+```sh
 # \[\e[1;96m\]\u = user #CCFF00 (Slot 11).
 # \[\e[1;94m\]@ = @ #00ADD8 (Slot 9).
 # \[\e[1;95m\]\h = hostname #FF1493 (Slot 10).
@@ -156,7 +166,7 @@ PS1="\[\e[1;96m\]\u\[\e[1;94m\]@\[\e[1;95m\]\h\[\e[1;94m\]@\[\e[1;96m\][\$PROMPT
 ```
 
 ## Setup Plank
-```
+```sh
 dconf dump /net/launchpad/plank/
 
 dconf write /net/launchpad/plank/docks/dock1/alignment "'center'"
@@ -195,7 +205,7 @@ dconf read /net/launchpad/plank/enabled-docks
 ```
 
 ## Disable Daemon
-```
+```sh
 # Printer
 sudo systemctl disable --now cups-browsed.service
 sudo systemctl disable --now cups.service
@@ -212,7 +222,7 @@ sudo systemctl enable --now docker.socket
 ```
 
 ## Enable Audio
-```
+```sh
 systemctl --user daemon-reload
 systemctl --user --now enable pipewire
 systemctl --user --now enable pipewire-pulse
@@ -220,7 +230,7 @@ systemctl --user --now enable wireplumber
 ```
 
 ## Blue Light Filter
-```
+```sh
 crontab -l
 (crontab -l 2>/dev/null | grep -v "blu-lght-fltr.sh"; echo "*/5 * * * * DISPLAY=:0 bash -c \"\$HOME/willyhorizont.github.io/linux/blu-lght-fltr.sh\" >/dev/null 2>&1") | crontab -
 crontab -l
@@ -229,12 +239,12 @@ crontab -l
 ## Install config, keybinds, autostart via ```install.sh```
 
 ## Restart and refresh the Desktop
-```
+```sh
 openbox --reconfigure
 ```
 
 ## Uncheck all except *polkit* in Default application for LXSession > autostart > Known Applications:
-```
+```sh
 # copy .desktop from /etc/xdg/autostart/ to ~/.config/autostart/ and add NotShowIn=LXDE;i3;
 ```
 
@@ -245,14 +255,14 @@ openbox --reconfigure
 ## Install [linux > themes > gtk2.md](https://github.com/willyhorizont/linux/blob/main/themes/gtk2.md)
 
 ## Apply Cursor theme globally
-```
+```sh
 sudo update-alternatives --config x-cursor-theme
 ```
 
 ## Adjust notification settings in ```~/.config/dunst/dunstrc```
 
 ## Adjust exit menu:
-```
+```sh
 ## logout
 lxsession-logout -p "$(printf '%0.s ' $(seq 1 80))" --hide-button hibernate --hide-button switch_user
 "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh"
@@ -262,30 +272,8 @@ sudo mv /usr/bin/lxlock /usr/bin/lxlock.bak
 sudo ln -s /usr/bin/xtrlock /usr/bin/lxlock
 ```
 
-## required for kwh in powr-indctr.sh
-```
-cat << 'EOF' | sudo tee /etc/systemd/system/rapl-perm.service > /dev/null
-[Unit]
-Description=Make Intel/AMD RAPL energy_uj readable by user
-After=multi-user.target
-
-[Service]
-Type=oneshot
-ExecStart=/bin/sh -c "chmod 0444 /sys/class/powercap/intel-rapl/intel-rapl:*/energy_uj"
-RemainAfterExit=yes
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-sudo systemctl daemon-reload
-sudo systemctl enable --now rapl-perm.service
-# sudo touch /etc/sys_load_mult_factor.txt
-# sudo chmod 0666 /etc/sys_load_mult_factor.txt
-```
-
 ## Create top-bar-free-text-1.sh and top-bar-free-text-2.sh
-```
+```sh
 mkdir -p ~/willyhorizont.github.io/
 cat << 'EOF' > ~/willyhorizont.github.io/.config/top-bar-free-text-1.sh
 #!/bin/bash
@@ -303,7 +291,7 @@ chmod +x ~/willyhorizont.github.io/.config/top-bar-free-text-2.sh
 ```
 
 ## Create screensavr-mgr desktop shortcut
-```
+```sh
 mkdir -p ~/.local/share/applications/
 cat << 'EOF' > ~/.local/share/applications/screensavr-mgr.desktop
 [Desktop Entry]
@@ -345,7 +333,7 @@ sed -i "s|#clock-format=|#clock-format=\nclock-format=%a, %d %b %Y \| %I:%M:%S %
 ```sudo systemctl restart lightdm```
 
 ## Adjust default terminal:
-```
+```sh
 sudo update-alternatives --config x-terminal-emulator
 ```
 
@@ -549,7 +537,7 @@ sudo apt purge -y \
 ```
 
 ## Cursor theme
-```
+```sh
 sudo apt install -y xcur2png
 ```
 
@@ -558,7 +546,7 @@ sudo apt install -y xcur2png
 ## See [linux > cheatsheet > debian-apt.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/debian-apt.md)
 
 ## i3
-```
+```sh
 sudo apt install -y --no-install-recommends \
     i3-wm \
     autotiling \

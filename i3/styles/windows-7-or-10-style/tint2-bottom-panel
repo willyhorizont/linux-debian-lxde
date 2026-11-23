@@ -183,7 +183,8 @@ systray_icon_size = 20
 # --- E: Indicator Bluetooth ---
 execp = new
 execp_command = ~/willyhorizont.github.io/linux/bt.sh --indicator --pref '| '
-execp_interval = 4
+execp_interval = 0
+execp_continuous = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
@@ -194,7 +195,8 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 # --- E: Indicator Network ---
 execp = new
 execp_command = ~/willyhorizont.github.io/linux/net.sh --indicator --pref '| '
-execp_interval = 5
+execp_interval = 0
+execp_continuous = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
@@ -205,7 +207,8 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 # --- E: Indicator Cam ---
 execp = new
 execp_command = ~/willyhorizont.github.io/linux/cam.sh --indicator --pref '| '
-execp_interval = 2
+execp_interval = 0
+execp_continuous = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
@@ -240,7 +243,8 @@ execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/wi
 # --- E: Indicator Power ---
 execp = new
 execp_command = ~/willyhorizont.github.io/linux/powr-indctr.sh --pref '| ' --sep ' | '
-execp_interval = 5
+execp_interval = 0
+execp_continuous = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100

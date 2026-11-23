@@ -234,56 +234,42 @@ if [ -z "$ICON_PATH" ]; then
     ICON_PATH="/usr/share/icons/hicolor/scalable/apps/application-x-desktop.svg"
 fi
 
-WID_COUNT=$(get_wids | grep -c .)
-if [ "$WID_COUNT" -gt 0 ]; then
-    INDICATOR="<span background='#FFFFFF' foreground='#FF1493'>+</span>]"
-else
-    INDICATOR="<span background='#FFFFFF' foreground='#00ADD8'>0</span>]"
-fi
-printf "%s\n%s\n" "$ICON_PATH" "$INDICATOR"
-if [ "$INVERT_MODE" = true ]; then
-    TOOLTIP_TXT=$(cat << EOF
+print_indicator_and_tooltip() {
+    local wid_count="$1"
+    local indicator
+    local tooltip_txt
+    if [ "$wid_count" -gt 0 ]; then
+        indicator="<span background='#FFFFFF' foreground='#FF1493'>+</span>]"
+    else
+        indicator="<span background='#FFFFFF' foreground='#00ADD8'>0</span>]"
+    fi
+    printf "%s\n%s\n" "$ICON_PATH" "$indicator"
+    if [ "$INVERT_MODE" = true ]; then
+        tooltip_txt=$(cat << EOF
 rofi-windows-task-view-mac-mission-control.sh
-[other opened wins] x $WID_COUNT
+[non fav opened wins] x $wid_count
 click to open rofi-windows-task-view-mac-mission-control.sh;
 EOF
-    )
-    printf "\e[2J%s" "$TOOLTIP_TXT" 1>&2
-else
-    TOOLTIP_TXT=$(cat << EOF
+        )
+        printf "\e[2J%s" "$tooltip_txt" 1>&2
+    else
+        tooltip_txt=$(cat << EOF
 rofi-windows-taskbar-mac-dock.sh
-[${APP_TOOLTIP[$FILE_NAME]}] x $WID_COUNT
+[${APP_TOOLTIP[$FILE_NAME]}] x $wid_count
 EOF
-    )
-    printf "\e[2J%s\n" "$TOOLTIP_TXT" 1>&2
-fi
+        )
+        printf "\e[2J%s\n" "$tooltip_txt" 1>&2
+    fi
+}
+
+WID_COUNT=$(get_wids | grep -c .)
+print_indicator_and_tooltip "$WID_COUNT"
 LAST_WID_COUNT="$WID_COUNT"
 
 xprop -root -spy _NET_CLIENT_LIST | while read -r line; do
     WID_COUNT=$(get_wids | grep -c .)
     if [ "$WID_COUNT" != "$LAST_WID_COUNT" ]; then
-        if [ "$WID_COUNT" -gt 0 ]; then
-            INDICATOR="<span background='#FFFFFF' foreground='#FF1493'>+</span>]"
-        else
-            INDICATOR="<span background='#FFFFFF' foreground='#00ADD8'>0</span>]"
-        fi
-        printf "%s\n%s\n" "$ICON_PATH" "$INDICATOR"
-        if [ "$INVERT_MODE" = true ]; then
-            TOOLTIP_TXT=$(cat << EOF
-rofi-windows-task-view-mac-mission-control.sh
-[other opened wins] x $WID_COUNT
-click to open rofi-windows-task-view-mac-mission-control.sh;
-EOF
-            )
-            printf "\e[2J%s" "$TOOLTIP_TXT" 1>&2
-        else
-            TOOLTIP_TXT=$(cat << EOF
-rofi-windows-taskbar-mac-dock.sh
-[${APP_TOOLTIP[$FILE_NAME]}] x $WID_COUNT
-EOF
-            )
-            printf "\e[2J%s\n" "$TOOLTIP_TXT" 1>&2
-        fi
+        print_indicator_and_tooltip "$WID_COUNT"
         LAST_WID_COUNT="$WID_COUNT"
     fi
 done
