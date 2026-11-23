@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 case 0 in
     $(pgrep -x "lxsession" >/dev/null; echo $?))
@@ -8,7 +8,7 @@ case 0 in
         CURRENT_SESSION="openbox"
         ;;
     *)
-        notify-send "$SCRIPT_NAME" "Error: Session not match!"
+        notify-send "lxsession-logout.sh" "Error: Session not match!"
         exit 1
         ;;
 esac
@@ -37,7 +37,9 @@ ALL_LABELS=(
 
 if [ -n "$ACTION" ]; then
     if [ "$ACTION" = "shutdown" ] || [ "$ACTION" = "reboot" ] || [ "$ACTION" = "suspend" ] || [ "$ACTION" = "logout" ]; then
-        $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm ${ALL_LABELS[$ACTION]}" || exit 1
+        if [ "$CURRENT_SESSION" = "openbox" ]; then
+            $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm ${ALL_LABELS[$ACTION]}" || exit 1
+        fi
     fi
     if [ "$ACTION" = "logout" ] && [ "$CURRENT_SESSION" = "openbox" ]; then
         openbox --exit
@@ -50,23 +52,6 @@ if [ -n "$ACTION" ]; then
     [ "$ACTION" != "reboot" ]   && HIDE_ARGS="$HIDE_ARGS --hide-button reboot"
     [ "$ACTION" != "shutdown" ] && HIDE_ARGS="$HIDE_ARGS --hide-button shutdown"
     lxsession-logout -p "$(printf '%0.s ' $(seq 1 80))" $HIDE_ARGS &
-
-    WID_TARGET=""
-
-    while true; do
-        WID_TARGET=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$7 == "lxsession-logout.Lxsession-logout" && $9 == "lxsession-logout" {print $1}' 2>/dev/null)
-        if [ -n "$WID_TARGET" ]; then
-            break
-        fi
-        sleep 0.2
-    done
-
-    xdotool windowactivate --sync "$WID_TARGET"
-    # wmctrl -i -a "$WID_TARGET"
-
-    sleep 0.2
-
-    xdotool key "Return"
 else
     lxsession-logout -p "$(printf '%0.s ' $(seq 1 80))" \
         --hide-button hibernate \

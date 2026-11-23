@@ -182,8 +182,13 @@
             <command>~/.config/openbox/start-desktop.sh</command>
         </action>
     </keybind>
-    <!-- Power Menu -->
+    <!-- open power menu -->
     <keybind key="C-A-Delete">
+        <action name="Execute">
+            <command>~/willyhorizont.github.io/linux/powr-mnu.sh '~/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout' xtrlock</command>
+        </action>
+    </keybind>
+    <keybind key="C-W-Delete">
         <action name="Execute">
             <command>~/willyhorizont.github.io/linux/powr-mnu.sh '~/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout' xtrlock</command>
         </action>
@@ -610,24 +615,16 @@
     <!-- Keybindings for windows -->
     <!-- kill focused window -->
     <keybind key="A-F4">
-        <action name="Execute">
-            <command>~/willyhorizont.github.io/linux/close-active-window.sh</command>
-        </action>
+        <action name="Close"/>
     </keybind>
     <keybind key="W-q">
-        <action name="Execute">
-            <command>~/willyhorizont.github.io/linux/close-active-window.sh</command>
-        </action>
+        <action name="Close"/>
     </keybind>
     <keybind key="A-q">
-        <action name="Execute">
-            <command>~/willyhorizont.github.io/linux/close-active-window.sh</command>
-        </action>
+        <action name="Close"/>
     </keybind>
     <keybind key="W-S-q">
-        <action name="Execute">
-            <command>~/willyhorizont.github.io/linux/close-active-window.sh</command>
-        </action>
+        <action name="Close"/>
     </keybind>
     <keybind key="A-Escape">
       <action name="Lower"/>

@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm Commit" || exi
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.9.6" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.9.7" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,8 +15,10 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-update tint2-bottom-panel, remove interval;
-update i3 tint2-bottom-panel, remove interval;
+update and fix lxsession-logout.sh;
+fix start-desktop.sh, kill .*dbus-monitor.*org.bluez.*, kill .*nmcli monitor.*, kill .*pactl subscribe.*, kill .*udevadm monitor --udev --subsystem-match=power_supply --subsystem-match=backlight.*;
+update i3 config, update kill focused window kb, remove confirm-cmd.sh;
+update lxde openbox rc xml config, update kill focused window kb, remove close-active-window.sh;
 
 [working on]
 create base i3 start-desktop.sh;

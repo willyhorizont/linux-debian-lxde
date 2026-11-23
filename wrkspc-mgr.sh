@@ -62,7 +62,7 @@ while [[ $# -gt 0 ]]; do
                 notify-send "[$SCRIPT_NAME]" "Error: active window not found!"
                 exit 1
             fi
-            TRGT_WIN_ID_HEX=$(printf "0x%08x" "$TRGT_WIN_ID" 2>/dev/null)
+            TRGT_WIN_ID_HEX=$(printf "0x%08llx" "$TRGT_WIN_ID" 2>/dev/null || printf "0x%08x" "$TRGT_WIN_ID" 2>/dev/null)
             WIN_DATA=$(echo "$OPEN_WINS_DATA" | awk -v wid="$TRGT_WIN_ID" -v widhex="$TRGT_WIN_ID_HEX" 'tolower($1) == tolower(wid) || tolower($1) == tolower(widhex) {print $0}')
             WIN_META=$(echo "$WIN_DATA" | awk '{print $1 " " $7}')
             FULL_NM=$(echo "$WIN_DATA" | awk '{$1=$2=$3=$4=$5=$6=$7=$8=""; sub(/^[ \t]+/, ""); print}')
@@ -191,7 +191,7 @@ fi
 
 if [ -z "$WIN_META" ] && [ -z "$FULL_NM" ]; then
     TRGT_WIN_ID=$(xdotool getactivewindow 2>/dev/null)
-    TRGT_WIN_ID_HEX=$(printf "0x%08x" "$TRGT_WIN_ID" 2>/dev/null)
+    TRGT_WIN_ID_HEX=$(printf "0x%08llx" "$TRGT_WIN_ID" 2>/dev/null || printf "0x%08x" "$TRGT_WIN_ID" 2>/dev/null)
     WIN_DATA=$(echo "$OPEN_WINS_DATA" | awk -v wid="$TRGT_WIN_ID" -v widhex="$TRGT_WIN_ID_HEX" 'tolower($1) == tolower(wid) || tolower($1) == tolower(widhex) {print $0}')
     WIN_META=$(echo "$WIN_DATA" | awk '{print $1 " " $7}')
     FULL_NM=$(echo "$WIN_DATA" | awk '{$1=$2=$3=$4=$5=$6=$7=$8=""; sub(/^[ \t]+/, ""); print}')

@@ -65,14 +65,21 @@ fetch_workspaces() {
             idx=$((idx + 1))
         done
     else
-        local cur_wrkspc tot_wrkspc open_wins_data max_active_win_ws max_valid_ws needed_tot_wrkspc
-        cur_wrkspc=$(wmctrl -d | awk '{if ($2 == "*") print $1}')
-        tot_wrkspc=$(wmctrl -d | grep -c .)
-        open_wins_data=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk '{print $2}')
+        local cur_wrkspc
+        local tot_wrkspc
+        local ls_ws
+        local max_active_win_ws
+        local max_valid_ws
+        local needed_tot_wrkspc
+        # tot_wrkspc=$(wmctrl -d | grep -c .)
+        # cur_wrkspc=$(wmctrl -d | awk '{if ($2 == "*") print $1}')
+        tot_wrkspc=$(xdotool get_num_desktops 2>/dev/null)
+        cur_wrkspc=$(xdotool get_desktop 2>/dev/null)
+        ls_ws=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk '{print $2}')
 
         max_active_win_ws=-1
-        if [ -n "$open_wins_data" ]; then
-            max_active_win_ws=$(echo "$open_wins_data" | sort -nu | tail -n 1)
+        if [ -n "$ls_ws" ]; then
+            max_active_win_ws=$(echo "$ls_ws" | sort -nu | tail -n 1)
         fi
 
         if [ "$cur_wrkspc" -gt "$max_active_win_ws" ]; then
@@ -105,9 +112,9 @@ fetch_workspaces() {
         local i open_wins_count display_i el
         for ((i = start_loop; step == 1 ? i <= end_loop : i >= end_loop; i += step)); do
             if [ "$SHOW_WINS" = true ]; then
-                open_wins_count=$(echo "$open_wins_data" | grep -c -w "$i")
+                open_wins_count=$(echo "$ls_ws" | grep -c -w "$i")
             else
-                if echo "$open_wins_data" | grep -q -w "$i"; then
+                if echo "$ls_ws" | grep -q -w "$i"; then
                     open_wins_count=1
                 else
                     open_wins_count=0

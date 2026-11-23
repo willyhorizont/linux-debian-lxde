@@ -2,7 +2,8 @@
 
 STAT_FILE="/tmp/i3-lst-actv-wrkspc-before-toggle-show-desktop.state"
 
-CUR_WRKSPC=$(wmctrl -d | awk '{if ($2 == "*") print $1}')
+# CUR_WRKSPC=$(wmctrl -d | awk '{if ($2 == "*") print $1}')
+CUR_WRKSPC=$(xdotool get_desktop 2>/dev/null)
 CUR_WRKSPC_OPEN_WINS_COUNT=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk -v cur_wrkspc="$CUR_WRKSPC" '
 BEGIN {
     c = 0

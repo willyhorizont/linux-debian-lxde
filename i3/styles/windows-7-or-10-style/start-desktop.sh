@@ -6,21 +6,25 @@ for pid in $(pgrep -f "start-desktop.sh"); do
     fi
 done
 
-# pkill -9 -f ".*willyhorizont.*dmn-auto-tiling.*"                      2>/dev/null
-pkill -9 -f ".*xpenguins.*"                                           2>/dev/null
-pkill -9 -f ".*willyhorizont.*dmn-screensavr.*"                       2>/dev/null
-pkill -9 -f ".*willyhorizont.*tux-indctr.*"                           2>/dev/null
+# pkill -9 -f ".*willyhorizont.*dmn-auto-tiling.*"                                                     2>/dev/null
+pkill -9 -f ".*xpenguins.*"                                                                          2>/dev/null
+pkill -9 -f ".*willyhorizont.*dmn-screensavr.*"                                                      2>/dev/null
+pkill -9 -f ".*willyhorizont.*tux-indctr.*"                                                          2>/dev/null
 
-pkill -9 -f ".*willyhorizont.*wrkspc-indctr.*"                        2>/dev/null
-pkill -9 -f ".*willyhorizont.*rofi-windows-taskbar-mac-dock.*"        2>/dev/null
-pkill -9 -f ".*willyhorizont.*bt.*"                                   2>/dev/null
-pkill -9 -f ".*willyhorizont.*net.*"                                  2>/dev/null
-pkill -9 -f ".*willyhorizont.*cam.*"                                  2>/dev/null
-pkill -9 -f ".*willyhorizont.*mic.*"                                  2>/dev/null
-pkill -9 -f ".*willyhorizont.*vol.*"                                  2>/dev/null
-pkill -9 -f ".*willyhorizont.*powr-indctr.*"                          2>/dev/null
-pkill -9 -f ".*willyhorizont.*SuckMyClock.*"                          2>/dev/null
-pkill -9 -f ".*willyhorizont.*SPRM.*"                                 2>/dev/null
+pkill -9 -f ".*dbus-monitor.*org.bluez.*"                                                            2>/dev/null
+pkill -9 -f ".*nmcli monitor.*"                                                                      2>/dev/null
+pkill -9 -f ".*pactl subscribe.*"                                                                    2>/dev/null
+pkill -9 -f ".*udevadm monitor --udev --subsystem-match=power_supply --subsystem-match=backlight.*"  2>/dev/null
+pkill -9 -f ".*willyhorizont.*wrkspc-indctr.*"                                                       2>/dev/null
+pkill -9 -f ".*willyhorizont.*rofi-windows-taskbar-mac-dock.*"                                       2>/dev/null
+pkill -9 -f ".*willyhorizont.*bt.*"                                                                  2>/dev/null
+pkill -9 -f ".*willyhorizont.*net.*"                                                                 2>/dev/null
+pkill -9 -f ".*willyhorizont.*cam.*"                                                                 2>/dev/null
+pkill -9 -f ".*willyhorizont.*mic.*"                                                                 2>/dev/null
+pkill -9 -f ".*willyhorizont.*vol.*"                                                                 2>/dev/null
+pkill -9 -f ".*willyhorizont.*powr-indctr.*"                                                         2>/dev/null
+pkill -9 -f ".*willyhorizont.*SuckMyClock.*"                                                         2>/dev/null
+pkill -9 -f ".*willyhorizont.*SPRM.*"                                                                2>/dev/null
 
 pkill -9 -f "tint2 -c .*tint2-top-bar" 2>/dev/null
 while true; do

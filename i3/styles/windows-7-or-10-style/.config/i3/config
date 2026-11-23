@@ -126,10 +126,10 @@ bindsym $super+$prtsc exec --no-startup-id mkdir -p ~/Pictures/Screenshots && sc
 bindsym $super+$shift+s exec --no-startup-id mkdir -p ~/Pictures/Screenshots && scrot --border --pointer --freeze --select --quality 100 ~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H%M%S.jpg
 
 ## kill focused window
-bindsym $meta+F4 exec --no-startup-id $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --confirm --msg "Confirm Close This Window" && i3-msg kill
-bindsym $super+q exec --no-startup-id $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --confirm --msg "Confirm Close This Window" && i3-msg kill
-bindsym $meta+q exec --no-startup-id $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --confirm --msg "Confirm Close This Window" && i3-msg kill
-bindsym $super+$shift+q exec --no-startup-id $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --confirm --msg "Confirm Close This Window" && i3-msg kill
+bindsym $meta+F4 kill
+bindsym $super+q kill
+bindsym $meta+q kill
+bindsym $super+$shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
@@ -319,8 +319,10 @@ bindsym $control+$shift+$super+x exec --no-startup-id ~/willyhorizont.github.io/
 bindsym $super+$shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $super+$shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-bindsym $super+$shift+e exec --no-startup-id ~/willyhorizont.github.io/linux/powr-mnu.sh "i3-msg exit" "xtrlock"
+# open power menu
 bindsym $control+$meta+$delete exec --no-startup-id ~/willyhorizont.github.io/linux/powr-mnu.sh "i3-msg exit" "xtrlock"
+bindsym $control+$super+$delete exec --no-startup-id ~/willyhorizont.github.io/linux/powr-mnu.sh "i3-msg exit" "xtrlock"
+bindsym $super+$shift+e exec --no-startup-id ~/willyhorizont.github.io/linux/powr-mnu.sh "i3-msg exit" "xtrlock"
 
 # resize window (you can also use the mouse for that)
 #mode "resize" {

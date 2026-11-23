@@ -25,7 +25,6 @@ CUR_ACTV_WIN_ID=$(xdotool getactivewindow 2>/dev/null)
 xdotool set_num_desktops "$((6 - 1))"
 xdotool set_desktop_for_window "$CUR_ACTV_WIN_ID" "$((3 - 1))"
 xdotool set_desktop "$((3 - 1))"
-xdotool key "ctrl+super+f"
 
 xdotool set_desktop "$((1 - 1))"
 wid_brv=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$7 == "brave-browser.Brave-browser" {print $1}' 2>/dev/null)
@@ -41,7 +40,6 @@ while true; do
 done
 xdotool set_num_desktops "$((6 - 1))"
 xdotool set_desktop_for_window "$wid_brv" "$((1 - 1))"
-xdotool key "ctrl+super+f"
 
 # xdotool set_desktop "$((2 - 1))"
 # wid_chrm=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$7 == "chromium.Chromium" {print $1}' 2>/dev/null)
@@ -57,7 +55,6 @@ xdotool key "ctrl+super+f"
 # done
 # xdotool set_num_desktops "$((6 - 1))"
 # xdotool set_desktop_for_window "$wid_chrm" "$((2 - 1))"
-# xdotool key "ctrl+super+f"
 
 xdotool set_desktop "$((5 - 1))"
 wid_vsc_lxde=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$7 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux-debian-lxde") || index($0, "linux-debian-lxde | ~/Codes/linux-debian-lxde")) {print $1}' 2>/dev/null)
@@ -73,7 +70,6 @@ while true; do
 done
 xdotool set_num_desktops "$((6 - 1))"
 xdotool set_desktop_for_window "$wid_vsc_lxde" "$((5 - 1))"
-xdotool key "ctrl+super+f"
 
 xdotool set_desktop "$((4 - 1))"
 wid_vsc_lnx=$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk -v wid_blckls="$wid_vsc_lxde" '$7 == "com.microsoft.vscode.com.microsoft.VSCode" && (index($0, "linux") || index($0, "linux | ~/Codes/linux")) && $1 != wid_blckls {print $1}' 2>/dev/null)
@@ -89,7 +85,6 @@ while true; do
 done
 xdotool set_num_desktops "$((6 - 1))"
 xdotool set_desktop_for_window "$wid_vsc_lnx" "$((4 - 1))"
-xdotool key "ctrl+super+f"
 
 xdotool set_desktop "$((3 - 1))"
 pcmanfm "$HOME/Codes/linux-debian-lxde/" &
@@ -104,6 +99,5 @@ while true; do
 done
 xdotool set_num_desktops "$((6 - 1))"
 xdotool set_desktop_for_window "$wid_fm" "$((3 - 1))"
-xdotool key "ctrl+super+f"
 
 xdotool set_desktop "$((1 - 1))"
