@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm Commit" || exi
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.10.0" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.10.1" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,35 +15,10 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-add rofi-powr-mnu.sh;
-major update in create-desktop-shortcuts.sh, merge lxde openbox i3 logout and exit via rofi-powr-mnu.sh, remove lxde openbox i3 individual logout and exit;
-add generate-genmon.sh;
-merge style-selector.sh;
-delete i3 style-selector.sh;
-rename set-env-current-desktop.sh to set-env.sh;
-add gtk-3.0 gtk.css;
-add xfce4-panel config;
-update install.sh, add gtk-3.0 gtk.css, add xfce4-panel config;
-update lxsession-logout.sh, use DESKTOP_SESSION;
-update README.md, comment autotiling install script, add xfce4-panel xfce4-whiskermenu-plugin xfce4-docklike-plugin xfce4-genmon-plugin install script;
-update rofi-manage-apps.sh, remove exclude_exit, use DESKTOP_SESSION;
-merge run-session.sh;
-delete i3 run-session.sh;
-merge tint2-bottom-panel;
-delete i3 tint2-bottom-panel;
-delete lxde openbox tint2-bottom-panel;
-merge wrkspc-indctr.sh, big update, add --mgr-mode, add --nmbrz-mode;
-delete i3 wrkspc-indctr.sh;
-merge wrkspc-mgr.sh, big update, remove --byname, --i3-mode;
-delete i3 wrkspc-mgr.sh;
-add xfce4-panel genmon rc config;
-add xfce4-panel xml config;
-update i3 toggle-show-dekstop.sh;
-merge start-desktop.sh, update kill, comment tint2-bottom-panel, use new xfce4-panel, use new merged wrkspc-indctr.sh --mgr-mode --nmbrz-mode;
-delete i3 start-desktop.sh;
-update i3 config, comment autotiling launch script, use new merged wrkspc-mgr.sh --i3-mode, use new merged start-desktop.sh, use new rofi-powr-mnu.sh;
-update lxde openbox rc xml config, use new merged wrkspc-mgr.sh --i3-mode, use new rofi-powr-mnu.sh;
-update lxde openbox autostart, use new merged start-desktop.sh;
+update install.sh, brutally kill xfce4-panel;
+update start-desktop.sh, remove xfconfd kill command;
+update i3 config, change to kb to open Windows Start Menu to xfce4-popup-whiskermenu;
+update lxde openbox rc xml config, change to kb to open Windows Start Menu to xfce4-popup-whiskermenu;
 
 [working on]
 create base i3 start-desktop.sh;

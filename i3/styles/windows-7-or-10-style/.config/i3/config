@@ -145,10 +145,14 @@ bindsym $super+$shift+q kill
 
 ## open Windows Start Menu / Mac Launchpad / Linux xfce4-popup-whiskermenu or jgmenu or dmenu or rofi
 # bindsym F4 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
-bindsym $super+a exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
-bindsym $meta+F1 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
-bindsym $super+F1 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
-bindsym $control+$escape exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
+# bindsym $super+a exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
+# bindsym $meta+F1 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
+# bindsym $super+F1 exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
+# bindsym $control+$escape exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --yoffset 32
+bindsym $super+a exec --no-startup-id xfce4-popup-whiskermenu
+bindsym $meta+F1 exec --no-startup-id xfce4-popup-whiskermenu
+bindsym $super+F1 exec --no-startup-id xfce4-popup-whiskermenu
+bindsym $control+$escape exec --no-startup-id xfce4-popup-whiskermenu
 
 ## open Windows Run or PowerToys Run / Mac Spotlight or Alfred / Linux dmenu or rofi
 bindsym $super+d exec --no-startup-id ~/willyhorizont.github.io/linux-debian-lxde/rofi-windows-start-menu-mac-launchpad.sh --spotlight

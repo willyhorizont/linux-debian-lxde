@@ -58,6 +58,14 @@ echo "blacklist uvcvideo" | sudo tee /etc/modprobe.d/block-camera.conf
 
 ## Install packages
 ```sh
+# Utils
+sudo apt install -y --no-install-recommends \
+    wmctrl \
+    xdotool \
+    xprop \
+    # xcape \
+    ""
+
 # Text Editor
 sudo apt install -y --no-install-recommends \
     micro \
@@ -78,8 +86,6 @@ sudo apt install -y --no-install-recommends \
 # Locker
 sudo apt install -y --no-install-recommends \
     xprintidle \
-    wmctrl \
-    xdotool \
     xtrlock \
     ""
 

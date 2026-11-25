@@ -60,18 +60,10 @@ while true; do
     sleep 0.2
 done
 
-pkill -STOP -x "xfce4-panel" 2>/dev/null
-pkill -9 -f "xfce4/panel/wrapper-2.0" 2>/dev/null
+pkill -9 -f "wrapper-2.0" 2>/dev/null
 pkill -9 -x "xfce4-panel" 2>/dev/null
 while true; do
     if [ -z "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "xfce4-panel.Xfce4-panel" && $9 == "xfce4-panel" {print $0}' 2>/dev/null)" ]; then
-        break
-    fi
-    sleep 0.2
-done
-pkill -9 -x "xfconfd" 2>/dev/null
-while true; do
-    if ! pgrep -x "xfconfd" >/dev/null; then
         break
     fi
     sleep 0.2
@@ -105,14 +97,16 @@ while [ "$#" -gt 0 ]; do
     esac
 done
 
-setsid -f xfce4-panel --disable-wm-check >/dev/null 2>&1
+setsid -f xfce4-panel >/dev/null 2>&1
 while true; do
     if [ -n "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "xfce4-panel.Xfce4-panel" && $9 == "xfce4-panel" {print $0}' 2>/dev/null)" ]; then
         break
     fi
     sleep 0.2
 done
-xfce4-panel --restart >/dev/null 2>&1
+if pgrep -x "xfce4-panel" >/dev/null; then
+    setsid -f xfce4-panel --restart >/dev/null 2>&1
+fi
 
 # tint2 -c "$HOME/willyhorizont.github.io/.config/tint2-bottom-panel" &
 # while true; do
