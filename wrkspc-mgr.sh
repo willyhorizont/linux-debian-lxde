@@ -1,20 +1,61 @@
 #!/bin/bash
 
 SCRIPT_NAME="wrkspc-mgr.sh"
+case "$DESKTOP_SESSION" in
+    LXDE|openbox)
+        if ! command -v wmctrl &> /dev/null || ! command -v xprop &> /dev/null || ! command -v xdotool &> /dev/null; then
+            notify-send "[$SCRIPT_NAME]" "Error: missing dependencies 'wmctrl xprop xdotool'"
+            exit 1
+        fi
+        ;;
+    i3)
+        if ! command -v i3-msg &> /dev/null || ! command -v jq &> /dev/null; then
+            notify-send "[$SCRIPT_NAME]" "Error: missing dependencies 'i3-msg jq'"
+            exit 1
+        fi
+        ;;
+    *)
+        notify-send "[$SCRIPT_NAME]" "Unsupported DESKTOP_SESSION: '$DESKTOP_SESSION'"
+        exit 1
+        ;;
+esac
 
-if ! command -v xdotool >/dev/null 2>&1 || ! command -v wmctrl >/dev/null 2>&1 || ! command -v xprop >/dev/null 2>&1; then
-    notify-send "[$SCRIPT_NAME]" "Error: missing dependencies 'xdotool wmctrl xprop'..."
-    exit 1
-fi
+switch_workspace() {
+    local trgt_ws_nm="$1"
+    if ! echo "$trgt_ws_nm" | grep -qE '^[0-9]+$'; then
+        notify-send "[$SCRIPT_NAME]" "Error: invalid input!"
+        exit 1
+    fi
+    case "$DESKTOP_SESSION" in
+        LXDE|openbox)
+            local ws_nms_len
+            local trgt_ws_i
+            trgt_ws_i=$((trgt_ws_nm - 1))
+            ws_nms_len=$(xdotool get_num_desktops 2>/dev/null)
+            if [ "$trgt_ws_i" -ge "${ws_nms_len:-1}" ]; then
+                xdotool set_num_desktops $((trgt_ws_i + 1))
+            fi
+            if [ "$MOV_WIN_MODE" = true ]; then
+                xdotool set_desktop_for_window "$TRGT_WIN_ID" "$trgt_ws_i"
+            elif [ "$MOV_WS_MODE" = true ]; then
+                while read -r WID; do
+                    [ -n "$WID" ] && xdotool set_desktop_for_window "$WID" "$trgt_ws_i"
+                done <<< "$CUR_WS_WIDS"
+            fi
+            xdotool set_desktop "$trgt_ws_i"
+            ;;
+        i3)
+            if [ "$MOV_WIN_MODE" = true ]; then
+                i3-msg "[id=\"$TRGT_WIN_ID\"] move container to workspace number $trgt_ws_nm" >/dev/null
+            elif [ "$MOV_WS_MODE" = true ]; then
+                i3-msg "[workspace=\"$CUR_WS_NM\"] move container to workspace number $trgt_ws_nm" >/dev/null
+            fi
+            i3-msg workspace "$trgt_ws_nm" >/dev/null
+            ;;
+    esac
+}
 
-tot_wrkspc=$(xdotool get_num_desktops 2>/dev/null)
-cur_wrkspc=$(xdotool get_desktop 2>/dev/null)
-
-OPEN_WINS_DATA=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh")
-WS_NMS=$(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) print $i}')
-OPEN_WINS_WS=$(echo "$OPEN_WINS_DATA" | awk '{print $2}')
-
-PROCESSED=0
+IS_I3_MODE=false
 MODE_SELECTED=false
 MOV_WIN_MODE=false
 MOV_WS_MODE=false
@@ -23,17 +64,17 @@ WIN_DATA=""
 WIN_NM=""
 WIN_META=""
 FULL_NM=""
-BYNAME_MODE=false
+CUR_WS_NM=""
+CUR_WS_WIDS=""
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --byname)
-            BYNAME_MODE=true
+        --i3-mode)
+            IS_I3_MODE=true
             shift
             ;;
         --goto)
             MODE_SELECTED=true
-            PROCESSED=1
             shift
             ;;
         --mov)
@@ -41,9 +82,7 @@ while [[ $# -gt 0 ]]; do
             MOV_WIN_MODE=true
             WIN_DATA=$("$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-windows-task-view-mac-mission-control.sh" --print --title "[$SCRIPT_NAME] Choose Window to Move")
             if [ "$WIN_DATA" = "Back" ]; then
-                EXTRA_ARGS=()
-                [ "$BYNAME_MODE" = true ] && EXTRA_ARGS+=("--byname")
-                exec "$0" "${EXTRA_ARGS[@]}"
+                exec "$0"
             fi
             TRGT_WIN_ID=$(echo "$WIN_DATA" | awk '{print $1}')
             if [ -z "$TRGT_WIN_ID" ]; then
@@ -51,7 +90,6 @@ while [[ $# -gt 0 ]]; do
             fi
             WIN_META=$(echo "$WIN_DATA" | awk '{print $1 " " $3}')
             FULL_NM=$(echo "$WIN_DATA" | awk '{$1=$2=$3=""; sub(/^[ \t]+/, ""); print}')
-            PROCESSED=1
             shift
             ;;
         --mov-cur-win)
@@ -62,132 +100,117 @@ while [[ $# -gt 0 ]]; do
                 notify-send "[$SCRIPT_NAME]" "Error: active window not found!"
                 exit 1
             fi
+            OPEN_WINS_DATA=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh")
             TRGT_WIN_ID_HEX=$(printf "0x%08llx" "$TRGT_WIN_ID" 2>/dev/null || printf "0x%08x" "$TRGT_WIN_ID" 2>/dev/null)
             WIN_DATA=$(echo "$OPEN_WINS_DATA" | awk -v wid="$TRGT_WIN_ID" -v widhex="$TRGT_WIN_ID_HEX" 'tolower($1) == tolower(wid) || tolower($1) == tolower(widhex) {print $0}')
             WIN_META=$(echo "$WIN_DATA" | awk '{print $1 " " $7}')
             FULL_NM=$(echo "$WIN_DATA" | awk '{$1=$2=$3=$4=$5=$6=$7=$8=""; sub(/^[ \t]+/, ""); print}')
-            PROCESSED=1
             shift
             ;;
         --mov-cur-ws)
             MODE_SELECTED=true
             MOV_WS_MODE=true
-            PROCESSED=1
             shift
             ;;
         --plus)
-            if [ "$BYNAME_MODE" = true ]; then
-                max_ws=$(echo "$WS_NMS" | awk '{
-                    if (match($0, /[0-9]+/)) {
-                        print substr($0, RSTART, RLENGTH);
-                    }
-                }' | sort -rn | head -n 1)
-                if [ -z "$max_ws" ]; then max_ws=0; fi
-                TRGT_WRKSPC=$(( max_ws + 1 ))
-            else
-                max_active_win_ws=-1
-                if [ -n "$OPEN_WINS_WS" ]; then
-                    max_active_win_ws=$(echo "$OPEN_WINS_WS" | sort -nu | tail -n 1)
-                fi
-                if [ "$cur_wrkspc" -gt "$max_active_win_ws" ]; then
-                    max_valid_ws=$cur_wrkspc
-                else
-                    max_valid_ws=$max_active_win_ws
-                fi
-                if [ "$max_valid_ws" -lt 0 ]; then
-                    max_valid_ws=0
-                fi
-                TRGT_WRKSPC=$(( max_valid_ws + 1 ))
-            fi
-            PROCESSED=1
-            shift
+            case "$DESKTOP_SESSION" in
+                LXDE|openbox)
+                    if [ "$IS_I3_MODE" = true ]; then
+                        CUR_WS_NM=$(( $(xdotool get_desktop 2>/dev/null) + 1 ))
+                        LS_WS_NM=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk '{print $2 + 1}')
+                        MAX_OPEN_WINS_WS_NM=0
+                        if [ -n "$LS_WS_NM" ]; then
+                            MAX_OPEN_WINS_WS_NM=$(echo "$LS_WS_NM" | sort -nu | tail -n 1)
+                        fi
+                        if [ "$CUR_WS_NM" -gt "$MAX_OPEN_WINS_WS_NM" ]; then
+                            MAX_NON_EMPTY_OR_CUR_WS_NM=$CUR_WS_NM
+                        else
+                            MAX_NON_EMPTY_OR_CUR_WS_NM=$MAX_OPEN_WINS_WS_NM
+                        fi
+                        if [ "$MAX_NON_EMPTY_OR_CUR_WS_NM" -lt 1 ]; then
+                            MAX_NON_EMPTY_OR_CUR_WS_NM=1
+                        fi
+                        TRGT_WS_NM=$((MAX_NON_EMPTY_OR_CUR_WS_NM + 1))
+                    else
+                        WS_NMS_LEN=$(xdotool get_num_desktops 2>/dev/null)
+                        TRGT_WS_NM="$WS_NMS_LEN"
+                    fi
+                    ;;
+                i3)
+                    TRGT_WS_NM=$(i3-msg -t get_workspaces | jq '[.[].num] | max + 1')
+                    ;;
+            esac
+            switch_workspace "$TRGT_WS_NM"
+            exit 0
             ;;
-        --next|--prev)
-            if [ "$BYNAME_MODE" = true ]; then
-                mapfile -t valid_workspaces < <(echo "$WS_NMS")
-                cur_idx=$(xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}')
-                cur_ws_name=${valid_workspaces[$cur_idx]}
-                tot_valid=${#valid_workspaces[@]}
-                cur_pos=0
-                for i in "${!valid_workspaces[@]}"; do
-                    if [ "${valid_workspaces[$i]}" = "$cur_ws_name" ]; then
-                        cur_pos=$i
-                        break
+        --prev|--next)
+            case "$DESKTOP_SESSION" in
+                LXDE|openbox)
+                    if [ "$IS_I3_MODE" = true ]; then
+                        WS_NMS_LEN=$(xdotool get_num_desktops 2>/dev/null)
+                        CUR_WS_I=$(xdotool get_desktop 2>/dev/null)
+                        LS_WS_I=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk '{print $2}')
+                        NON_EMPTY_AND_CUR_WS_I_LS=()
+                        for ((I=0; I<WS_NMS_LEN; I++)); do
+                            OPEN_WINS_COUNT=0
+                            if [ -n "$LS_WS_I" ]; then
+                                OPEN_WINS_COUNT=$(echo "$LS_WS_I" | grep -c -w "$I")
+                            fi
+                            if [ "$OPEN_WINS_COUNT" -gt 0 ] || [ "$I" -eq "$CUR_WS_I" ]; then
+                                NON_EMPTY_AND_CUR_WS_I_LS+=("$I")
+                            fi
+                        done
+                        NON_EMPTY_AND_CUR_WS_I_LS_LEN=${#NON_EMPTY_AND_CUR_WS_I_LS[@]}
+                        CUR_WS_I_NU=0
+                        for I in "${!NON_EMPTY_AND_CUR_WS_I_LS[@]}"; do
+                            if [ "${NON_EMPTY_AND_CUR_WS_I_LS[$I]}" -eq "$CUR_WS_I" ] 2>/dev/null; then
+                                CUR_WS_I_NU=$I
+                                break
+                            fi
+                        done
+                        if [ "$1" = "--next" ]; then
+                            NON_EMPTY_AND_CUR_WS_I_LS_I=$(( (CUR_WS_I_NU + 1) % NON_EMPTY_AND_CUR_WS_I_LS_LEN ))
+                        else
+                            NON_EMPTY_AND_CUR_WS_I_LS_I=$(( (CUR_WS_I_NU - 1 + NON_EMPTY_AND_CUR_WS_I_LS_LEN) % NON_EMPTY_AND_CUR_WS_I_LS_LEN ))
+                        fi
+                        TRGT_WS_NM=$((${NON_EMPTY_AND_CUR_WS_I_LS[$NON_EMPTY_AND_CUR_WS_I_LS_I]} + 1))
+                        switch_workspace "$TRGT_WS_NM"
+                    else
+                        WS_NMS_LEN=$(xdotool get_num_desktops 2>/dev/null)
+                        CUR_WS_I=$(xdotool get_desktop 2>/dev/null)
+                        if [ "$1" = "--next" ]; then
+                            TRGT_WS_I=$(( (CUR_WS_I + 1) % WS_NMS_LEN ))
+                        else
+                            TRGT_WS_I=$(( (CUR_WS_I - 1 + WS_NMS_LEN) % WS_NMS_LEN ))
+                        fi
+                        TRGT_WS_NM=$((TRGT_WS_I + 1))
+                        switch_workspace "$TRGT_WS_NM"
                     fi
-                done
-                if [ "$1" = "--next" ]; then
-                    trgt_pos=$(( (cur_pos + 1) % tot_valid ))
-                else
-                    trgt_pos=$(( (cur_pos - 1 + tot_valid) % tot_valid ))
-                fi
-                for i in "${!valid_workspaces[@]}"; do
-                    if [ "${valid_workspaces[$i]}" = "${valid_workspaces[$trgt_pos]}" ]; then
-                        TRGT_WRKSPC=$i
-                        break
+                    ;;
+                i3)
+                    if [ "$1" = "--next" ]; then
+                        i3-msg workspace next >/dev/null
+                    else
+                        i3-msg workspace prev >/dev/null
                     fi
-                done
-            else
-                valid_workspaces=()
-                for ((i=0; i<tot_wrkspc; i++)); do
-                    win_count=0
-                    if [ -n "$OPEN_WINS_WS" ]; then
-                        win_count=$(echo "$OPEN_WINS_WS" | grep -c -w "$i")
-                    fi
-                    if [ "$win_count" -gt 0 ] || [ "$i" -eq "$cur_wrkspc" ]; then
-                        valid_workspaces+=("$i")
-                    fi
-                done
-                tot_valid=${#valid_workspaces[@]}
-                cur_pos=0
-                for i in "${!valid_workspaces[@]}"; do
-                    if [ "${valid_workspaces[$i]}" -eq "$cur_wrkspc" ] 2>/dev/null; then
-                        cur_pos=$i
-                        break
-                    fi
-                done
-                if [ "$1" = "--next" ]; then
-                    trgt_pos=$(( (cur_pos + 1) % tot_valid ))
-                else
-                    trgt_pos=$(( (cur_pos - 1 + tot_valid) % tot_valid ))
-                fi
-                TRGT_WRKSPC=${valid_workspaces[$trgt_pos]}
-            fi
-            PROCESSED=1
-            shift
+                    ;;
+            esac
+            exit 0
             ;;
         --number)
-            if ! echo "$2" | grep -qE '^[0-9]+$'; then
-                notify-send "[$SCRIPT_NAME]" "Error: invalid arguments!"
-                exit 1
-            fi
-            if [ "$BYNAME_MODE" = true ] && [ -n "$2" ]; then
-                WS_NAME_BY_IDX=$(echo "$WS_NMS" | awk -v idx="$2" 'NR == idx {print $0}')
-                if [ -n "$WS_NAME_BY_IDX" ]; then
-                    mapfile -t all_ws_names < <(echo "$WS_NMS")
-                    for i in "${!all_ws_names[@]}"; do
-                        if [ "${all_ws_names[$i]}" = "$WS_NAME_BY_IDX" ]; then
-                            TRGT_WRKSPC=$i
-                            break
-                        fi
-                    done
-                fi
-                if [ -z "$TRGT_WRKSPC" ]; then TRGT_WRKSPC=$(( $2 - 1 )); fi
-            else
-                TRGT_WRKSPC=$(( $2 - 1 ))
-            fi
-            PROCESSED=1
-            shift 2
+            switch_workspace "$2"
+            exit 0
             ;;
         *)
-            echo "Usage: $0 [--byname] [--goto] [--mov] [--mov-cur-win] [--mov-cur-ws] [--plus] [--prev] [--next] [--number workspace_number]"
+            echo "Usage: $0 [--goto] [--mov] [--mov-cur-win] [--mov-cur-ws] [--plus] [--prev] [--next] [--number workspace_number]"
             exit 1
             ;;
     esac
 done
 
-if [ -z "$TRGT_WRKSPC" ]; then
-    PROCESSED=0
-fi
+OPEN_WINS_DATA=${OPEN_WINS_DATA:-$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh")}
+WS_NMS=$(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) {gsub(/[^0-9]/, "", $i); print ($i != "" ? $i : "404")}}')
+CUR_WS_I=$(xdotool get_desktop 2>/dev/null)
 
 if [ -z "$WIN_META" ] && [ -z "$FULL_NM" ]; then
     TRGT_WIN_ID=$(xdotool getactivewindow 2>/dev/null)
@@ -207,18 +230,17 @@ if [ -z "$WIN_NM" ]; then
     WIN_NM="[${WIN_NM}]"
 fi
 
-if [ "$BYNAME_MODE" = true ]; then
-    mapfile -t all_ws_names < <(echo "$WS_NMS")
-    CUR_WS_NM="${all_ws_names[$cur_wrkspc]}"
-    if [ -z "$CUR_WS_NM" ]; then
-        CUR_WS_NM=$((cur_wrkspc + 1))
-    fi
-else
-    CUR_WS_NM=$((cur_wrkspc + 1))
-fi
+case "$DESKTOP_SESSION" in
+    LXDE|openbox)
+        CUR_WS_NM=$(echo "$WS_NMS" | awk -v ws_i="$CUR_WS_I" 'NR == ws_i + 1 {print $0}')
+        ;;
+    i3)
+        CUR_WS_NM=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).num')
+        ;;
+esac
 WS_NM="[${CUR_WS_NM}]"
 
-CUR_WS_WINS=$(echo "$OPEN_WINS_DATA" | awk -v ws="$cur_wrkspc" '$2 == ws {print $1}')
+CUR_WS_WIDS=$(echo "$OPEN_WINS_DATA" | awk -v ws="$CUR_WS_I" '$2 == ws {print $1}')
 
 MAIN_MENU_OPTIONS=(
     "Go to Workspace"
@@ -233,7 +255,7 @@ if [ -n "$OPEN_WINS_DATA" ]; then
             "Move $WIN_NM to Workspace"
         )
     fi
-    if [ -n "$CUR_WS_WINS" ]; then
+    if [ -n "$CUR_WS_WIDS" ]; then
         MAIN_MENU_OPTIONS+=(
             "Move Windows in Workspace $WS_NM to Other Workspace"
         )
@@ -246,31 +268,29 @@ MAIN_MENU_OPTIONS+=(
     "Previous Workspace"
 )
 
-if [ $PROCESSED -eq 0 ] && [ "$MODE_SELECTED" = false ]; then
+if [ "$MODE_SELECTED" = false ]; then
     MAIN_MENU_CHOICE=$(printf "%s\n" "${MAIN_MENU_OPTIONS[@]}" | rofi -dmenu -p "$SCRIPT_NAME" -theme-str 'window { width: 90%; }')
-    EXTRA_ARGS=()
-    [ "$BYNAME_MODE" = true ] && EXTRA_ARGS+=("--byname")
     case "$MAIN_MENU_CHOICE" in
         "Go to Workspace")
-            exec "$0" "${EXTRA_ARGS[@]}" --goto
+            exec "$0" --goto
             ;;
         "Move Window to Workspace")
-            exec "$0" "${EXTRA_ARGS[@]}" --mov
+            exec "$0" --mov
             ;;
         "Move $WIN_NM to Workspace")
-            exec "$0" "${EXTRA_ARGS[@]}" --mov-cur-win
+            exec "$0" --mov-cur-win
             ;;
         "Move Windows in Workspace $WS_NM to Other Workspace")
-            exec "$0" "${EXTRA_ARGS[@]}" --mov-cur-ws
+            exec "$0" --mov-cur-ws
             ;;
         "New Workspace")
-            exec "$0" "${EXTRA_ARGS[@]}" --plus
+            exec "$0" --plus
             ;;
         "Next Workspace")
-            exec "$0" "${EXTRA_ARGS[@]}" --next
+            exec "$0" --next
             ;;
         "Previous Workspace")
-            exec "$0" "${EXTRA_ARGS[@]}" --prev
+            exec "$0" --prev
             ;;
         *)
             exit 0
@@ -278,75 +298,29 @@ if [ $PROCESSED -eq 0 ] && [ "$MODE_SELECTED" = false ]; then
     esac
 fi
 
-if [ $PROCESSED -eq 0 ]; then
-    ROFI_LIST="Back"
-    if [ "$BYNAME_MODE" = true ]; then
-        WS_LIST=$(echo "$WS_NMS" | tr '\n' '\\' | sed 's/\\/\\n/g' | sed 's/\\n$//')
-        [ -n "$WS_LIST" ] && ROFI_LIST="${ROFI_LIST}\n${WS_LIST}"
-    else
-        for ((i=0; i<tot_wrkspc; i++)); do
-            win_count=0
-            if [ -n "$OPEN_WINS_WS" ]; then
-                win_count=$(echo "$OPEN_WINS_WS" | grep -c -w "$i")
-            fi
-            if [ "$win_count" -gt 0 ]; then
-                display_num=$((i + 1))
-                ROFI_LIST="${ROFI_LIST}\n${display_num}"
-            fi
-        done
-    fi
-    if [ "$MOV_WIN_MODE" = true ]; then
-        PROMPT_MSG="[$SCRIPT_NAME] Move $WIN_NM to Workspace"
-        ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG" -theme-str 'window { width: 90%; }')
-    elif [ "$MOV_WS_MODE" = true ]; then
-        PROMPT_MSG="[$SCRIPT_NAME] Move Windows in Workspace $WS_NM to Other Workspace"
-        ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG" -theme-str 'window { width: 90%; }')
-    else
-        PROMPT_MSG="[$SCRIPT_NAME] Go to Workspace"
-        ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG")
-    fi
-    if [ -z "$ROFI_INPUT" ]; then
-        exit 0
-    elif [ "$ROFI_INPUT" = "Back" ]; then
-        EXTRA_ARGS=()
-        [ "$BYNAME_MODE" = true ] && EXTRA_ARGS+=("--byname")
-        exec "$0" "${EXTRA_ARGS[@]}"
-    fi
-    if [ "$BYNAME_MODE" = true ]; then
-        mapfile -t all_ws_names < <(echo "$WS_NMS")
-        for i in "${!all_ws_names[@]}"; do
-            if [ "${all_ws_names[$i]}" = "$ROFI_INPUT" ]; then
-                TRGT_WRKSPC=$i
-                break
-            fi
-        done
-        if [ -z "$TRGT_WRKSPC" ]; then TRGT_WRKSPC="$ROFI_INPUT"; fi
-    else
-        if echo "$ROFI_INPUT" | grep -qE '^[0-9]+$'; then
-            TRGT_WRKSPC=$(( ROFI_INPUT - 1 ))
-        else
-            TRGT_WRKSPC="$ROFI_INPUT"
-        fi
-    fi
+ROFI_LIST="Back"
+[ -n "$WS_NMS" ] && ROFI_LIST="${ROFI_LIST}\n${WS_NMS}"
+if [ "$MOV_WIN_MODE" = true ]; then
+    PROMPT_MSG="[$SCRIPT_NAME] Move $WIN_NM to Workspace"
+    ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG" -theme-str 'window { width: 90%; }')
+elif [ "$MOV_WS_MODE" = true ]; then
+    PROMPT_MSG="[$SCRIPT_NAME] Move Windows in Workspace $WS_NM to Other Workspace"
+    ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG" -theme-str 'window { width: 90%; }')
+else
+    PROMPT_MSG="[$SCRIPT_NAME] Go to Workspace"
+    ROFI_INPUT=$(echo -e "$ROFI_LIST" | rofi -dmenu -p "$PROMPT_MSG")
 fi
 
-if [ -z "$TRGT_WRKSPC" ]; then
+if [ -z "$ROFI_INPUT" ]; then
+    exit 0
+elif [ "$ROFI_INPUT" = "Back" ]; then
+    exec "$0"
+fi
+
+TRGT_WS_NM="$ROFI_INPUT"
+
+if [ -z "$TRGT_WS_NM" ]; then
     exit 0
 fi
 
-if echo "$TRGT_WRKSPC" | grep -qE '^[0-9]+$'; then
-    if [ "$TRGT_WRKSPC" -ge "$tot_wrkspc" ]; then
-        tot_wrkspc_nu=$((TRGT_WRKSPC + 1))
-        xdotool set_num_desktops $tot_wrkspc_nu
-    fi
-    if [ "$MOV_WIN_MODE" = true ]; then
-        xdotool set_desktop_for_window "$TRGT_WIN_ID" "$TRGT_WRKSPC"
-    elif [ "$MOV_WS_MODE" = true ]; then
-        while read -r WID; do
-            [ -n "$WID" ] && xdotool set_desktop_for_window "$WID" "$TRGT_WRKSPC"
-        done <<< "$CUR_WS_WINS"
-    fi
-    xdotool set_desktop "$TRGT_WRKSPC"
-else
-    notify-send "[$SCRIPT_NAME]" "Error: invalid input!"
-fi
+switch_workspace "$TRGT_WS_NM"

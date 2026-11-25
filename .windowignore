@@ -1,5 +1,7 @@
 pcmanfm.Pcmanfm             pcmanfm
 plank.Plank                 plank
+xfce4-panel.Xfce4-panel     xfce4-panel
+polybar.Polybar
 tint2.Tint2
 xpenguins.Xpenguins
 idle-window.XTerm

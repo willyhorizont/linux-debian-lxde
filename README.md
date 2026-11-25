@@ -59,24 +59,24 @@ echo "blacklist uvcvideo" | sudo tee /etc/modprobe.d/block-camera.conf
 ## Install packages
 ```sh
 # Text Editor
-sudo apt install -y \
+sudo apt install -y --no-install-recommends \
     micro \
     ""
 
 # Terminal Emulator
-sudo apt install -y \
+sudo apt install -y --no-install-recommends \
     alacritty \
     fzf \
     ""
 
 # Version Control
-sudo apt install -y \
+sudo apt install -y --no-install-recommends \
     lazygit \
     git-delta \
     ""
 
 # Locker
-sudo apt install -y \
+sudo apt install -y --no-install-recommends \
     xprintidle \
     wmctrl \
     xdotool \
@@ -84,54 +84,60 @@ sudo apt install -y \
     ""
 
 # Font
-sudo apt install -y fonts-jetbrains-mono
+sudo apt install -y --no-install-recommends fonts-jetbrains-mono
 
 # Brightness control
-sudo apt install -y brightnessctl
+sudo apt install -y --no-install-recommends brightnessctl
 
 # Blue Light Filter
-sudo apt install -y xsct
+sudo apt install -y --no-install-recommends xsct
 
 # Audio
-sudo apt install -y \
+sudo apt install -y --no-install-recommends \
     pipewire-audio \
     pipewire-pulse \
     pulseaudio-utils \
     ""
 
 # Bluetooth
-sudo apt install -y \
+sudo apt install -y --no-install-recommends \
     bluez \
     bluez-tools \
     ""
 
 # Panel
-sudo apt install -y tint2
+sudo apt install -y --no-install-recommends tint2
+sudo apt install -y --no-install-recommends \
+    xfce4-panel \
+    xfce4-whiskermenu-plugin \
+    xfce4-docklike-plugin \
+    xfce4-genmon-plugin \
+    ""
 
 ## conf editor
-sudo apt install -y dconf-cli
+sudo apt install -y --no-install-recommends dconf-cli
 
 ## Screenshot
-sudo apt install -y scrot
+sudo apt install -y --no-install-recommends scrot
 
 # Compositor
-sudo apt install -y picom
-# sudo apt install -y xcompmgr
+sudo apt install -y --no-install-recommends picom
+# sudo apt install -y --no-install-recommends xcompmgr
 
 # Pinned+Opened app combo
-# sudo apt install -y plank
+# sudo apt install -y --no-install-recommends plank
 
 # Prompt menu
-sudo apt install -y rofi
+sudo apt install -y --no-install-recommends rofi
 
 # Power
-sudo apt install -y \
+sudo apt install -y --no-install-recommends \
     power-profiles-daemon \
     acpi \
     ""
 
 # Notification
-sudo apt install -y \
+sudo apt install -y --no-install-recommends \
     dunst \
     libnotify-bin \
     inotify-tools \
@@ -388,14 +394,14 @@ sudo apt purge -y goldendict-ng kasumi && sudo apt autoremove -y --purge
 
 # Process Manager
 sudo apt purge -y lxtask && sudo apt autoremove -y --purge
-sudo apt install -y btop
+sudo apt install -y --no-install-recommends btop
 
 # Calendar
-sudo apt install -y calcurse
+sudo apt install -y --no-install-recommends calcurse
 
 # Video Player
 sudo apt purge -y mplayer && sudo apt autoremove -y --purge
-sudo apt install -y mpv
+sudo apt install -y --no-install-recommends mpv
 
 # Power manager
 sudo apt purge -y fdpowermon && sudo apt autoremove -y --purge
@@ -410,7 +416,7 @@ sudo apt purge -y system-config-printer system-config-printer-common && sudo apt
 sudo apt purge -y synaptic && sudo apt autoremove -y --purge
 
 # Torrent
-sudo apt install -y transmission-gtk
+sudo apt install -y --no-install-recommends transmission-gtk
 sudo apt purge -y deluge deluge-common deluge-gtk && sudo apt autoremove -y --purge
 
 # Screenshot
@@ -538,7 +544,7 @@ sudo apt purge -y \
 
 ## Cursor theme
 ```sh
-sudo apt install -y xcur2png
+sudo apt install -y --no-install-recommends xcur2png
 ```
 
 ## See [linux > cheatsheet > general.md](https://github.com/willyhorizont/linux/blob/main/cheatsheet/general.md)
@@ -549,7 +555,7 @@ sudo apt install -y xcur2png
 ```sh
 sudo apt install -y --no-install-recommends \
     i3-wm \
-    autotiling \
+    # autotiling \
     xss-lock \
     hsetroot \
     ""

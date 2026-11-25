@@ -2,9 +2,9 @@
 
 ## lxde/openbox
 
-1. xprop -root -spy _NET_CURRENT_DESKTOP
+1. xprop -root -spy _NET_CURRENT_DESKTOP _NET_NUMBER_OF_DESKTOPS
 ```sh
-xprop -root -spy _NET_CURRENT_DESKTOP | while read -r _; do
+xprop -root -spy _NET_CURRENT_DESKTOP _NET_NUMBER_OF_DESKTOPS | while read -r _; do
     echo "Workspace changed!"
 done
 ```
@@ -23,9 +23,9 @@ screen.connect("active-workspace-changed", on_workspace_changed)
 GLib.MainLoop().run()
 ```
 
-3. xev -root -event property | grep --line-buffered "_NET_CURRENT_DESKTOP"
+3. xev -root -event property | grep --line-buffered -E "_NET_CURRENT_DESKTOP|_NET_NUMBER_OF_DESKTOPS"
 ```sh
-xev -root -event property | grep --line-buffered "_NET_CURRENT_DESKTOP" | while read -r _; do
+xev -root -event property | grep --line-buffered -E "_NET_CURRENT_DESKTOP|_NET_NUMBER_OF_DESKTOPS" | while read -r _; do
     echo "Workspace changed!"
 done
 ```
@@ -41,14 +41,14 @@ done
 
 1. internal/i3 (polybar)
 
-2. i3-msg -m -t subscribe
+2. i3-msg -t subscribe -m '["workspace"]'
 ```sh
-i3-msg -m -t subscribe '["workspace"]' | while read -r _; do
+i3-msg -t subscribe -m '["workspace"]' | while read -r _; do
     echo "Workspace changed!"
 done
 ```
 ```sh
-i3-msg -t subscribe '["workspace"]' | while read -r event; do
+i3-msg -t subscribe -m '["workspace"]' | while read -r event; do
     cur_wrkspc=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).name')
     echo "Workspace changed!"
 done
@@ -67,6 +67,29 @@ i3.on('workspace', on_workspace_change)
 i3.main()
 ```
 
-4. xprop -root -spy _NET_CURRENT_DESKTOP
-5. xev -root -event property | grep --line-buffered "_NET_CURRENT_DESKTOP"
+4. xprop -root -spy _NET_CURRENT_DESKTOP _NET_NUMBER_OF_DESKTOPS
+5. xev -root -event property | grep --line-buffered -E "_NET_CURRENT_DESKTOP|_NET_NUMBER_OF_DESKTOPS"
 6. xdotool search --onlyvisible
+
+## bspwm ipc-socket
+
+1. bspc subscribe desktop_focus desktop_add desktop_remove
+```sh
+bspc subscribe desktop_focus desktop_add desktop_remove | while read -r _; do
+    handle_change
+done
+```
+
+## xfce
+
+1. xprop -root -spy _NET_CURRENT_DESKTOP _NET_NUMBER_OF_DESKTOPS
+
+## cinnamon
+
+1. xprop -root -spy _NET_CURRENT_DESKTOP _NET_NUMBER_OF_DESKTOPS
+2. dbus-monitor --session "interface='org.Cinnamon',member='WindowWorkspaceChanged'"
+```sh
+dbus-monitor --session "interface='org.Cinnamon',member='WindowWorkspaceChanged'" | while read -r _; do
+    handle_change
+done
+```

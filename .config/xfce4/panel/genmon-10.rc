@@ -1,0 +1,5 @@
+Command=sh -c "$HOME/willyhorizont.github.io/linux/vol.sh --indicator --pref '| ' --mode xfce4-panel --genmon-id genmon-10"
+UseLabel=0
+Text=(genmon)
+UpdatePeriod=86400000
+Font=JetBrains Mono Bold 8

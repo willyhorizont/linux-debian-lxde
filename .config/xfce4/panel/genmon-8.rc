@@ -1,0 +1,5 @@
+Command=sh -c 'echo "<txt>| 🔔 </txt><txtclick>dunstctl history-pop</txtclick><tool>Notification History</tool>"'
+UseLabel=0
+Text=(genmon)
+UpdatePeriod=86400000
+Font=JetBrains Mono Bold 8

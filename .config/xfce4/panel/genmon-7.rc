@@ -1,0 +1,5 @@
+Command=sh -c 'echo "<txt>| _ </txt><txtclick>xdotool key ctrl+super+d</txtclick><tool>Toggle Show Desktop</tool>"'
+UseLabel=0
+Text=(genmon)
+UpdatePeriod=86400000
+Font=JetBrains Mono Bold 8

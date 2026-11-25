@@ -28,9 +28,9 @@ sudo apt install -y \
     xfce4-panel \
     xfce4-whiskermenu-plugin \
     xfce4-docklike-plugin \
+    xfce4-genmon-plugin \
     xfce4-pulseaudio-plugin \
     xfce4-power-manager-plugins \
-    xfce4-genmon-plugin \
     xfce4-notifyd \
     ""
 ```

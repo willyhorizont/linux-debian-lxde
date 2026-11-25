@@ -1,14 +1,13 @@
 #!/bin/bash
 
-case 0 in
-    $(pgrep -x "lxsession" >/dev/null; echo $?))
-        CURRENT_SESSION="lxde"
+SCRIPT_NAME="lxsession-logout.sh"
+case "$DESKTOP_SESSION" in
+    LXDE)
         ;;
-    $(pgrep -x "openbox" >/dev/null; echo $?))
-        CURRENT_SESSION="openbox"
+    openbox)
         ;;
     *)
-        notify-send "lxsession-logout.sh" "Error: Session not match!"
+        notify-send "[$SCRIPT_NAME]" "Unsupported DESKTOP_SESSION: '$DESKTOP_SESSION'"
         exit 1
         ;;
 esac
@@ -37,11 +36,11 @@ ALL_LABELS=(
 
 if [ -n "$ACTION" ]; then
     if [ "$ACTION" = "shutdown" ] || [ "$ACTION" = "reboot" ] || [ "$ACTION" = "suspend" ] || [ "$ACTION" = "logout" ]; then
-        if [ "$CURRENT_SESSION" = "openbox" ]; then
+        if [ "$DESKTOP_SESSION" = "openbox" ]; then
             $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm ${ALL_LABELS[$ACTION]}" || exit 1
         fi
     fi
-    if [ "$ACTION" = "logout" ] && [ "$CURRENT_SESSION" = "openbox" ]; then
+    if [ "$ACTION" = "logout" ] && [ "$DESKTOP_SESSION" = "openbox" ]; then
         openbox --exit
         exit 0
     fi

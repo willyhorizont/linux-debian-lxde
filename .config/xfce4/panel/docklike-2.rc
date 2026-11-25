@@ -1,0 +1,12 @@
+[user]
+noWindowsListIfSingle=false
+onlyDisplayVisible=false
+showPreviews=false
+showWindowCount=true
+middleButtonBehavior=2
+indicatorOrientation=1
+indicatorColor=rgb(255,20,147)
+inactiveColor=rgb(0,173,216)
+pinned=lxterminal;pcmanfm;firefox-esr;com.brave.Browser;vivaldi-stable;chromium;com.microsoft.VSCode;
+forceIconSize=true
+iconSize=24

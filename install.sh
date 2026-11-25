@@ -1,11 +1,22 @@
 #!/bin/sh
 
 $HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh --clear-cache
+$HOME/.config/start-desktop.sh --kill
+rm -rf ~/.config/xfce4/ && mkdir -p ~/.config/xfce4/ && cp -r ~/willyhorizont.github.io/linux-debian-lxde/.config/xfce4/* ~/.config/xfce4/
+setsid -f xfce4-panel --disable-wm-check >/dev/null 2>&1
+while true; do
+    if [ -n "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "xfce4-panel.Xfce4-panel" && $9 == "xfce4-panel" {print $0}' 2>/dev/null)" ]; then
+        break
+    fi
+    sleep 0.2
+done
+xfce4-panel --restart >/dev/null 2>&1
 mkdir -p ~/.local/share/plank/themes/windows-7-or-10-style/
 cp ~/willyhorizont.github.io/linux-debian-lxde/.local/share/plank/themes/windows-7-or-10-style/dock.theme ~/.local/share/plank/themes/windows-7-or-10-style/dock.theme
 cp ~/willyhorizont.github.io/linux-debian-lxde/.fzfrc ~/.fzfrc
 mkdir -p ~/willyhorizont.github.io/.config/ && cp ~/willyhorizont.github.io/linux-debian-lxde/.windowignore ~/willyhorizont.github.io/.config/.windowignore
 mkdir -p ~/.config/fresh/ && cp ~/willyhorizont.github.io/linux-debian-lxde/.config/fresh/config.json ~/.config/fresh/config.json
+mkdir -p ~/.config/gtk-3.0/ && cp ~/willyhorizont.github.io/linux-debian-lxde/.config/gtk-3.0/gtk.css ~/.config/gtk-3.0/gtk.css
 mkdir -p ~/.config/lazygit/ && cp ~/willyhorizont.github.io/linux-debian-lxde/.config/lazygit/config.yml ~/.config/lazygit/config.yml
 mkdir -p ~/.config/btop/ && cp ~/willyhorizont.github.io/linux-debian-lxde/.config/btop/btop.conf ~/.config/btop/btop.conf
 mkdir -p ~/.config/alacritty/ && cp ~/willyhorizont.github.io/linux-debian-lxde/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
@@ -16,9 +27,8 @@ mkdir -p ~/.themes/XL/ && cp -r ~/willyhorizont.github.io/linux-debian-lxde/.the
 mkdir -p ~/.config/polybar/ && cp -r ~/willyhorizont.github.io/linux-debian-lxde/.config/polybar/* ~/.config/polybar/
 cp ~/willyhorizont.github.io/linux-debian-lxde/.Xresources ~/.Xresources
 xrdb -merge ~/.Xresources
-CMD_SET_CUR_DESKTOP='sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/set-env-current-desktop.sh"'
+CMD_SET_CUR_DESKTOP='sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/set-env.sh"'
 grep -qxF "$CMD_SET_CUR_DESKTOP" ~/.profile || echo "$CMD_SET_CUR_DESKTOP" >> ~/.profile
 # update-desktop-database ~/.local/share/applications && sudo update-desktop-database /usr/share/applications
 
 sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/style-selector.sh --default"
-sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/i3/style-selector.sh --default"

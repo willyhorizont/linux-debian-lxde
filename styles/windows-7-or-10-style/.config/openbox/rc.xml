@@ -179,23 +179,23 @@
     <!-- Restart Desktop -->
     <keybind key="W-S-r">
         <action name="Execute">
-            <command>~/.config/openbox/start-desktop.sh</command>
+            <command>~/.config/start-desktop.sh</command>
         </action>
     </keybind>
     <!-- open power menu -->
     <keybind key="C-A-Delete">
         <action name="Execute">
-            <command>~/willyhorizont.github.io/linux/powr-mnu.sh '~/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout' xtrlock</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/rofi-powr-mnu.sh</command>
         </action>
     </keybind>
     <keybind key="C-W-Delete">
         <action name="Execute">
-            <command>~/willyhorizont.github.io/linux/powr-mnu.sh '~/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout' xtrlock</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/rofi-powr-mnu.sh</command>
         </action>
     </keybind>
     <keybind key="S-W-e">
         <action name="Execute">
-            <command>~/willyhorizont.github.io/linux/powr-mnu.sh '~/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout' xtrlock</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/rofi-powr-mnu.sh</command>
         </action>
     </keybind>
     <!-- Lock -->
@@ -708,34 +708,34 @@
     <!-- cycle between Windows Virtual Desktops / Mac Spaces / Linux Workspaces -->
     <keybind key="C-A-Right">
         <action name="Execute">
-            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --next</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --next --i3-mode</command>
         </action>
     </keybind>
     <keybind key="C-W-Right">
         <action name="Execute">
-            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --next</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --next --i3-mode</command>
         </action>
     </keybind>
     <keybind key="C-A-Left">
         <action name="Execute">
-            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --prev</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --prev --i3-mode</command>
         </action>
     </keybind>
     <keybind key="C-W-Left">
         <action name="Execute">
-            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --prev</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --prev --i3-mode</command>
         </action>
     </keybind>
 
     <!-- open Windows Virtual Desktops / Mac Spaces / Linux Workspaces manager -->
     <keybind key="C-A-space">
         <action name="Execute">
-            <command>~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh</command>
         </action>
     </keybind>
     <keybind key="C-W-space">
         <action name="Execute">
-            <command>~/willyhorizont.github.io/linux-debian-lxde/i3/wrkspc-mgr.sh</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh</command>
         </action>
     </keybind>
 
@@ -764,7 +764,7 @@
     <!-- new Windows Virtual Desktop / Mac Space / Linux Workspace -->
     <keybind key="C-W-plus">
         <action name="Execute">
-            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --plus</command>
+            <command>~/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh --plus --i3-mode</command>
         </action>
     </keybind>
     <!-- go to Windows Virtual Desktop / Mac Space / Linux Workspace -->

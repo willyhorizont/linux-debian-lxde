@@ -35,9 +35,9 @@ if [ -z "$WINS_RAW" ]; then
     exit 0
 fi
 
-DESKTOP_NAMES=$(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) print $i}')
+WS_NMS=$(xprop -root _NET_DESKTOP_NAMES 2>/dev/null | awk -F'"' '{for(i=2; i<=NF; i+=2) {gsub(/[^0-9]/, "", $i); print ($i != "" ? $i : "404")}}')
 
-ROFI_LIST=$(echo "$WINS_RAW" | awk -v names_str="$DESKTOP_NAMES" '
+ROFI_LIST=$(echo "$WINS_RAW" | awk -v names_str="$WS_NMS" '
     BEGIN {
         split(names_str, names_arr, "\n");
     }

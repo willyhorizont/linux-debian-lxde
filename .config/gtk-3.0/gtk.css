@@ -1,0 +1,37 @@
+.xfce4-panel,
+.xfce4-panel * {
+    background-color: #ffffff;
+    color: #000000;
+}
+#pager-4 button,
+#pager-4 button label {
+    background-color: #000000;
+    color: #CCFF00;
+}
+#pager-4 button {
+    border-radius: 0;
+    border-style: solid;
+    border-color: #FF1493;
+    border-width: 0 2px 0 0;
+    box-shadow: none;
+    min-height: 0;
+    padding: 0 4px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+#pager-4 button:last-child {
+    border-right-width: 0;
+}
+#pager-4 button:checked,
+#pager-4 button:checked label,
+#pager-4 button:active,
+#pager-4 button:active label {
+    background-color: #00ADD8;
+    color: #000000;
+}
+#pager-4 button:hover,
+#pager-4 button:hover label {
+    background-color: #CCFF00;
+    color: #000000;
+    border-color: #FF1493;
+}

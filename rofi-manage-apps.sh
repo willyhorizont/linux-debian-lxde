@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 FAV_APPS_LIST_FILE_PATH="$HOME/willyhorizont.github.io/.config/fav-apps.txt"
 
@@ -12,16 +12,14 @@ fi
 
 EXIT_APPS=(
     "lock"
-    "logout-lxde"
-    "logout-openbox"
-    "logout-i3"
+    "logout"
     "suspend"
     "reboot"
     "shutdown"
 )
 
 CACHE_DIR="$HOME/.cache/rofi"
-CACHE_FILE="$CACHE_DIR/apps-list-${XDG_CURRENT_DESKTOP:-default}.cache"
+CACHE_FILE="$CACHE_DIR/apps-list-${XDG_CURRENT_DESKTOP:-${DESKTOP_SESSION:-default}}.cache"
 EXIT_MODE=false
 
 while [[ $# -gt 0 ]]; do
@@ -51,7 +49,7 @@ validate_and_get_metadata() {
         only_show_in=$(grep "^OnlyShowIn=" "$filepath" | cut -d'=' -f2 | tr ';' '\n')
         local match=0
         while read -r cur_session; do
-            if [ "$cur_session" = "$XDG_CURRENT_DESKTOP" ]; then
+            if [ "$cur_session" = "$DESKTOP_SESSION" ]; then
                 match=1
                 break
             fi
@@ -66,7 +64,7 @@ EOF
         local not_show_in
         not_show_in=$(grep "^NotShowIn=" "$filepath" | cut -d'=' -f2 | tr ';' '\n')
         while read -r cur_session; do
-            if [ "$cur_session" = "$XDG_CURRENT_DESKTOP" ]; then
+            if [ "$cur_session" = "$DESKTOP_SESSION" ]; then
                 return 1
             fi
         done <<EOF
@@ -109,21 +107,6 @@ generate_exit_list() {
 
 generate_app_list_raw() {
     declare -A printed_apps
-    local exclude_exit=(
-        "lock"
-        "logout-lxde"
-        "logout-openbox"
-        "logout-i3"
-        "suspend"
-        "reboot"
-        "shutdown"
-        "exit-lxde"
-        "exit-openbox"
-        "exit-i3"
-    )
-    for ex in "${exclude_exit[@]}"; do
-        printed_apps["$ex"]=1
-    done
     for app in "${FAV_APPS[@]}"; do
         local desktop_path
         desktop_path=$(find_desktop_file "$app")

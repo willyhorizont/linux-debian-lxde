@@ -2,86 +2,38 @@
 
 mkdir -p ~/.local/share/applications/
 
-cat << EOF > ~/.local/share/applications/exit-lxde.desktop
+cat << EOF > ~/.local/share/applications/exit.desktop
 [Desktop Entry]
 Name=Exit
 Comment=Exit
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout" "xtrlock"'
+Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-powr-mnu.sh"
 Terminal=false
 Type=Application
 Icon=system-shutdown
 Categories=System;Utility;Settings;
-OnlyShowIn=LXDE;
-EOF
-
-cat << EOF > ~/.local/share/applications/logout-lxde.desktop
-[Desktop Entry]
-Name=Logout
-Comment=Logout
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout" "xtrlock" --logout'
-Terminal=false
-Type=Application
-Icon=system-log-out
-Categories=System;Utility;Settings;
-OnlyShowIn=LXDE;
-EOF
-
-cat << EOF > ~/.local/share/applications/exit-openbox.desktop
-[Desktop Entry]
-Name=Exit
-Comment=Exit
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout" "xtrlock"'
-Terminal=false
-Type=Application
-Icon=system-shutdown
-Categories=System;Utility;Settings;
-OnlyShowIn=openbox;
-EOF
-
-cat << EOF > ~/.local/share/applications/logout-openbox.desktop
-[Desktop Entry]
-Name=Logout
-Comment=Logout
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "$HOME/willyhorizont.github.io/linux-debian-lxde/lxsession-logout.sh --logout" "xtrlock" --logout'
-Terminal=false
-Type=Application
-Icon=system-log-out
-Categories=System;Utility;Settings;
-OnlyShowIn=openbox;
-EOF
-
-cat << EOF > ~/.local/share/applications/exit-i3.desktop
-[Desktop Entry]
-Name=Exit
-Comment=Exit
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock"'
-Terminal=false
-Type=Application
-Icon=system-shutdown
-Categories=System;Utility;Settings;
-OnlyShowIn=i3;
-EOF
-
-cat << EOF > ~/.local/share/applications/logout-i3.desktop
-[Desktop Entry]
-Name=Logout
-Comment=Logout
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock" --logout'
-Terminal=false
-Type=Application
-Icon=system-log-out
-Categories=System;Utility;Settings;
-OnlyShowIn=i3;
+OnlyShowIn=LXDE;openbox;i3;
 EOF
 
 cat << EOF > ~/.local/share/applications/lock.desktop
 [Desktop Entry]
 Name=Lock
 Comment=Lock
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock" --lock'
+Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-powr-mnu.sh --lock"
 Terminal=false
 Type=Application
 Icon=system-lock-screen
+Categories=System;Utility;Settings;
+OnlyShowIn=LXDE;openbox;i3;
+EOF
+
+cat << EOF > ~/.local/share/applications/logout.desktop
+[Desktop Entry]
+Name=Logout
+Comment=Logout
+Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-powr-mnu.sh --logout"
+Terminal=false
+Type=Application
+Icon=system-log-out
 Categories=System;Utility;Settings;
 OnlyShowIn=LXDE;openbox;i3;
 EOF
@@ -90,7 +42,7 @@ cat << EOF > ~/.local/share/applications/suspend.desktop
 [Desktop Entry]
 Name=Suspend
 Comment=suspend
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock" --suspend'
+Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-powr-mnu.sh --suspend"
 Terminal=false
 Type=Application
 Icon=system-suspend
@@ -103,7 +55,7 @@ cat << EOF > ~/.local/share/applications/reboot.desktop
 [Desktop Entry]
 Name=Reboot
 Comment=reboot
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock" --reboot'
+Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-powr-mnu.sh --reboot"
 Terminal=false
 Type=Application
 Icon=system-reboot
@@ -116,7 +68,7 @@ cat << EOF > ~/.local/share/applications/shutdown.desktop
 [Desktop Entry]
 Name=Shutdown
 Comment=shutdown
-Exec=sh -c '"$HOME/willyhorizont.github.io/linux/powr-mnu.sh" "i3-msg exit" "xtrlock" --shutdown'
+Exec=sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-powr-mnu.sh --shutdown"
 Terminal=false
 Type=Application
 Icon=system-shutdown
