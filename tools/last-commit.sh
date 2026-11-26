@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm Commit" || exi
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.10.1" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.10.2" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,10 +15,9 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-update install.sh, brutally kill xfce4-panel;
-update start-desktop.sh, remove xfconfd kill command;
-update i3 config, change to kb to open Windows Start Menu to xfce4-popup-whiskermenu;
-update lxde openbox rc xml config, change to kb to open Windows Start Menu to xfce4-popup-whiskermenu;
+update SPRM, update --pref --suff;
+update SuckMyClock, update --pref --suff;
+update uptime, update --pref --suff;
 
 [working on]
 create base i3 start-desktop.sh;
@@ -47,7 +46,7 @@ add icon to rofi-fav-apps.sh;
 create xalendar.py holiday-calendar.py;
 try qtile (EWMH, default panel have my 3 req feature);
 try awesomewm (EWMH, default panel have my 3 req feature);
-try herbstluftwm (EWMH, default panel have my 3 req feature);
+try herbstluftwm (EWMH);
 try spectrwm (Not EWMH);
 try bspwm (Not EWMH, need sxhkd);
 try dwm; (Not EWMH, need compile);

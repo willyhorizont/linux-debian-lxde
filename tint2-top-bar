@@ -24,12 +24,12 @@ panel_window_name = tint2-top-bar
 
 # --- E: SPRM ---
 execp = new
-execp_command = $HOME/willyhorizont.github.io/linux/SPRM-c --pango --suff ' |'
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM-cpp --pango --suff ' |'
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.awk --pango --suff ' |'
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.pl --pango --suff ' |'
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.py --pango --suff ' |'
-# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.sh --pango --suff ' |'
+execp_command = $HOME/willyhorizont.github.io/linux/SPRM-c --pango --pref ' ' --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM-cpp --pango --pref ' ' --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.awk --pango --pref ' ' --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.pl --pango --pref ' ' --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.py --pango --pref ' ' --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/SPRM.sh --pango --pref ' ' --suff ' |'
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 6
@@ -40,12 +40,12 @@ execp_markup = 1
 
 # --- E: Uptime ---
 execp = new
-execp_command = $HOME/willyhorizont.github.io/linux/uptime-c --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/uptime-cpp --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/uptime.awk --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/uptime.pl --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/uptime.py --pango
-# execp_command = $HOME/willyhorizont.github.io/linux/uptime.sh --pango
+execp_command = $HOME/willyhorizont.github.io/linux/uptime-c --pango --pref ' ' --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/uptime-cpp --pango --pref ' ' --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/uptime.awk --pango --pref ' ' --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/uptime.pl --pango --pref ' ' --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/uptime.py --pango --pref ' ' --suff ' |'
+# execp_command = $HOME/willyhorizont.github.io/linux/uptime.sh --pango --pref ' ' --suff ' |'
 execp_interval = 30
 execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100
@@ -103,12 +103,12 @@ execp_markup = 1
 
 # --- E: SuckMyClock ---
 execp = new
-execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-c --pango --pref '| '
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-cpp --pango --pref '| '
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.awk --pango --pref '| '
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.pl --pango --pref '| '
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.py --pango --pref '| '
-# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.sh --pango --pref '| '
+execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-c --pango --pref '| ' --suff ' '
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock-cpp --pango --pref '| ' --suff ' '
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.awk --pango --pref '| ' --suff ' '
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.pl --pango --pref '| ' --suff ' '
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.py --pango --pref '| ' --suff ' '
+# execp_command = $HOME/willyhorizont.github.io/linux/SuckMyClock.sh --pango --pref '| ' --suff ' '
 execp_interval = 1
 execp_has_icon = 0
 execp_font = JetBrains Mono 6
