@@ -24,7 +24,7 @@ done
 pkill -9 -f ".*xpenguins.*"                                                                                                                           2>/dev/null
 pkill -9 -f ".*willyhorizont.*dmn-screensavr.*"                                                                                                       2>/dev/null
 pkill -9 -f ".*willyhorizont.*tux-indctr.*"                                                                                                           2>/dev/null
-pkill -9 -f ".*wrapper-2.0.*"                                                                                                                         2>/dev/null
+pkill -9 -f ".*wrapper-2.*"                                                                                                                           2>/dev/null
 pkill -9 -f ".*pidwait.*xpenguins.*"                                                                                                                  2>/dev/null
 pkill -9 -f ".*dbus-monitor.*bluez.*"                                                                                                                 2>/dev/null
 pkill -9 -f ".*nmcli monitor.*"                                                                                                                       2>/dev/null
