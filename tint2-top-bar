@@ -12,7 +12,7 @@ border_width = 1
 background_color = #000000 100
 border_color = #FF1493 100
 
-panel_items = EEFFEFEFEFFEEEE
+panel_items = EEFFEFEFEFFEEE
 panel_position = top center horizontal
 panel_layer = top
 panel_size = 100% 16
@@ -30,7 +30,7 @@ execp_command = $HOME/willyhorizont.github.io/linux/SPRM-c --pango --pref ' ' --
 # execp_command = $HOME/willyhorizont.github.io/linux/SPRM.pl --pango --pref ' ' --suff ' |'
 # execp_command = $HOME/willyhorizont.github.io/linux/SPRM.py --pango --pref ' ' --suff ' |'
 # execp_command = $HOME/willyhorizont.github.io/linux/SPRM.sh --pango --pref ' ' --suff ' |'
-execp_interval = 1
+execp_interval = 2
 execp_has_icon = 0
 execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100
@@ -55,7 +55,7 @@ execp_markup = 1
 
 # --- E: FreeText ---
 execp = new
-execp_command = $HOME/willyhorizont.github.io/.config/top-bar-free-text-1.sh
+execp_command = $HOME/willyhorizont.github.io/linux/top-bar-free-text.sh --txt " SPACE " --pango
 execp_interval = 0
 execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100
@@ -75,7 +75,7 @@ execp_markup = 1
 
 # --- E: FreeText ---
 execp = new
-execp_command = $HOME/willyhorizont.github.io/.config/top-bar-free-text-2.sh
+execp_command = $HOME/willyhorizont.github.io/linux/top-bar-free-text.sh --txt " AVAILABLE " --pango
 execp_interval = 0
 execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100

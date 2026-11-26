@@ -1,14 +1,33 @@
-.xfce4-panel,
-.xfce4-panel * {
-    background-color: #ffffff;
+tooltip,
+tooltip.background {
+    border: 2px solid #FF1493;
+    border-radius: 0;
+}
+tooltip decoration {
+    border: 2px solid #FF1493;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#whiskermenu-1,
+#whiskermenu-1 *,
+#whiskermenu-button,
+#whiskermenu-button * {
+    background-color: #FFFFFF;
     color: #000000;
 }
-#pager-4 button,
-#pager-4 button label {
+
+#docklike-2, #docklike-2 * {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+#pager-3 button,
+#pager-3 button label {
     background-color: #000000;
     color: #CCFF00;
 }
-#pager-4 button {
+#pager-3 button {
     border-radius: 0;
     border-style: solid;
     border-color: #FF1493;
@@ -19,19 +38,58 @@
     margin-top: 6px;
     margin-bottom: 6px;
 }
-#pager-4 button:last-child {
+#pager-3 button:last-child {
     border-right-width: 0;
 }
-#pager-4 button:checked,
-#pager-4 button:checked label,
-#pager-4 button:active,
-#pager-4 button:active label {
+#pager-3 button:checked,
+#pager-3 button:checked label,
+#pager-3 button:active,
+#pager-3 button:active label {
     background-color: #00ADD8;
     color: #000000;
 }
-#pager-4 button:hover,
-#pager-4 button:hover label {
+#pager-3 button:hover,
+#pager-3 button:hover label {
     background-color: #CCFF00;
     color: #000000;
     border-color: #FF1493;
+}
+
+#whiskermenu-window {
+    border: 2px solid #FF1493;
+}
+#whiskermenu-window > frame > border {
+    border: 2px solid #FF1493;
+}
+
+#docklike-plugin .group .window_count,
+#docklike-2 .group .window_count {
+    background-color: transparent;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 
+        1px 0 0 #00ADD8, -1px 0 0 #00ADD8, 
+        0 1px 0 #00ADD8, 0 -1px 0 #00ADD8,
+        1px 1px 0 #00ADD8, -1px -1px 0 #00ADD8,
+        1px -1px 0 #00ADD8, -1px 1px 0 #00ADD8;
+}
+
+#genmon-21, #genmon-21 *,
+#genmon-22, #genmon-22 *,
+#genmon-23, #genmon-23 *,
+#genmon-24, #genmon-24 *,
+#genmon-25, #genmon-25 *,
+#genmon-26, #genmon-26 *,
+#genmon-27, #genmon-27 *,
+#genmon-28, #genmon-28 *,
+#genmon-29, #genmon-29 * {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+#genmon-41, #genmon-41 *,
+#genmon-42, #genmon-42 *,
+#genmon-43, #genmon-43 * {
+    background-color: #000000;
+    color: #FFFFFF;
 }

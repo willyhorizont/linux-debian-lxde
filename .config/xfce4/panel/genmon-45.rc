@@ -1,0 +1,5 @@
+Command=sh -c '$HOME/willyhorizont.github.io/linux/top-bar-free-text.sh --txt " $DESKTOP_SESSION @ Linux Debian LXDE " --pref "|" --suff "" --val-bg "#CCFF00" --val-fg "#000000" --pango --mode xfce4-panel'
+UseLabel=0
+Text=(genmon)
+UpdatePeriod=86400000
+Font=JetBrains Mono Bold 6

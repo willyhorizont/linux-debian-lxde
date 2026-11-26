@@ -3,13 +3,13 @@
 SCRIPT_NAME="wrkspc-mgr.sh"
 case "$DESKTOP_SESSION" in
     LXDE|openbox)
-        if ! command -v wmctrl &> /dev/null || ! command -v xprop &> /dev/null || ! command -v xdotool &> /dev/null; then
+        if ! command -v wmctrl >/dev/null 2>&1 || ! command -v xprop >/dev/null 2>&1 || ! command -v xdotool >/dev/null 2>&1; then
             notify-send "[$SCRIPT_NAME]" "Error: missing dependencies 'wmctrl xprop xdotool'"
             exit 1
         fi
         ;;
     i3)
-        if ! command -v i3-msg &> /dev/null || ! command -v jq &> /dev/null; then
+        if ! command -v i3-msg >/dev/null 2>&1 || ! command -v jq >/dev/null 2>&1; then
             notify-send "[$SCRIPT_NAME]" "Error: missing dependencies 'i3-msg jq'"
             exit 1
         fi

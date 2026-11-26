@@ -284,24 +284,6 @@ sudo mv /usr/bin/lxlock /usr/bin/lxlock.bak
 sudo ln -s /usr/bin/xtrlock /usr/bin/lxlock
 ```
 
-## Create top-bar-free-text-1.sh and top-bar-free-text-2.sh
-```sh
-mkdir -p ~/willyhorizont.github.io/
-cat << 'EOF' > ~/willyhorizont.github.io/.config/top-bar-free-text-1.sh
-#!/bin/bash
-
-echo "SPACE"
-EOF
-chmod +x ~/willyhorizont.github.io/.config/top-bar-free-text-1.sh
-mkdir -p ~/willyhorizont.github.io/
-cat << 'EOF' > ~/willyhorizont.github.io/.config/top-bar-free-text-2.sh
-#!/bin/bash
-
-echo "AVAILABLE"
-EOF
-chmod +x ~/willyhorizont.github.io/.config/top-bar-free-text-2.sh
-```
-
 ## Create screensavr-mgr desktop shortcut
 ```sh
 mkdir -p ~/.local/share/applications/

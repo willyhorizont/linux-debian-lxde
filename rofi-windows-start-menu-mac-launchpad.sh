@@ -6,6 +6,7 @@ SCRIPT_NAME="rofi-windows-start-menu-mac-launchpad.sh"
 YOFFSET=32
 WIDTH_IN_PX=360
 INDICATOR_MODE=false
+SPOTLIGHT_MODE=false
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -14,8 +15,8 @@ while [[ $# -gt 0 ]]; do
             shift
         ;;
         --spotlight)
-            rofi -modi "All Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show "All Apps" -theme-str "promptbox { children: [ textbox-title ]; } textbox-title { background-color: transparent; text-color: #FF1493; str: \"$SCRIPT_NAME\"; padding: 0px; margin: 2px 8px 0px 8px; }"
-            exit 0
+            SPOTLIGHT_MODE=true
+            shift
         ;;
         --yoffset)
             YOFFSET="$2"
@@ -30,6 +31,15 @@ while [[ $# -gt 0 ]]; do
         ;;
     esac
 done
+
+if [ "$INDICATOR_MODE" = false ] && [ "$SPOTLIGHT_MODE" = false ] && command -v xfce4-popup-whiskermenu >/dev/null 2>&1; then
+    xfce4-popup-whiskermenu >/dev/null 2>&1 && exit 0
+fi
+
+if [ "$SPOTLIGHT_MODE" = true ]; then
+    rofi -modi "All Apps:$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" -show "All Apps" -theme-str "promptbox { children: [ textbox-title ]; } textbox-title { background-color: transparent; text-color: #FF1493; str: \"$SCRIPT_NAME\"; padding: 0px; margin: 2px 8px 0px 8px; }"
+    exit 0
+fi
 
 if [ "$INDICATOR_MODE" = true ]; then
     ICON_BASE_NAME="distributor-logo-debian"
@@ -54,9 +64,7 @@ if [ "$INDICATOR_MODE" = true ]; then
         print priority, $0
     }' | sort -nr -k1 | awk '{print $2}' | head -n 1)
 
-    if [ -z "$ICON_PATH" ]; then
-        ICON_PATH="/usr/share/icons/hicolor/scalable/apps/application-x-desktop.svg"
-    fi
+    [ -z "$ICON_PATH" ] && ICON_PATH="/usr/share/icons/hicolor/scalable/apps/application-x-desktop.svg"
 
     printf "%s\n\n" "$ICON_PATH"
     TOOLTIP_TXT=$(cat << EOF

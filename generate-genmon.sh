@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# bottom-panel
+
 CMDS=(
     "echo \"<txt>| _ </txt><txtclick>xdotool key ctrl+super+d</txtclick><tool>Toggle Show Desktop</tool>\""
     "echo \"<txt>| 🔔 </txt><txtclick>dunstctl history-pop</txtclick><tool>Notification History</tool>\""
@@ -44,3 +46,20 @@ for ((i = TOTAL - 1; i >= 0; i--)); do
     NUM=$((START_ID + i))
     echo "        <property name=\"plugin-${NUM}\" type=\"string\" value=\"genmon\" />"
 done
+
+# top-bar
+
+# E # 16 # SPRM
+# E # 17 # uptime
+# F # 101 # sep
+# F # 102 # sep
+# E # 18 # free-text
+# F # 103 # sep
+# E # 19 # empty-text
+# F # 104 # sep
+# E # 20 # free-text
+# F # 105 # sep
+# F # 106 # sep
+# E # 21 # WhatIsThis
+# E # 22 # WhoAmI
+# E # 23 # SuckMyClock

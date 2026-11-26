@@ -1,7 +1,7 @@
 #!/bin/sh
 
-$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh --clear-cache
-$HOME/.config/start-desktop.sh --kill
+setsid -f "$HOME/.config/start-desktop.sh" --kill >/dev/null 2>&1
+setsid -f "$HOME/willyhorizont.github.io/linux-debian-lxde/rofi-manage-apps.sh" --clear-cache >/dev/null 2>&1
 rm -rf ~/.config/xfce4/
 mkdir -p ~/.config/xfce4/
 cp -r ~/willyhorizont.github.io/linux-debian-lxde/.config/xfce4/* ~/.config/xfce4/
@@ -36,4 +36,4 @@ CMD_SET_CUR_DESKTOP='sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/set-
 grep -qxF "$CMD_SET_CUR_DESKTOP" ~/.profile || echo "$CMD_SET_CUR_DESKTOP" >> ~/.profile
 # update-desktop-database ~/.local/share/applications && sudo update-desktop-database /usr/share/applications
 
-sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/style-selector.sh --default"
+setsid -f "$HOME/willyhorizont.github.io/linux-debian-lxde/style-selector.sh"  --default >/dev/null 2>&1

@@ -1,0 +1,5 @@
+Command=sh -c '$HOME/willyhorizont.github.io/linux/SuckMyClock-c --pango --pref "| " --suff " " --mode xfce4-panel'
+UseLabel=0
+Text=(genmon)
+UpdatePeriod=1000
+Font=JetBrains Mono Bold 6

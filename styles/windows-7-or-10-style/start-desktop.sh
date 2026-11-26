@@ -52,7 +52,7 @@ pkill -9 -f ".*willyhorizont.*powr-indctr.*"                                    
 pkill -9 -f ".*willyhorizont.*SuckMyClock.*"                                                                                                          2>/dev/null
 pkill -9 -f ".*willyhorizont.*SPRM.*"                                                                                                                 2>/dev/null
 
-pkill -9 -f "tint2 -c .*tint2-top-bar" 2>/dev/null
+pkill -9 -f "tint2.*tint2-top-bar" 2>/dev/null
 while true; do
     if [ -z "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-top-bar" {print $0}' 2>/dev/null)" ]; then
         break
@@ -67,23 +67,16 @@ while true; do
     fi
     sleep 0.2
 done
+pkill -9 -x "xfconfd" 2>/dev/null
+pkill -9 -x "xss-lock" 2>/dev/null
 
-pkill -9 -f "tint2 -c .*tint2-bottom-panel" 2>/dev/null
+pkill -9 -f "tint2.*tint2-bottom-panel" 2>/dev/null
 while true; do
     if [ -z "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-bottom-panel" {print $0}' 2>/dev/null)" ]; then
         break
     fi
     sleep 0.2
 done
-
-openbox --reconfigure
-
-xset -dpms >/dev/null 2>&1 &
-xset s 240 240 >/dev/null 2>&1 &
-xset s noblank >/dev/null 2>&1 &
-xss-lock --transfer-sleep-lock -- xtrlock &
-
-(until pactl info >/dev/null 2>&1; do true; done && pactl set-source-mute @DEFAULT_SOURCE@ 1) >/dev/null 2>&1 &
 
 while [ "$#" -gt 0 ]; do
     case "$1" in
@@ -95,6 +88,15 @@ while [ "$#" -gt 0 ]; do
             ;;
     esac
 done
+
+openbox --reconfigure
+
+xset -dpms >/dev/null 2>&1 &
+xset s 240 240 >/dev/null 2>&1 &
+xset s noblank >/dev/null 2>&1 &
+xss-lock --transfer-sleep-lock -- xtrlock &
+
+(until pactl info >/dev/null 2>&1; do true; done && pactl set-source-mute @DEFAULT_SOURCE@ 1) >/dev/null 2>&1 &
 
 setsid -f xfce4-panel >/dev/null 2>&1
 while true; do
@@ -113,13 +115,13 @@ setsid -f xfce4-panel --restart >/dev/null 2>&1
 #     sleep 0.2
 # done
 
-tint2 -c "$HOME/willyhorizont.github.io/.config/tint2-top-bar" &
-while true; do
-    if [ -n "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-top-bar" {print $0}' 2>/dev/null)" ]; then
-        break
-    fi
-    sleep 0.2
-done
+# tint2 -c "$HOME/willyhorizont.github.io/.config/tint2-top-bar" &
+# while true; do
+#     if [ -n "$("$HOME/willyhorizont.github.io/linux/wmctrl-lxcapg.sh" | awk '$2 == "-1" && $7 == "tint2.Tint2" && $9 == "tint2-top-bar" {print $0}' 2>/dev/null)" ]; then
+#         break
+#     fi
+#     sleep 0.2
+# done
 
 case "$DESKTOP_SESSION" in
     LXDE|openbox)
