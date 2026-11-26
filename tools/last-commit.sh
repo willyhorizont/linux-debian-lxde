@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm Commit" || exi
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.10.6" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.10.7" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,15 +15,7 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-update rofi-windows-start-menu-mac-launchpad.sh, add open xfce4-popup-whiskermenu when possible;
-update tint2-top-bar, update penel_items, use top-bar-free-text.sh, fix SPRM interval;
-major update in gtk-3.0 gtk.css, change tooltip border color, change whiskermenu bg fg color, change docklike bg fg color, change whiskermenu tooltip border color, change docklike window_count color, change genmon bg fg color;
-update lxde openbox rc xml config, use new rofi-windows-start-menu-mac-launchpad.sh;
-update i3 config, use new rofi-windows-start-menu-mac-launchpad.sh;
-finish clone all tint2-top-bar tint2-bottom-panel indicator execp to xfce4-panel genmon;
-update xfce4-panel xml config, set top-bar bg fg color, set bottom-panel bg fg color, finish clone all tint2-top-bar tint2-bottom-panel indicator execp;
-update start-desktop.sh, kill xfconfd xss-lock after kill xfce4-panel, comment out tint2-top-bar and fully use new xfce4-panel intead;
-and some other minor updates and fixes;
+update xfce4-panel xml config, small geometry fix;
 
 [working on]
 create base i3 start-desktop.sh;
