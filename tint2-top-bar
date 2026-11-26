@@ -61,6 +61,7 @@ execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100
 execp_padding = 0 0
 execp_tooltip = 
+execp_markup = 1
 
 # --- E: Separator ---
 execp = new
@@ -80,6 +81,7 @@ execp_font = JetBrains Mono 6
 execp_font_color = #FF1493 100
 execp_padding = 0 0
 execp_tooltip = 
+execp_markup = 1
 
 # --- E: WhatIsThis ---
 execp = new

@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm Commit" || exi
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.10.3" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.10.5" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,7 +15,12 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-small fix in start-desktop.sh;
+-- add Pango Markup --;
+-- add --pango to --indicator *indctr --;
+-- add --pango to tint2 --;
+-- execp_markup = 1 to tint2 --;
+update tint2-top-bar, use new --pango, add execp_markup;
+update tint2-bottom-panel, use new --pango, add execp_markup;
 
 [working on]
 create base i3 start-desktop.sh;
@@ -57,14 +62,10 @@ try LXPanel;
 try XFCE4 Panel (xfce4-genmon-plugin <txt> + <tool>content</tool> sed 's/&/&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' + <txtclick>cmd_click</txtclick> (or <click> for icon));
 try AwesomeWM (awful.widget.watch + awful.tooltip + widget:buttons(...));
 try Qtile (GenPollText / GenPollCommand + qtile-extras TooltipMixin + mouse_callbacks={'Button1': lazy.spawn(...)});
-add --pango to --indicator *indctr;
 fix screenshot, maybe try flameshot scrot i3-scrot;
 add screen recorder, maybe obs screen recorder via flatpak;
 add /bin/bash to shell prompt, maybe add distro and session also;
 add i3 openbox lxde logo to wallpaper;
-add Pango Markup;
-add --pango to tint2;
-execp_markup = 1 to tint2;
 search xtrlock alternative;
 on idle autolock show Windows Update or Windows BSOD;
 
