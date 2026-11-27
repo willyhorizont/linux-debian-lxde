@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm Commit" || exi
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.10.7" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.10.8" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,7 +15,20 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
-update xfce4-panel xml config, small geometry fix;
+-- try to add background image in pcmanfm -- canceled because it turns out it can't do that;
+-- set pcmanfm background image -- canceled because it turns out it can't do that;
+-- replace pcmanfm with thunar for background image -- canceled because it turns out it can't do that;
+-- set thunar background image -- canceled because it turns out it can't do that;
+-- autostart thunar ~/Desktop -- canceled because it turns out it can't do that;
+--  desktop icon in i3, try idesk again -- idesk is static, but found caja which is the best for this;
+add caja to .windowignore;
+add caja.ini;
+update README.md, add caja install command, caja gsettings set and caja dconf write;
+update wrkspc-indctr.sh, ad,d --desktop-mode to open caja when cur_ws no wins open and close caja when cur_ws have any wins open;
+update gtk-3.0 gtk.css, add caja hide menubar and scrollbar rule;
+update i3 toggle-show-desktop.sh, small optimization;
+update i3 config, remove pactl mute, remove xset no screen blank, remove xss-lock transfer-sleep-lock, add caja on startup to act as desktop;
+update start-desktop.sh, add new wrkspc-indctr.sh --desktop-mode for i3;
 
 [working on]
 create base i3 start-desktop.sh;
@@ -67,12 +80,6 @@ on idle autolock show Windows Update or Windows BSOD;
 [TODO i3 #2]
 [TODO i3 #3]
 tinkering with i3gaps;
-try to add background image in pcmanfm;
-set pcmanfm background image;
-replace pcmanfm with thunar;
-set thunar background image;
-autostart thunar ~/Desktop;
-try desktop icon in i3, try idesk again;
 
 [TODO lxde openbox #2]
 [TODO lxde openbox #3]

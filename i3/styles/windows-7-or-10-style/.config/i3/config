@@ -61,11 +61,11 @@ exec --no-startup-id dunst
 
 exec --no-startup-id hsetroot -fill ~/willyhorizont.github.io/linux/wallpapers/pexels-arina-dmitrieva-66352626-11066411-1.jpg
 
+exec --no-startup-id sh -c 'gio set -t string "$HOME/Desktop" metadata::folder-background-image "file://$HOME/willyhorizont.github.io/linux/wallpapers/pexels-arina-dmitrieva-66352626-11066411-1.jpg" && gio set -t string "$HOME/Desktop" metadata::caja-icon-view-auto-layout "false" && gio set -t string "$HOME/Desktop" metadata::caja-icon-view-lock-icons-position "false" && gio set -t string "$HOME/Desktop" metadata::caja-icon-view-tighter-layout "true" && caja --no-desktop "$HOME/Desktop"'
+
 exec_always --no-startup-id ~/willyhorizont.github.io/linux/blu-lght-fltr.sh
 
 # exec_always --no-startup-id autotiling
-
-exec --no-startup-id sh -c 'until pactl info >/dev/null 2>&1; do true; done && pactl set-source-mute @DEFAULT_SOURCE@ 1' >/dev/null 2>&1 &
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -73,10 +73,6 @@ exec --no-startup-id sh -c 'until pactl info >/dev/null 2>&1; do true; done && p
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec_always --no-startup-id xset -dpms
-exec_always --no-startup-id xset s 240 240
-exec_always --no-startup-id xset s noblank
-exec --no-startup-id xss-lock --transfer-sleep-lock -- xtrlock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.

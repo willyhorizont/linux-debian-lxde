@@ -23,6 +23,7 @@ esac
 
 IS_MGR_MODE=false
 IS_NMBRZ_MODE=false
+IS_DSKTP_MODE=false
 SHOW_WINS=false
 REVERSE_ORDER=false
 USE_PANGO=false
@@ -39,6 +40,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --nmbrz-mode)
             IS_NMBRZ_MODE=true
+            shift
+            ;;
+        --desktop-mode)
+            IS_DSKTP_MODE=true
             shift
             ;;
         --shw-wins)
@@ -327,6 +332,25 @@ render_output() {
 }
 
 handle_change() {
+    if [ "$IS_DSKTP_MODE" = true ]; then
+        local cur_ws_i
+        local cur_ws_wids
+        cur_ws_i=$(xdotool get_desktop 2>/dev/null)
+        cur_ws_wids=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk -v ws="$cur_ws_i" '$2 == ws {print $1}')
+        if [ -n "$cur_ws_wids" ]; then
+            pkill -9 -x "caja" 2>/dev/null
+        elif ! pgrep -x "caja" >/dev/null 2>&1; then
+            case "$DESKTOP_SESSION" in
+                i3)
+                    i3-msg "exec --no-startup-id caja --no-desktop ~/Desktop"
+                    ;;
+                *)
+                    setsid -f caja --no-desktop ~/Desktop >/dev/null 2>&1
+                    ;;
+            esac
+        fi
+        return 0
+    fi
     if [ "$IS_NMBRZ_MODE" = true ]; then
         WS_NMS_LEN=$(xdotool get_num_desktops 2>/dev/null)
         python3 "$HOME/willyhorizont.github.io/linux/numrz-wrkspc.py" "${WS_NMS_LEN:-1}"
@@ -358,7 +382,7 @@ case "$DESKTOP_SESSION" in
         done
         ;;
     i3)
-        i3-msg -t subscribe -m '["workspace"]' 2>/dev/null | while read -r _; do
+        i3-msg -t subscribe -m '["workspace", "window"]' 2>/dev/null | while read -r _; do
             handle_change
         done
         ;;

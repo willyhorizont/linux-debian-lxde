@@ -133,6 +133,7 @@ case "$DESKTOP_SESSION" in
         setsid -f "$HOME/willyhorizont.github.io/linux-debian-lxde/wrkspc-indctr.sh" --mgr-mode --nmbrz-mode >/dev/null 2>&1
         ;;
     i3)
+        setsid -f "$HOME/willyhorizont.github.io/linux-debian-lxde/wrkspc-indctr.sh" --desktop-mode >/dev/null 2>&1
         ;;
     *)
         ;;

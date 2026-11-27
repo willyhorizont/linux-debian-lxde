@@ -93,3 +93,36 @@ tooltip decoration {
     background-color: #000000;
     color: #FFFFFF;
 }
+
+.caja-navigation-window menubar {
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    opacity: 0;
+    margin-top: -25px;
+}
+.caja-navigation-window scrollbar.vertical,
+.caja-navigation-window scrollbar.vertical slider,
+.caja-navigation-window scrollbar.vertical trough,
+.caja-navigation-window scrollbar.vertical button {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    margin-right: -4px;
+    border: none;
+    opacity: 0;
+    background: transparent;
+}
+.caja-navigation-window scrollbar.horizontal,
+.caja-navigation-window scrollbar.horizontal slider,
+.caja-navigation-window scrollbar.horizontal trough,
+.caja-navigation-window scrollbar.horizontal button {
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    margin-bottom: -4px;
+    border: none;
+    opacity: 0;
+    background: transparent;
+}

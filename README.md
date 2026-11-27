@@ -111,6 +111,55 @@ sudo apt install -y --no-install-recommends \
     bluez-tools \
     ""
 
+# Desktop
+sudo apt install -y --no-install-recommends caja
+
+# Setup Desktop
+gsettings list-recursively org.mate.background
+gsettings set org.mate.background show-desktop-icons false
+gsettings set org.mate.caja.preferences always-use-browser true
+gsettings set org.mate.caja.preferences default-folder-viewer 'icon-view'
+gsettings set org.mate.caja.preferences show-hidden-files true
+gsettings set org.mate.caja.preferences click-policy 'double'
+gsettings set org.mate.caja.preferences always-use-browser true
+gsettings set org.mate.caja.preferences executable-text-activation 'ask'
+gsettings set org.mate.caja.preferences confirm-trash true
+gsettings set org.mate.caja.preferences confirm-move-to-trash false
+gsettings set org.mate.caja.preferences enable-delete false
+gsettings set org.mate.caja.preferences show-backup-files false
+gsettings set org.mate.media-handling autorun-never true
+gsettings set org.mate.media-handling automount-open false
+gsettings set org.mate.caja.window-state start-with-toolbar false
+gsettings set org.mate.caja.window-state start-with-sidebar false
+gsettings set org.mate.caja.window-state start-with-location-bar false
+gsettings set org.mate.caja.window-state start-with-status-bar false
+# gsettings set org.mate.caja.window-state start-with-extra-pane false
+gsettings list-recursively org.mate.background
+gio info ~/Desktop | grep metadata::
+dconf dump /org/mate/caja/
+dconf write /org/mate/caja/icon-view/default-use-tighter-layout false
+dconf write /org/mate/caja/list-view/default-column-order "['name', 'size', 'type', 'date_modified', 'date_accessed', 'date_created', 'extension', 'group', 'where', 'mime_type', 'octal_permissions', 'owner', 'permissions', 'selinux_context', 'size_on_disk']"
+dconf write /org/mate/caja/list-view/default-visible-columns "['name', 'size', 'type', 'date_modified']"
+dconf write /org/mate/caja/preferences/always-use-browser true
+dconf write /org/mate/caja/preferences/background-color "''"
+dconf write /org/mate/caja/preferences/background-set false
+dconf write /org/mate/caja/preferences/background-uri "'file://$HOME/willyhorizont.github.io/linux/wallpapers/pexels-arina-dmitrieva-66352626-11066411-1.jpg'"
+dconf write /org/mate/caja/preferences/click-policy "'double'"
+dconf write /org/mate/caja/preferences/confirm-move-to-trash false
+dconf write /org/mate/caja/preferences/confirm-trash true
+dconf write /org/mate/caja/preferences/default-folder-viewer "'icon-view'"
+dconf write /org/mate/caja/preferences/enable-delete false
+dconf write /org/mate/caja/preferences/executable-text-activation "'ask'"
+dconf write /org/mate/caja/preferences/show-backup-files false
+dconf write /org/mate/caja/preferences/show-hidden-files true
+dconf write /org/mate/caja/window-state/start-with-location-bar false
+dconf write /org/mate/caja/window-state/start-with-sidebar false
+dconf write /org/mate/caja/window-state/start-with-status-bar false
+dconf write /org/mate/caja/window-state/start-with-toolbar false
+dconf dump /org/mate/caja/
+cat "$HOME/willyhorizont.github.io/linux-debian-lxde/caja/caja.ini" | dconf load /org/mate/caja/
+dconf load /org/mate/caja/ < "$HOME/willyhorizont.github.io/linux-debian-lxde/caja/caja.ini"
+
 # Panel
 sudo apt install -y --no-install-recommends tint2
 sudo apt install -y --no-install-recommends \
@@ -207,6 +256,7 @@ dconf dump /net/launchpad/plank/
 # or
 
 cat "$HOME/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/plank.ini" | dconf load /net/launchpad/plank/docks/
+dconf load /net/launchpad/plank/docks/ < "$HOME/willyhorizont.github.io/linux-debian-lxde/styles/windows-7-or-10-style/plank.ini"
 
 dconf read /net/launchpad/plank/enabled-docks
 dconf write /net/launchpad/plank/enabled-docks "['dock1']"

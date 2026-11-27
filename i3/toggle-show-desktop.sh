@@ -10,13 +10,10 @@ CUR_WS_I=$(xdotool get_desktop 2>/dev/null)
 CUR_WS_WIDS=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk -v ws="$CUR_WS_I" '$2 == ws {print $1}')
 
 if [ -z "$CUR_WS_WIDS" ]; then
-    if [ -f "$STAT_FILE" ]; then
-        LST_WS=$(cat "$STAT_FILE")
-        if [ -n "$LST_WS" ]; then
-            i3-msg workspace "$LST_WS"
-        else
-            "$HOME/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh" --prev --i3-mode
-        fi
+    LST_WS=$(cat "$STAT_FILE" 2>/dev/null)
+    rm -f "$STAT_FILE"
+    if [ -n "$LST_WS" ] && i3-msg -t get_workspaces | jq -e --arg ws "$LST_WS" 'any(.[]; .name == $ws)' >/dev/null 2>&1; then
+        i3-msg workspace "$LST_WS"
     else
         "$HOME/willyhorizont.github.io/linux-debian-lxde/wrkspc-mgr.sh" --prev --i3-mode
     fi
