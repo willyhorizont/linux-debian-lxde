@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm Commit" || exi
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.10.10" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.10.11" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -18,6 +18,19 @@ M="
 update notes;
 
 [working on]
+create xfce4-terminal config;
+create tilix config;
+create tilda config;
+create kitty config;
+create thunar config;
+create caja config;
+create mousepad config;
+create pluma config;
+create l3afpad config;
+add text editor to fav apps;
+update openbox window rule for terminal emulator and text editor;
+replace pcmanfm with thunar or caja;
+replace lxterminal with xfce4-terminal or tilix;
 add fastfetch on click avatar whiskermenu;
 change caja .desktop icon;
 create lock.sh, open idle win on lock kb press in lxde openbox;
