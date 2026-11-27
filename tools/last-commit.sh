@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm Commit" || exi
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.10.8" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.10.9" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,22 +15,21 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
--- try to add background image in pcmanfm -- canceled because it turns out it can't do that;
--- set pcmanfm background image -- canceled because it turns out it can't do that;
--- replace pcmanfm with thunar for background image -- canceled because it turns out it can't do that;
--- set thunar background image -- canceled because it turns out it can't do that;
--- autostart thunar ~/Desktop -- canceled because it turns out it can't do that;
---  desktop icon in i3, try idesk again -- idesk is static, but found caja which is the best for this;
-add caja to .windowignore;
-add caja.ini;
-update README.md, add caja install command, caja gsettings set and caja dconf write;
-update wrkspc-indctr.sh, ad,d --desktop-mode to open caja when cur_ws no wins open and close caja when cur_ws have any wins open;
-update gtk-3.0 gtk.css, add caja hide menubar and scrollbar rule;
-update i3 toggle-show-desktop.sh, small optimization;
-update i3 config, remove pactl mute, remove xset no screen blank, remove xss-lock transfer-sleep-lock, add caja on startup to act as desktop;
-update start-desktop.sh, add new wrkspc-indctr.sh --desktop-mode for i3;
+remove caja from .windowignore;
+update i3 toggle-show-desktop.sh, add caja filter;
+update i3 config, add caja rule remove border;
+update wrkspc-indctr.sh, close caja in other ws, close caja in cur ws, open caja in cur ws;
+update xfce4-panel xml config, add separator between docklike and ws, add separator between whiskermenu and docklike;
 
 [working on]
+create lock.sh, open idle win on lock kb press in lxde openbox;
+create panic.sh, cover screen with windows bsod or windows update;
+create control-center.sh;
+create lock-mgr.sh;
+create windows-control-panel.sh;
+try running xpenguins on i3 container;
+try running xpenguins on caja;
+tinkering with lightdm, theming, session position;
 create base i3 start-desktop.sh;
 create base i3 config;
 create base lxde openbox rc xml config;
@@ -38,6 +37,7 @@ create base lxde openbox start-desktop.sh;
 create base lxde openbox autostart;
 rename styles windows-7-or-10-style to tint2;
 rename i3 styles windows-7-or-10-style to tint2;
+fix xfce4-panel --quit and --restart if still buggy;
 add styles xfce4-panel;
 add i3 styles xfce4-panel;
 update wrkspc-indctr.sh, add --mode xfce4-panel <txt></txt>\n<txtclick></txtclick>\n<tool></tool>;
@@ -57,6 +57,7 @@ add icon to rofi-fav-apps.sh;
 create xalendar.py holiday-calendar.py;
 try qtile (EWMH, default panel have my 3 req feature);
 try awesomewm (EWMH, default panel have my 3 req feature);
+try notionwm, sudo apt install notion;
 try herbstluftwm (EWMH);
 try spectrwm (Not EWMH);
 try bspwm (Not EWMH, need sxhkd);
@@ -70,6 +71,10 @@ try LXPanel;
 try XFCE4 Panel (xfce4-genmon-plugin <txt> + <tool>content</tool> sed 's/&/&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' + <txtclick>cmd_click</txtclick> (or <click> for icon));
 try AwesomeWM (awful.widget.watch + awful.tooltip + widget:buttons(...));
 try Qtile (GenPollText / GenPollCommand + qtile-extras TooltipMixin + mouse_callbacks={'Button1': lazy.spawn(...)});
+install flatpak;
+install flameshot;
+install obs via flatpak;
+try pavucontrol;
 fix screenshot, maybe try flameshot scrot i3-scrot;
 add screen recorder, maybe obs screen recorder via flatpak;
 add /bin/bash to shell prompt, maybe add distro and session also;
@@ -91,6 +96,8 @@ try more bottom panel combo;
 try panels again to see features;
 find panel that have can communicate via some signal;
 find panel that have can communicate via some signal, maybe try dwmblocks xsetroot dwmblocks-async i3blocks;
+try vertical panel only for open wins in cur ws;
+try create vertical panel only for open winds in cur ws using ElKowar's Wacky Widgets;
 try tint2 taskbar_mode multi_desktop pager;
 try sxhkd sxhkdrc;
 [TODO #3]

@@ -7,7 +7,7 @@ flock -n 200 || exit 1
 STAT_FILE="/tmp/i3-lst-actv-ws-b4-togl-shw-dsktp.state"
 
 CUR_WS_I=$(xdotool get_desktop 2>/dev/null)
-CUR_WS_WIDS=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk -v ws="$CUR_WS_I" '$2 == ws {print $1}')
+CUR_WS_WIDS=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk -v ws="$CUR_WS_I" '$2 == ws && $7 != "caja.Caja" {print $1}')
 
 if [ -z "$CUR_WS_WIDS" ]; then
     LST_WS=$(cat "$STAT_FILE" 2>/dev/null)

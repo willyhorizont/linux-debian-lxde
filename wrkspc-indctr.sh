@@ -334,12 +334,27 @@ render_output() {
 handle_change() {
     if [ "$IS_DSKTP_MODE" = true ]; then
         local cur_ws_i
-        local cur_ws_wids
+        local open_wins_data
+        local cur_ws_wins
+        local wid_desktop_in_cur_ws
+        local wids_desktop_in_other_ws
         cur_ws_i=$(xdotool get_desktop 2>/dev/null)
-        cur_ws_wids=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh" | awk -v ws="$cur_ws_i" '$2 == ws {print $1}')
-        if [ -n "$cur_ws_wids" ]; then
-            pkill -9 -x "caja" 2>/dev/null
-        elif ! pgrep -x "caja" >/dev/null 2>&1; then
+        open_wins_data=$("$HOME/willyhorizont.github.io/linux/get-open-wins.sh")
+        cur_ws_wins=$(echo "$open_wins_data" | awk -v ws="$cur_ws_i" '$2 == ws && $7 != "caja.Caja" {print $1}')
+        wids_desktop_in_other_ws=$(echo "$open_wins_data" | awk -v ws="$cur_ws_i" '$2 != ws && $7 == "caja.Caja" {print $1}')
+        if [ -n "$wids_desktop_in_other_ws" ]; then
+            while read -r wid; do
+                [ -n "$wid" ] && xdotool windowclose "$wid" 2>/dev/null
+            done <<< "$wids_desktop_in_other_ws"
+        fi
+        wid_desktop_in_cur_ws=$(echo "$open_wins_data" | awk -v ws="$cur_ws_i" '$2 == ws && $7 == "caja.Caja" {print $1}')
+        if [ -n "$cur_ws_wins" ]; then
+            if [ -n "$wid_desktop_in_cur_ws" ]; then
+                while read -r wid; do
+                    [ -n "$wid" ] && xdotool windowclose "$wid" 2>/dev/null
+                done <<< "$wid_desktop_in_cur_ws"
+            fi
+        elif [ -z "$wid_desktop_in_cur_ws" ]; then
             case "$DESKTOP_SESSION" in
                 i3)
                     i3-msg "exec --no-startup-id caja --no-desktop ~/Desktop"
@@ -378,11 +393,16 @@ printf "%s" "$TOOLTIP_TXT" 1>&2
 case "$DESKTOP_SESSION" in
     LXDE|openbox)
         xprop -root -spy _NET_CURRENT_DESKTOP _NET_NUMBER_OF_DESKTOPS | while read -r _; do
+            sleep 0.2
             handle_change
         done
         ;;
     i3)
-        i3-msg -t subscribe -m '["workspace", "window"]' 2>/dev/null | while read -r _; do
+        i3-msg -t subscribe -m '["workspace", "window"]' 2>/dev/null | while read -r event; do
+            if echo "$event" | jq -e '.container.window_properties.class == "Caja"' >/dev/null 2>&1; then
+                continue
+            fi
+            sleep 0.2
             handle_change
         done
         ;;
