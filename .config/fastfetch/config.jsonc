@@ -125,8 +125,11 @@
         {
             "key": "Terminal Emulator",
             "type": "terminal",
-            "format": "lxterminal",
+            "format": "xfce4-terminal",
+            // "format": "tilix",
             // "format": "alacritty",
+            // "format": "kitty",
+            // "format": "tilda",
         },
 
         {

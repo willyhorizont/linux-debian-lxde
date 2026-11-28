@@ -239,23 +239,23 @@
     <!-- open terminal -->
     <keybind key="W-Return">
       <action name="Execute">
-        <command>lxterminal --geometry=88x28 --working-directory=~</command>
+        <command>xfce4-terminal</command>
       </action>
     </keybind>
     <keybind key="C-A-t">
       <action name="Execute">
-        <command>lxterminal --geometry=88x28 --working-directory=~</command>
+        <command>xfce4-terminal</command>
       </action>
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>lxterminal --geometry=88x28 --working-directory=~</command>
+        <command>xfce4-terminal</command>
       </action>
     </keybind>
     <!-- Open File Manager -->
     <keybind key="W-e">
       <action name="Execute">
-        <command>pcmanfm</command>
+        <command>thunar</command>
       </action>
     </keybind>
     <!-- open Windows Start Menu / Mac Launchpad / Linux xfce4-popup-whiskermenu or jgmenu or dmenu or rofi -->
@@ -303,12 +303,12 @@
     <!-- open Windows Task Manager / Mac Activity Monitor / Linux btop -->
     <keybind key="C-S-Escape">
       <action name="Execute">
-        <command>lxterminal --geometry=88x28 --working-directory=~ -e btop</command>
+        <command>xfce4-terminal -e btop</command>
       </action>
     </keybind>
     <keybind key="W-A-Escape">
       <action name="Execute">
-        <command>lxterminal --geometry=88x28 --working-directory=~ -e btop</command>
+        <command>xfce4-terminal -e btop</command>
       </action>
     </keybind>
     <!-- toggle show dekstop -->
@@ -789,7 +789,7 @@
     <!-- open Windows File Explorer / Mac Finder / Linux Thunar or PCManFM -->
     <keybind key="W-e">
       <action name="Execute">
-        <command>pcmanfm</command>
+        <command>thunar</command>
       </action>
     </keybind>
     <!--keybindings for LXPanel -->
@@ -1316,7 +1316,7 @@
             <y>center</y>
         </position>
     </application>
-    <application class="Mousepad">
+    <application class="XTerm">
         <focus>yes</focus>
         <position force="yes">
             <x>center</x>
@@ -1330,14 +1330,14 @@
             <y>center</y>
         </position>
     </application>
-    <application class="XTerm">
+    <application class="Xfce4-terminal">
         <focus>yes</focus>
         <position force="yes">
             <x>center</x>
             <y>center</y>
         </position>
     </application>
-    <application class="Lxterminal">
+    <application class="Tilix">
         <focus>yes</focus>
         <position force="yes">
             <x>center</x>
@@ -1351,7 +1351,35 @@
             <y>center</y>
         </position>
     </application>
-    <application class="Pcmanfm">
+    <application class="kitty">
+        <focus>yes</focus>
+        <position force="yes">
+            <x>center</x>
+            <y>center</y>
+        </position>
+    </application>
+    <application class="Thunar">
+        <focus>yes</focus>
+        <position force="yes">
+            <x>center</x>
+            <y>center</y>
+        </position>
+    </application>
+    <application class="Caja">
+        <focus>yes</focus>
+        <position force="yes">
+            <x>center</x>
+            <y>center</y>
+        </position>
+    </application>
+    <application class="Mousepad">
+        <focus>yes</focus>
+        <position force="yes">
+            <x>center</x>
+            <y>center</y>
+        </position>
+    </application>
+    <application class="Pluma">
         <focus>yes</focus>
         <position force="yes">
             <x>center</x>

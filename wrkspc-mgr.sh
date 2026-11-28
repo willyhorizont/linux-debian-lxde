@@ -28,6 +28,7 @@ switch_workspace() {
     fi
     case "$DESKTOP_SESSION" in
         LXDE|openbox)
+            "$HOME/willyhorizont.github.io/linux-debian-lxde/unshow-desktop.sh"
             local ws_nms_len
             local trgt_ws_i
             trgt_ws_i=$((trgt_ws_nm - 1))

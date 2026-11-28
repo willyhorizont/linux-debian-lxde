@@ -36,4 +36,5 @@ CMD_SET_CUR_DESKTOP='sh -c "$HOME/willyhorizont.github.io/linux-debian-lxde/set-
 grep -qxF "$CMD_SET_CUR_DESKTOP" ~/.profile || echo "$CMD_SET_CUR_DESKTOP" >> ~/.profile
 # update-desktop-database ~/.local/share/applications && sudo update-desktop-database /usr/share/applications
 
+xdg-mime default thunar.desktop inode/directory
 setsid -f "$HOME/willyhorizont.github.io/linux-debian-lxde/style-selector.sh"  --default >/dev/null 2>&1

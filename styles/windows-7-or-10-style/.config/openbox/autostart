@@ -4,8 +4,12 @@ picom --backend=xrender --daemon --no-fading-openclose --no-fading-destroyed-arg
 
 dunst &
 
-pcmanfm --desktop --profile LXDE &
+hsetroot -fill ~/willyhorizont.github.io/linux/wallpapers/pexels-arina-dmitrieva-66352626-11066411-1.jpg &
 
-bash -c "$HOME/willyhorizont.github.io/linux/blu-lght-fltr.sh" >/dev/null 2>&1 &
+setsid -f "$HOME/willyhorizont.github.io/linux-debian-lxde/setup-desktop.sh" >/dev/null 2>&1
 
-bash -c "$HOME/.config/start-desktop.sh" >/dev/null 2>&1 &
+caja --force-desktop &
+
+setsid -f "$HOME/willyhorizont.github.io/linux/blu-lght-fltr.sh" >/dev/null 2>&1
+
+setsid -f "$HOME/.config/start-desktop.sh" >/dev/null 2>&1

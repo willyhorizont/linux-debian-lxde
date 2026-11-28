@@ -128,6 +128,7 @@ fetch_workspaces() {
                     xdotool set_num_desktops "$ws_nms_len_nu"
                     ws_nms_len="$ws_nms_len_nu"
                 fi
+                [ "$IS_MGR_MODE" = true ] && return 0
                 local start_loop
                 local end_loop
                 local step
@@ -366,11 +367,12 @@ handle_change() {
         fi
         return 0
     fi
+    "$HOME/willyhorizont.github.io/linux-debian-lxde/unshow-desktop.sh"
+    fetch_workspaces || return 0
     if [ "$IS_NMBRZ_MODE" = true ]; then
         WS_NMS_LEN=$(xdotool get_num_desktops 2>/dev/null)
         python3 "$HOME/willyhorizont.github.io/linux/numrz-wrkspc.py" "${WS_NMS_LEN:-1}"
     fi
-    fetch_workspaces || return 0
     [ "$IS_MGR_MODE" = true ] && return 0
     build_visible_items
     render_output

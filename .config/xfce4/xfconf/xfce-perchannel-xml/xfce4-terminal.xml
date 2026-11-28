@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<channel name="xfce4-terminal" version="1.0">
+    <property name="color-foreground" type="string" value="#CCFF00" />
+    <property name="color-palette" type="string" value="#000000;#FF1493;#FF1493;#00ADD8;#CCFF00;#CCFF00;#FF1493;#00ADD8;#00ADD8;#FF1493;#FF1493;#FF1493;#00ADD8;#FF1493;#CCFF00;#FFFFFF;" />
+    <property name="title-initial" type="string" value="Xfce4 Terminal" />
+    <property name="use-default-working-dir" type="bool" value="true" />
+    <property name="default-working-dir" type="string" value="~" />
+    <property name="scrolling-lines" type="uint" value="2000" />
+    <property name="scrolling-bar" type="string" value="TERMINAL_SCROLLBAR_NONE" />
+    <property name="misc-cursor-shape" type="string" value="TERMINAL_CURSOR_SHAPE_IBEAM" />
+    <property name="misc-cursor-blinks" type="bool" value="true" />
+    <property name="misc-show-unsafe-paste-dialog" type="bool" value="false" />
+    <property name="font-name" type="string" value="JetBrains Mono 10" />
+    <property name="misc-menubar-default" type="bool" value="false" />
+    <property name="misc-default-geometry" type="string" value="88x28" />
+    <property name="tab-activity-color" type="string" value="#00ADD8" />
+    <property name="misc-tab-close-middle-click" type="bool" value="false" />
+    <property name="scrolling-on-output" type="bool" value="false" />
+</channel>

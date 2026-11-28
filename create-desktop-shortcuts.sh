@@ -108,13 +108,11 @@ modify_desktop_shorcuts() {
 }
 
 for KV in \
-    'debian-xterm.desktop;  s|^Terminal=.*|Terminal=false|; s|^Exec=.*|Exec=xterm -bc -uc -u8 -fa Monospace -fs 8 -geometry 88x28|' \
-    'lxterminal.desktop;    s|^Terminal=.*|Terminal=false|; s|^Exec=.*|Exec=lxterminal --geometry=88x28 --working-directory=$HOME|' \
-    'rxvt-unicode.desktop;  s|^Terminal=.*|Terminal=false|; s|^Icon=.*|Icon=utilities-terminal|; s|^Name=.*|Name=URxvt|; s|^Exec=.*|Exec=urxvt -bc -uc -pt root -fn "xft:Monospace:size=8" -geometry 88x28|; s|^OnlyShowIn=.*||g' \
-    'Alacritty.desktop;     s|^Terminal=.*|Terminal=false|; s|^Icon=.*|Icon=utilities-terminal|' \
-    'btop.desktop;          s|^Terminal=.*|Terminal=false|; s|^Exec=.*|Exec=lxterminal --geometry=88x28 --working-directory=$HOME -e btop|' \
-    'cmatrix.desktop;       s|^Terminal=.*|Terminal=false|; s|^Exec=.*|Exec=xterm -bc -uc -u8 -fa Monospace -fs 8 -geometry 88x28 -xrm "XTerm*color2: #008000" -xrm "XTerm*color7: #FFFFFF" -e cmatrix -a|' \
-    'fresh.desktop;         s|^Terminal=.*|Terminal=false|; s|^Exec=.*|Exec=alacritty --option window.dimensions.columns=88 window.dimensions.lines=28 -e fresh %F|' \
+    'rxvt-unicode.desktop;  s|^Icon=.*|Icon=utilities-terminal|; s|^Name=.*|Name=URxvt|; s|^OnlyShowIn=.*||g' \
+    'Alacritty.desktop;     s|^Icon=.*|Icon=utilities-terminal|' \
+    'btop.desktop;          s|^Exec=.*|Exec=xfce4-terminal -e btop|' \
+    'cmatrix.desktop;       s|^Exec=.*|Exec=xterm -xrm "XTerm*color2: #008000" -xrm "XTerm*color7: #FFFFFF" -e cmatrix -a|' \
+    'fresh.desktop;         s|^Exec=.*|Exec=xfce4-terminal -e fresh %F|' \
 ; do
     FILE_NAME="${KV%%;*}"
     RAW_SED="${KV#*;}"

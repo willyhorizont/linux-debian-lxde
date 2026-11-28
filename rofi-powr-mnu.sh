@@ -45,7 +45,7 @@ ALL_ACTIONS=(
     ["suspend"]="systemctl suspend"
     ["logout"]="$CMD_LOGOUT"
     ["lock"]="$CMD_LOCK"
-    ["btop"]="lxterminal --geometry=88x28 --working-directory=~ -e btop"
+    ["btop"]="xfce4-terminal -e btop"
 )
 
 declare -A ALL_LABELS

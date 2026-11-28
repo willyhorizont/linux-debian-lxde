@@ -118,11 +118,11 @@ sudo apt install -y --no-install-recommends caja
 gsettings list-recursively org.mate.background
 gsettings set org.mate.background show-desktop-icons false
 gsettings set org.mate.caja.preferences always-use-browser true
-gsettings set org.mate.caja.preferences default-folder-viewer 'icon-view'
+gsettings set org.mate.caja.preferences default-folder-viewer "'icon-view'"
 gsettings set org.mate.caja.preferences show-hidden-files true
-gsettings set org.mate.caja.preferences click-policy 'double'
+gsettings set org.mate.caja.preferences click-policy "'double'"
 gsettings set org.mate.caja.preferences always-use-browser true
-gsettings set org.mate.caja.preferences executable-text-activation 'ask'
+gsettings set org.mate.caja.preferences executable-text-activation "'ask'"
 gsettings set org.mate.caja.preferences confirm-trash true
 gsettings set org.mate.caja.preferences confirm-move-to-trash false
 gsettings set org.mate.caja.preferences enable-delete false
@@ -233,7 +233,7 @@ dconf dump /net/launchpad/plank/
 dconf write /net/launchpad/plank/docks/dock1/alignment "'center'"
 dconf write /net/launchpad/plank/docks/dock1/auto-pinning true
 dconf write /net/launchpad/plank/docks/dock1/current-workspace-only false
-dconf write /net/launchpad/plank/docks/dock1/dock-items "['lxterminal.dockitem', 'pcmanfm.dockitem', 'firefox-esr.dockitem', 'brave-browser.dockitem', 'vivaldi-stable.dockitem', 'chromium.dockitem', 'com.microsoft.VSCode.dockitem']"
+dconf write /net/launchpad/plank/docks/dock1/dock-items "['xfce4-terminal.dockitem', 'thunar.dockitem', 'firefox-esr.dockitem', 'brave-browser.dockitem', 'vivaldi-stable.dockitem', 'chromium.dockitem', 'com.microsoft.VSCode.dockitem']"
 dconf write /net/launchpad/plank/docks/dock1/hide-delay 0
 dconf write /net/launchpad/plank/docks/dock1/hide-mode "'none'"
 dconf write /net/launchpad/plank/docks/dock1/icon-size 36
@@ -341,7 +341,7 @@ cat << 'EOF' > ~/.local/share/applications/screensavr-mgr.desktop
 [Desktop Entry]
 Name=screensavr-mgr
 Comment=screensavr-mgr
-Exec=lxterminal --geometry=88x28 --working-directory=$HOME -e ~/willyhorizont.github.io/linux/screensavr-mgr.sh
+Exec=xfce4-terminal -e ~/willyhorizont.github.io/linux/screensavr-mgr.sh
 Terminal=false
 Type=Application
 Icon=system-lock-screen

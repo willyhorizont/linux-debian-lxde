@@ -46,8 +46,8 @@ else
     fi
 
     case "$APP_ORDER" in
-        1) FILE_NAME="lxterminal" ;;
-        2) FILE_NAME="pcmanfm" ;;
+        1) FILE_NAME="xfce4-terminal" ;;
+        2) FILE_NAME="thunar" ;;
         3) FILE_NAME="firefox-esr" ;;
         4) FILE_NAME="brave-browser" ;;
         5) FILE_NAME="vivaldi-stable" ;;
@@ -57,8 +57,8 @@ else
 fi
 
 declare -A APP_WM_CLASS
-APP_WM_CLASS["lxterminal"]="Lxterminal"
-APP_WM_CLASS["pcmanfm"]="Pcmanfm"
+APP_WM_CLASS["xfce4-terminal"]="Xfce4-terminal"
+APP_WM_CLASS["thunar"]="Thunar"
 APP_WM_CLASS["firefox-esr"]="firefox-esr"
 APP_WM_CLASS["brave-browser"]="Brave-browser"
 APP_WM_CLASS["vivaldi-stable"]="Vivaldi-stable"
@@ -67,8 +67,8 @@ APP_WM_CLASS["com.microsoft.VSCode"]="VSCode"
 APP_WM_CLASS["rofi-windows-task-view-mac-mission-control.sh"]="rofi-windows-task-view-mac-mission-control.sh"
 
 declare -A APP_ICON
-APP_ICON["lxterminal"]="lxterminal"
-APP_ICON["pcmanfm"]="system-file-manager"
+APP_ICON["xfce4-terminal"]="org.xfce.terminal"
+APP_ICON["thunar"]="org.xfce.thunar"
 APP_ICON["firefox-esr"]="firefox-esr"
 APP_ICON["brave-browser"]="brave-browser"
 APP_ICON["vivaldi-stable"]="vivaldi"
@@ -81,8 +81,8 @@ APP_ICON["rofi-windows-task-view-mac-mission-control.sh"]="workspace-switcher"
 # APP_ICON["rofi-windows-task-view-mac-mission-control.sh"]="window-duplicate"
 
 declare -A APP_TOOLTIP
-APP_TOOLTIP["lxterminal"]="Terminal Emulator"
-APP_TOOLTIP["pcmanfm"]="File Manager"
+APP_TOOLTIP["xfce4-terminal"]="Terminal Emulator"
+APP_TOOLTIP["thunar"]="File Manager"
 APP_TOOLTIP["firefox-esr"]="Firefox Web Browser"
 APP_TOOLTIP["brave-browser"]="Brave Web Browser"
 APP_TOOLTIP["vivaldi-stable"]="Vivaldi Web Browser"

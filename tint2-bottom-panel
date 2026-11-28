@@ -190,7 +190,7 @@ execp_font = JetBrains Mono 8
 execp_font_color = #000000 100
 execp_background_id = 2
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/screensavr-mgr.sh
+execp_lclick_command = xfce4-terminal -e ~/willyhorizont.github.io/linux/screensavr-mgr.sh
 execp_markup = 1
 
 # --- E: Indicator Bluetooth ---
@@ -203,7 +203,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 2
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/bt.sh
+execp_lclick_command = xfce4-terminal -e ~/willyhorizont.github.io/linux/bt.sh
 execp_markup = 1
 
 # --- E: Indicator Network ---
@@ -216,7 +216,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 2
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/net.sh
+execp_lclick_command = xfce4-terminal -e ~/willyhorizont.github.io/linux/net.sh
 execp_markup = 1
 
 # --- E: Indicator Cam ---
@@ -229,7 +229,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 2
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/cam.sh
+execp_lclick_command = xfce4-terminal -e ~/willyhorizont.github.io/linux/cam.sh
 execp_markup = 1
 
 # --- E: Indicator Mic ---
@@ -242,7 +242,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 2
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/mic.sh
+execp_lclick_command = xfce4-terminal -e ~/willyhorizont.github.io/linux/mic.sh
 execp_markup = 1
 
 # --- E: Indicator Volume ---
@@ -255,7 +255,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 2
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/vol.sh
+execp_lclick_command = xfce4-terminal -e ~/willyhorizont.github.io/linux/vol.sh
 execp_markup = 1
 
 # --- E: Indicator Power ---
@@ -268,7 +268,7 @@ execp_font = JetBrains Mono Bold 8
 execp_font_color = #000000 100
 execp_background_id = 2
 execp_padding = 0 0
-execp_lclick_command = lxterminal --geometry=88x28 --working-directory=~ -e ~/willyhorizont.github.io/linux/powr-mgr.sh
+execp_lclick_command = xfce4-terminal -e ~/willyhorizont.github.io/linux/powr-mgr.sh
 execp_markup = 1
 
 # --- E: Button to Show Notification History ---
