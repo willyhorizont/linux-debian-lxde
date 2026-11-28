@@ -111,7 +111,7 @@ for KV in \
     'rxvt-unicode.desktop;  s|^Icon=.*|Icon=utilities-terminal|; s|^Name=.*|Name=URxvt|; s|^OnlyShowIn=.*||g' \
     'Alacritty.desktop;     s|^Icon=.*|Icon=utilities-terminal|' \
     'btop.desktop;          s|^Exec=.*|Exec=xfce4-terminal -e btop|' \
-    'cmatrix.desktop;       s|^Exec=.*|Exec=xterm -xrm "XTerm*color2: #008000" -xrm "XTerm*color7: #FFFFFF" -e cmatrix -a|' \
+    'cmatrix.desktop;       s|^Terminal=.*|Terminal=false|; s|^Exec=.*|Exec=xterm -xrm "XTerm*color2: #008000" -xrm "XTerm*color7: #FFFFFF" -e cmatrix -a|' \
     'fresh.desktop;         s|^Exec=.*|Exec=xfce4-terminal -e fresh %F|' \
 ; do
     FILE_NAME="${KV%%;*}"

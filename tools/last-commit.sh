@@ -4,7 +4,7 @@ $HOME/willyhorizont.github.io/linux/confirm-cmd.sh --msg "Confirm Commit" || exi
 
 SD=$(dirname "$(realpath "$0")")
 RD=$(realpath "$SD/..")
-V="0.11.0" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
+V="0.11.1" # ! DON'T FORGET TO CHANGE VERSION BEFORE RUNNING !!!!
 T=$(date "+%d %b %Y @ %I:%M %p")
 cd "$RD" || exit
 
@@ -15,37 +15,8 @@ H=$(sed -e '/./,$!d' <<< "$H")
 # ! DON'T FORGET TO CHANGE COMMIT MESSAGE BEFORE RUNNING !!!!
 M="
 [new]
---replace lxterminal with xfce4-terminal or tilix--;
---replace pcmanfm with thunar or caja--;
-replace lxterminal with xfce4-terminal;
-replace pcmanfm with thunar;
-create xfce4-terminal config xml;
-create thunar config xml;
-replace wmctrl-lxpcapg.sh and get-open-wins.sh to wmctrl -l -x -G for lxde openbox non display;
-update .windowignore, replace pcmanfm.Pcmanfm pcmanfm with desktop_window.Caja Desktop;
-update .Xresources, fix xterm cursorBlink cursorUnderLine,  add urxvt cursorBlink cursorUnderLine preeditType geometry;
-update create-desktop-shortcuts.sh, remove xterm.desktop, remove lxterminal.desktop, update rxvt.desktop, update Alacritty.desktop, update btop.desktop, update cmatrix.desktop, update fresh.desktop;
-update install.sh, add set default file manager to thunar;
-update plank pinned apps, replace lxterminal with xfce4-terminal, replace pcmanfm with thunar;
-update plank.ini, update pinned apps, replace lxterminal with xfce4-terminal, replace pcmanfm with thunar;
-update README.md, update plank pinned apps, replace lxterminal with xfce4-terminal, replace pcmanfm with thunar;
-update rofi-windows-taskbar-mac-dock.sh, replace lxterminal with xfce4-terminal, replace pcmanfm with thunar;
-update run-session.sh, replace pcmanfm with thunar, replace wmctrl-lxpcapg.sh to wmctrl -l -x -G;
-add setup-desktop.sh, turn on caja desktop icons, set caja desktop wallpaper;
-update tint2-bottom-panel, replace lxterminal with xfce4-terminal;
-update tint2-top-bar, replace lxterminal with xfce4-terminal;
-add unshow-desktop.sh, press toggle show desktop kb if in desktop, check is cur active win is caja for lxde openbox;
-update wrkspc-indctr.sh, use new unshow-desktop.sh for lxde openbox --mgr-mode, fix --numrz-mode;
-update wrkspc-mgr.sh, use new unshow-desktop.sh on switch ws;
-update xfce4-docklike, replace lxterminal with xfce4-terminal, replace pcmanfm with thunar;
-update xfce4-panel config xml, update xfce4-whiskermenu pinned apps replace lxterminal with xfce4-terminal, replace pcmanfm with thunar;
-create thunar config kb;
-update i3 config, add startup command turn off caja desktop icons;
-update lxde autorun config, add hsetroot to set backround image, add new setup-desktop.sh, replace pcmanfm --desktop with caja --force-desktop;
-update openbox autorun config, add hsetroot to set backround image, add new setup-desktop.sh, replace pcmanfm --desktop with caja --force-desktop;
-update desktop.conf, set terminal_manager to xfce4-terminal, set file_manager to thunar;
-update lxde openbox window rule for terminal emulator and text editor;
-update lxde openbox rc xml config, replace lxterminal with xfce4-terminal, replace pcmanfm with thunar, add xfce4-terminal tilix alacritty kitty thunar caja window rule;
+update create-desktop-shortcut.sh, small fix in cmatrix.desktop;
+update wrkspc-indctr.sh, add debounce;
 
 [working on]
 add text editor to fav apps;

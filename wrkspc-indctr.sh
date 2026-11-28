@@ -392,11 +392,23 @@ EOF
 )
 printf "%s" "$TOOLTIP_TXT" 1>&2
 
+DEBOUNCE_PID=""
+
+trigger_debounced() {
+    if [ -n "$DEBOUNCE_PID" ]; then
+        kill "$DEBOUNCE_PID" 2>/dev/null
+    fi
+    (
+        sleep 0.2
+        handle_change
+    ) &
+    DEBOUNCE_PID=$!
+}
+
 case "$DESKTOP_SESSION" in
     LXDE|openbox)
         xprop -root -spy _NET_CURRENT_DESKTOP _NET_NUMBER_OF_DESKTOPS | while read -r _; do
-            sleep 0.2
-            handle_change
+            trigger_debounced
         done
         ;;
     i3)
@@ -404,8 +416,7 @@ case "$DESKTOP_SESSION" in
             if echo "$event" | jq -e '.container.window_properties.class == "Caja"' >/dev/null 2>&1; then
                 continue
             fi
-            sleep 0.2
-            handle_change
+            trigger_debounced
         done
         ;;
     *)
